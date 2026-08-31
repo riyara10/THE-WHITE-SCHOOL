@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,12 +60,17 @@ img {
 
 /* =====================================================
    LOADER
+   SHOWS ONLY ON FIRST VISIT OF THE SESSION
 ===================================================== */
 
 #loader {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+
+  width: 100%;
+  height: 100vh;
+
+  z-index: 99999;
 
   background: #2E2C1F;
 
@@ -72,6 +78,9 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  opacity: 1;
+  visibility: visible;
 
   transition:
     opacity .8s ease,
@@ -85,34 +94,62 @@ img {
 }
 
 .loader-image {
-  width: 220px;
-  margin-bottom: 18px;
+  width: auto;
+  margin-bottom: 22px;
 }
 
-.loader-image img {
-  width: 100%;
-  object-fit: contain;
+.loader-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  color: white;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+  line-height: 1.25;
+
+  text-align: left;
+}
+
+.loader-brand span {
+  color: var(--gold);
+
+  font-size: 34px;
+  font-weight: 700;
+
+  letter-spacing: 0;
 }
 
 .loader-bar {
   width: 180px;
-  height: 2px;
+  height: 3px;
+
   background: #5f5a40;
-  border-radius: 4px;
+
+  border-radius: 10px;
+
   overflow: hidden;
 }
 
 .loader-bar-fill {
   width: 0%;
   height: 100%;
-  background: var(--gold);
-  transition: width .3s ease;
+
+  background: #e5c95b;
+
+  border-radius: 10px;
+
+  transition: width .15s ease;
 }
 
 
 /* =====================================================
    HERO
-   FULL IMAGE HOMEPAGE
 ===================================================== */
 
 .hero {
@@ -191,89 +228,144 @@ img {
   background: transparent;
 }
 
+
+/* =====================================================
+   HERO TEXT LOGO
+===================================================== */
+
 .hero-logo {
-  width: 220px;
+  width: auto;
 
-  margin-top: -100px;
+  margin-top: 0;
   margin-bottom: auto;
+
+  color: white;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+
+  line-height: 1.2;
 }
 
-.hero-logo img {
-  width: 100%;
-  object-fit: contain;
+.hero-logo span {
+  color: var(--gold);
+
+  margin-right: 8px;
 }
+
 
 .hero-content {
   margin-top: auto;
   margin-bottom: 8px;
+
   max-width: 400px;
 }
 
 .eyebrow {
   color: var(--gold);
+
   font-size: 11px;
+
   letter-spacing: 3px;
+
   text-transform: uppercase;
+
   font-weight: 600;
+
   margin-bottom: 20px;
 }
 
 .hero-title {
   font-family: var(--serif);
+
   font-size: clamp(48px, 5vw, 72px);
+
   line-height: .94;
+
   font-weight: 400;
+
   letter-spacing: -2px;
+
   margin-bottom: 24px;
 }
 
 .hero-description {
   color: #dddcd2;
+
   font-size: 16px;
+
   line-height: 1.6;
+
   max-width: 380px;
+
   margin-bottom: 10px;
 }
 
 .hero-points {
   display: flex;
+
   align-items: center;
+
   gap: 0;
+
   margin-bottom: 28px;
+
   white-space: nowrap;
 }
 
 .hero-points span {
   color: white;
+
   font-size: 12px;
+
   line-height: 1.4;
+
   font-weight: 500;
 }
 
 .hero-points span:not(:last-child)::after {
   content: "•";
+
   margin-left: 9px;
+
   margin-right: 9px;
+
   color: white;
 }
 
 .hero-buttons {
   display: flex;
+
   align-items: center;
+
   gap: 18px;
+
   flex-wrap: wrap;
 }
 
 .yellow-button {
   background: var(--gold);
+
   color: #29291e;
+
   border-radius: 30px;
+
   padding: 12px 22px;
+
   font-size: 13px;
+
   font-weight: 600;
 
   display: inline-flex;
+
   align-items: center;
+
   gap: 16px;
 
   transition: .3s ease;
@@ -281,15 +373,19 @@ img {
 
 .yellow-button:hover {
   transform: translateY(-2px);
+
   background: #f0d66d;
 }
 
 .journey-link {
   color: white;
+
   font-size: 13px;
 
   display: inline-flex;
+
   gap: 10px;
+
   align-items: center;
 }
 
@@ -298,10 +394,13 @@ img {
   height: 22px;
 
   border: 1px solid #77776e;
+
   border-radius: 50%;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   font-size: 11px;
@@ -316,26 +415,34 @@ img {
   position: absolute;
 
   top: 22px;
+
   left: 32px;
   right: 32px;
 
   z-index: 5;
 
   display: flex;
+
   align-items: center;
+
   justify-content: flex-end;
 }
 
 .nav-links {
   display: flex;
+
   gap: 30px;
+
   align-items: center;
 }
 
 .nav-links a {
   color: white;
+
   font-size: 14px;
+
   font-weight: 500;
+
   transition: .25s ease;
 }
 
@@ -352,6 +459,7 @@ img {
   position: absolute;
 
   right: 28px;
+
   bottom: 24px;
 
   z-index: 5;
@@ -359,12 +467,15 @@ img {
   color: var(--gold);
 
   font-size: 10px;
+
   letter-spacing: 2.5px;
 
   text-transform: uppercase;
 
   display: flex;
+
   align-items: center;
+
   gap: 12px;
 
   font-weight: 700;
@@ -372,6 +483,7 @@ img {
 
 .scroll-down-arrow {
   font-size: 20px;
+
   transition: transform .3s ease;
 }
 
@@ -386,55 +498,77 @@ img {
 
 .about {
   padding: 95px 8%;
+
   background: var(--cream);
 }
 
 .about-container {
   display: grid;
+
   grid-template-columns: 56% 44%;
+
   align-items: center;
+
   gap: 45px;
+
   max-width: 1250px;
+
   margin: auto;
 }
 
 .about-images {
   position: relative;
+
   min-height: 570px;
 }
 
 .about-image {
   position: absolute;
+
   overflow: hidden;
 }
 
 .about-image-1 {
   width: 45%;
+
   height: 340px;
+
   left: 5%;
+
   top: 0;
+
   z-index: 1;
 }
 
 .about-image-2 {
   width: 47%;
+
   height: 390px;
+
   right: 4%;
+
   top: 30px;
+
   z-index: 2;
 }
 
 .about-image-3 {
   width: 44%;
+
   height: 325px;
+
   left: 23%;
+
   bottom: 0;
+
   z-index: 3;
 }
 
 .about-image img {
   width: 100%;
+
   height: 100%;
+
   object-fit: cover;
 }
 
@@ -442,23 +576,33 @@ img {
   padding-right: 20px;
 
   display: flex;
+
   flex-direction: column;
+
   justify-content: center;
 }
 
 .section-label {
   font-size: 11px;
+
   letter-spacing: 3px;
+
   color: #77766a;
+
   text-transform: uppercase;
+
   margin-bottom: 16px;
 }
 
 .serif-heading {
   font-family: var(--serif);
+
   font-weight: 400;
+
   font-size: clamp(34px, 3.4vw, 48px);
+
   line-height: 1.05;
+
   letter-spacing: -1.5px;
 }
 
@@ -468,29 +612,40 @@ img {
 
 .body-text {
   font-size: 15px;
+
   line-height: 1.7;
+
   color: #5c5b51;
+
   max-width: 390px;
 }
 
 .about-link {
   display: inline-flex;
+
   align-items: center;
+
   gap: 10px;
+
   margin-top: 26px;
+
   font-size: 13px;
+
   font-weight: 600;
 }
 
 
 /* =====================================================
-   WHITE METHOD / FRAMEWORK
+   WHITE METHOD
 ===================================================== */
 
 .framework {
   background: #636B2F;
+
   color: white;
+
   padding: 48px 6% 52px;
+
   text-align: center;
 }
 
@@ -500,23 +655,31 @@ img {
 
 .framework-title {
   font-family: var(--serif);
+
   font-size: clamp(32px, 3vw, 44px);
+
   font-weight: 400;
+
   margin-bottom: 40px;
 }
 
 .steps {
   max-width: 1050px;
+
   margin: auto;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 }
 
 .step {
   flex: 1;
+
   position: relative;
+
   text-align: center;
 }
 
@@ -526,11 +689,13 @@ img {
   position: absolute;
 
   width: 50%;
+
   height: 1px;
 
   background: #aaa58a;
 
   right: -25%;
+
   top: 30px;
 }
 
@@ -541,15 +706,19 @@ img {
   margin: 0 auto 14px;
 
   border: 1px solid #d0ccb5;
+
   border-radius: 50%;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   font-size: 15px;
 
   position: relative;
+
   z-index: 2;
 
   background: #636B2F;
@@ -557,23 +726,33 @@ img {
 
 .step-name {
   font-size: 11px;
+
   text-transform: uppercase;
+
   color: #eeeade;
+
   letter-spacing: .5px;
 }
 
 .framework-description {
   margin-top: 30px;
+
   font-size: 14px;
+
   color: #e1dece;
 }
 
 .framework-quote {
   margin-top: 14px;
+
   color: var(--gold);
+
   font-size: 11px;
+
   letter-spacing: 4px;
+
   text-transform: uppercase;
+
   font-weight: 600;
 }
 
@@ -584,14 +763,17 @@ img {
 
 .white-features {
   background: var(--cream);
+
   padding: 65px 5% 75px;
 }
 
 .white-features-container {
   max-width: 1250px;
+
   margin: auto;
 
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
 
   gap: 24px;
@@ -616,14 +798,17 @@ img {
 
 .white-feature-image {
   position: absolute;
+
   inset: 0;
 
   width: 100%;
+
   height: 100%;
 
   object-fit: cover;
 
   transform: none !important;
+
   transition: none !important;
 }
 
@@ -638,6 +823,7 @@ img {
 
   left: 0;
   right: 0;
+
   bottom: 0;
 
   height: 62%;
@@ -661,6 +847,7 @@ img {
 
   left: 0;
   right: 0;
+
   bottom: 0;
 
   z-index: 2;
@@ -674,10 +861,13 @@ img {
   font-family: "DM Sans", sans-serif;
 
   font-size: 17px;
+
   line-height: 1.2;
+
   font-weight: 600;
 
   letter-spacing: 2px;
+
   text-transform: uppercase;
 
   margin-bottom: 12px;
@@ -689,19 +879,27 @@ img {
 
 .white-feature-subtitle {
   font-size: 10px;
+
   line-height: 1.8;
+
   letter-spacing: 1.5px;
+
   text-transform: uppercase;
+
   color: #deddd4;
+
   margin-bottom: 12px;
 }
 
 .white-feature-description {
   font-size: 13px;
+
   line-height: 1.5;
+
   color: #f1f0e9;
 
   max-width: 330px;
+
   min-height: 38px;
 
   margin-bottom: 14px;
@@ -711,6 +909,7 @@ img {
   display: inline-flex;
 
   align-items: center;
+
   justify-content: space-between;
 
   gap: 18px;
@@ -720,15 +919,19 @@ img {
   padding: 5px 5px 5px 16px;
 
   border: 1px solid #636B2F;
+
   border-radius: 40px;
 
   background: #636B2F;
+
   color: white;
 
   font-size: 9px;
+
   font-weight: 600;
 
   letter-spacing: 2px;
+
   text-transform: uppercase;
 
   transition: all .3s ease;
@@ -736,7 +939,9 @@ img {
 
 .white-explore:hover {
   background: #25251b;
+
   border-color: #25251b;
+
   transform: translateY(-2px);
 }
 
@@ -747,7 +952,9 @@ img {
   flex-shrink: 0;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   border-radius: 50%;
@@ -763,7 +970,9 @@ img {
 
 .white-explore:hover .white-explore-arrow {
   background: white;
+
   color: #111;
+
   transform: rotate(45deg);
 }
 
@@ -774,14 +983,17 @@ img {
 
 .program-events {
   background: var(--cream);
+
   padding: 55px 4%;
 }
 
 .program-grid {
   max-width: 1250px;
+
   margin: auto;
 
   display: grid;
+
   grid-template-columns: 1fr 1fr;
 
   gap: 30px;
@@ -790,13 +1002,17 @@ img {
 .program-content,
 .events-column {
   background: #ebe8dd;
+
   padding: 38px;
+
   min-height: 480px;
 }
 
 .program-content {
   display: flex;
+
   flex-direction: column;
+
   justify-content: center;
 }
 
@@ -804,7 +1020,9 @@ img {
   font-family: var(--serif);
 
   font-size: 36px;
+
   font-weight: 400;
+
   line-height: 1.05;
 
   margin-bottom: 18px;
@@ -812,10 +1030,13 @@ img {
 
 .program-content p {
   font-size: 14px;
+
   line-height: 1.7;
+
   color: #65645b;
 
   max-width: 400px;
+
   margin-bottom: 20px;
 }
 
@@ -825,36 +1046,43 @@ img {
 
 .program-list li {
   font-size: 13px;
+
   padding: 5px 0;
+
   color: #4d4c43;
 }
 
 .program-list li::before {
   content: "+";
-  margin-right: 10px;
-}
 
-.events-column {
-  padding-top: 38px;
+  margin-right: 10px;
 }
 
 .event-top {
   display: grid;
+
   grid-template-columns: 1fr 150px;
+
   gap: 22px;
+
   margin-bottom: 32px;
 }
 
 .event-top h2 {
   font-family: var(--serif);
+
   font-size: 28px;
+
   font-weight: 400;
+
   margin-bottom: 8px;
 }
 
 .event-info {
   font-size: 13px;
+
   line-height: 1.7;
+
   color: #66655c;
 }
 
@@ -870,6 +1098,7 @@ img {
   padding: 10px 18px;
 
   font-size: 11px;
+
   font-weight: 600;
 }
 
@@ -883,25 +1112,33 @@ img {
 
 .past-events-title {
   font-size: 10px;
+
   letter-spacing: 2.5px;
+
   color: #77766c;
+
   text-transform: uppercase;
+
   margin-bottom: 12px;
 }
 
 .past-events {
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
+
   gap: 10px;
 }
 
 .past-event img {
   height: 60px;
+
   margin-bottom: 6px;
 }
 
 .past-event p {
   font-size: 10px;
+
   line-height: 1.4;
 }
 
@@ -912,26 +1149,33 @@ img {
 
 .stories {
   background: #f0eee6;
+
   padding: 48px 4%;
 }
 
 .stories-heading {
   max-width: 1250px;
+
   margin: auto;
 }
 
 .stories-heading h2 {
   font-family: var(--serif);
+
   font-size: 32px;
+
   font-weight: 400;
+
   margin-bottom: 28px;
 }
 
 .story-grid {
   max-width: 1250px;
+
   margin: auto;
 
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
 
   gap: 18px;
@@ -951,20 +1195,27 @@ img {
   min-height: 145px;
 
   display: flex;
+
   flex-direction: column;
+
   justify-content: space-between;
 }
 
 .story-content p {
   font-family: var(--serif);
+
   font-size: 15px;
+
   line-height: 1.5;
+
   color: white;
 }
 
 .story-name {
   font-size: 10px;
+
   line-height: 1.5;
+
   color: #e9e6d7;
 }
 
@@ -977,9 +1228,11 @@ img {
   min-height: 430px;
 
   display: grid;
+
   grid-template-columns: 45% 55%;
 
   background: var(--dark);
+
   color: white;
 
   overflow: hidden;
@@ -987,9 +1240,11 @@ img {
 
 .cta-image {
   position: relative;
+
   overflow: hidden;
 
   min-height: 430px;
+
   height: 430px;
 }
 
@@ -997,6 +1252,7 @@ img {
   content: "";
 
   position: absolute;
+
   inset: 0;
 
   background: rgba(22,22,15,.35);
@@ -1004,9 +1260,11 @@ img {
 
 .cta-image img {
   width: 100%;
+
   height: 100%;
 
   object-fit: cover;
+
   object-position: center 55%;
 }
 
@@ -1014,7 +1272,9 @@ img {
   padding: 55px 8%;
 
   display: flex;
+
   flex-direction: column;
+
   justify-content: center;
 }
 
@@ -1034,6 +1294,7 @@ img {
   color: #cac9bd;
 
   font-size: 13px;
+
   line-height: 1.6;
 
   margin-bottom: 22px;
@@ -1041,6 +1302,7 @@ img {
 
 .cta-content p span {
   margin: 0 7px;
+
   color: var(--gold);
 }
 
@@ -1059,13 +1321,9 @@ img {
 
 .minimal-footer-inner {
   max-width: 1250px;
+
   margin: auto;
 }
-
-
-/* =====================================================
-   FOOTER TOP
-===================================================== */
 
 .footer-top {
   display: grid;
@@ -1078,11 +1336,6 @@ img {
 
   margin-bottom: 65px;
 }
-
-
-/* =====================================================
-   LEFT FOOTER COLUMN
-===================================================== */
 
 .footer-woman-column {
   width: 100%;
@@ -1104,11 +1357,6 @@ img {
   margin-bottom: 25px;
 }
 
-
-/* =====================================================
-   RIGHT FOOTER COLUMN
-===================================================== */
-
 .footer-starting-column {
   width: 100%;
 }
@@ -1129,11 +1377,6 @@ img {
   margin-bottom: 25px;
 }
 
-
-/* =====================================================
-   FOOTER DESCRIPTION
-===================================================== */
-
 .footer-description {
   font-family: "DM Sans", sans-serif;
 
@@ -1150,11 +1393,6 @@ img {
   margin: 0;
 }
 
-
-/* =====================================================
-   FOOTER LOWER
-===================================================== */
-
 .footer-lower {
   border-top: 1px solid rgba(244,242,235,.35);
 
@@ -1169,10 +1407,6 @@ img {
 
 .footer-logo {
   width: 180px;
-}
-
-.footer-logo img {
-  width: 100%;
 }
 
 .footer-brand {
@@ -1282,6 +1516,7 @@ img {
 
   .hero-left {
     width: 55%;
+
     height: 100%;
 
     min-height: 0;
@@ -1297,6 +1532,7 @@ img {
     inset: 0;
 
     width: 100%;
+
     height: 100%;
 
     min-height: 0;
@@ -1304,6 +1540,7 @@ img {
 
   .top-nav {
     left: 25px;
+
     right: 25px;
   }
 
@@ -1358,6 +1595,7 @@ img {
 
   .hero-left {
     width: 100%;
+
     height: 100%;
 
     min-height: 0;
@@ -1373,6 +1611,7 @@ img {
     inset: 0;
 
     width: 100%;
+
     height: 100%;
 
     min-height: 0;
@@ -1386,6 +1625,7 @@ img {
     top: 22px;
 
     left: 20px;
+
     right: 20px;
 
     align-items: flex-start;
@@ -1406,9 +1646,29 @@ img {
   }
 
   .hero-logo {
-    width: 180px;
+    width: auto;
 
-    margin-top: -28px;
+    margin-top: 0;
+
+    margin-bottom: auto;
+
+    font-size: 16px;
+
+    letter-spacing: 1px;
+  }
+
+  .hero-logo span {
+    margin-right: 5px;
+  }
+
+  .loader-brand {
+    font-size: 14px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .loader-brand span {
+    font-size: 28px;
   }
 
   .hero-title {
@@ -1433,9 +1693,6 @@ img {
     font-size: 11px;
   }
 
-
-  /* ABOUT */
-
   .about {
     padding: 65px 20px;
   }
@@ -1450,25 +1707,31 @@ img {
 
   .about-image-1 {
     width: 46%;
+
     height: 250px;
 
     left: 1%;
+
     top: 0;
   }
 
   .about-image-2 {
     width: 49%;
+
     height: 285px;
 
     right: 1%;
+
     top: 20px;
   }
 
   .about-image-3 {
     width: 46%;
+
     height: 245px;
 
     left: 19%;
+
     bottom: 0;
   }
 
@@ -1480,15 +1743,13 @@ img {
     font-size: 14px;
   }
 
-
-  /* WHITE METHOD */
-
   .framework {
     padding: 40px 16px;
   }
 
   .steps {
     flex-wrap: wrap;
+
     gap: 24px;
   }
 
@@ -1500,20 +1761,19 @@ img {
     display: none;
   }
 
-
-  /* THREE CARDS */
-
   .white-features {
     padding: 50px 20px 60px;
   }
 
   .white-features-container {
     grid-template-columns: 1fr;
+
     gap: 18px;
   }
 
   .white-feature-card {
     height: 410px;
+
     border-radius: 16px;
   }
 
@@ -1523,21 +1783,21 @@ img {
 
   .white-feature-title {
     font-size: 18px;
+
     white-space: nowrap;
+
     letter-spacing: 2px;
   }
 
   .white-feature-subtitle {
     font-size: 9px;
+
     line-height: 1.8;
   }
 
   .white-feature-description {
     font-size: 13px;
   }
-
-
-  /* PROGRAM */
 
   .program-grid {
     grid-template-columns: 1fr;
@@ -1560,16 +1820,15 @@ img {
     min-height: 180px;
   }
 
-
-  /* CTA */
-
   .final-cta {
     grid-template-columns: 1fr;
+
     min-height: auto;
   }
 
   .cta-image {
     min-height: 380px;
+
     height: 380px;
   }
 
@@ -1579,11 +1838,9 @@ img {
 
   .cta-content h2 {
     font-size: 40px;
+
     line-height: 1.05;
   }
-
-
-  /* FOOTER */
 
   .minimal-footer {
     padding: 60px 22px 25px;
@@ -1593,6 +1850,7 @@ img {
     grid-template-columns: 1fr;
 
     column-gap: 0;
+
     row-gap: 45px;
 
     margin-bottom: 50px;
@@ -1611,12 +1869,15 @@ img {
 
   .footer-description {
     font-size: 13px;
+
     line-height: 1.7;
+
     max-width: 100%;
   }
 
   .footer-lower {
     grid-template-columns: 1fr;
+
     gap: 30px;
   }
 
@@ -1626,6 +1887,7 @@ img {
 
   .footer-cta {
     flex-direction: column;
+
     align-items: flex-start;
   }
 }
@@ -1643,6 +1905,7 @@ img {
 
   .hero-buttons {
     flex-direction: column;
+
     align-items: flex-start;
   }
 
@@ -1656,35 +1919,53 @@ img {
 
   .white-feature-title {
     font-size: 16px;
+
     letter-spacing: 1.5px;
+
     white-space: nowrap;
   }
 
   .white-feature-content {
     padding: 20px;
   }
+
+  .hero-logo {
+    font-size: 14px;
+
+    letter-spacing: .8px;
+  }
+
+  .loader-brand {
+    font-size: 12px;
+  }
+
+  .loader-brand span {
+    font-size: 25px;
+  }
 }
 
 </style>
 </head>
-
 
 <body>
 
 
 <!-- =====================================================
      LOADER
-     SHOWS ONLY ON FIRST VISIT
 ===================================================== -->
 
 <div id="loader">
 
   <div class="loader-image">
 
-    <img
-      src="assets/logo_pdf_page-0002-removebg-preview.png"
-      alt="The White Startup School Logo"
-    >
+    <div class="loader-brand">
+
+      <div>
+        WS-THE WHITE
+        STARTUP SCHOOL
+      </div>
+
+    </div>
 
   </div>
 
@@ -1702,13 +1983,9 @@ img {
 
 <!-- =====================================================
      HERO
-     FULL IMAGE HOMEPAGE
 ===================================================== -->
 
 <section class="hero" id="home">
-
-
-  <!-- FULL HOMEPAGE IMAGE -->
 
   <div class="hero-right">
 
@@ -1717,23 +1994,26 @@ img {
       <div class="nav-links">
 
         <a href="#home">Home</a>
+
         <a href="#about">About</a>
+
         <a href="#program">Program</a>
+
         <a href="#framework">Framework</a>
+
         <a href="#events">Events</a>
+
         <a href="#contact">Contact</a>
 
       </div>
 
     </nav>
 
-
     <img
       class="hero-image"
       src="assets/home.jpeg"
       alt="Founder working"
     >
-
 
     <a
       href="#about"
@@ -1753,16 +2033,11 @@ img {
   </div>
 
 
-  <!-- HERO CONTENT -->
-
   <div class="hero-left">
 
     <div class="hero-logo">
 
-      <img
-        src="assets/logo_pdf_page-0002-removebg-preview.png"
-        alt="The White Startup School Logo"
-      >
+      WS — THE WHITE STARTUP SCHOOL
 
     </div>
 
@@ -1774,18 +2049,17 @@ img {
         next.
       </h1>
 
-
       <div class="eyebrow">
         Where ideas become legacy.
       </div>
 
-
       <p class="hero-description">
+
         We help emerging founders turn ideas into thoughtfully built
         businesses through strategy, branding, digital presence and
         mentorship.
-      </p>
 
+      </p>
 
       <div class="hero-points">
 
@@ -1803,22 +2077,24 @@ img {
 
       </div>
 
-
       <div class="hero-buttons">
 
         <a
           href="#program"
           class="yellow-button"
         >
-          Explore the Program
-          <span>→</span>
-        </a>
 
+          Explore the Program
+
+          <span>→</span>
+
+        </a>
 
         <a
           href="#framework"
           class="journey-link"
         >
+
           Begin Your Journey
 
           <span class="circle-arrow">
@@ -1849,27 +2125,25 @@ img {
       <div class="about-image about-image-1">
 
         <img
-          src="assets/download (3).jpg"
+          src="assets/ab.jpeg"
           alt="Women discussing business"
         >
 
       </div>
 
-
       <div class="about-image about-image-2">
 
         <img
-          src="assets/download (8).jpg"
+          src="assets/abss.jpeg"
           alt="Founder"
         >
 
       </div>
 
-
       <div class="about-image about-image-3">
 
         <img
-          src="assets/about1.jpg"
+          src="assets/abs.jpeg"
           alt="Woman working"
         >
 
@@ -1877,19 +2151,18 @@ img {
 
     </div>
 
-
     <div class="about-text">
 
       <div class="section-label">
         The Beginning
       </div>
 
-
       <h2 class="serif-heading">
+
         An idea is only<br>
         the first move.
-      </h2>
 
+      </h2>
 
       <p class="body-text">
 
@@ -1899,7 +2172,6 @@ img {
         Sometimes you need someone to help you see what is possible.
 
       </p>
-
 
       <p
         class="body-text"
@@ -1930,11 +2202,9 @@ img {
     The White Method
   </div>
 
-
   <h2 class="framework-title">
     From possibility to presence.
   </h2>
-
 
   <div class="steps">
 
@@ -1950,7 +2220,6 @@ img {
 
     </div>
 
-
     <div class="step">
 
       <div class="step-icon">
@@ -1962,7 +2231,6 @@ img {
       </div>
 
     </div>
-
 
     <div class="step">
 
@@ -1976,7 +2244,6 @@ img {
 
     </div>
 
-
     <div class="step">
 
       <div class="step-icon">
@@ -1989,7 +2256,6 @@ img {
 
     </div>
 
-
     <div class="step">
 
       <div class="step-icon">
@@ -2001,7 +2267,6 @@ img {
       </div>
 
     </div>
-
 
     <div class="step">
 
@@ -2017,21 +2282,23 @@ img {
 
   </div>
 
-
   <p class="framework-description">
+
     A considered framework for turning ambition into something tangible.
+
   </p>
 
-
   <div class="framework-quote">
+
     Think deeply. Build deliberately. Move with purpose.
+
   </div>
 
 </section>
 
 
 <!-- =====================================================
-     THREE WHITE FEATURE CARDS
+     THREE FEATURE CARDS
 ===================================================== -->
 
 <section
@@ -2041,12 +2308,11 @@ img {
 
   <div class="white-features-container">
 
-
     <div class="white-feature-card">
 
       <img
         class="white-feature-image"
-        src="assets/download (5).jpg"
+        src="assets/start.jpeg"
         alt="The White Startup School"
       >
 
@@ -2092,7 +2358,7 @@ img {
 
       <img
         class="white-feature-image"
-        src="assets/download.jpg"
+        src="assets/st.jpeg"
         alt="The White Standard"
       >
 
@@ -2138,7 +2404,7 @@ img {
 
       <img
         class="white-feature-image"
-        src="assets/download (1).jpg"
+        src="assets/fo.jpeg"
         alt="The White Founders"
       >
 
@@ -2205,13 +2471,17 @@ img {
       </div>
 
       <h2>
+
         Clarity. Strategy.<br>
         Execution.
+
       </h2>
 
       <p>
+
         Our programs are designed to give founders the knowledge,
         tools and support to build businesses with clarity and confidence.
+
       </p>
 
       <ul class="program-list">
@@ -2275,7 +2545,9 @@ img {
             href="#contact"
             class="event-button"
           >
+
             Join Next Session&nbsp;&nbsp; →
+
           </a>
 
         </div>
@@ -2380,7 +2652,6 @@ img {
 
   </div>
 
-
   <div class="story-grid">
 
     <div class="story-card">
@@ -2461,24 +2732,28 @@ img {
 
   </div>
 
-
   <div class="cta-content">
 
     <h2>
+
       You won't leave with a certificate and a to-do list.
       You leave with momentum.
+
     </h2>
 
     <p>
+
       The White Startup School is built for the real journey
       of entrepreneurship—not the polished version. From your
       first idea to your first launch, we help you navigate
       uncertainty, make confident decisions, and move forward
       with the right perspective, creative thinking, and
       practical support.
+
     </p>
 
     <p>
+
       NO GENERIC FORMULAS.
       <span>|</span>
       NO EMPTY MOTIVATION.
@@ -2486,6 +2761,7 @@ img {
       NO GUESSWORK.
       <span>|</span>
       JUST A CLEARER WAY FORWARD.
+
     </p>
 
   </div>
@@ -2501,14 +2777,14 @@ img {
 
   <div class="minimal-footer-inner">
 
-
     <div class="footer-top">
-
 
       <div class="footer-woman-column">
 
         <h2 class="footer-woman-heading">
+
           THE WOMAN BEHIND THE IDEA.
+
         </h2>
 
         <p class="footer-description">
@@ -2549,7 +2825,9 @@ img {
       <div class="footer-starting-column">
 
         <h2 class="footer-main-heading">
+
           THE ONLY THING MISSING IS YOUR STARTING.
+
         </h2>
 
         <p class="footer-description">
@@ -2570,19 +2848,18 @@ img {
 
       </div>
 
-
     </div>
 
 
     <div class="footer-lower">
 
-
       <div class="footer-logo">
 
-        <img
-          src="assets/logo_pdf_page-0002-removebg-preview.png"
-          alt="The White Startup School Logo"
-        >
+        <div class="loader-brand">
+
+      
+
+        </div>
 
       </div>
 
@@ -2609,11 +2886,15 @@ img {
         <div class="footer-cta">
 
           <a href="#program">
+
             BEGIN YOUR JOURNEY &nbsp; →
+
           </a>
 
           <a href="founder.html">
+
             JOIN THE WHITE FOUNDERS &nbsp; →
+
           </a>
 
         </div>
@@ -2643,20 +2924,27 @@ img {
 
 /* =====================================================
    FIRST-VISIT LOADER
+   LOADER SHOWS ONLY ONCE PER BROWSER SESSION
 ===================================================== */
 
-(function () {
+document.addEventListener("DOMContentLoaded", function () {
 
   const loader = document.getElementById("loader");
   const fill = document.getElementById("loaderFill");
 
+  /*
+     Check whether the loader was already displayed
+     during this browser session.
+  */
+
   const loaderAlreadyShown =
-    localStorage.getItem("whiteStartupLoaderShown");
+    sessionStorage.getItem("whiteStartupLoaderShown");
 
 
-  /* -----------------------------------------------------
-     IF VISITOR HAS ALREADY SEEN THE LOADER
-  ----------------------------------------------------- */
+  /*
+     If loader was already shown,
+     hide it immediately.
+  */
 
   if (loaderAlreadyShown === "true") {
 
@@ -2668,25 +2956,37 @@ img {
   }
 
 
-  /* -----------------------------------------------------
+  /*
      FIRST VISIT
-  ----------------------------------------------------- */
+     Keep page scrolling disabled.
+  */
 
   document.body.style.overflow = "hidden";
 
   let progress = 0;
 
-  const interval = setInterval(function () {
 
-    progress += Math.floor(Math.random() * 6) + 2;
+  /*
+     Animate loading bar.
+  */
+
+  const loading = setInterval(function () {
+
+    progress += Math.floor(Math.random() * 8) + 4;
+
 
     if (progress >= 100) {
 
       progress = 100;
 
-      clearInterval(interval);
-
       fill.style.width = "100%";
+
+      clearInterval(loading);
+
+
+      /*
+         Give the 100% bar a short pause.
+      */
 
       setTimeout(function () {
 
@@ -2694,50 +2994,61 @@ img {
 
         document.body.style.overflow = "auto";
 
-        localStorage.setItem(
+
+        /*
+           Remember that loader has already been shown.
+        */
+
+        sessionStorage.setItem(
           "whiteStartupLoaderShown",
           "true"
         );
 
       }, 500);
 
+
+    } else {
+
+      fill.style.width = progress + "%";
+
     }
 
-    fill.style.width = progress + "%";
-
-  }, 120);
+  }, 100);
 
 
-  /* -----------------------------------------------------
+  /*
      SAFETY TIMEOUT
-  ----------------------------------------------------- */
+     Prevents loader from getting stuck.
+  */
 
   setTimeout(function () {
 
-    if (!loader.classList.contains("hide")) {
+    clearInterval(loading);
 
-      clearInterval(interval);
+    fill.style.width = "100%";
 
-      fill.style.width = "100%";
 
-      setTimeout(function () {
+    setTimeout(function () {
 
-        loader.classList.add("hide");
+      loader.classList.add("hide");
 
-        document.body.style.overflow = "auto";
+      document.body.style.overflow = "auto";
 
-        localStorage.setItem(
-          "whiteStartupLoaderShown",
-          "true"
-        );
 
-      }, 300);
+      /*
+         Mark loader as completed.
+      */
 
-    }
+      sessionStorage.setItem(
+        "whiteStartupLoaderShown",
+        "true"
+      );
 
-  }, 5000);
+    }, 300);
 
-})();
+  }, 4000);
+
+});
 
 
 /* =====================================================
