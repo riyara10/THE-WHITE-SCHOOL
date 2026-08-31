@@ -1,0 +1,2724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The White Startup School</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: #f4f2eb;
+  color: #25251c;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+:root {
+  --dark: #25251b;
+  --olive: #636B2F;
+  --cream: #f4f2eb;
+  --gold: #e5c95b;
+  --serif: "Playfair Display", serif;
+}
+
+
+/* =====================================================
+   LOADER
+===================================================== */
+
+#loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  background: #2E2C1F;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    opacity .8s ease,
+    visibility .8s ease;
+}
+
+#loader.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-image {
+  width: 220px;
+  margin-bottom: 18px;
+}
+
+.loader-image img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.loader-bar {
+  width: 180px;
+  height: 2px;
+  background: #5f5a40;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.loader-bar-fill {
+  width: 0%;
+  height: 100%;
+  background: var(--gold);
+  transition: width .3s ease;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+  min-height: 720px;
+  height: 90vh;
+  max-height: 1000px;
+
+  display: grid;
+  grid-template-columns: 39% 61%;
+
+  background: var(--dark);
+  color: white;
+
+  position: relative;
+}
+
+.hero-left {
+  padding: 28px 48px 55px;
+
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  z-index: 2;
+
+  background: #636B2F;
+}
+
+.hero-logo {
+  width: 220px;
+  margin-top: -100px;
+  margin-bottom: auto;
+}
+
+.hero-logo img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.hero-content {
+  margin-top: auto;
+  margin-bottom: 8px;
+  max-width: 400px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(48px, 5vw, 72px);
+  line-height: .94;
+  font-weight: 400;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
+}
+
+.hero-description {
+  color: #dddcd2;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 380px;
+  margin-bottom: 10px;
+}
+
+.hero-points {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 28px;
+  white-space: nowrap;
+}
+
+.hero-points span {
+  color: #11110d;
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.hero-points span:not(:last-child)::after {
+  content: "•";
+  margin-left: 9px;
+  margin-right: 9px;
+  color: #11110d;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.yellow-button {
+  background: var(--gold);
+  color: #29291e;
+  border-radius: 30px;
+  padding: 12px 22px;
+  font-size: 13px;
+  font-weight: 600;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+
+  transition: .3s ease;
+}
+
+.yellow-button:hover {
+  transform: translateY(-2px);
+  background: #f0d66d;
+}
+
+.journey-link {
+  color: white;
+  font-size: 13px;
+
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.circle-arrow {
+  width: 22px;
+  height: 22px;
+
+  border: 1px solid #77776e;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   HERO RIGHT
+===================================================== */
+
+.hero-right {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-right::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: rgba(20,20,13,.30);
+
+  pointer-events: none;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.top-nav {
+  position: absolute;
+
+  top: 22px;
+  left: 32px;
+  right: 32px;
+
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  transition: .25s ease;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+
+/* =====================================================
+   SCROLL
+===================================================== */
+
+.scroll-discover {
+  position: absolute;
+
+  right: 28px;
+  bottom: 24px;
+
+  z-index: 5;
+
+  color: var(--gold);
+
+  font-size: 10px;
+  letter-spacing: 2.5px;
+
+  text-transform: uppercase;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-weight: 700;
+}
+
+.scroll-down-arrow {
+  font-size: 20px;
+  transition: transform .3s ease;
+}
+
+.scroll-discover:hover .scroll-down-arrow {
+  transform: translateY(4px);
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about {
+  padding: 95px 8%;
+  background: var(--cream);
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 56% 44%;
+  align-items: center;
+  gap: 45px;
+  max-width: 1250px;
+  margin: auto;
+}
+
+.about-images {
+  position: relative;
+  min-height: 570px;
+}
+
+.about-image {
+  position: absolute;
+  overflow: hidden;
+}
+
+.about-image-1 {
+  width: 45%;
+  height: 340px;
+  left: 5%;
+  top: 0;
+  z-index: 1;
+}
+
+.about-image-2 {
+  width: 47%;
+  height: 390px;
+  right: 4%;
+  top: 30px;
+  z-index: 2;
+}
+
+.about-image-3 {
+  width: 44%;
+  height: 325px;
+  left: 23%;
+  bottom: 0;
+  z-index: 3;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-text {
+  padding-right: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #77766a;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.serif-heading {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(34px, 3.4vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+}
+
+.about-text .serif-heading {
+  margin-bottom: 20px;
+}
+
+.body-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #5c5b51;
+  max-width: 390px;
+}
+
+.about-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 26px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   WHITE METHOD / FRAMEWORK
+===================================================== */
+
+.framework {
+  background: #636B2F;
+  color: white;
+  padding: 48px 6% 52px;
+  text-align: center;
+}
+
+.framework .section-label {
+  color: #e0ddca;
+}
+
+.framework-title {
+  font-family: var(--serif);
+  font-size: clamp(32px, 3vw, 44px);
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.steps {
+  max-width: 1050px;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step {
+  flex: 1;
+  position: relative;
+  text-align: center;
+}
+
+.step:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  width: 50%;
+  height: 1px;
+
+  background: #aaa58a;
+
+  right: -25%;
+  top: 30px;
+}
+
+.step-icon {
+  width: 38px;
+  height: 38px;
+
+  margin: 0 auto 14px;
+
+  border: 1px solid #d0ccb5;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 15px;
+
+  position: relative;
+  z-index: 2;
+
+  background: #636B2F;
+}
+
+.step-name {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #eeeade;
+  letter-spacing: .5px;
+}
+
+.framework-description {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #e1dece;
+}
+
+.framework-quote {
+  margin-top: 14px;
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   THREE WHITE FEATURE CARDS
+===================================================== */
+
+.white-features {
+  background: var(--cream);
+  padding: 65px 5% 75px;
+}
+
+.white-features-container {
+  max-width: 1250px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+.white-feature-card {
+  position: relative;
+
+  height: 430px;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background: #111;
+
+  box-shadow:
+    0 15px 35px rgba(0,0,0,.13);
+
+  isolation: isolate;
+}
+
+.white-feature-image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transform: none !important;
+  transition: none !important;
+}
+
+.white-feature-card:hover .white-feature-image {
+  transform: none !important;
+}
+
+.white-feature-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 62%;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,.20) 15%,
+      rgba(0,0,0,.68) 45%,
+      rgba(0,0,0,.96) 100%
+    );
+
+  backdrop-filter: blur(1px);
+}
+
+.white-feature-content {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 2;
+
+  padding: 25px 25px 23px;
+
+  color: white;
+}
+
+.white-feature-title {
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 17px;
+  line-height: 1.2;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  margin-bottom: 12px;
+
+  color: white;
+
+  white-space: nowrap;
+}
+
+.white-feature-subtitle {
+  font-size: 10px;
+  line-height: 1.8;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #deddd4;
+  margin-bottom: 12px;
+}
+
+.white-feature-description {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #f1f0e9;
+
+  max-width: 330px;
+  min-height: 38px;
+
+  margin-bottom: 14px;
+}
+
+.white-explore {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  min-width: 165px;
+
+  padding: 5px 5px 5px 16px;
+
+  border: 1px solid #636B2F;
+  border-radius: 40px;
+
+  background: #636B2F;
+  color: white;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  transition: all .3s ease;
+}
+
+.white-explore:hover {
+  background: #25251b;
+  border-color: #25251b;
+  transform: translateY(-2px);
+}
+
+.white-explore-arrow {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.18);
+
+  color: white;
+
+  font-size: 18px;
+
+  transition: all .3s ease;
+}
+
+.white-explore:hover .white-explore-arrow {
+  background: white;
+  color: #111;
+  transform: rotate(45deg);
+}
+
+
+/* =====================================================
+   PROGRAM + EVENTS
+===================================================== */
+
+.program-events {
+  background: var(--cream);
+  padding: 55px 4%;
+}
+
+.program-grid {
+  max-width: 1250px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 30px;
+}
+
+.program-content,
+.events-column {
+  background: #ebe8dd;
+  padding: 38px;
+  min-height: 480px;
+}
+
+.program-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.program-content h2 {
+  font-family: var(--serif);
+
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.05;
+
+  margin-bottom: 18px;
+}
+
+.program-content p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #65645b;
+
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+.program-list {
+  list-style: none;
+}
+
+.program-list li {
+  font-size: 13px;
+  padding: 5px 0;
+  color: #4d4c43;
+}
+
+.program-list li::before {
+  content: "+";
+  margin-right: 10px;
+}
+
+.events-column {
+  padding-top: 38px;
+}
+
+.event-top {
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  gap: 22px;
+  margin-bottom: 32px;
+}
+
+.event-top h2 {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.event-info {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #66655c;
+}
+
+.event-button {
+  display: inline-block;
+
+  margin-top: 14px;
+
+  background: var(--gold);
+
+  border-radius: 30px;
+
+  padding: 10px 18px;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.event-image {
+  height: 155px;
+}
+
+.event-image img {
+  height: 100%;
+}
+
+.past-events-title {
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  color: #77766c;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.past-events {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.past-event img {
+  height: 60px;
+  margin-bottom: 6px;
+}
+
+.past-event p {
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+
+/* =====================================================
+   STORIES
+===================================================== */
+
+.stories {
+  background: #f0eee6;
+  padding: 48px 4%;
+}
+
+.stories-heading {
+  max-width: 1250px;
+  margin: auto;
+}
+
+.stories-heading h2 {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 28px;
+}
+
+.story-grid {
+  max-width: 1250px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 18px;
+}
+
+.story-card {
+  display: block;
+
+  background: #636B2F;
+
+  min-height: 190px;
+
+  padding: 22px;
+}
+
+.story-content {
+  min-height: 145px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.story-content p {
+  font-family: var(--serif);
+  font-size: 15px;
+  line-height: 1.5;
+  color: white;
+}
+
+.story-name {
+  font-size: 10px;
+  line-height: 1.5;
+  color: #e9e6d7;
+}
+
+
+/* =====================================================
+   FINAL CTA
+===================================================== */
+
+.final-cta {
+  min-height: 430px;
+
+  display: grid;
+  grid-template-columns: 45% 55%;
+
+  background: var(--dark);
+  color: white;
+
+  overflow: hidden;
+}
+
+.cta-image {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 430px;
+  height: 430px;
+}
+
+.cta-image::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: rgba(22,22,15,.35);
+}
+
+.cta-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center 55%;
+}
+
+.cta-content {
+  padding: 55px 8%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cta-content h2 {
+  font-family: var(--serif);
+
+  font-size: clamp(38px,4vw,54px);
+
+  line-height: 1;
+
+  font-weight: 400;
+
+  margin-bottom: 20px;
+}
+
+.cta-content p {
+  color: #cac9bd;
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  margin-bottom: 22px;
+}
+
+.cta-content p span {
+  margin: 0 7px;
+  color: var(--gold);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.minimal-footer {
+  background: #636B2F;
+
+  color: #f4f2eb;
+
+  padding: 70px 6% 35px;
+}
+
+.minimal-footer-inner {
+  max-width: 1250px;
+  margin: auto;
+}
+
+
+/* =====================================================
+   FOOTER TOP
+===================================================== */
+
+.footer-top {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  column-gap: 90px;
+
+  align-items: start;
+
+  margin-bottom: 65px;
+}
+
+
+/* =====================================================
+   LEFT FOOTER COLUMN
+===================================================== */
+
+.footer-woman-column {
+  width: 100%;
+}
+
+.footer-woman-heading {
+  font-family: var(--serif);
+
+  font-size: clamp(30px, 3.3vw, 48px);
+
+  line-height: 1.08;
+
+  font-weight: 400;
+
+  letter-spacing: 2px;
+
+  text-align: left;
+
+  margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   RIGHT FOOTER COLUMN
+===================================================== */
+
+.footer-starting-column {
+  width: 100%;
+}
+
+.footer-main-heading {
+  font-family: var(--serif);
+
+  font-size: clamp(30px, 3.3vw, 48px);
+
+  line-height: 1.08;
+
+  font-weight: 400;
+
+  letter-spacing: 2px;
+
+  text-align: left;
+
+  margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   FOOTER DESCRIPTION
+===================================================== */
+
+.footer-description {
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+
+  color: #e4e2d5;
+
+  text-align: left;
+
+  max-width: 540px;
+
+  margin: 0;
+}
+
+
+/* =====================================================
+   FOOTER LOWER
+===================================================== */
+
+.footer-lower {
+  border-top: 1px solid rgba(244,242,235,.35);
+
+  padding-top: 35px;
+
+  display: grid;
+
+  grid-template-columns: 220px 1fr;
+
+  gap: 50px;
+}
+
+.footer-logo {
+  width: 180px;
+}
+
+.footer-logo img {
+  width: 100%;
+}
+
+.footer-brand {
+  font-family: var(--serif);
+
+  font-size: 24px;
+
+  line-height: 1;
+
+  letter-spacing: 1px;
+
+  color: white;
+
+  margin-bottom: 22px;
+}
+
+.footer-positioning {
+  font-size: 11px;
+
+  line-height: 2;
+
+  letter-spacing: 2.5px;
+
+  text-transform: uppercase;
+
+  color: #dddacb;
+
+  margin-bottom: 30px;
+}
+
+.footer-cta {
+  display: flex;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+}
+
+.footer-cta a {
+  color: #25251b;
+
+  background: var(--gold);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.7px;
+
+  padding: 12px 19px;
+
+  border: 1px solid var(--gold);
+
+  border-radius: 30px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transition: .3s ease;
+}
+
+.footer-cta a:hover {
+  background: transparent;
+
+  color: white;
+
+  border-color: white;
+
+  transform: translateY(-2px);
+}
+
+.footer-copyright {
+  border-top: 1px solid rgba(244,242,235,.25);
+
+  margin-top: 45px;
+
+  padding-top: 22px;
+
+  text-align: center;
+
+  font-size: 11px;
+
+  letter-spacing: 1.5px;
+
+  color: #d8d5c7;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width:1000px) {
+
+  .hero {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 850px;
+  }
+
+  .hero-left {
+    min-height: 460px;
+  }
+
+  .hero-right {
+    min-height: 480px;
+  }
+
+  .top-nav {
+    left: 25px;
+    right: 25px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+  .program-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .story-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .white-features-container {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .footer-top {
+    column-gap: 45px;
+  }
+
+  .footer-woman-heading,
+  .footer-main-heading {
+    font-size: 36px;
+  }
+
+  .footer-description {
+    font-size: 13px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width:700px) {
+
+  .hero {
+    min-height: 850px;
+  }
+
+  .hero-left {
+    padding: 25px;
+  }
+
+  .top-nav {
+    top: 22px;
+    left: 20px;
+    right: 20px;
+
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    gap: 16px;
+
+    white-space: nowrap;
+
+    overflow-x: auto;
+
+    max-width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .hero-logo {
+    width: 180px;
+    margin-top: -28px;
+  }
+
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .hero-points {
+    flex-wrap: wrap;
+    gap: 3px 0;
+    margin-bottom: 25px;
+    white-space: normal;
+  }
+
+  .hero-points span {
+    font-size: 11px;
+  }
+
+  .hero-right {
+    min-height: 380px;
+  }
+
+
+  /* ABOUT */
+
+  .about {
+    padding: 65px 20px;
+  }
+
+  .about-container {
+    gap: 35px;
+  }
+
+  .about-images {
+    min-height: 440px;
+  }
+
+  .about-image-1 {
+    width: 46%;
+    height: 250px;
+
+    left: 1%;
+    top: 0;
+  }
+
+  .about-image-2 {
+    width: 49%;
+    height: 285px;
+
+    right: 1%;
+    top: 20px;
+  }
+
+  .about-image-3 {
+    width: 46%;
+    height: 245px;
+
+    left: 19%;
+    bottom: 0;
+  }
+
+  .about-text {
+    padding-right: 0;
+  }
+
+  .body-text {
+    font-size: 14px;
+  }
+
+
+  /* WHITE METHOD */
+
+  .framework {
+    padding: 40px 16px;
+  }
+
+  .steps {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .step {
+    flex: 0 0 30%;
+  }
+
+  .step:not(:last-child)::after {
+    display: none;
+  }
+
+
+  /* THREE CARDS */
+
+  .white-features {
+    padding: 50px 20px 60px;
+  }
+
+  .white-features-container {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .white-feature-card {
+    height: 410px;
+    border-radius: 16px;
+  }
+
+  .white-feature-content {
+    padding: 23px;
+  }
+
+  .white-feature-title {
+    font-size: 18px;
+    white-space: nowrap;
+    letter-spacing: 2px;
+  }
+
+  .white-feature-subtitle {
+    font-size: 9px;
+    line-height: 1.8;
+  }
+
+  .white-feature-description {
+    font-size: 13px;
+  }
+
+
+  /* PROGRAM */
+
+  .program-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .program-content,
+  .events-column {
+    min-height: auto;
+  }
+
+  .event-top {
+    grid-template-columns: 1fr;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story-card {
+    min-height: 180px;
+  }
+
+
+  /* CTA */
+
+  .final-cta {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .cta-image {
+    min-height: 380px;
+    height: 380px;
+  }
+
+  .cta-content {
+    padding: 50px 25px;
+  }
+
+  .cta-content h2 {
+    font-size: 40px;
+    line-height: 1.05;
+  }
+
+
+  /* FOOTER */
+
+  .minimal-footer {
+    padding: 60px 22px 25px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+
+    column-gap: 0;
+    row-gap: 45px;
+
+    margin-bottom: 50px;
+  }
+
+  .footer-woman-heading,
+  .footer-main-heading {
+    font-size: 29px;
+
+    line-height: 1.15;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 20px;
+  }
+
+  .footer-description {
+    font-size: 13px;
+    line-height: 1.7;
+    max-width: 100%;
+  }
+
+  .footer-lower {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-logo {
+    width: 150px;
+  }
+
+  .footer-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width:480px) {
+
+  .hero-title {
+    font-size: 42px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .step {
+    flex: 0 0 45%;
+  }
+
+  .white-feature-card {
+    height: 390px;
+  }
+
+  .white-feature-title {
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+  }
+
+  .white-feature-content {
+    padding: 20px;
+  }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     LOADER
+     SHOWS ONLY ON FIRST VISIT
+===================================================== -->
+
+<div id="loader">
+
+  <div class="loader-image">
+
+    <img
+      src="assets/logo_pdf_page-0002-removebg-preview.png"
+      alt="The White Startup School Logo"
+    >
+
+  </div>
+
+  <div class="loader-bar">
+
+    <div
+      class="loader-bar-fill"
+      id="loaderFill">
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+  <div class="hero-left">
+
+    <div class="hero-logo">
+
+      <img
+        src="assets/logo_pdf_page-0002-removebg-preview.png"
+        alt="The White Startup School Logo"
+      >
+
+    </div>
+
+
+    <div class="hero-content">
+
+      <h1 class="hero-title">
+        Build what's<br>
+        next.
+      </h1>
+
+
+      <div class="eyebrow">
+        Where ideas become legacy.
+      </div>
+
+
+      <p class="hero-description">
+        We help emerging founders turn ideas into thoughtfully built
+        businesses through strategy, branding, digital presence and
+        mentorship.
+      </p>
+
+
+      <div class="hero-points">
+
+        <span>
+          To build with clarity.
+        </span>
+
+        <span>
+          Build with distinction.
+        </span>
+
+        <span>
+          Build for what comes next.
+        </span>
+
+      </div>
+
+
+      <div class="hero-buttons">
+
+        <a
+          href="#program"
+          class="yellow-button"
+        >
+          Explore the Program
+          <span>→</span>
+        </a>
+
+
+        <a
+          href="#framework"
+          class="journey-link"
+        >
+          Begin Your Journey
+
+          <span class="circle-arrow">
+            →
+          </span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="hero-right">
+
+    <nav class="top-nav">
+
+      <div class="nav-links">
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#program">Program</a>
+        <a href="#framework">Framework</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
+
+      </div>
+
+    </nav>
+
+
+    <img
+      class="hero-image"
+      src="assets/down.jpg"
+      alt="Founder working"
+    >
+
+
+    <a
+      href="#about"
+      class="scroll-discover"
+    >
+
+      <span>
+        Scroll to discover
+      </span>
+
+      <span class="scroll-down-arrow">
+        ↓
+      </span>
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="about" id="about">
+
+  <div class="about-container">
+
+    <div class="about-images">
+
+      <div class="about-image about-image-1">
+
+        <img
+          src="assets/download (3).jpg"
+          alt="Women discussing business"
+        >
+
+      </div>
+
+
+      <div class="about-image about-image-2">
+
+        <img
+          src="assets/download (8).jpg"
+          alt="Founder"
+        >
+
+      </div>
+
+
+      <div class="about-image about-image-3">
+
+        <img
+          src="assets/about1.jpg"
+          alt="Woman working"
+        >
+
+      </div>
+
+    </div>
+
+
+    <div class="about-text">
+
+      <div class="section-label">
+        The Beginning
+      </div>
+
+
+      <h2 class="serif-heading">
+        An idea is only<br>
+        the first move.
+      </h2>
+
+
+      <p class="body-text">
+
+        The distance between an idea and a business is more than work.
+        It is vision, a strategic direction, meaning and identity.
+        Sometimes you need clarity before you move.
+        Sometimes you need someone to help you see what is possible.
+
+      </p>
+
+
+      <p
+        class="body-text"
+        style="margin-top:10px;"
+      >
+
+        The White Startup School exists to navigate that distance with you.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     THE WHITE METHOD
+===================================================== -->
+
+<section
+  class="framework"
+  id="framework"
+>
+
+  <div class="section-label">
+    The White Method
+  </div>
+
+
+  <h2 class="framework-title">
+    From possibility to presence.
+  </h2>
+
+
+  <div class="steps">
+
+    <div class="step">
+
+      <div class="step-icon">
+        ♧
+      </div>
+
+      <div class="step-name">
+        Idea
+      </div>
+
+    </div>
+
+
+    <div class="step">
+
+      <div class="step-icon">
+        ↗
+      </div>
+
+      <div class="step-name">
+        Direction
+      </div>
+
+    </div>
+
+
+    <div class="step">
+
+      <div class="step-icon">
+        ✎
+      </div>
+
+      <div class="step-name">
+        Identity
+      </div>
+
+    </div>
+
+
+    <div class="step">
+
+      <div class="step-icon">
+        ◎
+      </div>
+
+      <div class="step-name">
+        Presence
+      </div>
+
+    </div>
+
+
+    <div class="step">
+
+      <div class="step-icon">
+        ▤
+      </div>
+
+      <div class="step-name">
+        Foundation
+      </div>
+
+    </div>
+
+
+    <div class="step">
+
+      <div class="step-icon">
+        ♢
+      </div>
+
+      <div class="step-name">
+        Launch
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <p class="framework-description">
+    A considered framework for turning ambition into something tangible.
+  </p>
+
+
+  <div class="framework-quote">
+    Think deeply. Build deliberately. Move with purpose.
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     THREE WHITE FEATURE CARDS
+===================================================== -->
+
+<section
+  class="white-features"
+  id="white-features"
+>
+
+  <div class="white-features-container">
+
+
+    <div class="white-feature-card">
+
+      <img
+        class="white-feature-image"
+        src="assets/download (5).jpg"
+        alt="The White Startup School"
+      >
+
+      <div class="white-feature-content">
+
+        <h3 class="white-feature-title">
+          THE WHITE STARTUP SCHOOL
+        </h3>
+
+        <div class="white-feature-subtitle">
+
+          Learn the fundamentals.<br>
+          Build with clarity.<br>
+          Launch with confidence.
+
+        </div>
+
+        <p class="white-feature-description">
+          Learn. Build. Launch.
+        </p>
+
+        <a
+          href="startup.html"
+          class="white-explore"
+        >
+
+          <span>
+            Explore More
+          </span>
+
+          <span class="white-explore-arrow">
+            ↗
+          </span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="white-feature-card">
+
+      <img
+        class="white-feature-image"
+        src="assets/download.jpg"
+        alt="The White Standard"
+      >
+
+      <div class="white-feature-content">
+
+        <h3 class="white-feature-title">
+          THE WHITE STANDARD
+        </h3>
+
+        <div class="white-feature-subtitle">
+
+          Think deeper.<br>
+          Build deliberately.<br>
+          Create with purpose.
+
+        </div>
+
+        <p class="white-feature-description">
+          A philosophy for building meaningful businesses.
+        </p>
+
+        <a
+          href="standard.html"
+          class="white-explore"
+        >
+
+          <span>
+            Explore More
+          </span>
+
+          <span class="white-explore-arrow">
+            ↗
+          </span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="white-feature-card">
+
+      <img
+        class="white-feature-image"
+        src="assets/download (1).jpg"
+        alt="The White Founders"
+      >
+
+      <div class="white-feature-content">
+
+        <h3 class="white-feature-title">
+          THE WHITE FOUNDERS
+        </h3>
+
+        <div class="white-feature-subtitle">
+
+          Connect with founders.<br>
+          Share ideas.<br>
+          Grow together.
+
+        </div>
+
+        <p class="white-feature-description">
+          A community built around the founder journey.
+        </p>
+
+        <a
+          href="founder.html"
+          class="white-explore"
+        >
+
+          <span>
+            Explore More
+          </span>
+
+          <span class="white-explore-arrow">
+            ↗
+          </span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROGRAM + EVENTS
+===================================================== -->
+
+<section
+  class="program-events"
+  id="program"
+>
+
+  <div class="program-grid">
+
+    <div
+      class="program-content"
+      id="services"
+    >
+
+      <div class="section-label">
+        Our Program
+      </div>
+
+      <h2>
+        Clarity. Strategy.<br>
+        Execution.
+      </h2>
+
+      <p>
+        Our programs are designed to give founders the knowledge,
+        tools and support to build businesses with clarity and confidence.
+      </p>
+
+      <ul class="program-list">
+
+        <li>Idea Validation</li>
+        <li>Brand & Identity</li>
+        <li>Business Strategy</li>
+        <li>Digital Presence</li>
+        <li>Founder Mentorship</li>
+        <li>Launch Support</li>
+
+      </ul>
+
+      <a
+        href="startup.html"
+        class="about-link"
+      >
+
+        Explore Program
+
+        <span class="circle-arrow">
+          →
+        </span>
+
+      </a>
+
+    </div>
+
+
+    <div
+      class="events-column"
+      id="events"
+    >
+
+      <div class="section-label">
+        Upcoming Event
+      </div>
+
+      <div class="event-top">
+
+        <div>
+
+          <h2>
+            Event Heading
+          </h2>
+
+          <p class="event-info">
+
+            Date
+
+            <br><br>
+
+            Look back at our successful previous events
+            and stay tuned for the next one.
+
+            <br><br>
+
+          </p>
+
+          <a
+            href="#contact"
+            class="event-button"
+          >
+            Join Next Session&nbsp;&nbsp; →
+          </a>
+
+        </div>
+
+        <div class="event-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=700&q=85"
+            alt="Startup event"
+          >
+
+        </div>
+
+      </div>
+
+      <div class="past-events-title">
+        Past Events
+      </div>
+
+      <div class="past-events">
+
+        <div class="past-event">
+
+          <img
+            src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=400&q=80"
+            alt=""
+          >
+
+          <p>
+            Startup Kickoff<br>
+            Workshop
+          </p>
+
+        </div>
+
+        <div class="past-event">
+
+          <img
+            src="https://images.unsplash.com/photo-1551836022-0c7c3a3b0e34?auto=format&fit=crop&w=400&q=80"
+            alt=""
+          >
+
+          <p>
+            Women Founder<br>
+            Circle
+          </p>
+
+        </div>
+
+        <div class="past-event">
+
+          <img
+            src="https://images.unsplash.com/photo-1556761175-129418cb2dfe?auto=format&fit=crop&w=400&q=80"
+            alt=""
+          >
+
+          <p>
+            Brand Sprint<br>
+            Session
+          </p>
+
+        </div>
+
+        <div class="past-event">
+
+          <img
+            src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=400&q=80"
+            alt=""
+          >
+
+          <p>
+            Idea Validation<br>
+            Lab
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     STORIES
+===================================================== -->
+
+<section class="stories">
+
+  <div class="stories-heading">
+
+    <div class="section-label">
+      Founder Stories
+    </div>
+
+    <h2>
+      Real founders. Real journeys.
+    </h2>
+
+  </div>
+
+
+  <div class="story-grid">
+
+    <div class="story-card">
+
+      <div class="story-content">
+
+        <p>
+          "The White Startup School helped me bring clarity
+          to my ideas and confidence to build it into a brand."
+        </p>
+
+ 
+
+      </div>
+
+    </div>
+
+
+    <div class="story-card">
+
+      <div class="story-content">
+
+        <p>
+          "The mentors, the community and the structure —
+          everything aligned to help me move."
+        </p>
+
+
+
+      </div>
+
+    </div>
+
+
+    <div class="story-card">
+
+      <div class="story-content">
+
+        <p>
+          "I went from scattered ideas to a clear brand,
+          website and launch strategy in weeks."
+        </p>
+
+
+      </div>
+
+    </div>
+
+
+    <div class="story-card">
+
+      <div class="story-content">
+
+        <p>
+          "A space that feels like clarity, support and
+          motivation all in one place."
+        </p>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section
+  class="final-cta"
+  id="contact"
+>
+
+  <div class="cta-image">
+
+    <img
+      src="assets/grad.jpg"
+      alt="Woman entrepreneur"
+    >
+
+  </div>
+
+
+  <div class="cta-content">
+
+    <h2>
+      You won't leave with a certificate and a to-do list.
+      You leave with momentum.
+    </h2>
+
+    <p>
+      The White Startup School is built for the real journey
+      of entrepreneurship—not the polished version. From your
+      first idea to your first launch, we help you navigate
+      uncertainty, make confident decisions, and move forward
+      with the right perspective, creative thinking, and
+      practical support.
+    </p>
+
+    <p>
+      NO GENERIC FORMULAS.
+      <span>|</span>
+      NO EMPTY MOTIVATION.
+      <span>|</span>
+      NO GUESSWORK.
+      <span>|</span>
+      JUST A CLEARER WAY FORWARD.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="minimal-footer">
+
+  <div class="minimal-footer-inner">
+
+
+    <div class="footer-top">
+
+
+      <div class="footer-woman-column">
+
+        <h2 class="footer-woman-heading">
+          THE WOMAN BEHIND THE IDEA.
+        </h2>
+
+        <p class="footer-description">
+
+          <strong>
+            FOR WOMEN READY TO BUILD SOMETHING OF THEIR OWN.
+          </strong>
+
+          <br><br>
+
+          For the woman with an idea living in her notes.
+          For the founder building quietly after hours.
+          For the entrepreneur ready to turn a side hustle
+          into something serious. For the woman who knows
+          she wants to build—but wants to build it right.
+
+          <br><br>
+
+          You don't need a perfect plan, years of experience,
+          or every answer.
+
+          <br><br>
+
+          <strong>
+            YOU JUST NEED THE COURAGE TO BEGIN.
+          </strong>
+
+          <br>
+
+          NO PRIOR EXPERIENCE REQUIRED.
+          JUST THE READINESS TO START.
+
+        </p>
+
+      </div>
+
+
+      <div class="footer-starting-column">
+
+        <h2 class="footer-main-heading">
+          THE ONLY THING MISSING IS YOUR STARTING.
+        </h2>
+
+        <p class="footer-description">
+
+          Still shaping the idea?
+          Ready to take the first serious step?
+
+          <br><br>
+
+          Looking for mentorship, business support,
+          or a community of people building alongside you?
+
+          <br><br>
+
+          This is where the conversation begins.
+
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="footer-lower">
+
+
+      <div class="footer-logo">
+
+        <img
+          src="assets/logo_pdf_page-0002-removebg-preview.png"
+          alt="The White Startup School Logo"
+        >
+
+      </div>
+
+
+      <div class="footer-right">
+
+        <div class="footer-brand">
+          THE WHITE STARTUP SCHOOL
+        </div>
+
+        <div class="footer-positioning">
+
+          IDEAS WITH INTENTION.
+          &nbsp;
+
+          BUSINESSES WITH DIRECTION.
+          &nbsp;
+
+          FOUNDERS WITH AMBITION.
+
+        </div>
+
+
+        <div class="footer-cta">
+
+          <a href="#program">
+            BEGIN YOUR JOURNEY &nbsp; →
+          </a>
+
+          <a href="founder.html">
+            JOIN THE WHITE FOUNDERS &nbsp; →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-copyright">
+
+      © 2026 THE WHITE STARTUP SCHOOL.
+      ALL RIGHTS RESERVED.
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* =====================================================
+   FIRST-VISIT LOADER
+===================================================== */
+
+(function () {
+
+  const loader = document.getElementById("loader");
+  const fill = document.getElementById("loaderFill");
+
+  /*
+    This key is stored in the browser.
+
+    First visit:
+    - Loader appears
+    - Animation runs
+    - Website is unlocked
+    - "whiteStartupLoaderShown" is saved
+
+    Future visits:
+    - Loader is skipped completely
+  */
+
+  const loaderAlreadyShown =
+    localStorage.getItem("whiteStartupLoaderShown");
+
+
+  /* -----------------------------------------------------
+     IF VISITOR HAS ALREADY SEEN THE LOADER
+  ----------------------------------------------------- */
+
+  if (loaderAlreadyShown === "true") {
+
+    loader.style.display = "none";
+
+    document.body.style.overflow = "auto";
+
+    return;
+  }
+
+
+  /* -----------------------------------------------------
+     FIRST VISIT
+  ----------------------------------------------------- */
+
+  document.body.style.overflow = "hidden";
+
+  let progress = 0;
+
+  const interval = setInterval(function () {
+
+    progress += Math.floor(Math.random() * 6) + 2;
+
+    if (progress >= 100) {
+
+      progress = 100;
+
+      clearInterval(interval);
+
+      fill.style.width = "100%";
+
+      setTimeout(function () {
+
+        loader.classList.add("hide");
+
+        document.body.style.overflow = "auto";
+
+        /*
+          Save that the loader has already been shown.
+        */
+
+        localStorage.setItem(
+          "whiteStartupLoaderShown",
+          "true"
+        );
+
+      }, 500);
+
+    }
+
+    fill.style.width = progress + "%";
+
+  }, 120);
+
+
+  /* -----------------------------------------------------
+     SAFETY TIMEOUT
+     Prevents loader from getting stuck
+  ----------------------------------------------------- */
+
+  setTimeout(function () {
+
+    if (!loader.classList.contains("hide")) {
+
+      clearInterval(interval);
+
+      fill.style.width = "100%";
+
+      setTimeout(function () {
+
+        loader.classList.add("hide");
+
+        document.body.style.overflow = "auto";
+
+        localStorage.setItem(
+          "whiteStartupLoaderShown",
+          "true"
+        );
+
+      }, 300);
+
+    }
+
+  }, 5000);
+
+})();
+
+
+/* =====================================================
+   SMOOTH SCROLL
+===================================================== */
+
+document
+  .querySelectorAll('a[href^="#"]')
+  .forEach(function (link) {
+
+    link.addEventListener("click", function (e) {
+
+      const target =
+        document.querySelector(
+          this.getAttribute("href")
+        );
+
+      if (target) {
+
+        e.preventDefault();
+
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      }
+
+    });
+
+  });
+
+</script>
+
+</body>
+</html>
