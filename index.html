@@ -112,6 +112,7 @@ img {
 
 /* =====================================================
    HERO
+   FULL IMAGE HOMEPAGE
 ===================================================== */
 
 .hero {
@@ -119,29 +120,80 @@ img {
   height: 90vh;
   max-height: 1000px;
 
-  display: grid;
-  grid-template-columns: 39% 61%;
+  position: relative;
+
+  display: block;
 
   background: var(--dark);
   color: white;
 
-  position: relative;
+  overflow: hidden;
 }
 
+
+/* =====================================================
+   HERO FULL BACKGROUND IMAGE
+===================================================== */
+
+.hero-right {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.hero-right::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: rgba(20,20,13,.30);
+
+  pointer-events: none;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  display: block;
+}
+
+
+/* =====================================================
+   HERO LEFT CONTENT
+===================================================== */
+
 .hero-left {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 39%;
+  height: 100%;
+
   padding: 28px 48px 55px;
 
   display: flex;
   flex-direction: column;
 
-  position: relative;
-  z-index: 2;
+  z-index: 3;
 
-  background: #636B2F;
+  background: transparent;
 }
 
 .hero-logo {
   width: 220px;
+
   margin-top: -100px;
   margin-bottom: auto;
 }
@@ -192,7 +244,7 @@ img {
 }
 
 .hero-points span {
-  color: #11110d;
+  color: white;
   font-size: 12px;
   line-height: 1.4;
   font-weight: 500;
@@ -202,7 +254,7 @@ img {
   content: "•";
   margin-left: 9px;
   margin-right: 9px;
-  color: #11110d;
+  color: white;
 }
 
 .hero-buttons {
@@ -253,33 +305,6 @@ img {
   justify-content: center;
 
   font-size: 11px;
-}
-
-
-/* =====================================================
-   HERO RIGHT
-===================================================== */
-
-.hero-right {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-right::after {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background: rgba(20,20,13,.30);
-
-  pointer-events: none;
-}
-
-.hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 
@@ -1247,16 +1272,34 @@ img {
 
   .hero {
     grid-template-columns: 1fr;
-    height: auto;
+
+    height: 90vh;
+
     min-height: 850px;
+
+    display: block;
   }
 
   .hero-left {
-    min-height: 460px;
+    width: 55%;
+    height: 100%;
+
+    min-height: 0;
+
+    padding: 28px 48px 55px;
+
+    background: transparent;
   }
 
   .hero-right {
-    min-height: 480px;
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 0;
   }
 
   .top-nav {
@@ -1307,14 +1350,41 @@ img {
 
   .hero {
     min-height: 850px;
+
+    height: 100vh;
+
+    display: block;
   }
 
   .hero-left {
+    width: 100%;
+    height: 100%;
+
+    min-height: 0;
+
     padding: 25px;
+
+    background: transparent;
+  }
+
+  .hero-right {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 0;
+  }
+
+  .hero-right::after {
+    background: rgba(20,20,13,.38);
   }
 
   .top-nav {
     top: 22px;
+
     left: 20px;
     right: 20px;
 
@@ -1337,6 +1407,7 @@ img {
 
   .hero-logo {
     width: 180px;
+
     margin-top: -28px;
   }
 
@@ -1350,17 +1421,16 @@ img {
 
   .hero-points {
     flex-wrap: wrap;
+
     gap: 3px 0;
+
     margin-bottom: 25px;
+
     white-space: normal;
   }
 
   .hero-points span {
     font-size: 11px;
-  }
-
-  .hero-right {
-    min-height: 380px;
   }
 
 
@@ -1632,9 +1702,58 @@ img {
 
 <!-- =====================================================
      HERO
+     FULL IMAGE HOMEPAGE
 ===================================================== -->
 
 <section class="hero" id="home">
+
+
+  <!-- FULL HOMEPAGE IMAGE -->
+
+  <div class="hero-right">
+
+    <nav class="top-nav">
+
+      <div class="nav-links">
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#program">Program</a>
+        <a href="#framework">Framework</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
+
+      </div>
+
+    </nav>
+
+
+    <img
+      class="hero-image"
+      src="assets/home.jpeg"
+      alt="Founder working"
+    >
+
+
+    <a
+      href="#about"
+      class="scroll-discover"
+    >
+
+      <span>
+        Scroll to discover
+      </span>
+
+      <span class="scroll-down-arrow">
+        ↓
+      </span>
+
+    </a>
+
+  </div>
+
+
+  <!-- HERO CONTENT -->
 
   <div class="hero-left">
 
@@ -1711,49 +1830,6 @@ img {
       </div>
 
     </div>
-
-  </div>
-
-
-  <div class="hero-right">
-
-    <nav class="top-nav">
-
-      <div class="nav-links">
-
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#program">Program</a>
-        <a href="#framework">Framework</a>
-        <a href="#events">Events</a>
-        <a href="#contact">Contact</a>
-
-      </div>
-
-    </nav>
-
-
-    <img
-      class="hero-image"
-      src="assets/down.jpg"
-      alt="Founder working"
-    >
-
-
-    <a
-      href="#about"
-      class="scroll-discover"
-    >
-
-      <span>
-        Scroll to discover
-      </span>
-
-      <span class="scroll-down-arrow">
-        ↓
-      </span>
-
-    </a>
 
   </div>
 
@@ -2316,8 +2392,6 @@ img {
           to my ideas and confidence to build it into a brand."
         </p>
 
- 
-
       </div>
 
     </div>
@@ -2331,8 +2405,6 @@ img {
           "The mentors, the community and the structure —
           everything aligned to help me move."
         </p>
-
-
 
       </div>
 
@@ -2348,7 +2420,6 @@ img {
           website and launch strategy in weeks."
         </p>
 
-
       </div>
 
     </div>
@@ -2362,7 +2433,6 @@ img {
           "A space that feels like clarity, support and
           motivation all in one place."
         </p>
-
 
       </div>
 
@@ -2580,19 +2650,6 @@ img {
   const loader = document.getElementById("loader");
   const fill = document.getElementById("loaderFill");
 
-  /*
-    This key is stored in the browser.
-
-    First visit:
-    - Loader appears
-    - Animation runs
-    - Website is unlocked
-    - "whiteStartupLoaderShown" is saved
-
-    Future visits:
-    - Loader is skipped completely
-  */
-
   const loaderAlreadyShown =
     localStorage.getItem("whiteStartupLoaderShown");
 
@@ -2637,10 +2694,6 @@ img {
 
         document.body.style.overflow = "auto";
 
-        /*
-          Save that the loader has already been shown.
-        */
-
         localStorage.setItem(
           "whiteStartupLoaderShown",
           "true"
@@ -2657,7 +2710,6 @@ img {
 
   /* -----------------------------------------------------
      SAFETY TIMEOUT
-     Prevents loader from getting stuck
   ----------------------------------------------------- */
 
   setTimeout(function () {
