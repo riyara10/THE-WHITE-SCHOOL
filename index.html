@@ -1,71 +1,823 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading...</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>The White Startup School</title>
+
 
     <style>
+
+        :root {
+            --ink: #2e2c1f;
+            --olive: #736e4e;
+            --paper: #ffffff;
+            --soft: #eae9e5;
+            --yellow: #fff18f;
+            --muted: #b8b49c;
+        }
+
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+
+        html,
         body {
+            width: 100%;
+            height: 100%;
+        }
+
+
+        body {
+            overflow: hidden;
+            background: var(--paper);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        /* =====================================
+           LOADING SCREEN
+        ===================================== */
+
+        .loader-screen {
+
+            position: relative;
+
+            width: 100%;
             height: 100vh;
+            height: 100dvh;
+
             display: flex;
-            justify-content: center;
             align-items: center;
-            background: #111;
-            color: white;
-            font-family: Arial, sans-serif;
+            justify-content: center;
+
+            overflow: hidden;
+
+            background: var(--paper);
+
+            opacity: 1;
+
+            transform: scale(1);
+
+            transition:
+                opacity .65s
+                cubic-bezier(.16,1,.3,1),
+
+                transform .65s
+                cubic-bezier(.16,1,.3,1),
+
+                filter .65s
+                cubic-bezier(.16,1,.3,1);
         }
 
-        .loader-container {
+
+        /* =====================================
+           LARGE WS
+        ===================================== */
+
+        .brand {
+
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            z-index: 1;
+
             text-align: center;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            pointer-events: none;
+
+            user-select: none;
+
+            transition:
+                opacity .55s ease,
+                transform .65s
+                cubic-bezier(.16,1,.3,1);
         }
 
-        .loader {
-            width: 60px;
-            height: 60px;
-            border: 6px solid #333;
-            border-top: 6px solid #00ff88;
+
+        .background-text {
+
+            color: var(--yellow);
+
+            font-size:
+                clamp(120px, 22vw, 320px);
+
+            font-weight: 900;
+
+            line-height: .72;
+
+            letter-spacing: -.09em;
+
+            opacity: 0;
+
+            transform:
+                scale(.82)
+                translateY(30px);
+
+            animation:
+                wsReveal
+                1.3s
+                cubic-bezier(.16,1,.3,1)
+                .1s
+                forwards;
+        }
+
+
+        /* =====================================
+           SUBTITLE
+        ===================================== */
+
+        .brand-subtitle {
+
+            margin-top: 18px;
+
+            color: var(--ink);
+
+            font-size:
+                clamp(9px, 1vw, 13px);
+
+            font-weight: 600;
+
+            letter-spacing: .22em;
+
+            line-height: 1.4;
+
+            text-transform: uppercase;
+
+            white-space: nowrap;
+
+            opacity: 0;
+
+            transform:
+                translateY(12px);
+
+            animation:
+                subtitleReveal
+                .8s
+                cubic-bezier(.16,1,.3,1)
+                .9s
+                forwards;
+        }
+
+
+        /* =====================================
+           LOADER CONTENT
+        ===================================== */
+
+        .loader-content {
+
+            position: relative;
+
+            z-index: 5;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            opacity: 0;
+
+            transform:
+                scale(.8);
+
+            animation:
+                loaderAppear
+                .9s
+                cubic-bezier(.16,1,.3,1)
+                1.25s
+                forwards;
+        }
+
+
+        /* =====================================
+           LOADING CIRCLE
+        ===================================== */
+
+        .loader-circle {
+
+            position: relative;
+
+            width: 125px;
+            height: 125px;
+
             border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
+
+            /*
+                IMPORTANT:
+
+                Start with 0deg.
+                The ring begins completely empty.
+            */
+
+            background:
+                conic-gradient(
+                    var(--ink) 0deg,
+                    var(--ink) 0deg,
+                    var(--soft) 0deg,
+                    var(--soft) 360deg
+                );
+
+
+            /*
+                Transparent center
+            */
+
+            -webkit-mask:
+                radial-gradient(
+                    farthest-side,
+                    transparent calc(100% - 5px),
+                    #000 calc(100% - 5px)
+                );
+
+            mask:
+                radial-gradient(
+                    farthest-side,
+                    transparent calc(100% - 5px),
+                    #000 calc(100% - 5px)
+                );
+
+
+            box-shadow:
+                0 12px 35px
+                rgba(46, 44, 31, .10);
+
+
+            /*
+                Prevents any accidental
+                rotation animation.
+            */
+
+            transform:
+                rotate(0deg);
+
+            will-change:
+                background;
         }
 
-        .text {
-            font-size: 18px;
-            letter-spacing: 2px;
+
+        /* =====================================
+           PERCENTAGE
+        ===================================== */
+
+        .percentage {
+
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            z-index: 10;
+
+            color: var(--ink);
+
+            font-size: 24px;
+
+            font-weight: 700;
+
+            letter-spacing: -1px;
+
+            font-variant-numeric:
+                tabular-nums;
+
+            white-space: nowrap;
+
+            opacity: 0;
+
+            animation:
+                percentageReveal
+                .6s
+                ease
+                1.5s
+                forwards;
         }
 
-        @keyframes spin {
+
+        /* =====================================
+           WS ANIMATION
+        ===================================== */
+
+        @keyframes wsReveal {
+
             0% {
-                transform: rotate(0deg);
+
+                opacity: 0;
+
+                transform:
+                    scale(.82)
+                    translateY(30px);
             }
+
+
+            60% {
+
+                opacity: 1;
+
+                transform:
+                    scale(1.04)
+                    translateY(-3px);
+            }
+
 
             100% {
-                transform: rotate(360deg);
+
+                opacity: .78;
+
+                transform:
+                    scale(1)
+                    translateY(0);
             }
         }
+
+
+        /* =====================================
+           SUBTITLE ANIMATION
+        ===================================== */
+
+        @keyframes subtitleReveal {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translateY(12px);
+
+                letter-spacing: .35em;
+            }
+
+
+            100% {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+
+                letter-spacing: .22em;
+            }
+        }
+
+
+        /* =====================================
+           LOADER APPEAR
+        ===================================== */
+
+        @keyframes loaderAppear {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    scale(.7);
+            }
+
+
+            70% {
+
+                opacity: 1;
+
+                transform:
+                    scale(1.04);
+            }
+
+
+            100% {
+
+                opacity: 1;
+
+                transform:
+                    scale(1);
+            }
+        }
+
+
+        /* =====================================
+           PERCENTAGE APPEAR
+        ===================================== */
+
+        @keyframes percentageReveal {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(.6);
+            }
+
+
+            100% {
+
+                opacity: 1;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(1);
+            }
+        }
+
+
+        /* =====================================
+           EXIT
+        ===================================== */
+
+        .loader-screen.exit {
+
+            opacity: 0;
+
+            transform:
+                scale(1.025);
+
+            filter:
+                blur(4px);
+
+            pointer-events: none;
+        }
+
+
+        .loader-screen.exit .brand {
+
+            opacity: 0;
+
+            transform:
+                translate(-50%, -50%)
+                scale(1.08);
+        }
+
+
+        .loader-screen.exit .loader-content {
+
+            opacity: 0;
+
+            transform:
+                scale(.82);
+        }
+
+
+        /* =====================================
+           MOBILE
+        ===================================== */
+
+        @media (max-width: 600px) {
+
+            .background-text {
+
+                font-size: 40vw;
+
+                letter-spacing:
+                    -.08em;
+            }
+
+
+            .brand-subtitle {
+
+                font-size: 8px;
+
+                letter-spacing: .18em;
+            }
+
+
+            .loader-circle {
+
+                width: 105px;
+                height: 105px;
+            }
+
+
+            .percentage {
+
+                font-size: 20px;
+            }
+        }
+
+
+        /* =====================================
+           REDUCED MOTION
+        ===================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration:
+                    .01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    .01ms !important;
+            }
+        }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <div class="loader-container">
-        <div class="loader"></div>
-        <div class="text">Loading...</div>
+
+    <!-- =====================================
+         LOADING SCREEN
+    ===================================== -->
+
+    <div
+        class="loader-screen"
+        id="loaderScreen"
+    >
+
+
+        <!-- =================================
+             BRAND
+        ================================= -->
+
+        <div class="brand">
+
+            <div class="background-text">
+                WS
+            </div>
+
+
+            <div class="brand-subtitle">
+                THE WHITE STARTUP SCHOOL
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             LOADING CIRCLE
+        ================================= -->
+
+        <div class="loader-content">
+
+
+            <div
+                class="loader-circle"
+                id="loaderCircle"
+            ></div>
+
+
+            <div
+                class="percentage"
+                id="percentage"
+            >
+                0%
+            </div>
+
+
+        </div>
+
+
     </div>
 
+
     <script>
-        // Move to index.html after 3 seconds
-        setTimeout(function () {
-            window.location.href = "home.html";
-        }, 3000);
+
+
+        /* =====================================
+           SETTINGS
+        ===================================== */
+
+        const loadingTime = 4000;
+
+
+        /*
+            This is ONLY the visual exit time.
+
+            There is no extra 1-second white delay.
+        */
+
+        const exitTime = 650;
+
+
+        /* =====================================
+           ELEMENTS
+        ===================================== */
+
+        const percentage =
+            document.getElementById(
+                "percentage"
+            );
+
+
+        const loaderCircle =
+            document.getElementById(
+                "loaderCircle"
+            );
+
+
+        const loaderScreen =
+            document.getElementById(
+                "loaderScreen"
+            );
+
+
+        /* =====================================
+           START TIME
+        ===================================== */
+
+        let startTime = null;
+
+        let finished = false;
+
+
+        /* =====================================
+           LOADING ANIMATION
+        ===================================== */
+
+        function updateLoading(time) {
+
+
+            if (!startTime) {
+
+                startTime = time;
+
+            }
+
+
+            const elapsed =
+                time - startTime;
+
+
+            /*
+                0 → 1
+            */
+
+            let progress =
+                elapsed / loadingTime;
+
+
+            progress =
+                Math.min(
+                    progress,
+                    1
+                );
+
+
+            /* =================================
+               SMOOTH PROGRESS
+
+               Very light easing.
+
+               This prevents the ring from
+               appearing to stay empty and
+               suddenly jump near the end.
+            ================================= */
+
+            const eased =
+                progress;
+
+
+            /* =================================
+               PERCENTAGE
+            ================================= */
+
+            const value =
+                Math.floor(
+                    eased * 100
+                );
+
+
+            percentage.textContent =
+                value + "%";
+
+
+            /* =================================
+               RING
+
+               0%  = 0 degrees
+               50% = 180 degrees
+               100% = 360 degrees
+            ================================= */
+
+            const degrees =
+                eased * 360;
+
+
+            loaderCircle.style.background =
+                `
+                conic-gradient(
+
+                    var(--ink)
+                    0deg
+                    ${degrees}deg,
+
+                    var(--soft)
+                    ${degrees}deg
+                    360deg
+
+                )
+                `;
+
+
+            /* =================================
+               CONTINUE
+            ================================= */
+
+            if (progress < 1) {
+
+                requestAnimationFrame(
+                    updateLoading
+                );
+
+            } else {
+
+                finishLoading();
+
+            }
+
+        }
+
+
+        /* =====================================
+           FINISH
+        ===================================== */
+
+        function finishLoading() {
+
+
+            if (finished) {
+                return;
+            }
+
+
+            finished = true;
+
+
+            /*
+                Start exit immediately.
+
+                NO EXTRA 1 SECOND DELAY.
+            */
+
+            loaderScreen.classList.add(
+                "exit"
+            );
+
+
+            /*
+                Wait only for the actual
+                exit animation to finish.
+            */
+
+            setTimeout(
+                function () {
+
+                    window.location.replace(
+                        "home.html"
+                    );
+
+                },
+                exitTime
+            );
+
+        }
+
+
+        /* =====================================
+           START
+        ===================================== */
+
+        requestAnimationFrame(
+            updateLoading
+        );
+
+
     </script>
+
 
 </body>
 </html>
