@@ -1,0 +1,4631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The White Startup School™ — Where Ideas Become Legacy</title>
+
+  <style>
+
+    /* =========================================================
+       THE WHITE STARTUP SCHOOL™
+       ========================================================= */
+
+    :root {
+      --ink: #2e2c1f;
+      --olive: #736e4e;
+      --paper: #ffffff;
+      --soft: #eae9e5;
+      --yellow: #fff18f;
+      --muted: #b8b49c;
+      --line: rgba(46, 44, 31, .18);
+      --max: 1240px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--ink);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .site {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      background: var(--paper);
+    }
+
+    .eyebrow {
+      font-size: 8px;
+      line-height: 1.15;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .micro {
+      font-size: 7px;
+      line-height: 1.45;
+      letter-spacing: .02em;
+    }
+
+    .section-number {
+      font-size: 8px;
+      letter-spacing: .12em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 620px;
+      min-height: 620px;
+      overflow: hidden;
+      background: #2e2c1f;
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 12%;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(0, 0, 0, .10) 0%,
+          rgba(0, 0, 0, .02) 35%,
+          rgba(0, 0, 0, .18) 65%,
+          rgba(0, 0, 0, .70) 100%
+        );
+      z-index: 1;
+      pointer-events: none;
+    }
+
+
+    /* =========================================================
+       HERO TOP
+       ========================================================= */
+
+    .hero-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 25px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .hero-logo {
+      color: var(--yellow);
+      font-size: 10px;
+      line-height: .82;
+      font-weight: 900;
+      letter-spacing: -.05em;
+      text-transform: uppercase;
+      text-shadow: 0 1px 12px rgba(0,0,0,.25);
+      transition: opacity .25s ease;
+    }
+
+    .hero-logo span {
+      display: block;
+    }
+
+    .hero-logo:hover {
+      opacity: .75;
+    }
+
+
+    /* =========================================================
+       NAV
+       ========================================================= */
+
+    .hero-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #fff;
+      font-size: 8px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .hero-nav a {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 30px;
+      padding: 7px 12px;
+      border: 1px solid rgba(255,255,255,.38);
+      border-radius: 999px;
+      background: rgba(20,20,16,.16);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      color: #fff;
+      transition:
+        color .25s ease,
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+    }
+
+    .hero-nav a:hover {
+      color: var(--ink);
+      background: var(--yellow);
+      border-color: var(--yellow);
+      transform: translateY(-2px);
+    }
+
+    .hero-nav a:first-child {
+      color: var(--ink);
+      background: var(--yellow);
+      border-color: var(--yellow);
+    }
+
+
+    /* =========================================================
+       MOBILE HAMBURGER
+       ========================================================= */
+
+    .mobile-menu-toggle {
+      display: none;
+
+      width: 38px;
+      height: 38px;
+
+      padding: 0;
+
+      border: 1px solid rgba(255,255,255,.45);
+      border-radius: 50%;
+
+      background: rgba(20,20,16,.25);
+
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+
+      align-items: center;
+      justify-content: center;
+
+      flex-direction: column;
+
+      gap: 5px;
+
+      cursor: pointer;
+
+      z-index: 30;
+    }
+
+    .mobile-menu-toggle span {
+      display: block;
+
+      width: 15px;
+      height: 1px;
+
+      background: #fff;
+
+      transition:
+        transform .3s ease,
+        opacity .3s ease;
+    }
+
+
+    /* =========================================================
+       HERO CONTENT
+       ========================================================= */
+
+    .hero-content {
+      position: absolute;
+      z-index: 4;
+      left: 42px;
+      right: 42px;
+      bottom: 75px;
+      color: var(--yellow);
+    }
+
+    .hero-title {
+      max-width: 900px;
+      color: var(--yellow);
+      font-size: clamp(46px, 6vw, 78px);
+      line-height: .90;
+      letter-spacing: -.055em;
+      font-weight: 500;
+      text-shadow: 0 3px 25px rgba(0,0,0,.25);
+    }
+
+    .hero-title span {
+      display: block;
+    }
+
+
+    /* =========================================================
+       HERO SCROLL
+       ========================================================= */
+
+    .hero-scroll {
+      position: absolute;
+      z-index: 6;
+      left: 50%;
+      bottom: 22px;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: #fff;
+      font-size: 7px;
+      line-height: 1;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .hero-scroll-arrow {
+      font-size: 18px;
+      line-height: .8;
+      animation: scrollDown 1.8s ease-in-out infinite;
+    }
+
+    @keyframes scrollDown {
+
+      0%,100% {
+        transform: translateY(0);
+        opacity: .55;
+      }
+
+      50% {
+        transform: translateY(6px);
+        opacity: 1;
+      }
+
+    }
+
+
+    /* =========================================================
+       INTRO
+       ========================================================= */
+
+    .olive-section {
+      background: var(--olive);
+      color: #fff;
+    }
+
+    .intro {
+      min-height: 360px;
+      padding: 52px 30px 55px;
+      display: grid;
+      grid-template-columns: 28% 1fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .intro-copy {
+      max-width: 610px;
+    }
+
+    .intro-title {
+      color: var(--yellow);
+      font-size: clamp(40px, 6vw, 82px);
+      line-height: .83;
+      letter-spacing: -.065em;
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+
+    .intro-text {
+      max-width: 620px;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+
+    /* =========================================================
+       METHOD
+       ========================================================= */
+
+    .method {
+      background: var(--soft);
+      padding: 58px 30px 65px;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 45px;
+      margin-bottom: 55px;
+    }
+
+    .section-head h2 {
+      max-width: 650px;
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: .88;
+      letter-spacing: -.065em;
+      font-weight: 700;
+    }
+
+
+    /* =========================================================
+       MAIN METHOD LINE
+       ========================================================= */
+
+    .method-line {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      width: 100%;
+      padding-top: 18px;
+    }
+
+    .method-line::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 48px;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .method-step {
+      position: relative;
+      min-width: 0;
+      text-align: left;
+      padding-right: 18px;
+    }
+
+    .method-step:last-child {
+      padding-right: 0;
+    }
+
+    .method-step-number {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      height: 60px;
+      margin-bottom: 16px;
+    }
+
+
+    /* =========================================================
+       METHOD ICON
+       ========================================================= */
+
+    .method-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--ink);
+      border: 1px solid var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--yellow);
+      position: relative;
+      transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease,
+        border-color .3s ease;
+    }
+
+    .method-step:hover .method-icon {
+      transform: translateY(-4px);
+    }
+
+    .method-icon svg {
+      width: 23px;
+      height: 23px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.35;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .method-step.launch .method-icon {
+      border-radius: 0;
+      transform: rotate(45deg);
+      width: 48px;
+      height: 48px;
+      margin: 6px;
+    }
+
+    .method-step.launch .method-icon svg {
+      transform: rotate(-45deg);
+    }
+
+    .method-step.launch:hover .method-icon {
+      transform: rotate(45deg) translateY(-4px);
+    }
+
+    .method-step.launch .method-step-number {
+      height: 60px;
+    }
+
+    .method-word {
+      font-size: 17px;
+      letter-spacing: -.045em;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .method-description {
+      max-width: 150px;
+      font-size: 8px;
+      line-height: 1.45;
+      color: rgba(46,44,31,.72);
+    }
+
+    .method-footer {
+      margin-top: 42px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .method-footer strong {
+      font-size: 17px;
+      letter-spacing: -.04em;
+    }
+
+
+    /* =========================================================
+       JOURNEY
+       ========================================================= */
+
+    .journey {
+      position: relative;
+      background: var(--paper);
+      height: 520vh;
+    }
+
+    .journey-sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      min-height: 700px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .journey-header {
+      width: 100%;
+      padding: 60px 30px 30px;
+      flex-shrink: 0;
+    }
+
+    .journey-header-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 45px;
+      align-items: end;
+    }
+
+    .journey-header h2 {
+      max-width: 700px;
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: .88;
+      letter-spacing: -.065em;
+      font-weight: 700;
+    }
+
+    .journey-track-window {
+      position: relative;
+      width: 100%;
+      height: 390px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .journey-track {
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      height: 310px;
+      will-change: transform;
+    }
+
+    .journey-card {
+      position: relative;
+      flex: 0 0 400px;
+      width: 400px;
+      height: 270px;
+      padding: 24px;
+      background: var(--olive);
+      color: #fff;
+      border: 1px solid var(--olive);
+      margin-right: 22px;
+      box-shadow: 0 15px 40px rgba(46,44,31,.14);
+
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      transition:
+        box-shadow .3s ease,
+        transform .3s ease,
+        border-color .3s ease;
+    }
+
+    .journey-card:nth-child(even) {
+      background: var(--olive);
+    }
+
+    .journey-number {
+      color: var(--yellow);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+
+    .journey-card h3 {
+      margin-top: 28px;
+      max-width: 320px;
+      color: var(--yellow);
+      font-size: 34px;
+      line-height: .88;
+      letter-spacing: -.055em;
+      text-transform: uppercase;
+    }
+
+    .journey-card p {
+      margin-top: auto;
+      max-width: 335px;
+      color: #fff;
+      font-size: 9px;
+      line-height: 1.45;
+    }
+
+    .journey-card p strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--yellow);
+      font-size: 9px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .journey-card.active {
+      background: var(--olive);
+      border-color: var(--yellow);
+      box-shadow: 0 25px 60px rgba(46,44,31,.22);
+    }
+
+    .journey-progress {
+      position: absolute;
+      left: 30px;
+      right: 30px;
+      bottom: 35px;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .journey-progress-bar {
+      width: 0%;
+      height: 2px;
+      background: var(--olive);
+      transform-origin: left center;
+    }
+
+    .journey-progress-label {
+      position: absolute;
+      right: 30px;
+      bottom: 48px;
+      font-size: 7px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================================
+       THE EDIT — 3 PAGE CAROUSEL
+       ========================================================= */
+
+    .edit-carousel {
+      position: relative;
+      width: 100%;
+      height: 470px;
+      min-height: 470px;
+      overflow: hidden;
+      background: var(--olive);
+    }
+
+    .edit-slider {
+      display: flex;
+      width: 300%;
+      height: 100%;
+      transform: translateX(0);
+      transition:
+        transform .75s cubic-bezier(.77,0,.18,1);
+      will-change: transform;
+    }
+
+    .edit-slide {
+      position: relative;
+      flex: 0 0 33.333333%;
+      width: 33.333333%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+
+    /* =========================================================
+       SLIDE 1
+       ========================================================= */
+
+    .edit-slide-one {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--olive);
+    }
+
+    .edit-slide-one-image {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .edit-slide-one-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .edit-slide-one-copy {
+      height: 100%;
+      padding: 55px 30px;
+      background: var(--olive);
+      color: #fff;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .edit-slide-one-copy .eyebrow {
+      color: var(--yellow);
+    }
+
+    .edit-slide-one-copy h2 {
+      max-width: 430px;
+      margin-top: auto;
+      margin-bottom: 25px;
+      color: var(--yellow);
+      font-size: clamp(44px, 5vw, 72px);
+      line-height: .80;
+      letter-spacing: -.07em;
+      text-transform: uppercase;
+    }
+
+    .edit-slide-one-copy p {
+      max-width: 390px;
+      font-size: 10px;
+      line-height: 1.55;
+      color: #fff;
+    }
+
+
+    /* =========================================================
+       SLIDE 2
+       ========================================================= */
+
+    .edit-slide-two {
+      background:
+        url("assets/edit.jpg")
+        center / cover no-repeat;
+    }
+
+
+    /* =========================================================
+       SLIDE 3
+       ========================================================= */
+
+    .edit-slide-three {
+      background:
+        url("assets/edit.jpg")
+        center / cover no-repeat;
+    }
+
+
+    /* =========================================================
+       IMAGE BACKGROUND OVERLAY
+       ========================================================= */
+
+    .edit-background-overlay {
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(46,44,31,.84) 0%,
+          rgba(46,44,31,.62) 50%,
+          rgba(46,44,31,.40) 100%
+        );
+
+      z-index: 1;
+      pointer-events: none;
+    }
+
+
+    /* =========================================================
+       LARGE CONTENT
+       ========================================================= */
+
+    .edit-large-content {
+      position: relative;
+      z-index: 2;
+
+      width: 100%;
+      height: 100%;
+
+      padding: 55px 30px 65px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 0;
+
+      align-items: stretch;
+
+      color: #fff;
+    }
+
+    .edit-large-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-right: 45px;
+      border-right: 1px solid rgba(255,255,255,.25);
+    }
+
+    .edit-large-item:last-child {
+      padding-left: 45px;
+      padding-right: 0;
+      border-right: 0;
+    }
+
+    .edit-large-item .eyebrow {
+      color: var(--yellow);
+      font-size: 8px;
+      letter-spacing: .12em;
+    }
+
+    .edit-large-item h2 {
+      margin-top: auto;
+      margin-bottom: 18px;
+      color: var(--yellow);
+      font-size: clamp(54px, 7vw, 105px);
+      line-height: .72;
+      letter-spacing: -.085em;
+      font-weight: 700;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .edit-large-item h3 {
+      color: var(--yellow);
+      font-size: 10px;
+      line-height: 1.1;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .edit-large-item p {
+      max-width: 390px;
+      color: #fff;
+      font-size: 10px;
+      line-height: 1.55;
+    }
+
+
+    /* =========================================================
+       CAROUSEL CONTROLS
+       ========================================================= */
+
+    .edit-carousel-controls {
+      position: absolute;
+      z-index: 10;
+      left: 30px;
+      right: 30px;
+      bottom: 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      pointer-events: none;
+    }
+
+    .edit-arrow {
+      width: 34px;
+      height: 34px;
+
+      border: 1px solid rgba(255,255,255,.45);
+      border-radius: 50%;
+
+      background: rgba(46,44,31,.35);
+
+      color: var(--yellow);
+
+      font-size: 15px;
+
+      cursor: pointer;
+      pointer-events: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      transition:
+        background .25s ease,
+        color .25s ease,
+        transform .25s ease;
+    }
+
+    .edit-arrow:hover {
+      background: var(--yellow);
+      color: var(--ink);
+      transform: translateY(-2px);
+    }
+
+    .edit-dots {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      pointer-events: auto;
+    }
+
+    .edit-dot {
+      width: 6px;
+      height: 6px;
+
+      padding: 0;
+
+      border: 0;
+      border-radius: 50%;
+
+      background: rgba(255,255,255,.45);
+
+      cursor: pointer;
+
+      transition:
+        width .25s ease,
+        background .25s ease;
+    }
+
+    .edit-dot.active {
+      width: 22px;
+      border-radius: 999px;
+      background: var(--yellow);
+    }
+
+
+    /* =========================================================
+       STANDARD
+       ========================================================= */
+
+    .standard {
+      background: var(--paper);
+      padding: 65px 30px;
+    }
+
+    .standard-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 55px;
+    }
+
+    .standard-intro h2 {
+      font-size: clamp(44px, 6vw, 84px);
+      line-height: .8;
+      letter-spacing: -.07em;
+      text-transform: uppercase;
+    }
+
+    .standard-intro p {
+      max-width: 450px;
+      align-self: end;
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .principle {
+      min-height: 205px;
+      padding: 18px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .principle h3 {
+      margin-top: 62px;
+      font-size: 22px;
+      line-height: .9;
+      letter-spacing: -.045em;
+      text-transform: uppercase;
+    }
+
+    .principle p {
+      margin-top: 16px;
+      font-size: 8px;
+      line-height: 1.4;
+    }
+
+
+    /* =========================================================
+       THE 7 PILLARS
+       ========================================================= */
+
+    .pillars {
+      position: relative;
+      margin-top: 70px;
+      padding: 55px 30px 35px;
+
+      background: var(--olive);
+      color: #fff;
+
+      overflow: hidden;
+    }
+
+    .pillars::before {
+      content: "07";
+
+      position: absolute;
+      right: -18px;
+      top: -45px;
+
+      color: rgba(255, 241, 143, .055);
+
+      font-size: clamp(180px, 25vw, 330px);
+      line-height: .8;
+
+      font-weight: 900;
+      letter-spacing: -.12em;
+
+      pointer-events: none;
+    }
+
+    .pillars::after {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      bottom: 0;
+      left: 50%;
+
+      width: 1px;
+
+      background: rgba(255,255,255,.055);
+
+      pointer-events: none;
+    }
+
+    .pillars-head {
+      position: relative;
+      z-index: 2;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      gap: 30px;
+
+      margin-bottom: 48px;
+    }
+
+    .pillars-head .eyebrow {
+      color: var(--yellow);
+      margin-bottom: 9px;
+    }
+
+    .pillars-head h3 {
+      color: var(--yellow);
+
+      font-size: clamp(38px, 5vw, 68px);
+      line-height: .80;
+      letter-spacing: -.07em;
+
+      text-transform: uppercase;
+    }
+
+    .pillars-head .micro {
+      max-width: 180px;
+
+      text-align: right;
+
+      color: rgba(255,255,255,.55);
+    }
+
+    .pillar-row {
+      position: relative;
+      z-index: 2;
+
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+
+      gap: 1px;
+
+      background: rgba(255,255,255,.18);
+    }
+
+    .pillar {
+      position: relative;
+
+      min-height: 235px;
+
+      padding: 18px 14px 20px;
+
+      background: var(--yellow);
+
+      color: var(--ink);
+
+      border: 0;
+
+      display: flex;
+      flex-direction: column;
+
+      transition:
+        background .35s ease,
+        transform .35s ease,
+        color .35s ease,
+        box-shadow .35s ease;
+    }
+
+    .pillar:nth-child(even) {
+      background: var(--yellow);
+    }
+
+    .pillar:hover {
+      background: var(--yellow);
+
+      color: var(--ink);
+
+      transform: translateY(-8px);
+
+      z-index: 5;
+
+      box-shadow: 0 18px 35px rgba(46,44,31,.20);
+    }
+
+    .pillar strong {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 34px;
+      height: 34px;
+
+      margin-bottom: auto;
+
+      background: var(--ink);
+
+      color: var(--yellow);
+
+      border: 1px solid var(--ink);
+
+      border-radius: 50%;
+
+      font-size: 9px;
+
+      letter-spacing: .04em;
+    }
+
+    .pillar span {
+      position: relative;
+
+      display: block;
+
+      color: var(--ink);
+
+      font-size: 9px;
+
+      line-height: 1.45;
+
+      letter-spacing: .02em;
+    }
+
+    .pillar span::before {
+      content: attr(data-name);
+
+      display: block;
+
+      margin-bottom: 10px;
+
+      color: var(--ink);
+
+      font-size: 15px;
+
+      line-height: .9;
+
+      font-weight: 800;
+
+      letter-spacing: -.045em;
+    }
+
+    .pillar:hover span {
+      color: var(--ink);
+    }
+
+    .pillar:hover span::before {
+      color: var(--ink);
+    }
+
+    .pillar::after {
+      content: "";
+
+      position: absolute;
+
+      right: 14px;
+      top: 18px;
+
+      width: 5px;
+      height: 5px;
+
+      border-radius: 50%;
+
+      background: var(--ink);
+
+      opacity: .65;
+
+      transition:
+        transform .35s ease,
+        background .35s ease;
+    }
+
+    .pillar:hover::after {
+      background: var(--ink);
+      transform: scale(2);
+    }
+
+
+    /* =========================================================
+       WHY
+       ========================================================= */
+
+    .why {
+      background: var(--soft);
+      padding: 65px 30px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+    }
+
+    .why h2 {
+      max-width: 650px;
+      font-size: clamp(42px, 6vw, 82px);
+      line-height: .8;
+      letter-spacing: -.07em;
+      text-transform: uppercase;
+    }
+
+    .why-copy {
+      padding-top: 5px;
+    }
+
+    .why-copy h3 {
+      max-width: 430px;
+      font-size: 22px;
+      line-height: .95;
+      letter-spacing: -.04em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .why-copy p {
+      max-width: 430px;
+      font-size: 10px;
+      line-height: 1.55;
+      margin-bottom: 30px;
+    }
+
+    .rules {
+      border-top: 1px solid var(--line);
+    }
+
+    .rules div {
+      padding: 13px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================================
+       FOUNDERS
+       ========================================================= */
+
+    .founders {
+      padding: 60px 30px;
+      background: var(--paper);
+    }
+
+    .founder-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      margin-bottom: 45px;
+    }
+
+    .founder-top h2 {
+      font-size: clamp(45px, 6vw, 84px);
+      line-height: .8;
+      letter-spacing: -.07em;
+      text-transform: uppercase;
+    }
+
+    .founder-top p {
+      max-width: 450px;
+      align-self: end;
+      font-size: 10px;
+      line-height: 1.5;
+    }
+
+    .community-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: var(--line);
+    }
+
+    .community-card {
+      background: var(--paper);
+      min-height: 145px;
+      padding: 18px;
+    }
+
+    .community-card:nth-child(2),
+    .community-card:nth-child(4) {
+      background: var(--soft);
+    }
+
+    .community-card h3 {
+      margin-top: 42px;
+      font-size: 16px;
+      line-height: .9;
+      text-transform: uppercase;
+    }
+
+    .community-card p {
+      margin-top: 10px;
+      font-size: 7px;
+      line-height: 1.35;
+    }
+
+
+    /* =========================================================
+       WOMAN
+       ========================================================= */
+
+    .woman {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 480px;
+    }
+
+    .woman-image {
+      background:
+        url("assets/download.jpg")
+        center / cover no-repeat;
+
+      min-height: 480px;
+    }
+
+    .woman-copy {
+      background: var(--olive);
+      color: #fff;
+
+      padding: 52px 30px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .woman-copy h2 {
+      max-width: 500px;
+
+      color: var(--yellow);
+
+      font-size: clamp(43px, 5.5vw, 76px);
+
+      line-height: .8;
+
+      letter-spacing: -.07em;
+
+      text-transform: uppercase;
+    }
+
+    .woman-copy p {
+      max-width: 430px;
+
+      font-size: 10px;
+
+      line-height: 1.55;
+    }
+
+
+    /* =========================================================
+       ECOSYSTEM
+       ========================================================= */
+
+    .ecosystem {
+      background: var(--paper);
+      padding: 65px 30px;
+    }
+
+    .ecosystem-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      margin-bottom: 38px;
+    }
+
+    .ecosystem-head h2 {
+      font-size: clamp(44px, 6vw, 84px);
+      line-height: .8;
+      letter-spacing: -.07em;
+      text-transform: uppercase;
+    }
+
+    .ecosystem-head p {
+      max-width: 430px;
+      align-self: end;
+      font-size: 10px;
+      line-height: 1.5;
+    }
+
+    .eco-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line);
+    }
+
+    .eco-card {
+      min-height: 230px;
+      background: var(--paper);
+      padding: 18px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .eco-card:nth-child(2),
+    .eco-card:nth-child(4) {
+      background: var(--soft);
+    }
+
+    .eco-card h3 {
+      max-width: 220px;
+      font-size: 28px;
+      line-height: .85;
+      letter-spacing: -.055em;
+      text-transform: uppercase;
+    }
+
+    .eco-card p {
+      max-width: 190px;
+      font-size: 8px;
+      line-height: 1.4;
+    }
+
+
+    /* =========================================================
+       CTA
+       ========================================================= */
+
+    .cta {
+      min-height: 560px;
+
+      background:
+        linear-gradient(
+          rgba(0,0,0,.16),
+          rgba(0,0,0,.28)
+        ),
+        url("https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1800&q=90")
+        center / cover no-repeat;
+
+      color: var(--yellow);
+
+      padding: 50px 30px 35px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .cta h2 {
+      max-width: 930px;
+
+      font-size: clamp(54px, 8vw, 118px);
+
+      line-height: .78;
+
+      letter-spacing: -.08em;
+
+      text-transform: uppercase;
+    }
+
+    .cta-bottom {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .cta-copy {
+      max-width: 390px;
+
+      color: #fff;
+
+      font-size: 10px;
+
+      line-height: 1.5;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-width: 150px;
+
+      padding: 13px 20px;
+
+      background: var(--yellow);
+
+      color: var(--ink);
+
+      border-radius: 999px;
+
+      font-size: 8px;
+
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      transition: transform .2s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .cta-button.dark {
+      background: var(--ink);
+      color: var(--yellow);
+    }
+
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    footer {
+      background: var(--ink);
+
+      color: #fff;
+
+      padding: 55px 30px 35px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 50px;
+
+      margin-bottom: 70px;
+    }
+
+    .footer-brand {
+      color: var(--yellow);
+
+      font-size: clamp(45px, 5vw, 72px);
+
+      line-height: .78;
+
+      letter-spacing: -.07em;
+
+      font-weight: 700;
+
+      text-transform: uppercase;
+    }
+
+    .footer-right {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 25px;
+    }
+
+    .footer-column strong {
+      display: block;
+
+      margin-bottom: 15px;
+
+      color: var(--yellow);
+
+      font-size: 8px;
+
+      text-transform: uppercase;
+    }
+
+    .footer-column a {
+      display: block;
+
+      margin-bottom: 8px;
+
+      font-size: 8px;
+
+      line-height: 1.2;
+
+      color: #fff;
+    }
+
+    .footer-column a:hover {
+      color: var(--yellow);
+    }
+
+    .footer-bottom {
+      padding-top: 16px;
+
+      border-top: 1px solid rgba(255,255,255,.2);
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      font-size: 7px;
+
+      color: var(--muted);
+    }
+
+
+    /* =========================================================
+       TABLET
+       ========================================================= */
+
+    @media (max-width: 900px) {
+
+      .hero {
+        height: 600px;
+        min-height: 600px;
+      }
+
+      .hero-top {
+        padding: 22px 20px;
+      }
+
+      .hero-nav {
+        gap: 5px;
+        font-size: 7px;
+      }
+
+      .hero-nav a {
+        padding: 6px 9px;
+        min-height: 27px;
+      }
+
+      .hero-content {
+        left: 20px;
+        right: 20px;
+        bottom: 60px;
+      }
+
+      .intro,
+      .section-head,
+      .standard-intro,
+      .why-grid,
+      .founder-top,
+      .ecosystem-head,
+      .journey-header-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .intro {
+        padding: 42px 20px;
+      }
+
+      .method,
+      .standard,
+      .why,
+      .founders,
+      .ecosystem {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+
+      /* METHOD TABLET */
+
+      .method-line {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 45px;
+      }
+
+      .method-line::before {
+        display: none;
+      }
+
+      .method-step {
+        padding-right: 25px;
+      }
+
+
+      /* JOURNEY TABLET */
+
+      .journey {
+        height: 520vh;
+      }
+
+      .journey-header {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .journey-track {
+        left: 20px;
+      }
+
+      .journey-card {
+        flex-basis: 380px;
+        width: 380px;
+      }
+
+      .journey-progress {
+        left: 20px;
+        right: 20px;
+      }
+
+      .journey-progress-label {
+        right: 20px;
+      }
+
+
+      /* THE EDIT TABLET */
+
+      .edit-carousel {
+        height: 500px;
+        min-height: 500px;
+      }
+
+      .edit-slide-one-copy {
+        padding: 45px 20px;
+      }
+
+      .edit-large-content {
+        padding: 45px 20px 60px;
+      }
+
+      .edit-large-item {
+        padding-right: 25px;
+      }
+
+      .edit-large-item:last-child {
+        padding-left: 25px;
+      }
+
+      .edit-large-item h2 {
+        font-size: 58px;
+      }
+
+      .edit-carousel-controls {
+        left: 20px;
+        right: 20px;
+      }
+
+
+      /* WOMAN */
+
+      .woman {
+        grid-template-columns: 1fr;
+      }
+
+      .woman-image {
+        min-height: 360px;
+      }
+
+
+      /* STANDARD */
+
+      .principles {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+
+      /* PILLARS */
+
+      .pillars {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .pillars::after {
+        display: none;
+      }
+
+      .pillar-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pillar {
+        min-height: 190px;
+        background: var(--yellow);
+        color: var(--ink);
+      }
+
+      .pillar:nth-child(even) {
+        background: var(--yellow);
+      }
+
+      .pillar:hover {
+        background: var(--yellow);
+        color: var(--ink);
+        transform: translateY(-5px);
+      }
+
+
+      /* OTHER */
+
+      .community-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .eco-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cta {
+        min-height: 650px;
+
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .cta-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width: 560px) {
+
+      .hero {
+        height: 650px;
+        min-height: 650px;
+      }
+
+      .hero-top {
+        padding: 18px;
+        align-items: flex-start;
+      }
+
+      .hero-logo {
+        font-size: 8px;
+      }
+
+
+      /* =====================================================
+         HAMBURGER MOBILE HEADER
+         ===================================================== */
+
+      .mobile-menu-toggle {
+        display: flex;
+      }
+
+      .hero-nav {
+        position: absolute;
+
+        top: 66px;
+        right: 18px;
+
+        width: 190px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 5px;
+
+        padding: 10px;
+
+        background: rgba(46,44,31,.96);
+
+        border: 1px solid rgba(255,255,255,.20);
+
+        border-radius: 14px;
+
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transform: translateY(-10px);
+
+        transition:
+          opacity .3s ease,
+          visibility .3s ease,
+          transform .3s ease;
+      }
+
+      .hero-nav.open {
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+
+        transform: translateY(0);
+      }
+
+      .hero-nav a {
+        width: 100%;
+
+        min-height: 35px;
+
+        padding: 9px 12px;
+
+        justify-content: flex-start;
+
+        border: 0;
+
+        border-radius: 8px;
+
+        background: transparent;
+
+        font-size: 7px;
+      }
+
+      .hero-nav a:first-child {
+        background: var(--yellow);
+
+        color: var(--ink);
+      }
+
+      .hero-nav a:hover {
+        transform: none;
+      }
+
+
+      /* HAMBURGER TO X */
+
+      .mobile-menu-toggle.active span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+      }
+
+      .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .mobile-menu-toggle.active span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+      }
+
+
+      /* =====================================================
+         HERO
+         ===================================================== */
+
+      .hero-content {
+        left: 18px;
+        right: 18px;
+        bottom: 45px;
+      }
+
+      .hero-title {
+        font-size: 42px;
+        line-height: .94;
+      }
+
+      .hero-scroll {
+        bottom: 15px;
+      }
+
+
+      /* =====================================================
+         METHOD
+         ===================================================== */
+
+      .method {
+        padding-top: 45px;
+        padding-bottom: 50px;
+      }
+
+      .section-head {
+        margin-bottom: 40px;
+      }
+
+      .method-line {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        padding-top: 0;
+
+        border-left: 1px solid var(--line);
+
+        margin-left: 12px;
+      }
+
+      .method-line::before {
+        display: block;
+
+        top: 0;
+        bottom: 0;
+        left: -1px;
+        right: auto;
+
+        width: 1px;
+        height: auto;
+      }
+
+      .method-step {
+        display: grid;
+
+        grid-template-columns: 70px 1fr;
+
+        column-gap: 16px;
+
+        min-height: 105px;
+
+        padding: 0 0 25px 0;
+
+        text-align: left;
+      }
+
+      .method-step-number {
+        height: 60px;
+
+        margin-left: -30px;
+
+        margin-bottom: 0;
+      }
+
+      .method-icon {
+        width: 58px;
+        height: 58px;
+      }
+
+      .method-word {
+        padding-top: 13px;
+
+        margin-bottom: 6px;
+      }
+
+      .method-description {
+        max-width: 220px;
+      }
+
+      .method-step.launch .method-step-number {
+        height: 60px;
+      }
+
+      .method-step.launch .method-icon {
+        width: 46px;
+        height: 46px;
+        margin: 6px;
+      }
+
+      .method-footer {
+        margin-top: 18px;
+      }
+
+      .method-footer strong {
+        font-size: 13px;
+        line-height: 1.15;
+      }
+
+
+      /* =====================================================
+         JOURNEY
+         ===================================================== */
+
+      .journey {
+        height: 600vh;
+      }
+
+      .journey-sticky {
+        min-height: 650px;
+      }
+
+      .journey-header {
+        padding: 35px 18px 20px;
+      }
+
+      .journey-header h2 {
+        font-size: 39px;
+      }
+
+      .journey-track-window {
+        height: 350px;
+      }
+
+      .journey-track {
+        left: 18px;
+        height: 280px;
+      }
+
+      .journey-card {
+        flex-basis: 330px;
+        width: 330px;
+        height: 235px;
+
+        padding: 20px;
+
+        margin-right: 14px;
+      }
+
+      .journey-card h3 {
+        margin-top: 22px;
+        font-size: 28px;
+      }
+
+      .journey-card p {
+        font-size: 8px;
+        line-height: 1.4;
+      }
+
+      .journey-progress {
+        left: 18px;
+        right: 18px;
+        bottom: 25px;
+      }
+
+      .journey-progress-label {
+        right: 18px;
+        bottom: 38px;
+      }
+
+
+      /* =====================================================
+         THE EDIT MOBILE
+         ===================================================== */
+
+      .edit-carousel {
+        height: 560px;
+        min-height: 560px;
+      }
+
+
+      /* SLIDE 1 */
+
+      .edit-slide-one {
+        grid-template-columns: 1fr;
+      }
+
+      .edit-slide-one-image {
+        height: 230px;
+      }
+
+      .edit-slide-one-copy {
+        height: 330px;
+        padding: 28px 18px 55px;
+      }
+
+      .edit-slide-one-copy h2 {
+        font-size: 42px;
+        margin-top: 20px;
+        margin-bottom: 14px;
+      }
+
+      .edit-slide-one-copy p {
+        font-size: 8px;
+      }
+
+
+      /* IMAGE SLIDES */
+
+      .edit-large-content {
+        padding: 35px 18px 60px;
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+      }
+
+      .edit-large-item {
+        padding-right: 0;
+
+        padding-bottom: 20px;
+
+        border-right: 0;
+
+        border-bottom: 1px solid rgba(255,255,255,.25);
+      }
+
+      .edit-large-item:last-child {
+        padding-left: 0;
+
+        padding-bottom: 0;
+
+        border-bottom: 0;
+      }
+
+      .edit-large-item h2 {
+        margin-top: 18px;
+
+        margin-bottom: 10px;
+
+        font-size: 52px;
+
+        line-height: .75;
+      }
+
+      .edit-large-item h3 {
+        font-size: 8px;
+        margin-bottom: 8px;
+      }
+
+      .edit-large-item p {
+        max-width: 100%;
+
+        font-size: 8px;
+
+        line-height: 1.45;
+      }
+
+      .edit-background-overlay {
+        background:
+          linear-gradient(
+            180deg,
+            rgba(46,44,31,.68),
+            rgba(46,44,31,.86)
+          );
+      }
+
+      .edit-carousel-controls {
+        left: 18px;
+        right: 18px;
+        bottom: 15px;
+      }
+
+
+      /* =====================================================
+         PILLARS
+         ===================================================== */
+
+      .pillars {
+        margin-top: 50px;
+
+        padding: 42px 18px 25px;
+      }
+
+      .pillars::before {
+        font-size: 180px;
+
+        right: -10px;
+        top: -20px;
+      }
+
+      .pillars-head {
+        display: block;
+
+        margin-bottom: 35px;
+      }
+
+      .pillars-head h3 {
+        font-size: 42px;
+      }
+
+      .pillars-head .micro {
+        margin-top: 20px;
+
+        text-align: left;
+      }
+
+      .pillar-row {
+        grid-template-columns: 1fr;
+
+        gap: 1px;
+      }
+
+      .pillar {
+        min-height: 145px;
+
+        padding: 16px;
+
+        background: var(--yellow);
+
+        color: var(--ink);
+      }
+
+      .pillar:nth-child(even) {
+        background: var(--yellow);
+      }
+
+      .pillar strong {
+        width: 30px;
+        height: 30px;
+
+        margin-bottom: 25px;
+
+        background: var(--ink);
+        color: var(--yellow);
+        border-color: var(--ink);
+      }
+
+      .pillar span {
+        color: var(--ink);
+      }
+
+      .pillar span::before {
+        font-size: 18px;
+
+        margin-bottom: 8px;
+
+        color: var(--ink);
+      }
+
+      .pillar:hover {
+        background: var(--yellow);
+
+        color: var(--ink);
+
+        transform: translateX(5px);
+      }
+
+      .pillar:hover span {
+        color: var(--ink);
+      }
+
+      .pillar:hover span::before {
+        color: var(--ink);
+      }
+
+
+      /* OTHER MOBILE */
+
+      .principles,
+      .community-grid,
+      .eco-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-right {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+    }
+
+
+    /* =========================================================
+       VERY SMALL MOBILE
+       ========================================================= */
+
+    @media (max-width: 380px) {
+
+      .hero {
+        height: 600px;
+        min-height: 600px;
+      }
+
+      .hero-top {
+        padding: 15px;
+      }
+
+      .hero-nav {
+        top: 62px;
+        right: 15px;
+        max-width: 205px;
+      }
+
+      .hero-nav a {
+        font-size: 5px;
+        padding: 8px 6px;
+      }
+
+      .mobile-menu-toggle {
+        width: 35px;
+        height: 35px;
+      }
+
+      .hero-title {
+        font-size: 36px;
+      }
+
+      .journey {
+        height: 620vh;
+      }
+
+      .journey-card {
+        flex-basis: 300px;
+        width: 300px;
+        height: 225px;
+      }
+
+      .journey-card h3 {
+        font-size: 25px;
+      }
+
+
+      /* VERY SMALL EDIT */
+
+      .edit-carousel {
+        height: 580px;
+        min-height: 580px;
+      }
+
+      .edit-large-item h2 {
+        font-size: 46px;
+      }
+
+
+      /* VERY SMALL PILLARS */
+
+      .pillars-head h3 {
+        font-size: 37px;
+      }
+
+      .pillar {
+        min-height: 135px;
+
+        background: var(--yellow);
+
+        color: var(--ink);
+      }
+
+      .pillar:nth-child(even) {
+        background: var(--yellow);
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+<main class="site">
+
+
+  <!-- =======================================================
+       HERO
+       ======================================================= -->
+
+  <section class="hero" id="home">
+
+    <img
+      src="assets/hero.jpg"
+      class="hero-image"
+      alt="The White Startup School founder"
+    >
+
+    <div class="hero-overlay"></div>
+
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <div class="hero-top">
+
+      <a
+        href="index.html"
+        class="hero-logo"
+        aria-label="The White Startup School Home"
+      >
+
+        <span>The White</span>
+        <span>Startup</span>
+        <span>School</span>
+
+      </a>
+
+
+      <nav
+        class="hero-nav"
+        id="heroNav"
+      >
+
+        <a href="index.html">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#method">Framework</a>
+
+        <a href="#journey">Program</a>
+
+        <a href="#standard">Standard</a>
+
+        <a href="#founders">Founders</a>
+
+        <a href="#ecosystem">Contact</a>
+
+      </nav>
+
+
+      <!-- MOBILE HAMBURGER -->
+
+      <button
+        type="button"
+        class="mobile-menu-toggle"
+        id="mobileMenuToggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </div>
+
+
+    <!-- HERO CONTENT -->
+
+    <div class="hero-content">
+
+      <h1 class="hero-title">
+
+        <span>Where ideas become legacy.</span>
+
+        <span>Build what’s next.</span>
+
+      </h1>
+
+    </div>
+
+
+    <!-- HERO SCROLL -->
+
+    <a
+      href="#about"
+      class="hero-scroll"
+      aria-label="Scroll to view the next section"
+    >
+
+      <span>Scroll to view</span>
+
+      <span class="hero-scroll-arrow">
+        ↓
+      </span>
+
+    </a>
+
+  </section>
+
+
+  <!-- =======================================================
+       INTRO
+       ======================================================= -->
+
+  <section
+    class="olive-section intro"
+    id="about"
+  >
+
+    <div>
+
+      <div class="eyebrow">
+        The Beginning
+      </div>
+
+      <div
+        class="section-number"
+        style="margin-top:8px;"
+      >
+        01 / The idea
+      </div>
+
+    </div>
+
+    <div class="intro-copy">
+
+      <h2 class="intro-title">
+        An idea is only the first move.
+      </h2>
+
+      <p class="intro-text">
+
+        Every meaningful company begins with a thought. A conviction.
+        A problem worth solving. The White Startup School is where that
+        vision begins to take form. We work with emerging founders to
+        transform early-stage ideas into thoughtfully positioned businesses
+        through strategic mentorship, brand development, digital presence,
+        and essential business guidance.
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       METHOD
+       ======================================================= -->
+
+  <section
+    class="method"
+    id="method"
+  >
+
+    <div class="section-head">
+
+      <div>
+
+        <div class="eyebrow">
+          The White Method
+        </div>
+
+        <div
+          class="section-number"
+          style="margin-top:8px;"
+        >
+          A considered framework
+        </div>
+
+      </div>
+
+      <div>
+
+        <h2>
+          From possibility to presence.
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="method-line">
+
+
+      <div class="method-step">
+
+        <div class="method-step-number">
+
+          <div class="method-icon">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+
+              <path d="M9 18h6"></path>
+              <path d="M10 21h4"></path>
+              <path d="M8.5 14.5C7.55 13.65 7 12.4 7 11a5 5 0 0 1 10 0c0 1.4-.55 2.65-1.5 3.5-.7.62-1.1 1.35-1.25 2.5h-4.5c-.15-1.15-.55-1.88-1.25-2.5Z"></path>
+
+            </svg>
+
+          </div>
+
+        </div>
+
+        <div>
+
+          <div class="method-word">
+            Idea
+          </div>
+
+          <p class="method-description">
+            Discover the thought, problem and opportunity worth pursuing.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="method-step">
+
+        <div class="method-step-number">
+
+          <div class="method-icon">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+
+              <circle cx="12" cy="12" r="8.5"></circle>
+
+              <path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8 4.8-2.2Z"></path>
+
+            </svg>
+
+          </div>
+
+        </div>
+
+        <div>
+
+          <div class="method-word">
+            Direction
+          </div>
+
+          <p class="method-description">
+            Define priorities, positioning and the path forward.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="method-step">
+
+        <div class="method-step-number">
+
+          <div class="method-icon">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+
+              <path d="M12 3v4"></path>
+              <path d="M12 17v4"></path>
+              <path d="M3 12h4"></path>
+              <path d="M17 12h4"></path>
+              <path d="m5.6 5.6 2.8 2.8"></path>
+              <path d="m15.6 15.6 2.8 2.8"></path>
+              <path d="m18.4 5.6-2.8 2.8"></path>
+              <path d="M8.4 15.6 5.6 18.4"></path>
+              <circle cx="12" cy="12" r="2.2"></circle>
+
+            </svg>
+
+          </div>
+
+        </div>
+
+        <div>
+
+          <div class="method-word">
+            Identity
+          </div>
+
+          <p class="method-description">
+            Give the business a distinctive voice, character and point of view.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="method-step">
+
+        <div class="method-step-number">
+
+          <div class="method-icon">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+
+              <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path>
+
+              <circle cx="12" cy="12" r="2.5"></circle>
+
+            </svg>
+
+          </div>
+
+        </div>
+
+        <div>
+
+          <div class="method-word">
+            Presence
+          </div>
+
+          <p class="method-description">
+            Build the digital presence that introduces the business to the world.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="method-step">
+
+        <div class="method-step-number">
+
+          <div class="method-icon">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+
+              <path d="M4 20h16"></path>
+              <path d="M5 17h14"></path>
+              <path d="M6 14h12"></path>
+              <path d="M7 11h10"></path>
+              <path d="M8 8h8"></path>
+              <path d="M9 5h6"></path>
+
+            </svg>
+
+          </div>
+
+        </div>
+
+        <div>
+
+          <div class="method-word">
+            Foundation
+          </div>
+
+          <p class="method-description">
+            Establish the essential structures needed to operate and grow.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="method-step launch">
+
+        <div class="method-step-number">
+
+          <div class="method-icon">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+
+              <path d="M12 3 21 12 12 21 3 12 12 3Z"></path>
+              <path d="M12 7v10"></path>
+              <path d="m8.5 10.5 3.5-3.5 3.5 3.5"></path>
+
+            </svg>
+
+          </div>
+
+        </div>
+
+        <div>
+
+          <div class="method-word">
+            Launch
+          </div>
+
+          <p class="method-description">
+            Take the idea, identity and foundation into the world.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="method-footer"
+      style="text-align: center;"
+    >
+
+      <strong>
+        THINK DEEPLY. BUILD DELIBERATELY. MOVE WITH PURPOSE.
+      </strong>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       JOURNEY
+       ======================================================= -->
+
+  <section
+    class="journey"
+    id="journey"
+  >
+
+    <div class="journey-sticky">
+
+      <div class="journey-header">
+
+        <div class="journey-header-grid">
+
+          <div>
+
+            <div class="eyebrow">
+              The Journey
+            </div>
+
+            <div
+              class="section-number"
+              style="margin-top:8px;"
+            >
+              Vision to venture
+            </div>
+
+          </div>
+
+          <div>
+
+            <h2>
+              The distance between an idea and a business.
+            </h2>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="journey-track-window">
+
+        <div
+          class="journey-track"
+          id="journeyTrack"
+        >
+
+
+          <article class="journey-card">
+
+            <div class="journey-number">
+              01
+            </div>
+
+            <h3>
+              The Idea
+            </h3>
+
+            <p>
+
+              <strong>
+                Define the opportunity.
+              </strong>
+
+              Every venture begins with a reason to exist.
+              We help you examine the problem, understand the audience,
+              identify the opportunity, and articulate the vision behind
+              your idea.
+
+            </p>
+
+          </article>
+
+
+          <article class="journey-card">
+
+            <div class="journey-number">
+              02
+            </div>
+
+            <h3>
+              The Direction
+            </h3>
+
+            <p>
+
+              <strong>
+                Find your advantage.
+              </strong>
+
+              Ideas become businesses through decisions.
+              Gain practical perspective and strategic mentorship to
+              determine where to go, what to prioritize, and how to move
+              forward with confidence.
+
+            </p>
+
+          </article>
+
+
+          <article class="journey-card">
+
+            <div class="journey-number">
+              03
+            </div>
+
+            <h3>
+              The Identity
+            </h3>
+
+            <p>
+
+              <strong>
+                Give the business a point of view.
+              </strong>
+
+              A business should be recognizable before it becomes familiar.
+              Develop a distinctive brand identity that captures your
+              character, communicates value, and establishes market
+              credibility.
+
+            </p>
+
+          </article>
+
+
+          <article class="journey-card">
+
+            <div class="journey-number">
+              04
+            </div>
+
+            <h3>
+              The Presence
+            </h3>
+
+            <p>
+
+              <strong>
+                Make your business seen.
+              </strong>
+
+              Your presence is your introduction to the world.
+              Create a digital ecosystem that communicates with clarity,
+              earns attention, and gives your audience a reason to
+              remember you.
+
+            </p>
+
+          </article>
+
+
+          <article class="journey-card">
+
+            <div class="journey-number">
+              05
+            </div>
+
+            <h3>
+              The Foundation
+            </h3>
+
+            <p>
+
+              <strong>
+                Build beyond the brand.
+              </strong>
+
+              A powerful idea needs a solid business behind it.
+              Understand the essential structures, processes, and
+              considerations required to establish your venture and
+              prepare it for operation.
+
+            </p>
+
+          </article>
+
+
+          <article class="journey-card">
+
+            <div class="journey-number">
+              06
+            </div>
+
+            <h3>
+              The Launch
+            </h3>
+
+            <p>
+
+              <strong>
+                Take it into the world.
+              </strong>
+
+              The strategy is ready. The identity is defined.
+              The foundation is taking shape. Now comes the moment
+              that matters. Launch.
+
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+
+      <div class="journey-progress">
+
+        <div
+          class="journey-progress-bar"
+          id="journeyProgress"
+        ></div>
+
+      </div>
+
+      <div
+        class="journey-progress-label"
+        id="journeyProgressLabel"
+      >
+        01 / 06
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       THE EDIT — 3 PAGE CAROUSEL
+       ======================================================= -->
+
+  <section
+    class="edit-carousel"
+    id="program"
+  >
+
+    <div
+      class="edit-slider"
+      id="editSlider"
+    >
+
+
+      <!-- SLIDE 1 -->
+
+      <div class="edit-slide edit-slide-one">
+
+        <div class="edit-slide-one-image">
+
+          <img
+            src="assets/down.jpg"
+            alt="Founders collaborating"
+          >
+
+        </div>
+
+
+        <div class="edit-slide-one-copy">
+
+          <div>
+
+            <div class="eyebrow">
+              The Edit
+            </div>
+
+            <div
+              class="section-number"
+              style="margin-top:8px;"
+            >
+              The essentials, considered.
+            </div>
+
+          </div>
+
+
+          <h2>
+            Build the signature.
+          </h2>
+
+
+          <p>
+            A curated suite of capabilities designed to give emerging
+            founders a stronger beginning: brand, digital, mentorship
+            and foundation.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- SLIDE 2 -->
+
+      <div class="edit-slide edit-slide-two">
+
+        <div class="edit-background-overlay"></div>
+
+
+        <div class="edit-large-content">
+
+
+          <div class="edit-large-item">
+
+            <h2>
+              BRAND
+            </h2>
+
+            <h3>
+              BUILD THE SIGNATURE
+            </h3>
+
+            <p>
+              Your brand is more than an identity. It is how your
+              business is recognized, remembered, and perceived.
+              Build a distinctive identity around clarity,
+              character and long-term relevance.
+            </p>
+
+          </div>
+
+
+          <div class="edit-large-item">
+
+            <h2>
+              DIGITAL
+            </h2>
+
+            <h3>
+              CREATE YOUR PRESENCE.
+            </h3>
+
+            <p>
+              Create a digital presence that feels as intentional
+              as the business behind it. Establish a credible
+              platform that communicates clearly and introduces
+              your business to the world.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- SLIDE 3 -->
+
+      <div class="edit-slide edit-slide-three">
+
+        <div class="edit-background-overlay"></div>
+
+
+        <div class="edit-large-content">
+
+
+          <div class="edit-large-item">
+
+            <h2>
+              MENTORSHIP
+            </h2>
+
+            <h3>
+              BORROW EXPERIENCE. BUILD WISER.
+            </h3>
+
+            <p>
+              You shouldn't have to discover every lesson the hard
+              way. Gain practical knowledge, strategic perspective
+              and direct guidance to make better decisions sooner.
+            </p>
+
+          </div>
+
+
+          <div class="edit-large-item">
+
+            <h2>
+              FOUNDATION
+            </h2>
+
+            <h3>
+              CREATE THE STRUCTURE TO GROW.
+            </h3>
+
+            <p>
+              Before growth comes readiness. Understand the essential
+              elements required to establish your business and create
+              the structure needed to support what comes next.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- CAROUSEL CONTROLS -->
+
+    <div class="edit-carousel-controls">
+
+
+      <button
+        type="button"
+        class="edit-arrow"
+        id="editPrev"
+        aria-label="Previous page"
+      >
+        ←
+      </button>
+
+
+      <div class="edit-dots">
+
+
+        <button
+          type="button"
+          class="edit-dot active"
+          data-slide="0"
+          aria-label="Go to page 1"
+        ></button>
+
+
+        <button
+          type="button"
+          class="edit-dot"
+          data-slide="1"
+          aria-label="Go to page 2"
+        ></button>
+
+
+        <button
+          type="button"
+          class="edit-dot"
+          data-slide="2"
+          aria-label="Go to page 3"
+        ></button>
+
+
+      </div>
+
+
+      <button
+        type="button"
+        class="edit-arrow"
+        id="editNext"
+        aria-label="Next page"
+      >
+        →
+      </button>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       WHITE STANDARD
+       ======================================================= -->
+
+  <section
+    class="standard"
+    id="standard"
+  >
+
+    <div class="standard-intro">
+
+      <div>
+
+        <div class="eyebrow">
+          Philosophy & Quality Benchmark
+        </div>
+
+        <h2>
+          The White Standard
+        </h2>
+
+      </div>
+
+      <p>
+        Anyone can start a business. Building one with clarity,
+        character, and conviction is different. The White Standard
+        represents the level of thinking, intention, craft and ambition
+        we believe should go into every business we help shape.
+      </p>
+
+    </div>
+
+
+    <div class="principles">
+
+      <article class="principle">
+
+        <h3>
+          Think with depth.
+        </h3>
+
+        <p>
+          Great businesses rarely begin with superficial answers. We
+          encourage founders to look beneath the obvious—to
+          understand the problem, question assumptions, recognize
+          opportunity, and develop a point of view of their own.
+        </p>
+
+      </article>
+
+
+      <article class="principle">
+
+        <h3>
+          Build with intention.
+        </h3>
+
+        <p>
+          Every decision leaves a mark: the name, positioning,
+          identity, experience, communication, and the way people
+          encounter the business. We believe those decisions should
+          never be accidental.
+        </p>
+
+      </article>
+
+
+      <article class="principle">
+
+        <h3>
+          Create with distinction.
+        </h3>
+
+        <p>
+          The market is crowded with businesses that look, sound,
+          and behave alike. We believe founders should have the
+          courage to create something unmistakably their own—a
+          distinctive voice, recognizable identity, meaningful
+          proposition, and presence with character.
+        </p>
+
+      </article>
+
+
+      <article class="principle">
+
+        <h3>
+          Present with confidence.
+        </h3>
+
+        <p>
+          Being new doesn’t mean looking unfinished. From the first
+          brand expression to the first digital interaction, your
+          business should communicate credibility, intention, and
+          ambition. Your presence is part of your proposition.
+        </p>
+
+      </article>
+
+
+      <article class="principle">
+
+        <h3>
+          Build for relevance.
+        </h3>
+
+        <p>
+          We aren’t interested in creating businesses that exist only
+          for the moment. We encourage founders to think beyond
+          the launch—to build brands, systems, and relationships
+          capable of evolving with the market and growing with
+          ambition.
+        </p>
+
+      </article>
+
+    </div>
+
+
+    <!-- THE 7 PILLARS -->
+
+    <div class="pillars">
+
+      <div class="pillars-head">
+
+        <div>
+
+          <div class="eyebrow">
+            The 7 Pillars
+          </div>
+
+          <h3>
+            Know the<br>
+            standard.
+          </h3>
+
+        </div>
+
+      </div>
+
+
+      <div class="pillar-row">
+
+
+        <div class="pillar">
+
+          <strong>
+            01
+          </strong>
+
+          <span data-name="CLARITY">
+            Know what you stand for.
+          </span>
+
+        </div>
+
+
+        <div class="pillar">
+
+          <strong>
+            02
+          </strong>
+
+          <span data-name="CHARACTER">
+            Build something of your own.
+          </span>
+
+        </div>
+
+
+        <div class="pillar">
+
+          <strong>
+            03
+          </strong>
+
+          <span data-name="CRAFT">
+            Respect the details.
+          </span>
+
+        </div>
+
+
+        <div class="pillar">
+
+          <strong>
+            04
+          </strong>
+
+          <span data-name="CREDIBILITY">
+            Earn trust through substance.
+          </span>
+
+        </div>
+
+
+        <div class="pillar">
+
+          <strong>
+            05
+          </strong>
+
+          <span data-name="COURAGE">
+            Move beyond the obvious.
+          </span>
+
+        </div>
+
+
+        <div class="pillar">
+
+          <strong>
+            06
+          </strong>
+
+          <span data-name="CONNECTION">
+            Create lasting value.
+          </span>
+
+        </div>
+
+
+        <div class="pillar">
+
+          <strong>
+            07
+          </strong>
+
+          <span data-name="CONTINUITY">
+            Think beyond the launch.
+          </span>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       WHY
+       ======================================================= -->
+
+  <section class="why">
+
+    <div class="why-grid">
+
+      <div>
+
+        <div class="eyebrow">
+          Why The White
+        </div>
+
+        <h2>
+          You won't leave with a certificate and a to-do list.
+        </h2>
+
+      </div>
+
+      <div class="why-copy">
+
+        <h3>
+          You leave with momentum.
+        </h3>
+
+        <p>
+          The White Startup School is designed around the reality
+          of entrepreneurship—not the polished version of it.
+          There will be questions, decisions and uncertainty.
+          Our role is to help you navigate them with perspective,
+          creative capability and practical support.
+        </p>
+
+        <div class="rules">
+
+          <div>
+            No generic formulas.
+          </div>
+
+          <div>
+            No empty motivation.
+          </div>
+
+          <div>
+            No guesswork.
+          </div>
+
+          <div>
+            Just a clearer way forward.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       FOUNDERS
+       ======================================================= -->
+
+  <section
+    class="founders"
+    id="founders"
+  >
+
+    <div class="founder-top">
+
+      <div>
+
+        <div class="eyebrow">
+          The Community
+        </div>
+
+        <h2>
+          The White Founders
+        </h2>
+
+      </div>
+
+      <p>
+        A curated network of founders, entrepreneurs, creators and
+        ambitious minds connected by one shared instinct: the desire
+        to build something meaningful.
+      </p>
+
+    </div>
+
+
+    <div class="community-grid">
+
+      <article class="community-card">
+
+        <div class="section-number">
+          01
+        </div>
+
+        <h3>
+          Connect
+        </h3>
+
+        <p>
+          Build relationships with ambitious people.
+        </p>
+
+      </article>
+
+
+      <article class="community-card">
+
+        <div class="section-number">
+          02
+        </div>
+
+        <h3>
+          Collaborate
+        </h3>
+
+        <p>
+          Exchange capabilities and opportunities.
+        </p>
+
+      </article>
+
+
+      <article class="community-card">
+
+        <div class="section-number">
+          03
+        </div>
+
+        <h3>
+          Learn
+        </h3>
+
+        <p>
+          Share experiences and gain perspective.
+        </p>
+
+      </article>
+
+
+      <article class="community-card">
+
+        <div class="section-number">
+          04
+        </div>
+
+        <h3>
+          Discover
+        </h3>
+
+        <p>
+          Be exposed to new conversations.
+        </p>
+
+      </article>
+
+
+      <article class="community-card">
+
+        <div class="section-number">
+          05
+        </div>
+
+        <h3>
+          Grow
+        </h3>
+
+        <p>
+          Build lasting valuable relationships.
+        </p>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       WOMAN
+       ======================================================= -->
+
+  <section
+    class="woman"
+    id="women"
+  >
+
+    <div
+      class="woman-image"
+      role="img"
+      aria-label="Woman founder"
+    ></div>
+
+    <div class="woman-copy">
+
+      <div>
+
+        <div
+          class="section-number"
+          style="margin-top:8px;"
+        >
+          The woman behind the idea
+        </div>
+
+      </div>
+
+      <h2>
+        For women ready to build something of their own.
+      </h2>
+
+      <p>
+        For the woman with an idea living in her notes.
+        For the founder building quietly after hours.
+        For the entrepreneur ready to turn a side hustle into
+        something serious. You don't need a perfect plan,
+        years of experience, or every answer. You just need
+        the courage to begin.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       ECOSYSTEM
+       ======================================================= -->
+
+  <section
+    class="ecosystem"
+    id="ecosystem"
+  >
+
+    <div class="ecosystem-head">
+
+      <div>
+
+        <div class="eyebrow">
+          The White Ecosystem
+        </div>
+
+        <h2>
+          Learn. Build. Launch.
+        </h2>
+
+      </div>
+
+      <p>
+        A connected ecosystem built around the founder's journey—
+        from the philosophy behind the build to the community
+        behind the journey.
+      </p>
+
+    </div>
+
+
+    <div class="eco-grid">
+
+
+      <a
+        class="eco-card"
+        href="#program"
+      >
+
+        <div class="section-number">
+          01 / The School
+        </div>
+
+        <h3>
+          The White Startup School
+        </h3>
+
+        <p>
+          Where ideas become legacy.
+        </p>
+
+      </a>
+
+
+      <a
+        class="eco-card"
+        href="#standard"
+      >
+
+        <div class="section-number">
+          02 / The Philosophy
+        </div>
+
+        <h3>
+          The White Standard
+        </h3>
+
+        <p>
+          Think deeper. Build deliberately. Create with purpose.
+        </p>
+
+      </a>
+
+
+      <a
+        class="eco-card"
+        href="#founders"
+      >
+
+        <div class="section-number">
+          03 / The Community
+        </div>
+
+        <h3>
+          The White Founders
+        </h3>
+
+        <p>
+          Connect. Collaborate. Learn. Grow.
+        </p>
+
+      </a>
+
+
+      <a
+        class="eco-card"
+        href="home.html"
+      >
+
+        <div class="section-number">
+          04 / The Next Step
+        </div>
+
+        <h3>
+          Your journey starts here.
+        </h3>
+
+        <p>
+          Begin the conversation.
+        </p>
+
+      </a>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       CTA
+       ======================================================= -->
+
+  <section
+    class="cta"
+    id="contact"
+  >
+
+    <div>
+
+      <h2>
+
+        Ideas with intention.<br>
+
+        Businesses with direction.<br>
+
+        Founders with ambition.
+
+      </h2>
+
+    </div>
+
+
+    <div class="cta-bottom">
+
+      <p class="cta-copy">
+
+        Still shaping the idea? Ready to take the first serious step?
+        Looking for mentorship, business support, or a community of
+        people building alongside you? This is where the conversation begins.
+
+      </p>
+
+
+      <div class="cta-actions">
+
+        <a
+          class="cta-button"
+          href="#program"
+        >
+          Explore the Program
+        </a>
+
+        <a
+          class="cta-button dark"
+          href="#ecosystem"
+        >
+          Begin Your Journey
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
+
+  <footer>
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+
+        The White<br>
+        Startup<br>
+        School
+
+      </div>
+
+
+      <div class="footer-right">
+
+
+        <div class="footer-column">
+
+          <strong>
+            Explore
+          </strong>
+
+          <a href="home.html">
+            Home
+          </a>
+
+          <a href="#about">
+            About
+          </a>
+
+          <a href="#program">
+            Program
+          </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <strong>
+            Framework
+          </strong>
+
+          <a href="#standard">
+            The White Standard
+          </a>
+
+          <a href="#founders">
+            The White Founders
+          </a>
+
+          <a href="#method">
+            The White Method
+          </a>
+
+          <a href="#women">
+            Woman Behind the Idea
+          </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <strong>
+            Start
+          </strong>
+
+      
+
+          <a href="#ecosystem">
+            Begin Your Journey
+          </a>
+
+          <a href="#program">
+            Explore the Program
+          </a>
+
+              <a href="#ecosystem">
+            Contact
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        THE WHITE STARTUP SCHOOL
+      </span>
+
+      <span>
+        WHERE IDEAS BECOME LEGACY.
+      </span>
+
+      <span>
+        thewhitestartup.com
+      </span>
+
+    </div>
+
+  </footer>
+
+</main>
+
+
+<!-- =========================================================
+     JOURNEY SCROLL SCRIPT
+     ========================================================= -->
+
+<script>
+
+(function () {
+
+  const journey =
+    document.querySelector(".journey");
+
+  const track =
+    document.getElementById("journeyTrack");
+
+  const progress =
+    document.getElementById("journeyProgress");
+
+  const progressLabel =
+    document.getElementById("journeyProgressLabel");
+
+  const cards =
+    document.querySelectorAll(".journey-card");
+
+
+  if (
+    !journey ||
+    !track ||
+    !cards.length
+  ) return;
+
+
+  function updateJourney() {
+
+    const rect =
+      journey.getBoundingClientRect();
+
+
+    const scrollDistance =
+      journey.offsetHeight -
+      window.innerHeight;
+
+
+    let travelled =
+      -rect.top;
+
+
+    travelled =
+      Math.max(
+        0,
+        Math.min(
+          travelled,
+          scrollDistance
+        )
+      );
+
+
+    let progressValue =
+      scrollDistance > 0
+        ? travelled / scrollDistance
+        : 0;
+
+
+    progressValue =
+      Math.max(
+        0,
+        Math.min(
+          progressValue,
+          1
+        )
+      );
+
+
+    const firstCard =
+      cards[0];
+
+
+    const cardWidth =
+      firstCard.getBoundingClientRect().width;
+
+
+    const cardGap =
+      window.innerWidth <= 560
+        ? 14
+        : 22;
+
+
+    const totalTrackWidth =
+      cards.length * cardWidth +
+      (cards.length - 1) * cardGap;
+
+
+    const viewportWidth =
+      document
+        .querySelector(".journey-track-window")
+        .getBoundingClientRect()
+        .width;
+
+
+    const maxMove =
+      Math.max(
+        0,
+        totalTrackWidth -
+        viewportWidth +
+        30
+      );
+
+
+    const x =
+      -(maxMove * progressValue);
+
+
+    track.style.transform =
+      `translate3d(${x}px, -50%, 0)`;
+
+
+    progress.style.width =
+      `${progressValue * 100}%`;
+
+
+    let currentCard =
+      Math.floor(
+        progressValue *
+        cards.length
+      );
+
+
+    currentCard =
+      Math.min(
+        cards.length - 1,
+        currentCard
+      );
+
+
+    cards.forEach(
+      (card, index) => {
+
+        card.classList.toggle(
+          "active",
+          index === currentCard
+        );
+
+      }
+    );
+
+
+    progressLabel.textContent =
+      String(
+        currentCard + 1
+      ).padStart(2, "0") +
+      " / 06";
+
+  }
+
+
+  let ticking = false;
+
+
+  function requestUpdate() {
+
+    if (!ticking) {
+
+      window.requestAnimationFrame(
+        () => {
+
+          updateJourney();
+
+          ticking = false;
+
+        }
+      );
+
+      ticking = true;
+
+    }
+
+  }
+
+
+  window.addEventListener(
+    "scroll",
+    requestUpdate,
+    {
+      passive: true
+    }
+  );
+
+
+  window.addEventListener(
+    "resize",
+    updateJourney
+  );
+
+
+  updateJourney();
+
+})();
+
+</script>
+
+
+<!-- =========================================================
+     THE EDIT — 3 SLIDE CAROUSEL SCRIPT
+     ========================================================= -->
+
+<script>
+
+(function () {
+
+  const slider =
+    document.getElementById("editSlider");
+
+  const prev =
+    document.getElementById("editPrev");
+
+  const next =
+    document.getElementById("editNext");
+
+  const dots =
+    document.querySelectorAll(".edit-dot");
+
+
+  if (
+    !slider ||
+    !prev ||
+    !next
+  ) return;
+
+
+  let currentSlide = 0;
+
+  const totalSlides = 3;
+
+
+  function goToSlide(index) {
+
+    currentSlide =
+      (index + totalSlides) %
+      totalSlides;
+
+
+    slider.style.transform =
+      `translateX(-${currentSlide * (100 / totalSlides)}%)`;
+
+
+    dots.forEach(
+      (dot, dotIndex) => {
+
+        dot.classList.toggle(
+          "active",
+          dotIndex === currentSlide
+        );
+
+      }
+    );
+
+  }
+
+
+  /* NEXT */
+
+  next.addEventListener(
+    "click",
+    function () {
+
+      goToSlide(
+        currentSlide + 1
+      );
+
+    }
+  );
+
+
+  /* PREVIOUS */
+
+  prev.addEventListener(
+    "click",
+    function () {
+
+      goToSlide(
+        currentSlide - 1
+      );
+
+    }
+  );
+
+
+  /* DOT NAVIGATION */
+
+  dots.forEach(
+    (dot) => {
+
+      dot.addEventListener(
+        "click",
+        function () {
+
+          goToSlide(
+            Number(
+              dot.dataset.slide
+            )
+          );
+
+        }
+      );
+
+    }
+  );
+
+
+  /* TOUCH / SWIPE */
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+
+  slider.addEventListener(
+    "touchstart",
+    function (event) {
+
+      touchStartX =
+        event.changedTouches[0].screenX;
+
+    },
+    {
+      passive: true
+    }
+  );
+
+
+  slider.addEventListener(
+    "touchend",
+    function (event) {
+
+      touchEndX =
+        event.changedTouches[0].screenX;
+
+
+      const difference =
+        touchStartX - touchEndX;
+
+
+      if (
+        Math.abs(difference) < 50
+      ) {
+        return;
+      }
+
+
+      if (difference > 0) {
+
+        goToSlide(
+          currentSlide + 1
+        );
+
+      } else {
+
+        goToSlide(
+          currentSlide - 1
+        );
+
+      }
+
+    },
+    {
+      passive: true
+    }
+  );
+
+
+})();
+
+</script>
+
+
+<!-- =========================================================
+     MOBILE HAMBURGER MENU SCRIPT
+     ========================================================= -->
+
+<script>
+
+(function () {
+
+  const menuButton =
+    document.getElementById("mobileMenuToggle");
+
+  const menu =
+    document.getElementById("heroNav");
+
+
+  if (
+    !menuButton ||
+    !menu
+  ) return;
+
+
+  /* =====================================================
+     OPEN / CLOSE MENU
+     ===================================================== */
+
+  menuButton.addEventListener(
+    "click",
+    function () {
+
+      const isOpen =
+        menu.classList.toggle("open");
+
+
+      menuButton.classList.toggle(
+        "active",
+        isOpen
+      );
+
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+      );
+
+
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen
+          ? "Close menu"
+          : "Open menu"
+      );
+
+    }
+  );
+
+
+  /* =====================================================
+     CLOSE MENU WHEN LINK IS CLICKED
+     ===================================================== */
+
+  menu.querySelectorAll("a").forEach(
+    function (link) {
+
+      link.addEventListener(
+        "click",
+        function () {
+
+          menu.classList.remove("open");
+
+          menuButton.classList.remove("active");
+
+          menuButton.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuButton.setAttribute(
+            "aria-label",
+            "Open menu"
+          );
+
+        }
+      );
+
+    }
+  );
+
+
+  /* =====================================================
+     CLOSE MENU WHEN RESIZING TO DESKTOP
+     ===================================================== */
+
+  window.addEventListener(
+    "resize",
+    function () {
+
+      if (window.innerWidth > 560) {
+
+        menu.classList.remove("open");
+
+        menuButton.classList.remove("active");
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        menuButton.setAttribute(
+          "aria-label",
+          "Open menu"
+        );
+
+      }
+
+    }
+  );
+
+
+})();
+
+</script>
+
+
+</body>
+
+</html>
