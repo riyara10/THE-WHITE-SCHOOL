@@ -136,7 +136,7 @@
     transform:
         translate(-50%, -50%);
 
-    width: 360px;
+    width: 400px;
 
     text-align: center;
 
@@ -145,15 +145,15 @@
 
 /* =========================================================
    LOGO FRAME
-   BIGGER
+   MUCH BIGGER
    ========================================================= */
 
 .white-logo-frame {
 
     position: relative;
 
-    width: 210px;
-    height: 210px;
+    width: 250px;
+    height: 250px;
 
     margin: 0 auto;
 
@@ -162,18 +162,18 @@
 
 /* =========================================================
    SQUARE BORDER
-   BIGGER
+   200px × 200px
    ========================================================= */
 
 .square-frame {
 
     position: absolute;
 
-    left: 20px;
-    top: 20px;
+    left: 25px;
+    top: 25px;
 
-    width: 170px;
-    height: 170px;
+    width: 200px;
+    height: 200px;
 
     border: 2px solid #222;
 
@@ -195,18 +195,17 @@
 
 /* =========================================================
    SQUARE FILL
-   BIGGER
    ========================================================= */
 
 .square-fill {
 
     position: absolute;
 
-    left: 22px;
-    top: 22px;
+    left: 27px;
+    top: 27px;
 
-    width: 166px;
-    height: 166px;
+    width: 196px;
+    height: 196px;
 
     background: #222;
 
@@ -235,8 +234,8 @@
 
     position: absolute;
 
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
 
     opacity: 0;
 
@@ -256,9 +255,9 @@
     position: absolute;
 
     left: 0;
-    top: 7px;
+    top: 8px;
 
-    width: 16px;
+    width: 18px;
     height: 2px;
 
     background: #888;
@@ -276,11 +275,11 @@
 
     position: absolute;
 
-    left: 7px;
+    left: 8px;
     top: 0;
 
     width: 2px;
-    height: 16px;
+    height: 18px;
 
     background: #888;
 
@@ -289,18 +288,18 @@
 
 /* =========================================================
    CROSS POSITIONS
-   CLOSE TO BIGGER SQUARE CORNERS
+   CLOSE TO BIG SQUARE CORNERS
    ========================================================= */
 
 
 /* =========================================================
-   TOP LEFT
+   TOP LEFT CROSS
    ========================================================= */
 
 .cross-tl {
 
-    left: 4px;
-    top: 4px;
+    left: 2px;
+    top: 2px;
 
     animation:
         crossTL
@@ -312,13 +311,13 @@
 
 
 /* =========================================================
-   TOP RIGHT
+   TOP RIGHT CROSS
    ========================================================= */
 
 .cross-tr {
 
-    right: 4px;
-    top: 4px;
+    right: 2px;
+    top: 2px;
 
     animation:
         crossTR
@@ -330,13 +329,13 @@
 
 
 /* =========================================================
-   BOTTOM LEFT
+   BOTTOM LEFT CROSS
    ========================================================= */
 
 .cross-bl {
 
-    left: 4px;
-    bottom: 4px;
+    left: 2px;
+    bottom: 2px;
 
     animation:
         crossBL
@@ -348,13 +347,13 @@
 
 
 /* =========================================================
-   BOTTOM RIGHT
+   BOTTOM RIGHT CROSS
    ========================================================= */
 
 .cross-br {
 
-    right: 4px;
-    bottom: 4px;
+    right: 2px;
+    bottom: 2px;
 
     animation:
         crossBR
@@ -376,7 +375,7 @@
         opacity: 0;
 
         transform:
-            translate(-55px,-55px)
+            translate(-65px,-65px)
             rotate(0deg)
             scale(.4);
 
@@ -391,7 +390,7 @@
     30% {
 
         transform:
-            translate(-24px,-24px)
+            translate(-28px,-28px)
             rotate(180deg)
             scale(1.15);
 
@@ -431,7 +430,7 @@
         opacity: 0;
 
         transform:
-            translate(55px,-55px)
+            translate(65px,-65px)
             rotate(0deg)
             scale(.4);
 
@@ -446,7 +445,7 @@
     30% {
 
         transform:
-            translate(24px,-24px)
+            translate(28px,-28px)
             rotate(180deg)
             scale(1.15);
 
@@ -486,7 +485,7 @@
         opacity: 0;
 
         transform:
-            translate(-55px,55px)
+            translate(-65px,65px)
             rotate(0deg)
             scale(.4);
 
@@ -501,7 +500,7 @@
     30% {
 
         transform:
-            translate(-24px,24px)
+            translate(-28px,28px)
             rotate(180deg)
             scale(1.15);
 
@@ -541,7 +540,7 @@
         opacity: 0;
 
         transform:
-            translate(55px,55px)
+            translate(65px,65px)
             rotate(0deg)
             scale(.4);
 
@@ -556,7 +555,7 @@
     30% {
 
         transform:
-            translate(24px,24px)
+            translate(28px,28px)
             rotate(180deg)
             scale(1.15);
 
@@ -652,11 +651,11 @@
 
     position: absolute;
 
-    left: 20px;
-    top: 20px;
+    left: 25px;
+    top: 25px;
 
-    width: 170px;
-    height: 170px;
+    width: 200px;
+    height: 200px;
 
     display: flex;
 
@@ -666,7 +665,7 @@
 
     text-align: center;
 
-    padding: 18px;
+    padding: 20px;
 
     z-index: 5;
 
@@ -677,7 +676,7 @@
         Helvetica,
         sans-serif;
 
-    font-size: 16px;
+    font-size: 18px;
 
     font-weight: 900;
 
@@ -886,62 +885,68 @@
     }
 
 
+    /* BIGGER MOBILE FRAME */
+
     .white-logo-frame {
 
-        width: 175px;
-        height: 175px;
+        width: 205px;
+        height: 205px;
 
     }
 
 
+    /* BIGGER MOBILE SQUARE */
+
     .square-frame {
 
-        left: 17px;
-        top: 17px;
+        left: 20px;
+        top: 20px;
 
-        width: 141px;
-        height: 141px;
+        width: 165px;
+        height: 165px;
 
     }
 
 
     .square-fill {
 
-        left: 19px;
-        top: 19px;
+        left: 22px;
+        top: 22px;
 
-        width: 137px;
-        height: 137px;
+        width: 161px;
+        height: 161px;
 
     }
 
 
     .white-logo {
 
-        left: 17px;
-        top: 17px;
+        left: 20px;
+        top: 20px;
 
-        width: 141px;
-        height: 141px;
+        width: 165px;
+        height: 165px;
 
-        padding: 14px;
+        padding: 15px;
 
-        font-size: 13px;
+        font-size: 14px;
 
     }
 
 
+    /* MOBILE CROSSES */
+
     .cross {
 
-        width: 14px;
-        height: 14px;
+        width: 15px;
+        height: 15px;
 
     }
 
 
     .cross::before {
 
-        width: 14px;
+        width: 15px;
         height: 2px;
 
         top: 6px;
@@ -952,7 +957,7 @@
     .cross::after {
 
         width: 2px;
-        height: 14px;
+        height: 15px;
 
         left: 6px;
 
@@ -961,32 +966,32 @@
 
     .cross-tl {
 
-        left: 3px;
-        top: 3px;
+        left: 2px;
+        top: 2px;
 
     }
 
 
     .cross-tr {
 
-        right: 3px;
-        top: 3px;
+        right: 2px;
+        top: 2px;
 
     }
 
 
     .cross-bl {
 
-        left: 3px;
-        bottom: 3px;
+        left: 2px;
+        bottom: 2px;
 
     }
 
 
     .cross-br {
 
-        right: 3px;
-        bottom: 3px;
+        right: 2px;
+        bottom: 2px;
 
     }
 
