@@ -3,19 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coffee with Founders — Apply</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-
+  <title>The White Founders™ — The Rise Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
       --ink: #2e2c1f;
       --olive: #736e4e;
@@ -24,23 +17,15 @@
       --yellow: #fff18f;
       --muted: #b8b49c;
     }
-
     body {
       background: var(--paper);
       color: var(--olive);
-      font-family: 'Inter', Arial, Helvetica, sans-serif;
+      font-family: "Inter", Arial, Helvetica, sans-serif;
       overflow-x: hidden;
     }
+    a { text-decoration: none; color: inherit; }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ============================================================
-       NAVBAR
-    ============================================================ */
-
+    /* ---------- NAVBAR ---------- */
     .navbar {
       width: 100%;
       min-height: 92px;
@@ -53,2447 +38,867 @@
       position: relative;
       z-index: 20;
     }
-
     .nav-inner {
       display: flex;
       align-items: center;
       gap: 48px;
     }
-
     .brand {
       display: flex;
       align-items: center;
       gap: 13px;
     }
-
     .brand-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--yellow);
+      width: 10px; height: 10px; border-radius: 50%; background: var(--yellow);
       box-shadow: 0 0 0 4px rgba(115, 110, 78, .08);
     }
-
     .brand-name {
-      font-family: "DM Serif Display", serif;
-      font-size: 27px;
-      line-height: 1;
-      color: var(--olive);
+      font-family: "DM Serif Display", serif; font-size: 27px; line-height: 1; color: var(--olive);
     }
-
     .brand-tag {
-      border: 1px solid rgba(115, 110, 78, .35);
-      border-radius: 4px;
-      padding: 7px 10px;
-      color: var(--olive);
-      font-family: "Space Mono", monospace;
-      font-size: 10px;
-      letter-spacing: 3px;
+      border: 1px solid rgba(115, 110, 78, .35); border-radius: 4px; padding: 7px 10px;
+      color: var(--olive); font-family: "Space Mono", monospace; font-size: 10px; letter-spacing: 3px;
     }
-
-    /* NAV LINKS */
-
     .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
+      display: flex; align-items: center; gap: 28px;
     }
-
     .nav-links a {
-      color: var(--olive);
-      font-family: "Space Mono", monospace;
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      transition: .25s ease;
+      color: var(--olive); font-family: "Space Mono", monospace; font-size: 9px;
+      font-weight: 600; letter-spacing: 1.5px; transition: .25s ease;
     }
-
-    .nav-links a:hover {
-      color: var(--ink);
-    }
-
+    .nav-links a:hover { color: var(--ink); }
     .apply-nav {
-      padding: 17px 25px;
-      background: var(--yellow);
-      color: var(--ink);
-      border-radius: 40px;
-      font-family: "Space Mono", monospace;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-align: center;
-      cursor: pointer;
+      padding: 17px 25px; background: var(--yellow); color: var(--ink);
+      border-radius: 40px; font-family: "Space Mono", monospace; font-size: 10px;
+      font-weight: 700; letter-spacing: 2px; text-align: center; cursor: pointer;
     }
-
-    .apply-nav:hover {
-      color: var(--ink) !important;
-      background: #fff8b0;
-    }
-
-    /* MOBILE MENU */
-
+    .apply-nav:hover { color: var(--ink) !important; background: #fff8b0; }
     .mobile-menu {
-      display: none;
-      width: 45px;
-      height: 45px;
-      border: 1px solid rgba(115, 110, 78, .35);
-      border-radius: 50%;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      position: absolute;
-      right: 4vw;
-      top: 50%;
-      transform: translateY(-50%);
+      display: none; width: 45px; height: 45px; border: 1px solid rgba(115, 110, 78, .35);
+      border-radius: 50%; align-items: center; justify-content: center; cursor: pointer;
+      position: absolute; right: 4vw; top: 50%; transform: translateY(-50%);
       background: var(--paper);
     }
-
     .mobile-menu span {
-      width: 18px;
-      height: 2px;
-      background: var(--olive);
-      position: relative;
-      display: block;
+      width: 18px; height: 2px; background: var(--olive); position: relative; display: block;
       transition: .25s ease;
     }
-
-    .mobile-menu span::before,
-    .mobile-menu span::after {
-      content: "";
-      position: absolute;
-      width: 18px;
-      height: 2px;
-      background: var(--olive);
-      left: 0;
-      transition: .25s ease;
-    }
-
-    .mobile-menu span::before {
-      top: -6px;
-    }
-
-    .mobile-menu span::after {
-      top: 6px;
-    }
-
-    /* ============================================================
-       HERO
-    ============================================================ */
-
-    .hero {
-      width: 100%;
-      min-height: calc(100vh - 136px);
-      padding: 70px 4vw 90px;
-      display: grid;
-      grid-template-columns: 55% 45%;
-      position: relative;
-      overflow: hidden;
-      background: #ffffff;
-    }
-
-    .hero-left {
-      position: relative;
-      z-index: 3;
-      padding-top: 10px;
-    }
-
-    .location-label {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 28px;
-    }
-
-    .location-line {
-      width: 55px;
-      height: 2px;
-      background: var(--olive);
-    }
-
-    .location-label span {
-      color: var(--olive);
-      font-family: "Space Mono", monospace;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 4px;
-    }
-
-    .hero-title {
-      font-family: "Inter", sans-serif;
-      font-weight: 900;
-      text-transform: uppercase;
-      font-size: clamp(65px, 8vw, 145px);
-      line-height: .82;
-      letter-spacing: -6px;
-    }
-
-    .title-coffee {
-      color: transparent;
-      -webkit-text-stroke: 2px var(--olive);
-    }
-
-    .title-founders {
-      color: var(--yellow);
-      text-shadow: 0 1px 0 var(--olive);
-    }
-
-    .title-session {
-      color: var(--olive);
-    }
-
-    .hero-description {
-      max-width: 720px;
-      margin-top: 42px;
-      color: var(--olive);
-      font-family: "DM Serif Display", serif;
-      font-style: italic;
-      font-size: clamp(25px, 2.3vw, 40px);
-      line-height: 1.2;
-    }
-
-    .hero-meta {
-      margin-top: 35px;
-      display: flex;
-      align-items: flex-end;
-      gap: 8px;
-    }
-
-    .date-display {
-      display: flex;
-      align-items: baseline;
-      gap: 4px;
-    }
-
-    .date-day {
-      font-family: "Inter", sans-serif;
-      font-weight: 900;
-      font-size: clamp(64px, 7vw, 110px);
-      line-height: 0.85;
-      color: var(--olive);
-      letter-spacing: -4px;
-    }
-
-    .date-month {
-      font-family: "Inter", sans-serif;
-      font-weight: 700;
-      font-size: clamp(18px, 1.8vw, 32px);
-      color: var(--olive);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-
-    .date-time {
-      font-family: "Space Mono", monospace;
-      font-size: clamp(14px, 1.2vw, 22px);
-      font-weight: 700;
-      color: var(--muted);
-      letter-spacing: 2px;
-      margin-left: 12px;
-      padding-left: 12px;
-      border-left: 2px solid var(--soft);
-    }
-
-    .meta-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 12px;
-    }
-
-    .meta-pill {
-      padding: 12px 17px;
-      border: 1px solid rgba(115, 110, 78, .35);
-      border-radius: 50px;
-      font-family: "Space Mono", monospace;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
-
-    .meta-pill.highlight {
-      background: var(--yellow);
-      border-color: var(--yellow);
-    }
-
-    .hero-right {
-      position: relative;
-      z-index: 5;
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-start;
-    }
-
-    .event-card {
-      width: min(100%, 650px);
-      background: var(--ink);
-      color: var(--paper);
-      border-radius: 23px;
-      padding: 50px 52px 45px;
-      box-shadow: 0 30px 80px rgba(46, 44, 31, .25);
-      position: relative;
-    }
-
-    .card-kicker {
-      color: var(--yellow);
-      font-family: "Space Mono", monospace;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      margin-bottom: 18px;
-    }
-
-    .card-title {
-      color: var(--paper);
-      font-family: "DM Serif Display", serif;
-      font-size: clamp(40px, 3.3vw, 58px);
-      font-weight: 400;
-      line-height: 1;
-    }
-
-    .card-subtitle {
-      margin-top: 15px;
-      color: rgba(255, 255, 255, .70);
-      font-family: "DM Serif Display", serif;
-      font-style: italic;
-      font-size: 21px;
-    }
-
-    .apply-card {
-      margin-top: 25px;
-      padding: 28px 24px 24px;
-      background: var(--paper);
-      color: var(--olive);
-      border-radius: 18px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, .10);
-    }
-
-    .apply-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    .apply-head h4 {
-      font-family: "Space Mono", monospace;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--olive);
-    }
-
-    .apply-badge {
-      background: var(--yellow);
-      color: var(--olive);
-      font-family: "Space Mono", monospace;
-      font-size: 9px;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 20px;
-    }
-
-    .seat-bar-wrap {
-      width: 100%;
-      height: 8px;
-      background: var(--soft);
-      border-radius: 20px;
-      margin: 12px 0 10px;
-      overflow: hidden;
-    }
-
-    .seat-bar-fill {
-      height: 100%;
-      width: 53.75%;
-      background: var(--olive);
-      border-radius: 20px;
-    }
-
-    .seat-stats {
-      display: flex;
-      justify-content: space-between;
-      font-family: "Space Mono", monospace;
-      font-size: 10px;
-      color: var(--muted);
-    }
-
-    .seat-stats strong {
-      color: var(--olive);
-    }
-
-    .apply-note {
-      font-size: 13px;
-      line-height: 1.5;
-      margin: 14px 0 16px;
-      color: #5a5642;
-    }
-
-    .apply-button {
-      display: inline-block;
-      width: 100%;
-      text-align: center;
-      padding: 16px;
-      background: var(--olive);
-      color: var(--paper);
-      border-radius: 50px;
-      font-family: "Space Mono", monospace;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      transition: .25s ease;
-    }
-
-    .apply-button:hover {
-      background: var(--ink);
-      transform: translateY(-2px);
-    }
-
-    .countdown-box {
-      margin-top: 15px;
-      padding: 24px 20px;
-      border-radius: 15px;
-      background: var(--yellow);
-      color: var(--olive);
-    }
-
-    .countdown-label {
-      color: var(--olive);
-      font-family: "Space Mono", monospace;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      margin-bottom: 12px;
-    }
-
-    .countdown {
-      font-family: "Space Mono", monospace;
-      font-size: 21px;
-      font-weight: 700;
-      color: var(--olive);
-    }
-
-    .countdown .seconds {
-      color: var(--olive);
-    }
-
-    /* ============================================================
-       PROGRAM SCHEDULE
-    ============================================================ */
-
-    .program-section {
-      padding: 50px 4vw 30px;
-      background: var(--paper);
-      border-top: 1px solid rgba(115, 110, 78, 0.10);
-    }
-
-    .program-header {
-      max-width: 1200px;
-      margin: 0 auto 28px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 12px;
-    }
-
-    .program-header h2 {
-      font-family: "DM Serif Display", serif;
-      font-size: clamp(30px, 3.2vw, 44px);
-      font-weight: 400;
-      color: var(--ink);
-      letter-spacing: -0.5px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .program-header h2 .accent-line {
-      width: 32px;
-      height: 4px;
-      background: var(--yellow);
-      border-radius: 4px;
-      display: inline-block;
-    }
-
-    .schedule-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .schedule-row {
-      display: grid;
-      grid-template-columns: 140px 1fr 160px;
-      align-items: center;
-      padding: 10px 18px;
-      border-radius: 12px;
-      background: var(--paper);
-      transition: all 0.15s ease;
-      border: 1px solid transparent;
-      gap: 6px;
-    }
-
-    .schedule-row:hover {
-      background: #f8f8f5;
-      border-color: rgba(115, 110, 78, 0.08);
-    }
-
-    .schedule-time {
-      font-family: "Space Mono", monospace;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--olive);
-      letter-spacing: 0.2px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .schedule-time .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--yellow);
-      display: inline-block;
-      flex-shrink: 0;
-    }
-
-    .schedule-title {
-      font-family: "Inter", sans-serif;
-      font-weight: 600;
-      font-size: 14px;
-      color: var(--ink);
-      letter-spacing: -0.1px;
-    }
-
-    .schedule-desc {
-      font-family: "Inter", sans-serif;
-      font-size: 12.5px;
-      color: var(--muted);
-      line-height: 1.35;
-      padding-left: 10px;
-      border-left: 2px solid var(--soft);
-      grid-column: 2 / 3;
-    }
-
-    .schedule-category {
-      font-family: "Space Mono", monospace;
-      font-size: 8.5px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--olive);
-      background: var(--soft);
-      padding: 4px 14px;
-      border-radius: 40px;
-      text-align: center;
-      white-space: nowrap;
-      justify-self: end;
-      transition: all 0.15s;
-      border: 1px solid transparent;
-    }
-
-    .schedule-category.highlight {
-      background: var(--yellow);
-      color: var(--ink);
-      border-color: var(--yellow);
-    }
-
-    .schedule-category.break {
-      background: #f0efe8;
-      color: #8a866a;
-    }
-
-    .schedule-category.welcome {
-      background: #e7e5db;
-      color: #5f5b47;
-    }
-
-    /* ============================================================
-       PROGRAMME FLOW
-    ============================================================ */
-
-    .flow-section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 4vw 50px;
-      background: var(--paper);
-    }
-
-    .flow-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 28px;
-    }
-
-    .flow-header h2 {
-      font-family: "DM Serif Display", serif;
-      font-size: clamp(28px, 3vw, 42px);
-      font-weight: 400;
-      color: var(--ink);
-      letter-spacing: -0.5px;
-    }
-
-    .flow-header .line {
-      flex: 1;
-      height: 2px;
-      background: var(--soft);
-      max-width: 200px;
-    }
-
-    .flow-strip {
-      padding: 20px 28px;
-      background: var(--paper);
-      border: 1px solid #d6d4ca;
-      border-radius: 0;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 6px 14px;
-      font-family: "Space Mono", monospace;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      color: var(--olive);
-    }
-
-    .flow-strip .step {
-      background: var(--soft);
-      padding: 6px 18px;
-      border-radius: 40px;
-      white-space: nowrap;
-      transition: 0.2s;
-      font-size: 10px;
-    }
-
-    .flow-strip .step:hover {
-      background: var(--yellow);
-      transform: translateY(-2px);
-    }
-
-    .flow-strip .arrow {
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 300;
-    }
-
-    /* ============================================================
-       ACTIVITIES
-    ============================================================ */
-
-    .activities-section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 50px 4vw 50px;
-      background: var(--paper);
-      border-top: 1px solid rgba(115, 110, 78, 0.08);
-    }
-
-    .activities-header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-
-    .activities-header h2 {
-      font-family: "DM Serif Display", serif;
-      font-size: clamp(34px, 3.6vw, 52px);
-      font-weight: 400;
-      color: var(--ink);
-      letter-spacing: -0.5px;
-    }
-
-    .activities-header p {
-      font-family: "Inter", sans-serif;
-      font-size: 18px;
-      color: var(--muted);
-      margin-top: 8px;
-    }
-
-    .activities-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .activity-card:nth-child(1) {
-      grid-column: 1;
-      grid-row: 1;
-    }
-
-    .activity-card:nth-child(2) {
-      grid-column: 2;
-      grid-row: 1;
-    }
-
-    .activity-card:nth-child(3) {
-      grid-column: 3;
-      grid-row: 1;
-    }
-
-    .activity-card:nth-child(4) {
-      grid-column: 1;
-      grid-row: 2;
-      justify-self: end;
-      margin-right: 12px;
-    }
-
-    .activity-card:nth-child(5) {
-      grid-column: 2;
-      grid-row: 2;
-      justify-self: start;
-      margin-left: 12px;
-    }
-
-    .activity-card {
-      position: relative;
-      border-radius: 28px;
-      padding: 34px 28px 30px;
-      border: 1px solid rgba(115, 110, 78, 0.10);
-      transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
-      background: rgba(46, 44, 31, 0.03);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.02);
-      width: 100%;
-    }
-
-    .activity-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 28px;
-      background: rgba(46, 44, 31, 0.02);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      z-index: -1;
-      transition: all 0.3s;
-    }
-
-    .activity-card:hover {
-      transform: translateY(-8px) scale(1.01);
-      border-color: rgba(115, 110, 78, 0.25);
-      box-shadow: 0 24px 60px rgba(46, 44, 31, 0.10);
-      background: rgba(46, 44, 31, 0.06);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-
-    .activity-card:hover::before {
-      background: rgba(46, 44, 31, 0.06);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-    }
-
-    .activity-number {
-      font-family: "Inter", sans-serif;
-      font-weight: 900;
-      font-size: 36px;
-      line-height: 1;
-      color: var(--yellow);
-      opacity: 0.6;
-      margin-bottom: 10px;
-      letter-spacing: -2px;
-      transition: 0.3s;
-    }
-
-    .activity-card:hover .activity-number {
-      opacity: 1;
-      transform: scale(1.05);
-    }
-
-    .activity-card h3 {
-      font-family: "Inter", sans-serif;
-      font-weight: 700;
-      font-size: 18px;
-      color: var(--ink);
-      margin-bottom: 8px;
-      letter-spacing: -0.2px;
-    }
-
-    .activity-card p {
-      font-family: "Inter", sans-serif;
-      font-size: 14px;
-      line-height: 1.6;
-      color: var(--olive);
-      opacity: 0.8;
-    }
-
-    .activity-card .highlight-text {
-      display: inline-block;
-      background: var(--yellow);
-      color: var(--ink);
-      font-weight: 600;
-      padding: 2px 10px;
-      border-radius: 12px;
-      font-size: 13px;
-      margin-top: 6px;
-    }
-
-    .activity-card .quote {
-      font-family: "DM Serif Display", serif;
-      font-style: italic;
-      font-size: 16px;
-      color: var(--olive);
-      padding: 12px 16px;
-      background: rgba(115, 110, 78, 0.05);
-      border-radius: 12px;
-      margin-top: 8px;
-      border-left: 3px solid var(--yellow);
-    }
-
-    /* ============================================================
-       CTA BANNER
-    ============================================================ */
-
+    .mobile-menu span::before, .mobile-menu span::after {
+      content: ""; position: absolute; width: 18px; height: 2px; background: var(--olive);
+      left: 0; transition: .25s ease;
+    }
+    .mobile-menu span::before { top: -6px; }
+    .mobile-menu span::after { top: 6px; }
+
+    /* ---------- HERO (unchanged) ---------- */
+    .hero { width: 100%; min-height: calc(100vh - 92px); padding: 70px 4vw 90px;
+      display: grid; grid-template-columns: 55% 45%; position: relative; overflow: hidden;
+      background: #ffffff; }
+    .hero-left { position: relative; z-index: 3; padding-top: 10px; }
+    .location-label { display: flex; align-items: center; gap: 20px; margin-bottom: 28px; }
+    .location-line { width: 55px; height: 2px; background: var(--olive); }
+    .location-label span { color: var(--olive); font-family: "Space Mono", monospace; font-size: 13px; font-weight: 700; letter-spacing: 4px; }
+    .hero-title { font-family: "Inter", sans-serif; font-weight: 900; text-transform: uppercase;
+      font-size: clamp(55px, 7vw, 125px); line-height: .82; letter-spacing: -6px; }
+    .title-coffee { color: transparent; -webkit-text-stroke: 2px var(--olive); }
+    .title-founders { color: var(--yellow); text-shadow: 0 1px 0 var(--olive); }
+    .title-session { color: var(--olive); }
+    .hero-description { max-width: 760px; margin-top: 42px; color: var(--olive);
+      font-family: "DM Serif Display", serif; font-style: italic; font-size: clamp(22px, 2vw, 34px);
+      line-height: 1.25; }
+    .hero-description strong { color: var(--ink); font-style: normal; }
+    .hero-meta { margin-top: 35px; display: flex; align-items: flex-end; gap: 8px; }
+    .date-display { display: flex; align-items: baseline; gap: 4px; }
+    .date-day { font-family: "Inter", sans-serif; font-weight: 900; font-size: clamp(64px, 7vw, 110px);
+      line-height: 0.85; color: var(--olive); letter-spacing: -4px; }
+    .date-month { font-family: "Inter", sans-serif; font-weight: 700; font-size: clamp(18px, 1.8vw, 32px);
+      color: var(--olive); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+    .date-time { font-family: "Space Mono", monospace; font-size: clamp(14px, 1.2vw, 22px);
+      font-weight: 700; color: var(--muted); letter-spacing: 2px; margin-left: 12px;
+      padding-left: 12px; border-left: 2px solid var(--soft); }
+    .meta-pills { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+    .meta-pill { padding: 12px 17px; border: 1px solid rgba(115, 110, 78, .35);
+      border-radius: 50px; font-family: "Space Mono", monospace; font-size: 10px;
+      font-weight: 700; letter-spacing: 2px; }
+    .meta-pill.highlight { background: var(--yellow); border-color: var(--yellow); }
+    .hero-right { position: relative; z-index: 5; display: flex; justify-content: flex-end;
+      align-items: flex-start; }
+    .event-card { width: min(100%, 650px); background: var(--ink); color: var(--paper);
+      border-radius: 23px; padding: 50px 52px 45px; box-shadow: 0 30px 80px rgba(46, 44, 31, .25);
+      position: relative; }
+    .card-kicker { color: var(--yellow); font-family: "Space Mono", monospace; font-size: 10px;
+      font-weight: 700; letter-spacing: 3px; margin-bottom: 18px; }
+    .card-title { color: var(--paper); font-family: "DM Serif Display", serif;
+      font-size: clamp(38px, 3.3vw, 58px); font-weight: 400; line-height: 1; }
+    .card-subtitle { margin-top: 15px; color: rgba(255, 255, 255, .70);
+      font-family: "DM Serif Display", serif; font-style: italic; font-size: 21px; line-height: 1.35; }
+    .apply-card { margin-top: 25px; padding: 28px 24px 24px; background: var(--paper);
+      color: var(--olive); border-radius: 18px; box-shadow: 0 8px 25px rgba(0,0,0,.10); }
+    .apply-head { display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 12px; }
+    .apply-head h4 { font-family: "Space Mono", monospace; font-size: 12px; font-weight: 700;
+      letter-spacing: 1px; color: var(--olive); }
+    .apply-badge { background: var(--yellow); color: var(--olive);
+      font-family: "Space Mono", monospace; font-size: 9px; font-weight: 700; padding: 4px 12px;
+      border-radius: 20px; }
+    .seat-bar-wrap { width: 100%; height: 8px; background: var(--soft); border-radius: 20px;
+      margin: 12px 0 10px; overflow: hidden; }
+    .seat-bar-fill { height: 100%; width: 53.75%; background: var(--olive); border-radius: 20px; }
+    .seat-stats { display: flex; justify-content: space-between; font-family: "Space Mono", monospace;
+      font-size: 10px; color: var(--muted); }
+    .seat-stats strong { color: var(--olive); }
+    .apply-note { font-size: 13px; line-height: 1.5; margin: 14px 0 16px; color: #5a5642; }
+    .apply-button { display: inline-block; width: 100%; text-align: center; padding: 16px;
+      background: var(--olive); color: var(--paper); border-radius: 50px;
+      font-family: "Space Mono", monospace; font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      transition: .25s ease; }
+    .apply-button:hover { background: var(--ink); transform: translateY(-2px); }
+    .countdown-box { margin-top: 15px; padding: 24px 20px; border-radius: 15px;
+      background: var(--yellow); color: var(--olive); }
+    .countdown-label { color: var(--olive); font-family: "Space Mono", monospace; font-size: 9px;
+      font-weight: 700; letter-spacing: 3px; margin-bottom: 12px; }
+    .countdown { font-family: "Space Mono", monospace; font-size: 21px; font-weight: 700;
+      color: var(--olive); }
+    .countdown .seconds { color: var(--olive); }
+
+    /* ---------- other sections (unchanged) ---------- */
+    .intro-section { padding: 80px 4vw 70px; background: var(--paper); border-top: 1px solid rgba(115,110,78,0.10); }
+    .intro-container { max-width: 1200px; margin: 0 auto; }
+    .section-kicker { font-family: "Space Mono", monospace; font-size: 10px; font-weight: 700;
+      letter-spacing: 3px; color: var(--olive); margin-bottom: 18px; }
+    .intro-title { max-width: 1050px; font-family: "Inter", sans-serif; font-weight: 900;
+      text-transform: uppercase; color: var(--ink); font-size: clamp(38px, 5vw, 76px);
+      line-height: .92; letter-spacing: -4px; }
+    .intro-title span { color: var(--yellow); -webkit-text-stroke: 1.5px var(--olive); }
+    .intro-copy { max-width: 950px; margin-top: 38px; font-family: "DM Serif Display", serif;
+      font-size: clamp(21px, 2vw, 30px); line-height: 1.45; color: var(--olive); }
+    .intro-copy p + p { margin-top: 24px; }
+    .standard-section { padding: 75px 4vw; background: var(--ink); color: var(--paper); }
+    .standard-container { max-width: 1200px; margin: 0 auto; }
+    .standard-kicker { color: var(--yellow); font-family: "Space Mono", monospace; font-size: 10px;
+      letter-spacing: 3px; font-weight: 700; margin-bottom: 20px; }
+    .standard-title { font-family: "DM Serif Display", serif; font-weight: 400;
+      font-size: clamp(45px, 6vw, 82px); line-height: .95; color: var(--paper); }
+    .standard-tagline { margin-top: 18px; font-family: "Inter", sans-serif; font-weight: 900;
+      font-size: clamp(20px, 2.5vw, 34px); letter-spacing: 3px; color: var(--yellow); }
+    .standard-copy { max-width: 850px; margin-top: 28px; color: rgba(255,255,255,.72);
+      font-family: "DM Serif Display", serif; font-size: 21px; line-height: 1.5; }
+    .values-grid { margin-top: 55px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .value-card { padding: 30px; min-height: 190px; border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03); transition: .3s ease; }
+    .value-card:hover { background: rgba(255,241,143,.08); transform: translateY(-5px); }
+    .value-number { font-family: "Space Mono", monospace; color: var(--yellow); font-size: 11px;
+      letter-spacing: 2px; margin-bottom: 28px; }
+    .value-card h3 { color: var(--paper); font-family: "Inter", sans-serif; font-size: 20px;
+      font-weight: 800; letter-spacing: 1px; }
+    .value-card p { margin-top: 9px; color: rgba(255,255,255,.62); font-size: 14px; line-height: 1.55; }
+    .belongs-section { padding: 75px 4vw 55px; background: var(--paper); }
+    .belongs-container { max-width: 1200px; margin: 0 auto; }
+    .belongs-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: 18px;
+      margin-bottom: 45px; }
+    .belongs-heading h2 { font-family: "DM Serif Display", serif; font-weight: 400;
+      font-size: clamp(36px, 4vw, 58px); color: var(--ink); }
+    .belongs-heading span { font-family: "Space Mono", monospace; font-size: 10px;
+      letter-spacing: 3px; color: var(--muted); }
+    .belong-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+      border-top: 1px solid var(--soft); }
+    .belong-item { padding: 30px 24px; border-bottom: 1px solid var(--soft);
+      border-right: 1px solid var(--soft); min-height: 170px; }
+    .belong-item:nth-child(3n) { border-right: none; }
+    .belong-item h3 { color: var(--ink); font-family: "Inter", sans-serif; font-size: 16px;
+      font-weight: 800; letter-spacing: 1px; }
+    .belong-item p { margin-top: 10px; color: var(--olive); font-size: 13px; line-height: 1.55; }
+    .activities-section { max-width: 1200px; margin: 0 auto; padding: 65px 4vw 75px;
+      background: var(--paper); border-top: 1px solid rgba(115,110,78,0.08); }
+    .activities-header { margin-bottom: 48px; }
+    .activities-header h2 { font-family: "DM Serif Display", serif; font-size: clamp(38px, 4.5vw, 62px);
+      font-weight: 400; color: var(--ink); }
+    .activities-header p { font-family: "Space Mono", monospace; font-size: 10px; color: var(--muted);
+      letter-spacing: 3px; margin-top: 10px; }
+    .activities-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .activity-card { position: relative; border-radius: 28px; padding: 34px 28px 30px;
+      border: 1px solid rgba(115,110,78,0.10); transition: all 0.3s cubic-bezier(0.2,0,0,1);
+      background: rgba(46,44,31,0.03); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.02); }
+    .activity-card:hover { transform: translateY(-8px) scale(1.01);
+      border-color: rgba(115,110,78,0.25); box-shadow: 0 24px 60px rgba(46,44,31,0.10);
+      background: rgba(46,44,31,0.06); }
+    .activity-number { font-family: "Inter", sans-serif; font-weight: 900; font-size: 36px;
+      line-height: 1; color: var(--yellow); opacity: 0.7; margin-bottom: 25px; letter-spacing: -2px; }
+    .activity-card h3 { font-family: "Inter", sans-serif; font-weight: 800; font-size: 18px;
+      color: var(--ink); margin-bottom: 12px; letter-spacing: -.2px; }
+    .activity-card p { font-family: "Inter", sans-serif; font-size: 14px; line-height: 1.6;
+      color: var(--olive); }
+    .activity-card .activity-label { display: inline-block; margin-bottom: 12px; padding: 5px 11px;
+      border-radius: 30px; background: var(--yellow); color: var(--ink);
+      font-family: "Space Mono", monospace; font-size: 8px; letter-spacing: 1.5px; font-weight: 700; }
+    .program-section { padding: 70px 4vw 50px; background: var(--paper);
+      border-top: 1px solid rgba(115,110,78,0.10); }
+    .program-header { max-width: 1200px; margin: 0 auto 35px; display: flex; flex-wrap: wrap;
+      justify-content: space-between; align-items: baseline; gap: 12px; }
+    .program-header h2 { font-family: "DM Serif Display", serif; font-size: clamp(34px, 4vw, 55px);
+      font-weight: 400; color: var(--ink); display: flex; align-items: center; gap: 14px; }
+    .program-header h2 .accent-line { width: 45px; height: 4px; background: var(--yellow);
+      border-radius: 4px; display: inline-block; }
+    .schedule-date { font-family: "Space Mono", monospace; font-size: 10px; font-weight: 700;
+      color: var(--muted); letter-spacing: 2px; }
+    .schedule-grid { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 2px; }
+    .schedule-row { display: grid; grid-template-columns: 140px 1fr 160px; align-items: center;
+      padding: 16px 18px; border-radius: 12px; background: var(--paper);
+      transition: all .15s ease; border: 1px solid transparent; gap: 6px; }
+    .schedule-row:hover { background: #f8f8f5; border-color: rgba(115,110,78,0.08); }
+    .schedule-time { font-family: "Space Mono", monospace; font-size: 12px; font-weight: 700;
+      color: var(--olive); display: flex; align-items: center; gap: 8px; }
+    .schedule-time .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--yellow);
+      display: inline-block; flex-shrink: 0; }
+    .schedule-title { font-family: "Inter", sans-serif; font-weight: 700; font-size: 14px;
+      color: var(--ink); }
+    .schedule-desc { font-family: "Inter", sans-serif; font-size: 12.5px; color: var(--muted);
+      line-height: 1.4; padding-left: 10px; border-left: 2px solid var(--soft);
+      grid-column: 2 / 3; margin-top: 4px; }
+    .schedule-category { font-family: "Space Mono", monospace; font-size: 8.5px; font-weight: 700;
+      letter-spacing: 1px; color: var(--olive); background: var(--soft); padding: 5px 14px;
+      border-radius: 40px; text-align: center; white-space: nowrap; justify-self: end; }
+    .schedule-category.highlight { background: var(--yellow); color: var(--ink); }
+    .leave-section { padding: 80px 4vw; background: var(--soft); }
+    .leave-container { max-width: 1200px; margin: 0 auto; }
+    .leave-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: 18px;
+      margin-bottom: 45px; }
+    .leave-heading h2 { font-family: "DM Serif Display", serif; font-size: clamp(38px, 4.5vw, 62px);
+      font-weight: 400; color: var(--ink); }
+    .leave-heading span { font-family: "Space Mono", monospace; font-size: 10px;
+      letter-spacing: 3px; color: var(--muted); }
+    .leave-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .leave-card { background: var(--paper); padding: 30px; min-height: 190px;
+      border: 1px solid rgba(115,110,78,.08); }
+    .leave-card:nth-child(4), .leave-card:nth-child(5), .leave-card:nth-child(6) { margin-top: 22px; }
+    .leave-card h3 { font-family: "Inter", sans-serif; font-size: 17px; font-weight: 900;
+      letter-spacing: 1px; color: var(--ink); }
+    .leave-card p { margin-top: 12px; color: var(--olive); font-size: 14px; line-height: 1.55; }
+    .come-section { padding: 85px 4vw; background: var(--paper); }
+    .come-container { max-width: 1100px; margin: 0 auto; text-align: center; }
+    .come-title { font-family: "Inter", sans-serif; font-weight: 900;
+      font-size: clamp(48px, 7vw, 100px); line-height: .85; text-transform: uppercase;
+      letter-spacing: -5px; color: var(--ink); }
+    .come-title span { color: var(--yellow); -webkit-text-stroke: 2px var(--olive); }
+    .come-copy { max-width: 850px; margin: 35px auto 0; font-family: "DM Serif Display", serif;
+      font-size: clamp(21px, 2vw, 30px); line-height: 1.45; color: var(--olive); }
+    .come-copy strong { color: var(--ink); }
+
+    /* ---------- CTA BANNER with background image ---------- */
     .cta-banner {
       max-width: 1200px;
       margin: 0 auto 70px;
       border-radius: 32px;
       overflow: hidden;
       position: relative;
-      min-height: 420px;
+      min-height: 440px;
       display: flex;
       align-items: center;
-      background: #2e2c1f;
-      background-image: url('assets/get.jpg');
-      background-size: cover;
-      background-position: center 40%;
-      background-blend-mode: overlay;
-      background-color: rgba(46, 44, 31, 0.50);
+      background: url("assets/get.jpg") center center / cover no-repeat;
     }
-
     .cta-banner::before {
-      content: '';
+      content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        135deg,
-        rgba(46, 44, 31, 0.75) 0%,
-        rgba(46, 44, 31, 0.30) 60%,
-        rgba(46, 44, 31, 0.05) 100%
-      );
+      background:
+        radial-gradient(circle at 80% 20%, rgba(255,241,143,.16), transparent 35%),
+        linear-gradient(135deg, rgba(46,44,31,.68) 0%, rgba(46,44,31,.58) 60%, rgba(115,110,78,.38) 100%);
       z-index: 1;
     }
-
     .cta-content {
       position: relative;
       z-index: 2;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 40px;
-      padding: 60px 56px;
+      padding: 65px 56px;
       width: 100%;
       align-items: center;
     }
+    .cta-left { display: flex; flex-direction: column; }
+    .cta-title { font-family: "Inter", sans-serif; font-weight: 900; text-transform: uppercase;
+      font-size: clamp(40px, 5vw, 80px); line-height: .85; letter-spacing: -4px; color: var(--paper); }
+    .cta-title .with { color: var(--yellow); }
+    .cta-title .coffee { color: transparent; -webkit-text-stroke: 2px var(--yellow); }
+    .cta-sub { font-family: "DM Serif Display", serif; font-style: italic;
+      font-size: clamp(18px, 1.8vw, 27px); color: rgba(255,255,255,.85); margin-top: 20px;
+      line-height: 1.35; }
+    .cta-right { display: flex; flex-direction: column; align-items: flex-start; gap: 16px;
+      padding-left: 30px; border-left: 2px solid rgba(255,255,255,.15); }
+    .cta-right p { color: rgba(255,255,255,.80); font-family: "Inter", sans-serif; font-size: 15px;
+      line-height: 1.65; max-width: 430px; }
+    .cta-right .cta-button { display: inline-block; padding: 16px 42px; background: var(--yellow);
+      color: var(--ink); border-radius: 50px; font-family: "Space Mono", monospace; font-size: 11px;
+      font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; transition: all .3s ease;
+      border: none; cursor: pointer; margin-top: 6px; }
+    .cta-right .cta-button:hover { transform: translateY(-3px); background: #fff8b0; }
+    .cta-badge { display: inline-block; background: rgba(255,255,255,.12); padding: 6px 18px;
+      border-radius: 40px; font-family: "Space Mono", monospace; font-size: 9px; letter-spacing: 2px;
+      color: rgba(255,255,255,.70); border: 1px solid rgba(255,255,255,.08); }
 
-    .cta-left {
-      display: flex;
-      flex-direction: column;
+    /* ---------- APPLICATION SECTION: sticky left + scrollable form (hidden scrollbar) ---------- */
+    .apply-section {
+      padding: 70px 4vw 80px;
+      background: var(--paper);
+      border-top: 1px solid rgba(115,110,78,0.08);
     }
-
-    .cta-title {
+    .apply-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 50px;
+      align-items: start;
+    }
+    .apply-left {
+      position: sticky;
+      top: 30px;
+      align-self: start;
+      padding-top: 10px;
+    }
+    .apply-left .section-kicker {
+      margin-bottom: 14px;
+    }
+    .apply-left h2 {
       font-family: "Inter", sans-serif;
       font-weight: 900;
-      text-transform: uppercase;
-      font-size: clamp(40px, 5vw, 80px);
-      line-height: 0.85;
-      letter-spacing: -4px;
-      color: var(--paper);
-    }
-
-    .cta-title .coffee {
-      color: transparent;
-      -webkit-text-stroke: 2px var(--yellow);
-    }
-
-    .cta-title .with {
-      color: var(--yellow);
-      text-shadow: 0 1px 0 rgba(0,0,0,0.2);
-    }
-
-    .cta-title .founders {
-      color: var(--paper);
-    }
-
-    .cta-sub {
-      font-family: "DM Serif Display", serif;
-      font-style: italic;
-      font-size: clamp(18px, 1.8vw, 28px);
-      color: rgba(255,255,255,0.85);
-      margin-top: 18px;
-      line-height: 1.3;
-    }
-
-    .cta-sub span {
-      background: var(--yellow);
+      font-size: clamp(38px, 4.5vw, 64px);
+      line-height: .9;
+      letter-spacing: -2px;
       color: var(--ink);
-      padding: 2px 12px;
-      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .apply-left h2 span {
+      color: var(--yellow);
+      -webkit-text-stroke: 1.5px var(--olive);
+    }
+    .apply-left .apply-desc {
+      margin-top: 28px;
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(18px, 1.8vw, 26px);
+      line-height: 1.4;
+      color: var(--olive);
+    }
+    .apply-left .apply-desc strong {
+      color: var(--ink);
       font-style: normal;
-      font-weight: 600;
+    }
+    .apply-left .apply-note-small {
+      margin-top: 20px;
+      font-family: "Space Mono", monospace;
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 1px;
+      border-left: 3px solid var(--yellow);
+      padding-left: 18px;
     }
 
-    .cta-right {
+    /* ---------- FORM (hidden scrollbar) ---------- */
+    .apply-form {
+      background: var(--paper);
+      border: 1px solid rgba(115,110,78,0.12);
+      border-radius: 28px;
+      padding: 30px 32px 40px;
+      box-shadow: 0 12px 40px rgba(46,44,31,0.04);
+      max-height: 700px;
+      overflow-y: auto;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE/Edge */
+    }
+    .apply-form::-webkit-scrollbar {
+      display: none; /* Chrome/Safari/Opera */
+    }
+    .apply-form .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 20px;
+      margin-bottom: 14px;
+    }
+    .apply-form .form-group {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      gap: 16px;
-      padding-left: 20px;
-      border-left: 2px solid rgba(255,255,255,0.15);
+      gap: 4px;
+      margin-bottom: 14px;
     }
-
-    .cta-right p {
-      color: rgba(255,255,255,0.80);
+    .apply-form .form-group.full {
+      grid-column: 1 / -1;
+    }
+    .apply-form label {
       font-family: "Inter", sans-serif;
-      font-size: 15px;
-      line-height: 1.6;
-      max-width: 380px;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.3px;
+      color: var(--olive);
     }
-
-    .cta-right .cta-button {
-      display: inline-block;
-      padding: 16px 42px;
-      background: var(--yellow);
+    .apply-form label .required {
+      color: #b33;
+      margin-left: 2px;
+    }
+    .apply-form input,
+    .apply-form select,
+    .apply-form textarea {
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      padding: 12px 15px;
+      border-radius: 12px;
+      border: 1px solid rgba(115,110,78,0.20);
+      background: var(--paper);
+      transition: 0.2s;
       color: var(--ink);
-      border-radius: 50px;
+      width: 100%;
+    }
+    .apply-form input:focus,
+    .apply-form select:focus,
+    .apply-form textarea:focus {
+      outline: none;
+      border-color: var(--olive);
+      box-shadow: 0 0 0 3px rgba(115,110,78,0.08);
+    }
+    .apply-form textarea {
+      min-height: 70px;
+      resize: vertical;
+    }
+    .apply-form select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%23736e4e' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 15px center;
+      padding-right: 40px;
+    }
+    .apply-form .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      margin-top: 4px;
+    }
+    .apply-form .checkbox-group label {
+      font-weight: 400;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      color: var(--olive);
+    }
+    .apply-form .checkbox-group input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--olive);
+      cursor: pointer;
+    }
+    .apply-form .checkbox-group label .helper {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 400;
+    }
+    .apply-form .helper-text {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+      line-height: 1.4;
+    }
+    .apply-form .form-actions {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .apply-form .submit-btn {
+      padding: 16px 28px;
+      background: var(--ink);
+      color: var(--paper);
+      border: none;
+      border-radius: 60px;
       font-family: "Space Mono", monospace;
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 2.5px;
       text-transform: uppercase;
-      transition: all 0.3s ease;
-      border: none;
       cursor: pointer;
-      box-shadow: 0 8px 30px rgba(255, 241, 143, 0.25);
-      margin-top: 6px;
-    }
-
-    .cta-right .cta-button:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 14px 40px rgba(255, 241, 143, 0.35);
-      background: #fff8b0;
-    }
-
-    .cta-badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.12);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      padding: 6px 18px;
-      border-radius: 40px;
-      font-family: "Space Mono", monospace;
-      font-size: 9px;
-      letter-spacing: 2px;
-      color: rgba(255,255,255,0.70);
-      margin-bottom: 4px;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    /* ============================================================
-       APPLY SECTION
-    ============================================================ */
-
-    .apply-section {
-      max-width: 1200px;
-      margin: 0 auto 80px;
-      padding: 0 4vw;
-    }
-
-    .apply-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: start;
-      background: var(--paper);
-      border-radius: 32px;
-      padding: 48px 56px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
-      border: 1px solid rgba(115, 110, 78, 0.08);
-      position: relative;
-    }
-
-    .apply-left {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      position: sticky;
-      top: 100px;
-      align-self: flex-start;
-      max-height: calc(100vh - 140px);
-      overflow-y: auto;
-      padding-right: 10px;
-    }
-
-    .apply-left .badge {
-      display: inline-block;
-      background: var(--yellow);
-      color: var(--ink);
-      font-family: "Space Mono", monospace;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      padding: 6px 16px;
-      border-radius: 40px;
-      align-self: flex-start;
-    }
-
-    .apply-left h2 {
-      font-family: "Inter", sans-serif;
-      font-weight: 900;
-      text-transform: uppercase;
-      font-size: clamp(36px, 4.5vw, 64px);
-      line-height: 0.9;
-      letter-spacing: -3px;
-      color: var(--ink);
-    }
-
-    .apply-left h2 .highlight {
-      color: var(--yellow);
-      -webkit-text-stroke: 1.5px var(--olive);
-      text-shadow: 0 1px 0 var(--olive);
-    }
-
-    .apply-left .sub-text {
-      font-family: "DM Serif Display", serif;
-      font-style: italic;
-      font-size: clamp(18px, 1.6vw, 26px);
-      color: var(--olive);
-      line-height: 1.3;
-    }
-
-    .apply-left .sub-text span {
-      background: var(--yellow);
-      padding: 2px 10px;
-      border-radius: 4px;
-      font-style: normal;
-    }
-
-    .seat-status {
-      margin-top: 12px;
-      padding: 20px 24px;
-      background: var(--soft);
-      border-radius: 16px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .seat-status .seat-number {
-      font-family: "Inter", sans-serif;
-      font-weight: 900;
-      font-size: 28px;
-      color: var(--ink);
-      letter-spacing: -1px;
-    }
-
-    .seat-status .seat-number small {
-      font-weight: 400;
-      font-size: 16px;
-      color: var(--muted);
-    }
-
-    .seat-status .seat-badge {
-      background: var(--yellow);
-      padding: 6px 18px;
-      border-radius: 40px;
-      font-family: "Space Mono", monospace;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--ink);
-    }
-
-    .seat-stats {
-      display: flex;
-      justify-content: space-between;
-      font-family: "Space Mono", monospace;
-      font-size: 10px;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
-    .seat-stats strong {
-      color: var(--olive);
-    }
-
-    /* RIGHT FORM */
-
-    .apply-right {
-      background: var(--paper);
-      color: var(--olive);
-      border-radius: 24px;
-      padding: 40px 36px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-      border: 1px solid rgba(115, 110, 78, 0.12);
-      padding-top: 20px;
-      margin-top: -10px;
-    }
-
-    .apply-right h3 {
-      font-family: "DM Serif Display", serif;
-      font-size: 28px;
-      font-weight: 400;
-      margin-bottom: 6px;
-      color: var(--ink);
-    }
-
-    .form-sub {
-      font-family: "Inter", sans-serif;
-      font-size: 14px;
-      color: var(--muted);
-      margin-bottom: 28px;
-    }
-
-    .form-group {
-      margin-bottom: 18px;
-    }
-
-    .form-group label {
-      display: block;
-      font-family: "Inter", sans-serif;
-      font-weight: 600;
-      font-size: 13px;
-      color: var(--ink);
-      margin-bottom: 5px;
-    }
-
-    .form-group label .required {
-      color: #e74c3c;
-      margin-left: 2px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
+      transition: 0.25s;
       width: 100%;
-      padding: 12px 16px;
-      background: var(--paper);
-      border: 1px solid #d6d4ca;
-      border-radius: 10px;
-      color: var(--ink);
-      font-family: "Inter", sans-serif;
-      font-size: 14px;
-      transition: all 0.2s;
-      outline: none;
     }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--olive);
-      box-shadow: 0 0 0 3px rgba(115, 110, 78, 0.10);
+    .apply-form .submit-btn:hover {
+      background: var(--olive);
+      transform: translateY(-2px);
     }
-
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-      color: #b8b49c;
-      font-size: 13px;
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 70px;
-    }
-
-    .form-group select option {
-      background: var(--paper);
-      color: var(--ink);
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    /* PHONE */
-
-    .phone-input-group {
-      display: flex;
-      gap: 0;
-      border: 1px solid #d6d4ca;
-      border-radius: 10px;
-      overflow: hidden;
-      background: var(--paper);
-      transition: all 0.2s;
-    }
-
-    .phone-input-group:focus-within {
-      border-color: var(--olive);
-      box-shadow: 0 0 0 3px rgba(115, 110, 78, 0.10);
-    }
-
-    .phone-input-group select {
-      width: auto;
-      min-width: 100px;
-      padding: 12px 8px 12px 14px;
-      border: none;
-      border-right: 1px solid #d6d4ca;
-      background: var(--soft);
-      color: var(--ink);
-      font-family: "Inter", sans-serif;
-      font-size: 14px;
-      outline: none;
-      cursor: pointer;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23736e4e' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 8px center;
-      padding-right: 28px;
-    }
-
-    .phone-input-group select:focus {
-      outline: none;
-    }
-
-    .phone-input-group input {
-      flex: 1;
-      padding: 12px 16px;
-      border: none;
-      border-radius: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: "Inter", sans-serif;
-      font-size: 14px;
-      outline: none;
-      min-width: 0;
-    }
-
-    .phone-input-group input:focus {
-      box-shadow: none;
-    }
-
-    .checkbox-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 4px;
-    }
-
-    .checkbox-group label {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-family: "Inter", sans-serif;
-      font-size: 13px;
-      font-weight: 400;
-      color: var(--olive);
-      cursor: pointer;
-      padding: 6px 14px;
-      background: var(--soft);
-      border-radius: 30px;
-      transition: all 0.2s;
-    }
-
-    .checkbox-group label:hover {
-      background: var(--yellow);
-    }
-
-    .checkbox-group input[type="checkbox"] {
-      width: 16px;
-      height: 16px;
-      accent-color: var(--olive);
-    }
-
-    .form-submit {
-      width: 100%;
-      padding: 18px;
-      background: var(--yellow);
-      color: var(--ink);
-      border: none;
-      border-radius: 50px;
-      font-family: "Space Mono", monospace;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.3s ease;
+    .apply-form .disclaimer {
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.5;
       margin-top: 8px;
     }
-
-    .form-submit:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(255, 241, 143, 0.30);
-      background: #fff8b0;
+    .apply-form .disclaimer a {
+      color: var(--olive);
+      text-decoration: underline;
     }
-
-    .radio-group {
+    .apply-form .radio-group {
       display: flex;
-      gap: 20px;
-      margin-top: 4px;
+      gap: 16px;
       flex-wrap: wrap;
+      margin-top: 4px;
     }
-
-    .radio-group label {
+    .apply-form .radio-group label {
+      font-weight: 400;
+      font-size: 13px;
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-family: "Inter", sans-serif;
-      font-size: 14px;
-      font-weight: 400;
+      gap: 6px;
+      cursor: pointer;
       color: var(--olive);
+    }
+    .apply-form .radio-group input[type="radio"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--olive);
       cursor: pointer;
     }
-
-    .radio-group input[type="radio"] {
-      width: 16px;
-      height: 16px;
-      accent-color: var(--olive);
+    /* phone input with country code */
+    .phone-wrapper {
+      display: flex;
+      gap: 8px;
+      align-items: center;
     }
-
-    .helper-text {
+    .phone-wrapper select {
+      width: 110px;
+      flex-shrink: 0;
+      padding: 12px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(115,110,78,0.20);
+      background: var(--paper);
       font-family: "Inter", sans-serif;
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 4px;
-      font-style: italic;
+      font-size: 14px;
+      color: var(--ink);
+    }
+    .phone-wrapper input {
+      flex: 1;
     }
 
-    /* ============================================================
-       RESPONSIVE
-    ============================================================ */
-
+    /* ---------- RESPONSIVE ---------- */
     @media (max-width: 1100px) {
-
-      /* MOBILE/TABLET NAVIGATION */
-
-      .navbar {
-        min-height: 92px;
-        justify-content: center;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 92px;
-        left: 0;
-        width: 100%;
-        padding: 24px 20px;
-        background: var(--paper);
-        border-bottom: 1px solid rgba(115, 110, 78, .20);
-        box-shadow: 0 12px 25px rgba(46, 44, 31, .08);
-
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-      }
-
-      .nav-links.mobile-active {
-        display: flex;
-      }
-
-      .nav-links a {
-        font-size: 10px;
-      }
-
-      .apply-nav {
-        padding: 14px 25px !important;
-      }
-
-      .mobile-menu {
-        display: flex;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 65px;
-      }
-
-      .hero-right {
-        justify-content: center;
-      }
-
-      .event-card {
-        width: min(100%, 700px);
-      }
-
-      .schedule-row {
-        grid-template-columns: 120px 1fr 110px;
-        padding: 10px 14px;
-      }
-
-      .schedule-desc {
-        grid-column: 1 / 4;
-        border-left: none;
-        padding-left: 0;
-        margin-top: 2px;
-        font-size: 12px;
-      }
-
-      .schedule-title {
-        grid-column: 2 / 3;
-        font-size: 13px;
-      }
-
-      .activities-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-      }
-
-      .activity-card:nth-child(1),
-      .activity-card:nth-child(2),
-      .activity-card:nth-child(3),
-      .activity-card:nth-child(4),
-      .activity-card:nth-child(5) {
-        grid-column: auto;
-        grid-row: auto;
-        justify-self: auto;
-        margin: 0;
-      }
-
-      .flow-header .line {
-        max-width: 80px;
-      }
-
-      .cta-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 50px 32px;
-        text-align: center;
-      }
-
-      .cta-right {
-        padding-left: 0;
-        border-left: none;
-        align-items: center;
-        text-align: center;
-      }
-
-      .cta-right p {
-        max-width: 100%;
-      }
-
-      .cta-banner {
-        min-height: auto;
-      }
-
-      .apply-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 32px 28px;
-      }
-
-      .apply-left {
-        position: static;
-        max-height: none;
-        overflow-y: visible;
-        padding-right: 0;
-      }
-
-      .apply-right {
-        padding-top: 20px;
-        margin-top: 0;
-      }
-
-      .phone-input-group select {
-        min-width: 80px;
-        padding: 12px 6px 12px 10px;
-        font-size: 13px;
-        padding-right: 24px;
-      }
-
-      .phone-input-group input {
-        font-size: 13px;
-        padding: 12px 12px;
-      }
+      .nav-links { display: none; }
+      .mobile-menu { display: flex; }
+      .nav-links.mobile-active { display: flex; position: absolute; top: 92px; left: 0;
+        width: 100%; padding: 24px 20px; background: var(--paper);
+        border-bottom: 1px solid rgba(115,110,78,.20); flex-direction: column;
+        align-items: center; gap: 20px; }
+      .hero { grid-template-columns: 1fr; gap: 65px; }
+      .hero-right { justify-content: center; }
+      .event-card { width: min(100%, 700px); }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .belong-grid { grid-template-columns: 1fr 1fr; }
+      .belong-item:nth-child(3n) { border-right: 1px solid var(--soft); }
+      .belong-item:nth-child(2n) { border-right: none; }
+      .activities-grid { grid-template-columns: 1fr 1fr; }
+      .leave-grid { grid-template-columns: 1fr 1fr; }
+      .schedule-row { grid-template-columns: 120px 1fr 110px; padding: 10px 14px; }
+      .schedule-desc { grid-column: 1 / 4; border-left: none; padding-left: 0; margin-top: 2px; }
+      .cta-content { grid-template-columns: 1fr; gap: 30px; padding: 50px 32px; text-align: center; }
+      .cta-right { padding-left: 0; border-left: none; align-items: center; text-align: center; }
+      .cta-right p { max-width: 100%; }
+      .apply-grid { grid-template-columns: 1fr; gap: 40px; }
+      .apply-left { position: static; }
+      .apply-form { max-height: none; overflow-y: visible; }
+      .apply-form .form-row { grid-template-columns: 1fr; }
     }
-
     @media (max-width: 700px) {
-
-      .navbar {
-        min-height: 78px;
-        padding: 0 20px;
-      }
-
-      .mobile-menu {
-        right: 20px;
-      }
-
-      .nav-links {
-        top: 78px;
-      }
-
-      .brand-name {
-        font-size: 22px;
-      }
-
-      .brand-tag,
-      .apply-nav {
-        display: none;
-      }
-
-      /* Keep APPLY NOW visible inside mobile dropdown */
-      .nav-links .apply-nav {
-        display: inline-block;
-      }
-
-      .hero {
-        padding: 45px 20px 75px;
-        gap: 55px;
-      }
-
-      .hero-title {
-        font-size: clamp(52px, 16vw, 100px);
-        letter-spacing: -4px;
-      }
-
-      .hero-description {
-        margin-top: 30px;
-        font-size: 27px;
-      }
-
-      .hero-meta {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-
-      .date-time {
-        margin-left: 0;
-        padding-left: 0;
-        border-left: none;
-      }
-
-      .event-card {
-        padding: 35px 24px 30px;
-        border-radius: 18px;
-      }
-
-      .card-title {
-        font-size: 40px;
-      }
-
-      .program-section {
-        padding: 40px 20px 20px;
-      }
-
-      .program-header {
-        margin-bottom: 20px;
-      }
-
-      .program-header h2 .accent-line {
-        width: 20px;
-      }
-
-      .schedule-row {
-        grid-template-columns: 1fr;
-        gap: 2px;
-        padding: 10px 14px;
-        border-bottom: 1px solid var(--soft);
-        border-radius: 0;
-        background: transparent;
-      }
-
-      .schedule-row:hover {
-        background: transparent;
-        border-color: transparent;
-      }
-
-      .schedule-time {
-        font-size: 11px;
-      }
-
-      .schedule-title {
-        font-size: 13px;
-        grid-column: auto;
-      }
-
-      .schedule-desc {
-        grid-column: auto;
-        border-left: none;
-        padding-left: 0;
-        font-size: 12px;
-        margin-top: 0;
-      }
-
-      .schedule-category {
-        justify-self: start;
-        font-size: 8px;
-        padding: 3px 12px;
-        margin-top: 2px;
-      }
-
-      .flow-section {
-        padding: 20px 20px 30px;
-      }
-
-      .flow-header {
-        margin-bottom: 16px;
-      }
-
-      .flow-header .line {
-        display: none;
-      }
-
-      .flow-strip {
-        padding: 14px 16px;
-        font-size: 8px;
-        gap: 4px 10px;
-        border: 1px solid #d6d4ca;
-      }
-
-      .flow-strip .step {
-        padding: 4px 12px;
-        font-size: 8px;
-      }
-
-      .flow-strip .arrow {
-        font-size: 10px;
-      }
-
-      .activities-section {
-        padding: 30px 20px 30px;
-      }
-
-      .activities-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .activity-card:nth-child(1),
-      .activity-card:nth-child(2),
-      .activity-card:nth-child(3),
-      .activity-card:nth-child(4),
-      .activity-card:nth-child(5) {
-        grid-column: auto;
-        grid-row: auto;
-        justify-self: auto;
-        margin: 0;
-        flex: 1 1 100%;
-        max-width: 100%;
-      }
-
-      .activity-card {
-        padding: 24px 20px 22px;
-      }
-
-      .activity-number {
-        font-size: 30px;
-      }
-
-      .activity-card h3 {
-        font-size: 17px;
-      }
-
-      .cta-banner {
-        margin: 0 0 40px;
-        border-radius: 20px;
-      }
-
-      .cta-content {
-        padding: 36px 24px;
-      }
-
-      .cta-title {
-        font-size: clamp(32px, 12vw, 56px);
-        letter-spacing: -2px;
-      }
-
-      .cta-sub {
-        font-size: 18px;
-      }
-
-      .cta-right p {
-        font-size: 14px;
-      }
-
-      .cta-right .cta-button {
-        padding: 14px 32px;
-        font-size: 10px;
-      }
-
-      .apply-section {
-        margin: 30px auto 50px;
-      }
-
-      .apply-grid {
-        padding: 20px 16px;
-      }
-
-      .apply-left {
-        position: static;
-        max-height: none;
-        overflow-y: visible;
-        padding-right: 0;
-      }
-
-      .apply-left h2 {
-        font-size: 32px;
-        letter-spacing: -2px;
-      }
-
-      .apply-right {
-        padding: 20px 18px;
-        padding-top: 16px;
-        margin-top: 0;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .seat-status {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .checkbox-group label {
-        padding: 4px 12px;
-        font-size: 12px;
-      }
-
-      .phone-input-group select {
-        min-width: 70px;
-        padding: 10px 4px 10px 8px;
-        font-size: 12px;
-        padding-right: 20px;
-      }
-
-      .phone-input-group input {
-        font-size: 13px;
-        padding: 10px 12px;
-      }
+      .navbar { min-height: 78px; padding: 0 20px; }
+      .mobile-menu { right: 20px; }
+      .nav-links { top: 78px; }
+      .brand-name { font-size: 22px; }
+      .brand-tag, .apply-nav { display: none; }
+      .nav-links .apply-nav { display: inline-block; }
+      .hero { padding: 45px 20px 75px; gap: 55px; }
+      .hero-title { font-size: clamp(48px, 15vw, 85px); letter-spacing: -4px; }
+      .hero-description { margin-top: 30px; font-size: 24px; }
+      .hero-meta { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .date-time { margin-left: 0; padding-left: 0; border-left: none; }
+      .event-card { padding: 35px 24px 30px; border-radius: 18px; }
+      .card-title { font-size: 40px; }
+      .intro-section, .standard-section, .belongs-section, .come-section, .leave-section {
+        padding: 55px 20px; }
+      .intro-title { font-size: 42px; letter-spacing: -2px; }
+      .intro-copy { font-size: 21px; }
+      .standard-title { font-size: 46px; }
+      .standard-tagline { font-size: 18px; letter-spacing: 1px; }
+      .values-grid, .belong-grid, .activities-grid, .leave-grid { grid-template-columns: 1fr; }
+      .belong-item, .belong-item:nth-child(3n), .belong-item:nth-child(2n) { border-right: none; }
+      .leave-card:nth-child(4), .leave-card:nth-child(5), .leave-card:nth-child(6) { margin-top: 0; }
+      .activities-section { padding: 50px 20px; }
+      .activities-grid { gap: 16px; }
+      .activity-card { padding: 25px 20px; }
+      .program-section { padding: 50px 20px 30px; }
+      .program-header { margin-bottom: 20px; }
+      .program-header h2 { font-size: 38px; }
+      .schedule-row { grid-template-columns: 1fr; gap: 4px; padding: 14px;
+        border-bottom: 1px solid var(--soft); border-radius: 0; }
+      .schedule-title { font-size: 13px; }
+      .schedule-desc { grid-column: auto; border-left: none; padding-left: 0; font-size: 12px; }
+      .schedule-category { justify-self: start; margin-top: 5px; }
+      .cta-banner { margin: 0 0 40px; border-radius: 20px; }
+      .cta-content { padding: 40px 24px; }
+      .cta-title { font-size: clamp(38px, 13vw, 58px); letter-spacing: -2px; }
+      .cta-sub { font-size: 18px; }
+      .apply-section { padding: 50px 20px; }
+      .apply-form { padding: 24px 18px; }
+      .apply-left h2 { font-size: 38px; }
+      .phone-wrapper { flex-direction: column; align-items: stretch; }
+      .phone-wrapper select { width: 100%; }
     }
-
     @media (max-width: 430px) {
-
-      .hero-title {
-        font-size: 51px;
-        letter-spacing: -3px;
-      }
-
-      .hero-description {
-        font-size: 24px;
-      }
-
-      .card-title {
-        font-size: 36px;
-      }
-
-      .countdown {
-        font-size: 16px;
-      }
-
-      .apply-left h2 {
-        font-size: 28px;
-      }
-
-      .apply-right h3 {
-        font-size: 22px;
-      }
-
-      .phone-input-group select {
-        min-width: 60px;
-        font-size: 11px;
-        padding: 10px 2px 10px 6px;
-        padding-right: 18px;
-      }
-
-      .phone-input-group input {
-        font-size: 12px;
-        padding: 10px 8px;
-      }
+      .hero-title { font-size: 48px; letter-spacing: -3px; }
+      .hero-description { font-size: 22px; }
+      .card-title { font-size: 36px; }
+      .countdown { font-size: 16px; }
     }
   </style>
 </head>
-
 <body>
 
-  <!-- ============================================================
-       NAV
-  ============================================================ -->
-
+  <!-- ===== NAVBAR ===== -->
   <nav class="navbar">
-
     <div class="nav-inner">
-
-      <div class="brand">
-        <!-- Brand intentionally left empty as in your original code -->
-      </div>
-
+      <div class="brand"></div>
       <div class="nav-links" id="navLinks">
+        <a href="#about">THE RISE</a>
+        <a href="#standard">STANDARD</a>
+        <a href="#belongs">WHO BELONGS</a>
         <a href="#schedule">SCHEDULE</a>
-        <a href="#program">PROGRAMME</a>
-        <a href="#activity">ACTIVITIES</a>
-        <a href="#apply" class="apply-nav">APPLY NOW</a>
+        <a href="#expect">WHAT TO EXPECT</a>
+        <a href="#register" class="apply-nav">REGISTER NOW</a>
       </div>
-
     </div>
-
-    <button
-      class="mobile-menu"
-      id="mobileMenu"
-      aria-label="Toggle navigation menu"
-      aria-expanded="false"
-      type="button"
-    >
-      <span></span>
-    </button>
-
+    <button class="mobile-menu" id="mobileMenu" aria-label="Toggle navigation" aria-expanded="false" type="button"><span></span></button>
   </nav>
 
-
-  <!-- ============================================================
-       HERO
-  ============================================================ -->
-
+  <!-- ===== HERO ===== -->
   <main class="hero">
-
     <section class="hero-left">
-
+      <div class="location-label"></div>
       <h1 class="hero-title">
-        <div class="title-coffee">COFFEE</div>
-        <div class="title-founders">WITH</div>
-        <div class="title-session">FOUNDERS</div>
+        <div class="title-coffee">THE</div>
+        <div class="title-founders">RISE</div>
+        <div class="title-session">EDITION</div>
       </h1>
-
       <div class="hero-description">
-        Ideas. Stories. Conversations. Connections.
+        The room where the next move begins.<br>
+        <strong>One room. One standard. One powerful day.</strong>
       </div>
-
       <div class="hero-meta">
-
-        <div class="date-display">
-          <span class="date-day">12</span>
-          <span class="date-month">September</span>
-        </div>
-
-        <span class="date-time">
-          9:30am – 1:00pm
-        </span>
-
+        <div class="date-display"><span class="date-day">12</span><span class="date-month">September</span></div>
+        <span class="date-time">1:00 PM — 9:00 PM</span>
       </div>
-
       <div class="meta-pills">
-        <div class="meta-pill highlight">FOUNDER TALK</div>
-        <div class="meta-pill">NETWORKING</div>
-        <div class="meta-pill">STARTUP CHALLENGE</div>
+        <div class="meta-pill highlight">FOUNDERS</div>
+        <div class="meta-pill">ENTREPRENEURS</div>
+        <div class="meta-pill">BUILDERS</div>
+        <div class="meta-pill">CREATORS</div>
       </div>
-
     </section>
-
-
     <section class="hero-right">
-
       <div class="event-card">
-
-        <div class="card-kicker">
-          A MORNING WITH FOUNDERS
-        </div>
-
-        <h2 class="card-title">
-          Apply for a seat.
-        </h2>
-
-        <div class="card-subtitle">
-          Not a seminar. A room full of ideas.
-        </div>
-
+        <div class="card-kicker">THE WHITE FOUNDERS</div>
+        <h2 class="card-title">The Rise Edition.</h2>
+        <div class="card-subtitle">The room where the next move begins.</div>
         <div class="apply-card">
-
-          <div class="apply-head">
-            <h4>← 43 of 80 seats taken</h4>
-            <span class="apply-badge">Filling fast</span>
-          </div>
-
-          <div class="seat-bar-wrap">
-            <div
-              class="seat-bar-fill"
-              style="width:53.75%;"
-            ></div>
-          </div>
-
-          <div class="seat-stats">
-            <span><strong>43</strong> reserved</span>
-            <span><strong>37</strong> remaining</span>
-          </div>
-
-          <p class="apply-note"></p>
-
-          <a href="#apply" class="apply-button">
-            APPLY FOR SEAT →
-          </a>
-
+          <div class="apply-head"><h4>ONE ROOM. ONE STANDARD.</h4><span class="apply-badge">LIMITED</span></div>
+          <div class="seat-bar-wrap"><div class="seat-bar-fill" style="width:70%;"></div></div>
+          <div class="seat-stats"><span><strong>SATURDAY</strong></span><span><strong>SEPT 12</strong></span></div>
+          <p class="apply-note">One powerful day built around the people shaping what comes next.</p>
+          <a href="#register" class="apply-button">REGISTER NOW →</a>
         </div>
-
         <div class="countdown-box">
-
-          <div class="countdown-label">
-            SESSION STARTS IN
-          </div>
-
-          <div id="countdown" class="countdown">
-            Loading...
-          </div>
-
+          <div class="countdown-label">THE RISE BEGINS IN</div>
+          <div id="countdown" class="countdown">Loading...</div>
         </div>
-
       </div>
-
     </section>
-
   </main>
 
-
-  <!-- ============================================================
-       PROGRAM SCHEDULE
-  ============================================================ -->
-
-  <section class="program-section" id="schedule">
-
-    <div class="program-header">
-
-      <h2>
-        <span>Program Schedule</span>
-        <span class="accent-line"></span>
-      </h2>
-
+  <!-- ===== INTRO ===== -->
+  <section class="intro-section" id="about">
+    <div class="intro-container">
+      <div class="section-kicker">THIS ISN’T ANOTHER EVENT</div>
+      <h2 class="intro-title">THIS  ISN’T  ANOTHER  EVENT.<br>IT’S A ROOM BUILT FOR PEOPLE WHO ARE BUILDING.</h2>
+      <div class="intro-copy">
+        <p>The entrepreneurial journey can feel solitary. You build in the early mornings. You make decisions nobody else understands. You take risks before anyone can see the outcome. You keep going when the room gets quiet.</p>
+        <p>The Rise Edition exists to change the room. For one powerful day, ambitious minds come together to exchange ideas, challenge perspectives, share experiences, and create relationships that can extend far beyond the event.</p>
+        <p>No unnecessary noise. No manufactured hype. Just people with ambition, surrounded by people with ambition.</p>
+      </div>
     </div>
-
-    <div class="schedule-grid">
-
-      <div class="schedule-row">
-        <span class="schedule-time">
-          <span class="dot"></span>
-          9:30 – 10:00
-        </span>
-        <span class="schedule-title">
-          Registration &amp; Welcome Coffee
-        </span>
-        <span class="schedule-desc">
-          Guest registration, name tags, coffee/refreshments, informal networking
-        </span>
-        <span class="schedule-category welcome">
-          Welcome
-        </span>
-      </div>
-
-      <div class="schedule-row">
-        <span class="schedule-time">
-          <span class="dot"></span>
-          10:00 – 10:10
-        </span>
-        <span class="schedule-title">
-          Opening &amp; Welcome
-        </span>
-        <span class="schedule-desc">
-          Welcome note, introduction of the event and objectives
-        </span>
-        <span class="schedule-category">
-          Opening
-        </span>
-      </div>
-
-      <div class="schedule-row">
-        <span class="schedule-time">
-          <span class="dot"></span>
-          10:10 – 10:20
-        </span>
-        <span class="schedule-title">
-          Founder Introduction
-        </span>
-        <span class="schedule-desc">
-          Brief introduction of participating founders and their ventures
-        </span>
-        <span class="schedule-category">
-          Intro
-        </span>
-      </div>
-
-      <div class="schedule-row">
-        <span class="schedule-time">
-          <span class="dot"></span>
-          10:20 – 10:50
-        </span>
-        <span class="schedule-title">
-          Founder Story: From Idea to Reality
-        </span>
-        <span class="schedule-desc">
-          Founder shares their journey, challenges, failures, turning points and achievements
-        </span>
-        <span class="schedule-category highlight">
-          Story
-        </span>
-      </div>
-
-      <div class="schedule-row">
-        <span class="schedule-time">
-          <span class="dot"></span>
-          10:50 – 11:20
-        </span>
-        <span class="schedule-title">
-          Founder Fireside Chat
-        </span>
-        <span class="schedule-desc">
-          Moderator-led conversation on entrepreneurship, decision-making, risk and leadership
-        </span>
-        <span class="schedule-category highlight">
-          Fireside
-        </span>
-      </div>
-
-      <div class="schedule-row">
-        <span class="schedule-time">
-          <span class="dot"></span>
-          11:20 – 11:30
-        </span>
-        <span class="schedule-title">
-          Coffee Break &amp; Networking
-        </span>
-        <span class="schedule-desc">
-          Informal interaction between students/participants and founders
-        </span>
-        <span class="schedule-category break">
-          Break
-        </span>
-      </div>
-
-      <div class="schedule-row">
-        <span class="schedule-time">
-          <span class="dot"></span>
-          11:30 – 12:00
-        </span>
-        <span class="schedule-title">
-          Ask the Founder – Open Q&amp;A
-        </span>
-        <span class="schedule-desc">
-          Participants ask practical questions about business, funding, marketing, team building and failures
-        </span>
-        <span class="schedule-category">
-          Q&amp;A
-        </span>
-      </div>
-
-      <div class="schedule-row">
-        <span class="schedule-time">
-          <span class="dot"></span>
-          12:00 – 12:30
-        </span>
-        <span class="schedule-title">
-          Startup Challenge / Activity
-        </span>
-        <span class="schedule-desc">
-          Participants form teams and develop a simple business idea/problem-solution concept
-        </span>
-        <span class="schedule-category highlight">
-          Challenge
-        </span>
-      </div>
-
-      <div class="schedule-row">
-        <span class="schedule-time">
-          <span class="dot"></span>
-          12:30 – 12:45
-        </span>
-        <span class="schedule-title">
-          1-Minute Founder Pitch
-        </span>
-        <span class="schedule-desc">
-          Selected participants present their ideas in 60 seconds
-        </span>
-        <span class="schedule-category">
-          Pitch
-        </span>
-      </div>
-
-      <div class="schedule-row">
-        <span class="schedule-time">
-          <span class="dot"></span>
-          12:45 – 12:55
-        </span>
-        <span class="schedule-title">
-          Founder’s Takeaway: 5 Lessons
-        </span>
-        <span class="schedule-desc">
-          Founder gives practical advice and key lessons
-        </span>
-        <span class="schedule-category highlight">
-          Takeaway
-        </span>
-      </div>
-
-      <div class="schedule-row">
-        <span class="schedule-time">
-          <span class="dot"></span>
-          12:55 – 1:00
-        </span>
-        <span class="schedule-title">
-          Vote of Thanks &amp; Group Photograph
-        </span>
-        <span class="schedule-desc">
-          Appreciation, certificates/mementos and official group photo
-        </span>
-        <span class="schedule-category">
-          Closing
-        </span>
-      </div>
-
-    </div>
-
   </section>
 
-
-  <!-- ============================================================
-       PROGRAMME FLOW
-  ============================================================ -->
-
-  <section class="flow-section" id="program">
-
-    <div class="flow-header">
-      <h2>Programme Flow</h2>
+  <!-- ===== WHERE AMBITION MEETS OPPORTUNITY ===== -->
+  <section class="intro-section">
+    <div class="intro-container">
+      <div class="section-kicker">WHERE AMBITION MEETS OPPORTUNITY.</div>
+      <h2 class="intro-title">THE MOMENT YOU DECIDE TO START.</h2>
+      <div class="intro-copy">
+        <p>Every founder has a moment when they decide to stop waiting. To start. To build. To take the first risk. To make the next move.</p>
+        <p>The Rise Edition is built around that moment. Whether you’re running a company, building your first venture, developing an idea, growing a brand, or searching for the right collaborators—there is a place for you in this room.</p>
+      </div>
     </div>
-
-    <div class="flow-strip">
-
-      <span class="step">Registration</span>
-      <span class="arrow">→</span>
-
-      <span class="step">Networking</span>
-      <span class="arrow">→</span>
-
-      <span class="step">Founder Story</span>
-      <span class="arrow">→</span>
-
-      <span class="step">Fireside Chat</span>
-      <span class="arrow">→</span>
-
-      <span class="step">Coffee Break</span>
-      <span class="arrow">→</span>
-
-      <span class="step">Q&amp;A</span>
-      <span class="arrow">→</span>
-
-      <span class="step">Startup Activity</span>
-      <span class="arrow">→</span>
-
-      <span class="step">Pitching</span>
-      <span class="arrow">→</span>
-
-      <span class="step">Founder Takeaways</span>
-      <span class="arrow">→</span>
-
-      <span class="step">Closing</span>
-
-    </div>
-
   </section>
 
-
-  <!-- ============================================================
-       ACTIVITIES
-  ============================================================ -->
-
-  <section class="activities-section" id="activity">
-
-    <div class="activities-header">
-      <h2>Event Activities</h2>
-      <p>
-        Five powerful sessions designed to spark ideas and build connections
-      </p>
+  <!-- ===== STANDARD ===== -->
+  <section class="standard-section" id="standard">
+    <div class="standard-container">
+      <div class="standard-kicker">THE WHITE STANDARD</div>
+      <h2 class="standard-title">THINK BIGGER.<br>BUILD BETTER.<br>MOVE WITH INTENT.</h2>
+      <div class="standard-tagline">THE QUALITY OF THE ROOM SHAPES THE QUALITY OF THE CONVERSATION.</div>
+      <div class="standard-copy">The White Startup™ is built around a simple belief: The quality of the room shapes the quality of the conversation.<br><br>That’s why The White Founders™ isn’t designed simply to fill seats. It brings together people with ambition, curiosity, courage, creativity, integrity and execution.</div>
+      <div class="values-grid">
+        <div class="value-card"><div class="value-number">01</div><h3>AMBITION</h3><p>The desire to build something meaningful.</p></div>
+        <div class="value-card"><div class="value-number">02</div><h3>CURIOSITY</h3><p>The willingness to question, learn, and explore.</p></div>
+        <div class="value-card"><div class="value-number">03</div><h3>COURAGE</h3><p>The ability to act before certainty arrives.</p></div>
+        <div class="value-card"><div class="value-number">04</div><h3>CREATIVITY</h3><p>The imagination to see what others don’t.</p></div>
+        <div class="value-card"><div class="value-number">05</div><h3>INTEGRITY</h3><p>The standard to build without compromising.</p></div>
+        <div class="value-card"><div class="value-number">06</div><h3>EXECUTION</h3><p>The discipline to turn ideas into reality.</p></div>
+      </div>
     </div>
+  </section>
 
+  <!-- ===== WHO BELONGS ===== -->
+  <section class="belongs-section" id="belongs">
+    <div class="belongs-container">
+      <div class="belongs-heading"><h2>WHO BELONGS IN THE ROOM?</h2></div>
+      <div class="belong-grid">
+        <div class="belong-item"><h3>FOUNDERS</h3><p>People building companies, products, brands and ventures.</p></div>
+        <div class="belong-item"><h3>ENTREPRENEURS</h3><p>People turning opportunities into businesses.</p></div>
+        <div class="belong-item"><h3>FUTURE FOUNDERS</h3><p>People with the ambition to make the leap from idea to execution.</p></div>
+        <div class="belong-item"><h3>CREATORS</h3><p>People building audiences, communities and creative businesses.</p></div>
+        <div class="belong-item"><h3>VISIONARIES</h3><p>People who see an opportunity where others see a problem.</p></div>
+        <div class="belong-item"><h3>BUSINESS LEADERS</h3><p>People responsible for teams, growth, strategy and transformation.</p></div>
+        <div class="belong-item"><h3>MARKETERS</h3><p>People shaping brands and influencing how businesses are perceived.</p></div>
+        <div class="belong-item"><h3>PROFESSIONALS</h3><p>People ready to expand their network, perspective and possibilities.</p></div>
+        <div class="belong-item"><h3>STUDENTS</h3><p>Young minds who want to experience entrepreneurship beyond classrooms.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHAT TO EXPECT ===== -->
+  <section class="activities-section" id="expect">
+    <div class="activities-header"><h2>WHAT TO EXPECT</h2><p>A DAY DESIGNED FOR MOVEMENT</p></div>
     <div class="activities-grid">
-
-      <div class="activity-card">
-
-        <div class="activity-number">01</div>
-
-        <h3>Ask Me Anything Cards</h3>
-
-        <p>
-          Every participant gets a small card to write one question for the founder.
-          Anonymous, honest, and unfiltered.
-        </p>
-
-      </div>
-
-
-      <div class="activity-card">
-
-        <div class="activity-number">02</div>
-
-        <h3>Founder Failure Moment</h3>
-
-        <div class="quote">
-          "Tell us about one decision that failed—and what you learned from it."
-        </div>
-
-        <p>
-          This usually creates a much more authentic conversation.
-        </p>
-
-      </div>
-
-
-      <div class="activity-card">
-
-        <div class="activity-number">03</div>
-
-        <h3>Startup Challenge</h3>
-
-        <p>
-          Participants get
-          <span class="highlight-text">15–20 minutes</span>
-          to identify a problem and create a basic solution/business model.
-        </p>
-
-      </div>
-
-
-      <div class="activity-card">
-
-        <div class="activity-number">04</div>
-
-        <h3>60-Second Pitch</h3>
-
-        <p>
-          Each selected team gets exactly
-          <span class="highlight-text">one minute</span>
-          to pitch:
-        </p>
-
-        <p style="font-size: 13px; margin-top: 6px; opacity: 0.9;">
-          • Problem &nbsp;• Solution &nbsp;• Target customer &nbsp;• Why it can work
-        </p>
-
-      </div>
-
-
-      <div class="activity-card">
-
-        <div class="activity-number">05</div>
-
-        <h3>Networking Corner</h3>
-
-        <p>
-          During coffee, participants introduce themselves using:
-        </p>
-
-        <div
-          class="quote"
-          style="font-size: 14px; padding: 10px 14px;"
-        >
-          <em>
-            Name + Background + Business/Interest + What I'm Looking For
-          </em>
-        </div>
-
-      </div>
-
+      <div class="activity-card"><div class="activity-number">01</div><span class="activity-label">THE FOUNDERS ROOM™</span><h3>Meaningful Founder Conversations</h3><p>An intimate environment for meaningful founder conversations. Hear what happens behind the headlines: decisions, failures, breakthroughs, pivots, and lessons. Real business. Real experiences.</p></div>
+      <div class="activity-card"><div class="activity-number">02</div><span class="activity-label">FOUNDER STORIES™</span><h3>The Journeys Behind the Build</h3><p>Success rarely happens in a straight line. Listen to the real journeys behind the businesses—the moments that tested the founder, changed the strategy, and shaped the company.</p></div>
+      <div class="activity-card"><div class="activity-number">03</div><span class="activity-label">THE BUSINESS ROOM</span><h3>The Realities of Building</h3><p>A focused conversation around Strategy, Execution, Brand, Growth, Leadership, Capital, People, and Opportunity. Learning how to ask better questions.</p></div>
+      <div class="activity-card"><div class="activity-number">04</div><span class="activity-label">THE CONNECTION ROOM</span><h3>Don’t Just Network. Connect.</h3><p>Meet people outside your usual circle, start conversations, exchange ideas, and discover unexpected opportunities for your next business partnership.</p></div>
+      <div class="activity-card"><div class="activity-number">05</div><span class="activity-label">THE OPEN MIC™</span><h3>Your Idea Deserves a Moment.</h3><p>Selected participants step forward to introduce themselves, their business, or their vision. One introduction can create a life-changing connection.</p></div>
+      <div class="activity-card"><div class="activity-number">06</div><span class="activity-label">THE RISE CONVERSATION</span><h3>What Comes Next?</h3><p>A high-energy conversation around ambition, entrepreneurship, and decisions defining the next chapter. Bigger vision, sharper decisions, and stronger execution.</p></div>
     </div>
-
   </section>
 
-
-  <!-- ============================================================
-       CTA BANNER
-  ============================================================ -->
-
-  <div class="cta-banner">
-
-    <div class="cta-content">
-
-      <div class="cta-left">
-
-        <div class="cta-title">
-
-          <div class="with">GRAB</div>
-
-          <div class="coffee">THE</div>
-
-          <div class="founders">SEAT</div>
-
-        </div>
-
-        <div class="cta-sub">
-          Applications close when the room is full<br />
-          Grab the seat for 12 September.
-        </div>
-
-      </div>
-
-
-      <div class="cta-right">
-
-        <span class="cta-badge">
-          ✨ Limited seats
-        </span>
-
-        <p>
-          Join founders, builders and investors for a morning of real talk,
-          honest stories and hands-on learning. No fluff — just practical insights
-          from people who've built things that matter.
-        </p>
-
-        <a href="#apply" class="cta-button">
-          Apply Now →
-        </a>
-
-      </div>
-
+  <!-- ===== SCHEDULE ===== -->
+  <section class="program-section" id="schedule">
+    <div class="program-header">
+      <h2><span>THE SCHEDULE</span><span class="accent-line"></span></h2>
+      <span class="schedule-date">SATURDAY, SEPTEMBER 12, 2026</span>
     </div>
+    <div class="schedule-grid">
+      <div class="schedule-row"><span class="schedule-time"><span class="dot"></span>1:00 PM</span><span class="schedule-title">ARRIVAL & REGISTRATION</span><span class="schedule-desc">The room opens. Your experience begins.</span><span class="schedule-category welcome">ARRIVAL</span></div>
+      <div class="schedule-row"><span class="schedule-time"><span class="dot"></span>1:30 PM</span><span class="schedule-title">THE OPENING — THE RISE</span><span class="schedule-desc">Welcome to The White Founders™. The standard is set.</span><span class="schedule-category highlight">OPENING</span></div>
+      <div class="schedule-row"><span class="schedule-time"><span class="dot"></span>2:00 PM</span><span class="schedule-title">THE FOUNDERS ROOM™</span><span class="schedule-desc">Founder conversations and real-world perspectives.</span><span class="schedule-category highlight">FOUNDERS</span></div>
+      <div class="schedule-row"><span class="schedule-time"><span class="dot"></span>3:00 PM</span><span class="schedule-title">FOUNDER STORIES™</span><span class="schedule-desc">The people. The businesses. The journeys behind the build.</span><span class="schedule-category">STORIES</span></div>
+      <div class="schedule-row"><span class="schedule-time"><span class="dot"></span>4:00 PM</span><span class="schedule-title">THE BUSINESS ROOM™</span><span class="schedule-desc">Strategy, execution, growth, brand and opportunity.</span><span class="schedule-category highlight">BUSINESS</span></div>
+      <div class="schedule-row"><span class="schedule-time"><span class="dot"></span>5:00 PM</span><span class="schedule-title">THE CONNECTION ROOM™</span><span class="schedule-desc">Meet the room. Start the conversations. Build the relationships.</span><span class="schedule-category">CONNECT</span></div>
+      <div class="schedule-row"><span class="schedule-time"><span class="dot"></span>6:00 PM</span><span class="schedule-title">THE OPEN MIC™</span><span class="schedule-desc">Ideas take the stage. Selected pitches and introductions.</span><span class="schedule-category highlight">OPEN MIC</span></div>
+      <div class="schedule-row"><span class="schedule-time"><span class="dot"></span>7:00 PM</span><span class="schedule-title">THE RISE CONVERSATION™</span><span class="schedule-desc">A powerful conversation about ambition, entrepreneurship, and what comes next.</span><span class="schedule-category highlight">CONVERSATION</span></div>
+      <div class="schedule-row"><span class="schedule-time"><span class="dot"></span>8:00 PM</span><span class="schedule-title">THE RISE MOMENT™</span><span class="schedule-desc">One room. One question: What are you going to build next?</span><span class="schedule-category">THE RISE</span></div>
+      <div class="schedule-row"><span class="schedule-time"><span class="dot"></span>8:30 PM</span><span class="schedule-title">COMMUNITY CONNECT</span><span class="schedule-desc">The formal program begins to close. The conversations continue.</span><span class="schedule-category">COMMUNITY</span></div>
+      <div class="schedule-row"><span class="schedule-time"><span class="dot"></span>9:00 PM</span><span class="schedule-title">CLOSE</span><span class="schedule-desc">The event ends. The journey doesn’t.</span><span class="schedule-category highlight">CLOSE</span></div>
+    </div>
+  </section>
 
+  <!-- ===== WHAT YOU LEAVE WITH ===== -->
+  <section class="leave-section">
+    <div class="leave-container">
+      <div class="leave-heading"><h2>WHAT YOU LEAVE WITH</h2></div>
+      <div class="leave-grid">
+        <div class="leave-card"><h3>NEW CONNECTIONS</h3><p>People who could become partners, collaborators, clients, mentors or friends.</p></div>
+        <div class="leave-card"><h3>NEW PERSPECTIVE</h3><p>A broader, sharper view of what is possible in business.</p></div>
+        <div class="leave-card"><h3>NEW ENERGY</h3><p>The momentum that comes from surrounding yourself with builders.</p></div>
+        <div class="leave-card"><h3>NEW CLARITY</h3><p>A clearer understanding of your strategic next move.</p></div>
+        <div class="leave-card"><h3>NEW OPPORTUNITIES</h3><p>Possibilities that often begin with a single conversation.</p></div>
+        <div class="leave-card"><h3>BIGGER STANDARD</h3><p>A stronger belief in what you can build and execute.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COME AS YOU ARE ===== -->
+  <section class="come-section">
+    <div class="come-container">
+      <h2 class="come-title">COME AS YOU ARE</h2>
+      <div class="come-copy">
+        <p>You don’t need to have a million-dollar company. You don’t need a perfect pitch. You don’t need everything figured out.</p>
+        <p>You need <strong>ambition, curiosity,</strong> and the willingness to step forward.</p>
+        <p>Bring the idea, the questions, the vision, and the ambition. <strong>We’ll bring the room.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BANNER with background image ===== -->
+  <div class="cta-banner">
+    <div class="cta-content">
+      <div class="cta-left">
+        <div class="cta-title"><div class="with">BE</div><div class="coffee">IN</div><div>THE ROOM.</div></div>
+        <div class="cta-sub">The room where the next move begins.<br>One powerful day built around the people shaping what comes next.</div>
+      </div>
+      <div class="cta-right">
+        <span class="cta-badge">LIMITED PARTICIPATION</span>
+        <p>Join The White Founders™ — The Rise Edition.<br><br>Saturday, September 12, 2026 &nbsp;|&nbsp; 1:00 PM — 9:00 PM &nbsp;|&nbsp; Business Park</p>
+        <a href="#register" class="cta-button">REGISTER NOW →</a>
+      </div>
+    </div>
   </div>
 
-
-  <!-- ============================================================
-       APPLY SECTION
-  ============================================================ -->
-
-  <section class="apply-section" id="apply">
-
+  <!-- ============================================================ -->
+  <!-- ===== APPLICATION SECTION: sticky left + scrollable form (no scrollbar) ===== -->
+  <!-- ============================================================ -->
+  <section class="apply-section" id="register">
     <div class="apply-grid">
-
-      <!-- LEFT -->
-
+      <!-- left column: sticky -->
       <div class="apply-left">
-
-        <span class="badge">
-          ✦ Apply now
-        </span>
-
-        <h2>
-          Tell us<br />
-          <span>who you are.</span>
-        </h2>
-
-        <p class="sub-text">
-          Two minutes, no card details.
+        <div class="section-kicker">APPLY</div>
+        <h2>TELL US WHO YOU ARE</h2>
+        <div class="apply-desc">
           We read every application by hand.
-        </p>
-
-        <div class="seat-status">
-
-          <div>
-
-            <div class="seat-number">
-              43 <small>of 80</small>
-            </div>
-
-            <div style="font-size:13px; color:var(--muted);">
-              seats taken
-            </div>
-
-          </div>
-
-          <span class="seat-badge">
-            Filling fast
-          </span>
-
-          <div style="width:100%;">
-
-            <div class="seat-bar-wrap">
-
-              <div
-                class="seat-bar-fill"
-                style="width:53.75%;"
-              ></div>
-
-            </div>
-
-            <div class="seat-stats">
-              <span>
-                <strong>43</strong> reserved
-              </span>
-
-              <span>
-                <strong>37</strong> remaining
-              </span>
-            </div>
-
-          </div>
-
         </div>
 
+        <div style="margin-top:30px; font-size:14px; color:var(--muted); line-height:1.6; border-top:1px solid var(--soft); padding-top:24px;">
+          <p style="font-weight:600; color:var(--olive);">Why apply?</p>
+          <p>This is a curated room. We hand-select each participant to ensure the quality of conversation, connection, and opportunity. Your application helps us understand who you are and what you’re building — so we can make sure this room is right for you.</p>
+        </div>
       </div>
 
-
-      <!-- RIGHT FORM -->
-
-      <div class="apply-right">
-
-        <h3>
-          Apply for a seat
-        </h3>
-
-        <form
-          id="applyForm"
-          onsubmit="event.preventDefault(); alert('✅ Application submitted! We\\'ll review and get back to you within 48 hours.');"
-        >
-
+      <!-- right column: scrollable form (scrollbar hidden) -->
+      <div class="apply-form">
+        <form id="applicationForm" onsubmit="event.preventDefault(); alert('Application submitted (demo). We\'ll review it within 48 hours.');">
+          <!-- row: First Name + Last Name -->
           <div class="form-row">
-
             <div class="form-group">
-
-              <label>
-                First Name
-                <span class="required">*</span>
-              </label>
-
-              <input
-                type="text"
-                placeholder="Enter your first name"
-                required
-              />
-
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" placeholder="Enter your first name" />
             </div>
-
-
             <div class="form-group">
-
-              <label>
-                Last Name
-                <span class="required">*</span>
-              </label>
-
-              <input
-                type="text"
-                placeholder="Enter your last name"
-                required
-              />
-
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" placeholder="Enter your last name" />
             </div>
-
           </div>
 
-
+          <!-- Email -->
           <div class="form-group">
-
-            <label>
-              Email
-              <span class="required">*</span>
-            </label>
-
-            <input
-              type="email"
-              placeholder="your@email.com"
-              required
-            />
-
+            <label for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" placeholder="your@email.com" required />
           </div>
 
-
-          <!-- PHONE -->
-
+          <!-- WhatsApp with country code -->
           <div class="form-group">
-
-            <label>
-              WhatsApp Number
-              <span class="required">*</span>
-            </label>
-
-            <div class="phone-input-group">
-
-              <select required>
-
+            <label for="whatsapp">WhatsApp Number <span class="required">*</span></label>
+            <div class="phone-wrapper">
+              <select id="countryCode">
                 <option value="+1">🇺🇸 +1</option>
                 <option value="+44">🇬🇧 +44</option>
                 <option value="+91" selected>🇮🇳 +91</option>
@@ -2504,8 +909,8 @@
                 <option value="+33">🇫🇷 +33</option>
                 <option value="+39">🇮🇹 +39</option>
                 <option value="+55">🇧🇷 +55</option>
-                <option value="+7">🇷🇺 +7</option>
                 <option value="+82">🇰🇷 +82</option>
+                <option value="+52">🇲🇽 +52</option>
                 <option value="+31">🇳🇱 +31</option>
                 <option value="+34">🇪🇸 +34</option>
                 <option value="+41">🇨🇭 +41</option>
@@ -2514,465 +919,160 @@
                 <option value="+45">🇩🇰 +45</option>
                 <option value="+358">🇫🇮 +358</option>
                 <option value="+64">🇳🇿 +64</option>
-                <option value="+65">🇸🇬 +65</option>
+                <option value="+27">🇿🇦 +27</option>
+                <option value="+54">🇦🇷 +54</option>
+                <option value="+56">🇨🇱 +56</option>
+                <option value="+57">🇨🇴 +57</option>
                 <option value="+60">🇲🇾 +60</option>
-                <option value="+62">🇮🇩 +62</option>
                 <option value="+63">🇵🇭 +63</option>
+                <option value="+65">🇸🇬 +65</option>
                 <option value="+66">🇹🇭 +66</option>
                 <option value="+84">🇻🇳 +84</option>
                 <option value="+971">🇦🇪 +971</option>
                 <option value="+966">🇸🇦 +966</option>
-                <option value="+27">🇿🇦 +27</option>
-                <option value="+234">🇳🇬 +234</option>
-                <option value="+254">🇰🇪 +254</option>
-                <option value="+233">🇬🇭 +233</option>
-                <option value="+212">🇲🇦 +212</option>
-                <option value="+20">🇪🇬 +20</option>
+                <option value="+972">🇮🇱 +972</option>
+                <option value="+98">🇮🇷 +98</option>
                 <option value="+90">🇹🇷 +90</option>
-                <option value="+30">🇬🇷 +30</option>
-                <option value="+351">🇵🇹 +351</option>
-                <option value="+353">🇮🇪 +353</option>
-                <option value="+32">🇧🇪 +32</option>
-                <option value="+43">🇦🇹 +43</option>
                 <option value="+48">🇵🇱 +48</option>
                 <option value="+420">🇨🇿 +420</option>
                 <option value="+36">🇭🇺 +36</option>
                 <option value="+40">🇷🇴 +40</option>
-                <option value="+52">🇲🇽 +52</option>
-                <option value="+54">🇦🇷 +54</option>
-                <option value="+56">🇨🇱 +56</option>
-                <option value="+57">🇨🇴 +57</option>
-                <option value="+58">🇻🇪 +58</option>
-                <option value="+592">🇬🇾 +592</option>
-                <option value="+595">🇵🇾 +595</option>
-                <option value="+598">🇺🇾 +598</option>
-
+                <option value="+7">🇷🇺 +7</option>
               </select>
-
-              <input
-                type="tel"
-                placeholder="Enter your phone number"
-                required
-              />
-
+              <input type="tel" id="whatsapp" placeholder="555-000-0000" required />
             </div>
-
           </div>
 
-
+          <!-- Instagram / LinkedIn -->
           <div class="form-group">
-
-            <label>
-              Instagram / LinkedIn Profile
-              <span class="required">*</span>
-            </label>
-
-            <input
-              type="text"
-              placeholder="Enter your text"
-              required
-            />
-
+            <label for="social">Instagram / LinkedIn Profile <span class="required">*</span></label>
+            <input type="text" id="social" placeholder="@yourhandle or LinkedIn URL" required />
           </div>
 
-
+          <!-- Which best describes you? -->
           <div class="form-group">
-
-            <label>
-              Which best describes you?
-              <span class="required">*</span>
-            </label>
-
-            <select required>
-
-              <option value="">
-                Required
-              </option>
-
-              <option value="founder">
-                Founder / Co-founder
-              </option>
-
-              <option value="builder">
-                Builder / Engineer
-              </option>
-
-              <option value="investor">
-                Investor / VC
-              </option>
-
-              <option value="student">
-                Student
-              </option>
-
-              <option value="other">
-                Other
-              </option>
-
+            <label for="describe">Which best describes you? <span class="required">*</span></label>
+            <select id="describe" required>
+              <option value="">Select...</option>
+              <option>Founder / Co-founder</option>
+              <option>Entrepreneur</option>
+              <option>Future Founder</option>
+              <option>Creator / Influencer</option>
+              <option>Business Leader</option>
+              <option>Professional</option>
+              <option>Student</option>
+              <option>Other</option>
             </select>
-
           </div>
 
-
+          <!-- Company / Brand / Project Name -->
           <div class="form-group">
-
-            <label>
-              Company / Brand / Project Name
-              <span class="required">*</span>
-            </label>
-
-            <input
-              type="text"
-              placeholder="Enter your text"
-              required
-            />
-
+            <label for="company">Company / Brand / Project Name <span class="required">*</span></label>
+            <input type="text" id="company" placeholder="Enter your text" required />
           </div>
 
-
+          <!-- Company website -->
           <div class="form-group">
-
-            <label>
-              What's your company website?
-              <span class="required">*</span>
-            </label>
-
-            <input
-              type="url"
-              placeholder="https://yourwebsite.com"
-              required
-            />
-
+            <label for="website">What's your company website? <span class="required">*</span></label>
+            <input type="url" id="website" placeholder="https://yourwebsite.com" required />
           </div>
 
-
+          <!-- What are you currently building? -->
           <div class="form-group">
-
-            <label>
-              What are you currently building or working on?
-              <span class="required">*</span>
-            </label>
-
-            <textarea
-              placeholder="Enter your text"
-              rows="3"
-              required
-            ></textarea>
-
+            <label for="building">What are you currently building or working on? <span class="required">*</span></label>
+            <textarea id="building" rows="2" placeholder="Enter your text" required></textarea>
           </div>
 
-
+          <!-- What stage are you at? (checkboxes) -->
           <div class="form-group">
-
-            <label>
-              What stage are you currently at?
-              <span class="required">*</span>
-            </label>
-
-            <select required>
-
-              <option value="">
-                Choose one or more options
-              </option>
-
-              <option value="idea">
-                Idea / Concept
-              </option>
-
-              <option value="prototype">
-                Prototype / MVP
-              </option>
-
-              <option value="launched">
-                Launched / Early revenue
-              </option>
-
-              <option value="growth">
-                Scaling / Growth
-              </option>
-
-              <option value="established">
-                Established / Profitable
-              </option>
-
-            </select>
-
-          </div>
-
-
-          <div class="form-group">
-
-            <label>
-              What would make this meetup valuable for you?
-              <span class="required">*</span>
-            </label>
-
+            <label>What stage are you currently at? <span class="required">*</span></label>
             <div class="checkbox-group">
-
-              <label>
-                <input type="checkbox" />
-                Get our product into attendees' hands
-              </label>
-
-              <label>
-                <input type="checkbox" />
-                Meet potential customers
-              </label>
-
-              <label>
-                <input type="checkbox" />
-                Meet founders &amp; decision-makers
-              </label>
-
-              <label>
-                <input type="checkbox" />
-                Creator / influencer relationships
-              </label>
-
-              <label>
-                <input type="checkbox" />
-                Brand awareness
-              </label>
-
-              <label>
-                <input type="checkbox" />
-                Content from the event
-              </label>
-
-              <label>
-                <input type="checkbox" />
-                Generate partnerships
-              </label>
-
-              <label>
-                <input type="checkbox" />
-                Investor / ecosystem visibility
-              </label>
-
+              <label><input type="checkbox" value="Idea" /> Idea</label>
+              <label><input type="checkbox" value="MVP" /> MVP</label>
+              <label><input type="checkbox" value="Early traction" /> Early traction</label>
+              <label><input type="checkbox" value="Scaling" /> Scaling</label>
+              <label><input type="checkbox" value="Established" /> Established</label>
+              <label><input type="checkbox" value="Other" /> Other</label>
             </div>
-
           </div>
 
-
+          <!-- What would make this meetup valuable? (checkboxes) -->
           <div class="form-group">
-
-            <label>
-              What can you bring to the room?
-              <span class="required">*</span>
-            </label>
-
-            <textarea
-              placeholder="Helper: Experience, expertise, connections, opportunities, ideas — anything you think other attendees would value."
-              rows="3"
-              required
-            ></textarea>
-
+            <label>What would make this meetup valuable for you? <span class="required">*</span></label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" value="Get our product into attendees' hands" /> Get our product into attendees' hands</label>
+              <label><input type="checkbox" value="Meet potential customers" /> Meet potential customers</label>
+              <label><input type="checkbox" value="Meet founders & decision-makers" /> Meet founders & decision-makers</label>
+              <label><input type="checkbox" value="Creator / influencer relationships" /> Creator / influencer relationships</label>
+              <label><input type="checkbox" value="Brand awareness" /> Brand awareness</label>
+              <label><input type="checkbox" value="Content from the event" /> Content from the event</label>
+              <label><input type="checkbox" value="Generate partnerships" /> Generate partnerships</label>
+              <label><input type="checkbox" value="Investor / ecosystem visibility" /> Investor / ecosystem visibility</label>
+            </div>
           </div>
 
-
+          <!-- What can you bring to the room? -->
           <div class="form-group">
-
-            <label
-              style="
-                font-weight:400;
-                font-size:13px;
-                display:flex;
-                align-items:center;
-                gap:10px;
-                cursor:pointer;
-              "
-            >
-
-              <input
-                type="checkbox"
-                required
-                style="
-                  width:18px;
-                  height:18px;
-                  accent-color:var(--olive);
-                "
-              />
-
-              I agree to receive important updates about my Coffee With Founders Meetup application and the event via SMS/WhatsApp.
-
-              <span class="required">*</span>
-
-            </label>
-
+            <label for="bring">What can you bring to the room? <span class="required">*</span></label>
+            <textarea id="bring" rows="2" placeholder="Experience, expertise, connections, opportunities, ideas — anything you think other attendees would value." required></textarea>
+            <div class="helper-text">Helper: Experience, expertise, connections, opportunities, ideas — anything you think other attendees would value.</div>
           </div>
 
-
-          <button
-            type="submit"
-            class="form-submit"
-          >
-            APPLY FOR A SEAT
-          </button>
-
+          <div class="form-actions">
+            <button type="submit" class="submit-btn">APPLY FOR A SEAT</button>
+          </div>
         </form>
-
       </div>
-
     </div>
-
   </section>
 
+  <!-- ===== FOOTER ===== -->
+  <div style="padding: 30px 4vw 50px; text-align: center; border-top: 1px solid var(--soft);">
+    <div style="max-width:800px; margin:0 auto;">
+      <h3 style="font-family:'DM Serif Display',serif; font-size:24px; color:var(--ink);">The White Founders</h3>
+      <p style="font-size:13px; color:var(--muted); margin-top:6px;">The Rise Edition — One room. One standard. One powerful day.</p>
+    </div>
+  </div>
 
-  <!-- ============================================================
-       JAVASCRIPT
-  ============================================================ -->
-
+  <!-- ===== JAVASCRIPT (countdown + mobile) ===== -->
   <script>
-
-    /* ============================================================
-       COUNTDOWN
-    ============================================================ */
-
-    const targetDate =
-      new Date("September 12, 2026 09:30:00").getTime();
-
-    const countdownEl =
-      document.getElementById("countdown");
-
+    // countdown
+    const targetDate = new Date("September 12, 2026 13:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
     function updateCountdown() {
-
-      const now =
-        new Date().getTime();
-
-      const distance =
-        targetDate - now;
-
-      if (distance <= 0) {
-
-        countdownEl.innerHTML =
-          "SESSION IS LIVE";
-
-        return;
-      }
-
-      const days =
-        Math.floor(
-          distance /
-          (1000 * 60 * 60 * 24)
-        );
-
-      const hours =
-        Math.floor(
-          (distance %
-            (1000 * 60 * 60 * 24)) /
-          (1000 * 60 * 60)
-        );
-
-      const minutes =
-        Math.floor(
-          (distance %
-            (1000 * 60 * 60)) /
-          (1000 * 60)
-        );
-
-      const seconds =
-        Math.floor(
-          (distance %
-            (1000 * 60)) /
-          1000
-        );
-
-      countdownEl.innerHTML =
-        `${days}d ${String(hours).padStart(2, "0")}h ${String(minutes).padStart(2, "0")}m <span class="seconds">${String(seconds).padStart(2, "0")}s</span>`;
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+      if (distance <= 0) { countdownEl.innerHTML = "THE RISE IS LIVE"; return; }
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      countdownEl.innerHTML = `${days}d ${String(hours).padStart(2,"0")}h ${String(minutes).padStart(2,"0")}m <span class="seconds">${String(seconds).padStart(2,"0")}s</span>`;
     }
-
     updateCountdown();
+    setInterval(updateCountdown, 1000);
 
-    setInterval(
-      updateCountdown,
-      1000
-    );
-
-
-    /* ============================================================
-       MOBILE NAVIGATION
-    ============================================================ */
-
-    const mobileMenu =
-      document.getElementById("mobileMenu");
-
-    const navLinks =
-      document.getElementById("navLinks");
-
-
-    mobileMenu.addEventListener(
-      "click",
-      () => {
-
-        const isOpen =
-          navLinks.classList.toggle(
-            "mobile-active"
-          );
-
-        mobileMenu.setAttribute(
-          "aria-expanded",
-          isOpen
-        );
-
-      }
-    );
-
-
-    /* Close mobile menu after clicking a link */
-
-    const mobileNavLinks =
-      navLinks.querySelectorAll("a");
-
-    mobileNavLinks.forEach(link => {
-
-      link.addEventListener(
-        "click",
-        () => {
-
-          if (
-            window.innerWidth <= 1100
-          ) {
-
-            navLinks.classList.remove(
-              "mobile-active"
-            );
-
-            mobileMenu.setAttribute(
-              "aria-expanded",
-              "false"
-            );
-
-          }
-
-        }
-      );
-
+    // mobile nav
+    const mobileMenu = document.getElementById("mobileMenu");
+    const navLinks = document.getElementById("navLinks");
+    mobileMenu.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("mobile-active");
+      mobileMenu.setAttribute("aria-expanded", isOpen);
     });
-
-
-    /* Reset navigation when resizing to desktop */
-
-    window.addEventListener(
-      "resize",
-      () => {
-
-        if (window.innerWidth > 1100) {
-
-          navLinks.classList.remove(
-            "mobile-active"
-          );
-
-          mobileMenu.setAttribute(
-            "aria-expanded",
-            "false"
-          );
-
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth <= 1100) {
+          navLinks.classList.remove("mobile-active");
+          mobileMenu.setAttribute("aria-expanded", "false");
         }
-
+      });
+    });
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 1100) {
+        navLinks.classList.remove("mobile-active");
+        mobileMenu.setAttribute("aria-expanded", "false");
       }
-    );
-
+    });
   </script>
-
 </body>
 </html>
