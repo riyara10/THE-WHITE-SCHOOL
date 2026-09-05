@@ -1,0 +1,1941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The White Founders™ — The Global Founder Room</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+:root{
+  --ink:#2e2c1f;
+  --olive:#736e4e;
+  --paper:#ffffff;
+  --soft:#eae9e5;
+  --yellow:#fff18f;
+  --muted:#b8b49c;
+  --line:rgba(46,44,31,.16);
+
+  --max:1240px;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--ink);
+  color:var(--ink);
+  font-family:"Inter",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+img{
+  display:block;
+  width:100%;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+
+/* =========================================================
+   MAIN SITE
+   ========================================================= */
+
+.site{
+  width:min(100%,var(--max));
+  margin:auto;
+  background:var(--paper);
+}
+
+
+/* =========================================================
+   EDITORIAL OPENING
+   ========================================================= */
+
+.editorial-opening{
+  padding:0 0 58px;
+  background:var(--paper);
+  border-bottom:none;
+}
+
+.opening-meta{
+  display:none;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  margin-bottom:64px;
+}
+
+.eyebrow,
+.section-index,
+.small-label{
+  font-size:8px;
+  line-height:1.1;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.issue{
+  font-size:8px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:rgba(46,44,31,.48);
+}
+
+
+/* =========================================================
+   OPENING IMAGE
+   ========================================================= */
+
+.opening-image{
+  margin-top:0;
+  height:620px;
+  overflow:hidden;
+  position:relative;
+  background:#ddd;
+}
+
+.opening-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+
+  /*
+    Face-safe crop.
+    Keeps the people/faces from being pushed
+    too far toward the top or bottom.
+  */
+  object-position:center 38%;
+
+  filter:none;
+  transform:none;
+}
+
+
+/* =========================================================
+   OPENING IMAGE OVERLAY
+   ========================================================= */
+
+.opening-image::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(20,19,14,.08) 0%,
+      rgba(20,19,14,.12) 35%,
+      rgba(20,19,14,.70) 100%
+    );
+
+  z-index:1;
+}
+
+
+/* =========================================================
+   OPENING OVERLAY
+   ========================================================= */
+
+.opening-overlay{
+  position:absolute;
+  inset:0;
+  z-index:2;
+
+  display:grid;
+  grid-template-columns:1.35fr .65fr;
+
+  align-items:end;
+
+  gap:50px;
+
+  padding:34px 32px;
+
+  color:#fff;
+}
+
+
+/* =========================================================
+   OPENING TITLE
+   ========================================================= */
+
+.opening-title{
+  max-width:900px;
+
+  font-size:clamp(54px,7.2vw,94px);
+
+  line-height:.79;
+
+  letter-spacing:-.09em;
+
+  font-weight:700;
+
+  text-transform:uppercase;
+}
+
+.opening-title span{
+  display:block;
+}
+
+.opening-title .highlight{
+  position:relative;
+  display:inline-block;
+  z-index:1;
+}
+
+.opening-title .highlight::after{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  right:9%;
+  bottom:-4px;
+
+  height:9px;
+
+  background:var(--yellow);
+
+  z-index:-1;
+}
+
+
+/* =========================================================
+   OPENING TITLE ON IMAGE
+   ========================================================= */
+
+.opening-overlay .opening-title{
+  color:#fff;
+
+  text-shadow:
+    0 4px 24px rgba(0,0,0,.22);
+}
+
+.opening-overlay .opening-title .highlight{
+  color:var(--yellow);
+}
+
+.opening-overlay .opening-title .highlight::after{
+  display:none;
+}
+
+
+/* =========================================================
+   OPENING NOTE
+   ========================================================= */
+
+.opening-note{
+  max-width:360px;
+
+  padding-left:24px;
+
+  border-left:1px solid rgba(255,255,255,.38);
+
+  color:#fff;
+}
+
+.opening-note .small-label{
+  color:var(--yellow);
+  margin-bottom:14px;
+}
+
+.opening-note p{
+  font-size:10px;
+  line-height:1.65;
+  color:rgba(255,255,255,.88);
+}
+
+
+/* =========================================================
+   GENERAL EDITORIAL SECTIONS
+   ========================================================= */
+
+.editorial-section{
+  padding:78px 30px;
+}
+
+.editorial-section.soft{
+  background:var(--soft);
+}
+
+.editorial-section.ink{
+  background:var(--ink);
+  color:var(--paper);
+}
+
+
+/* =========================================================
+   STANDARD SECTION LAYOUT
+   ========================================================= */
+
+.section-layout{
+  display:grid;
+
+  grid-template-columns:28% 1fr;
+
+  column-gap:70px;
+
+  align-items:start;
+}
+
+.section-side{
+  position:relative;
+  align-self:start;
+}
+
+.section-index{
+  margin-bottom:17px;
+  color:rgba(46,44,31,.5);
+}
+
+.ink .section-index{
+  color:rgba(255,255,255,.5);
+}
+
+.section-side h2{
+  max-width:420px;
+
+  font-size:clamp(30px,4vw,54px);
+
+  line-height:.83;
+
+  letter-spacing:-.07em;
+
+  text-transform:uppercase;
+}
+
+.section-side-detail{
+  max-width:330px;
+
+  margin-top:28px;
+
+  padding-top:18px;
+
+  border-top:1px solid var(--line);
+}
+
+.section-side-detail .side-lead{
+  font-size:16px;
+
+  line-height:1.02;
+
+  letter-spacing:-.035em;
+
+  margin-bottom:16px;
+}
+
+.section-side-detail p:not(.side-lead){
+  font-size:9px;
+
+  line-height:1.6;
+
+  color:rgba(46,44,31,.68);
+}
+
+.ink .section-side h2{
+  color:var(--yellow);
+}
+
+.section-copy{
+  max-width:740px;
+}
+
+
+/* =========================================================
+   LEAD / BODY
+   ========================================================= */
+
+.lead{
+  max-width:690px;
+
+  font-size:clamp(23px,2.65vw,35px);
+
+  line-height:.96;
+
+  letter-spacing:-.055em;
+
+  text-transform:uppercase;
+}
+
+.body-copy{
+  max-width:650px;
+
+  margin-top:24px;
+
+  font-size:10px;
+
+  line-height:1.68;
+
+  color:rgba(46,44,31,.72);
+}
+
+.ink .body-copy{
+  color:rgba(255,255,255,.72);
+}
+
+.body-copy strong{
+  color:var(--ink);
+}
+
+.ink .body-copy strong{
+  color:var(--yellow);
+}
+
+
+/* =========================================================
+   GLOBAL FOUNDER ROOM
+   ========================================================= */
+
+.world-feature{
+  margin-top:45px;
+
+  display:grid;
+
+  grid-template-columns:1.15fr .85fr;
+
+  gap:12px;
+}
+
+.world-feature img{
+  width:100%;
+
+  height:290px;
+
+  object-fit:cover;
+
+  object-position:center;
+
+  filter:none;
+}
+
+.world-feature .feature-text{
+  min-height:290px;
+
+  background:var(--ink);
+
+  color:#fff;
+
+  padding:25px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:space-between;
+}
+
+.feature-text .small-label{
+  color:var(--yellow);
+}
+
+.feature-text h3{
+  max-width:370px;
+
+  color:var(--yellow);
+
+  font-size:clamp(30px,4vw,53px);
+
+  line-height:.82;
+
+  letter-spacing:-.07em;
+
+  text-transform:uppercase;
+}
+
+.feature-text p{
+  max-width:360px;
+
+  font-size:9px;
+
+  line-height:1.5;
+
+  color:rgba(255,255,255,.72);
+}
+
+
+/* =========================================================
+   VALUE OF CONNECTION
+   ========================================================= */
+
+.connection-section{
+  align-items:start;
+}
+
+.connection-section .section-side{
+  align-self:start;
+  padding-top:0;
+}
+
+
+/* LEFT SIDE */
+
+.connection-main-text{
+  max-width:330px;
+
+  margin-top:25px;
+
+  font-size:15px;
+
+  line-height:1.12;
+
+  letter-spacing:-.035em;
+
+  text-transform:uppercase;
+
+  color:var(--ink);
+}
+
+
+/* RIGHT SIDE */
+
+.connection-list{
+  width:100%;
+
+  display:flex;
+
+  flex-direction:column;
+
+  padding-top:0;
+
+  margin-top:0;
+
+  /*
+    Keeps right side aligned with
+    the top of the left section.
+  */
+  align-self:start;
+}
+
+
+/*
+  No lines between items.
+  Clean consistent spacing.
+*/
+
+.connection-item{
+  display:block;
+
+  margin:0 0 24px;
+
+  padding:0;
+
+  border:none;
+}
+
+.connection-item:last-child{
+  margin-bottom:0;
+}
+
+.connection-item h3{
+  max-width:720px;
+
+  font-size:24px;
+
+  line-height:.95;
+
+  letter-spacing:-.045em;
+
+  text-transform:uppercase;
+
+  color:var(--olive);
+}
+
+
+/* =========================================================
+   03 / BEYOND NETWORKING
+   ========================================================= */
+
+/*
+   Desktop:
+
+   LEFT                         RIGHT
+
+   03 / Beyond Networking      01 Curated access.
+   Environments Where          Designed around...
+   Relevance Meets             02 Shared perspective.
+   Opportunity                 ...
+   
+              LARGE CENTER GAP
+*/
+
+.editorial-section.ink .section-layout{
+  grid-template-columns:32% 1fr;
+
+  column-gap:110px;
+
+  row-gap:0;
+
+  align-items:start;
+}
+
+
+/* LEFT */
+
+.editorial-section.ink .section-side{
+  align-self:start;
+
+  padding-right:20px;
+}
+
+
+/* RIGHT */
+
+.editorial-section.ink .section-copy{
+  width:100%;
+
+  max-width:700px;
+
+  margin:0;
+
+  align-self:start;
+}
+
+
+/* =========================================================
+   ENVIRONMENT LIST
+   ========================================================= */
+
+.environment-list{
+  width:100%;
+
+  margin:0;
+
+  padding:0;
+
+  border:none;
+}
+
+
+/* =========================================================
+   ENVIRONMENT ROW
+   ========================================================= */
+
+.environment-row{
+
+  /*
+    Number + text only.
+    Arrow removed.
+  */
+
+  display:grid;
+
+  grid-template-columns:55px 1fr;
+
+  column-gap:25px;
+
+  align-items:start;
+
+  padding:18px 0;
+
+  border:none;
+}
+
+
+/*
+  First row starts at the exact top
+  of the right-side column.
+*/
+
+.environment-row:first-child{
+  padding-top:0;
+}
+
+.environment-row .num{
+  font-size:8px;
+
+  line-height:1.2;
+
+  letter-spacing:.13em;
+
+  color:rgba(255,255,255,.45);
+
+  font-weight:700;
+}
+
+.environment-row h3{
+  font-size:18px;
+
+  line-height:.95;
+
+  letter-spacing:-.045em;
+
+  text-transform:uppercase;
+
+  color:var(--yellow);
+}
+
+.environment-row p{
+  margin-top:7px;
+
+  font-size:9px;
+
+  line-height:1.45;
+
+  color:rgba(255,255,255,.63);
+
+  max-width:500px;
+}
+
+
+/*
+  Arrow element completely hidden.
+*/
+
+.environment-row .row-mark{
+  display:none !important;
+}
+
+
+/* =========================================================
+   LONGER VIEW
+   ========================================================= */
+
+.longer-view{
+  background:var(--paper);
+}
+
+.longer-feature{
+  margin-top:42px;
+
+  display:grid;
+
+  grid-template-columns:.82fr 1.18fr;
+
+  gap:16px;
+
+  align-items:stretch;
+}
+
+.longer-feature .portrait{
+  height:330px;
+
+  overflow:hidden;
+}
+
+
+/*
+  FULL COLOR IMAGE
+*/
+
+.longer-feature .portrait img{
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  /*
+    Full color — grayscale removed.
+  */
+  filter:none;
+
+  object-position:center;
+}
+
+.longer-quote{
+  background:var(--soft);
+
+  padding:28px;
+
+  display:flex;
+
+  align-items:flex-end;
+}
+
+.longer-quote p{
+  max-width:460px;
+
+  font-family:"DM Serif Display",Georgia,serif;
+
+  font-size:clamp(26px,3.2vw,43px);
+
+  line-height:.95;
+
+  letter-spacing:-.035em;
+}
+
+
+/* =========================================================
+   THESIS LIST
+   ========================================================= */
+
+.thesis-list{
+  margin-top:40px;
+
+  border-top:1px solid var(--line);
+}
+
+.thesis-line{
+
+  /*
+    Text only.
+    No arrow.
+  */
+
+  display:block;
+
+  padding:18px 0;
+
+  border-bottom:1px solid var(--line);
+}
+
+.thesis-line span:first-child{
+  display:block;
+
+  font-size:10px;
+
+  line-height:1.35;
+
+  text-transform:uppercase;
+
+  letter-spacing:.02em;
+}
+
+
+/*
+  Hide any arrow if present.
+*/
+
+.thesis-arrow{
+  display:none !important;
+}
+
+
+/* =========================================================
+   CLOSING
+   ========================================================= */
+
+.closer{
+  background:var(--yellow);
+
+  color:var(--ink);
+
+  padding:70px 30px 28px;
+}
+
+.closer-grid{
+  display:grid;
+
+  grid-template-columns:28% 1fr;
+
+  column-gap:70px;
+
+  align-items:start;
+}
+
+.closer-kicker{
+  font-size:8px;
+
+  font-weight:700;
+
+  letter-spacing:.13em;
+
+  text-transform:uppercase;
+}
+
+.closer h2{
+  max-width:920px;
+
+  font-size:clamp(42px,6.1vw,82px);
+
+  line-height:.78;
+
+  letter-spacing:-.085em;
+
+  text-transform:uppercase;
+}
+
+.closer p{
+  max-width:700px;
+
+  margin-top:28px;
+
+  font-size:10px;
+
+  line-height:1.6;
+
+  text-transform:uppercase;
+}
+
+.closer-bottom{
+  margin-top:58px;
+
+  padding-top:15px;
+
+  border-top:1px solid rgba(46,44,31,.24);
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:20px;
+
+  font-size:8px;
+
+  letter-spacing:.12em;
+
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   MARQUEE
+   ========================================================= */
+
+.marquee{
+  overflow:hidden;
+
+  background:var(--ink);
+
+  color:var(--yellow);
+
+  border-top:1px solid rgba(255,255,255,.12);
+
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.marquee-track{
+  display:flex;
+
+  width:max-content;
+
+  animation:marquee 24s linear infinite;
+}
+
+.marquee-track span{
+  padding:13px 28px;
+
+  font-size:8px;
+
+  letter-spacing:.18em;
+
+  white-space:nowrap;
+
+  text-transform:uppercase;
+}
+
+@keyframes marquee{
+
+  from{
+    transform:translateX(0);
+  }
+
+  to{
+    transform:translateX(-50%);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:900px){
+
+  .opening-grid,
+  .section-layout,
+  .closer-grid{
+
+    grid-template-columns:1fr;
+
+    gap:28px;
+  }
+
+
+  /* WORLD */
+
+  .world-feature,
+  .longer-feature{
+
+    grid-template-columns:1fr;
+  }
+
+  .world-feature img,
+  .world-feature .feature-text{
+
+    height:auto;
+
+    min-height:240px;
+  }
+
+
+  .section-side h2{
+    max-width:700px;
+  }
+
+
+  /* OPENING */
+
+  .opening-image{
+    height:500px;
+  }
+
+  .opening-image img{
+    object-position:center 38%;
+  }
+
+
+  /* OPENING OVERLAY */
+
+  .opening-overlay{
+
+    grid-template-columns:1fr;
+
+    gap:22px;
+
+    padding:28px 24px;
+  }
+
+  .opening-overlay .opening-note{
+
+    max-width:520px;
+
+    padding-left:0;
+
+    border-left:0;
+
+    border-top:1px solid rgba(255,255,255,.38);
+
+    padding-top:16px;
+  }
+
+
+  /* CONNECTION */
+
+  .connection-section{
+    gap:28px;
+  }
+
+  .connection-main-text{
+    max-width:520px;
+  }
+
+
+  /* =====================================================
+     BEYOND NETWORKING
+     ===================================================== */
+
+  .editorial-section.ink .section-layout{
+
+    grid-template-columns:1fr;
+
+    column-gap:0;
+
+    row-gap:42px;
+  }
+
+  .editorial-section.ink .section-side{
+
+    padding-right:0;
+  }
+
+  .editorial-section.ink .section-copy{
+
+    max-width:700px;
+  }
+
+
+  .environment-row{
+
+    grid-template-columns:55px 1fr;
+
+    column-gap:18px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:560px){
+
+  .editorial-opening,
+  .editorial-section,
+  .closer{
+
+    padding-left:18px;
+
+    padding-right:18px;
+  }
+
+
+  /* OPENING */
+
+  .editorial-opening{
+
+    padding-top:0;
+
+    padding-bottom:42px;
+  }
+
+  .opening-meta{
+    margin-bottom:48px;
+  }
+
+  .opening-title{
+
+    font-size:41px;
+
+    line-height:.86;
+  }
+
+
+  .opening-image{
+
+    height:500px;
+
+    margin-top:0;
+  }
+
+  .opening-image img{
+
+    object-position:center 35%;
+  }
+
+
+  .opening-overlay{
+
+    padding:22px 18px 22px;
+
+    gap:18px;
+  }
+
+  .opening-overlay .opening-note p{
+
+    font-size:9px;
+
+    line-height:1.55;
+  }
+
+
+  /* GENERAL */
+
+  .editorial-section{
+
+    padding-top:52px;
+
+    padding-bottom:52px;
+  }
+
+  .section-layout{
+
+    gap:30px;
+  }
+
+
+  .section-side h2{
+
+    font-size:37px;
+  }
+
+
+  /* SIDE DETAIL */
+
+  .section-side-detail{
+
+    max-width:100%;
+
+    margin-top:20px;
+
+    padding-top:15px;
+  }
+
+  .section-side-detail .side-lead{
+
+    font-size:20px;
+  }
+
+
+  /* CONNECTION */
+
+  .connection-main-text{
+
+    max-width:100%;
+
+    margin-top:20px;
+
+    font-size:18px;
+  }
+
+  .connection-list{
+
+    padding-top:0;
+  }
+
+  .connection-item{
+
+    margin-bottom:18px;
+  }
+
+  .connection-item h3{
+
+    font-size:21px;
+
+    line-height:.95;
+  }
+
+
+  /* =====================================================
+     BEYOND NETWORKING MOBILE
+     ===================================================== */
+
+  .editorial-section.ink .section-layout{
+
+    grid-template-columns:1fr;
+
+    column-gap:0;
+
+    row-gap:34px;
+  }
+
+  .editorial-section.ink .section-side{
+
+    padding-right:0;
+  }
+
+  .editorial-section.ink .section-copy{
+
+    max-width:100%;
+  }
+
+
+  .environment-row{
+
+    grid-template-columns:38px 1fr;
+
+    column-gap:12px;
+
+    padding:16px 0;
+  }
+
+  .environment-row:first-child{
+
+    padding-top:0;
+  }
+
+  .environment-row h3{
+
+    font-size:18px;
+  }
+
+  .environment-row p{
+
+    font-size:9px;
+  }
+
+
+  /* LONGER VIEW */
+
+  .longer-feature .portrait{
+
+    height:260px;
+  }
+
+  .longer-quote{
+
+    min-height:230px;
+
+    padding:22px;
+  }
+
+  .longer-quote p{
+
+    font-size:31px;
+  }
+
+
+  .thesis-line{
+
+    padding:16px 0;
+  }
+
+
+  /* CLOSING */
+
+  .closer{
+
+    padding-top:55px;
+
+    padding-bottom:24px;
+  }
+
+  .closer h2{
+
+    font-size:52px;
+  }
+
+  .closer-bottom{
+
+    flex-direction:column;
+
+    gap:7px;
+
+    margin-top:44px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<main class="site">
+
+
+  <!-- =========================================================
+       OPENING
+       ========================================================= -->
+
+  <section class="editorial-opening">
+
+    <div class="opening-meta">
+    </div>
+
+
+    <div class="opening-image">
+
+      <!--
+        Opening image.
+        Crop is adjusted so the faces are not unnecessarily cut.
+      -->
+
+       <img
+        src="https://images.unsplash.com/photo-1752650736187-3e0c20a5796f?auto=format&fit=crop&fm=jpg&q=88&w=1800"
+        alt="Two women discussing something over a laptop"
+      >
+
+
+
+      <div class="opening-overlay">
+
+
+        <h1 class="opening-title">
+
+          <span>
+            One World.
+          </span>
+
+          <span class="highlight">
+            One Collective.
+          </span>
+
+          <span>
+            A Higher Standard.
+          </span>
+
+        </h1>
+
+
+        <div class="opening-note">
+
+          <div class="small-label">
+            Global by design
+          </div>
+
+          <p>
+            The boundaries of business have changed.
+            Companies are global from day one.
+            Talent is borderless.
+            Capital is mobile.
+            Ideas move at the speed of technology.
+            Opportunity can emerge anywhere.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       01 / THE REALITY
+       ========================================================= -->
+
+  <section class="editorial-section">
+
+
+    <div class="section-layout">
+
+
+      <!-- LEFT -->
+
+      <aside class="section-side">
+
+        <div class="section-index">
+          01 / The Reality
+        </div>
+
+        <h2>
+          The Global Founder Room
+        </h2>
+
+
+        <div class="section-side-detail">
+
+          <p class="side-lead">
+            A global network for the reality of modern entrepreneurship.
+          </p>
+
+          <p>
+            <strong>THE WHITE FOUNDERS</strong> is designed for this reality—a global network
+            connecting exceptional people across markets, cultures, industries, and generations
+            of entrepreneurship.
+          </p>
+
+        </div>
+
+      </aside>
+
+
+      <!-- RIGHT -->
+
+      <div class="section-copy">
+
+
+        <div class="world-feature">
+
+
+          <!--
+            LOCAL IMAGE
+            Place abs.jpeg inside the assets folder.
+          -->
+
+          <img
+            src="assets/abs.jpeg"
+            alt="Entrepreneurs in conversation"
+          >
+
+
+          <div class="feature-text">
+
+            <div class="small-label">
+              Across borders
+            </div>
+
+            <h3>
+              Opportunity can emerge anywhere.
+            </h3>
+
+            <p>
+              Different markets.
+              Different perspectives.
+              One room built around what comes next.
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       02 / THE VALUE
+       ========================================================= -->
+
+  <section class="editorial-section soft">
+
+
+    <div class="section-layout connection-section">
+
+
+      <!-- LEFT SIDE -->
+
+      <aside class="section-side">
+
+        <div class="section-index">
+          02 / The Value
+        </div>
+
+        <h2>
+          The Value of the Right Connection
+        </h2>
+
+        <p class="connection-main-text">
+          A powerful relationship can change the trajectory of a business.
+        </p>
+
+      </aside>
+
+
+      <!-- RIGHT SIDE -->
+
+      <div class="section-copy">
+
+
+        <div class="connection-list">
+
+
+          <div class="connection-item">
+
+            <h3>
+              An introduction can open a market.
+            </h3>
+
+          </div>
+
+
+          <div class="connection-item">
+
+            <h3>
+              A conversation can reshape a strategy.
+            </h3>
+
+          </div>
+
+
+          <div class="connection-item">
+
+            <h3>
+              A partnership can accelerate growth.
+            </h3>
+
+          </div>
+
+
+          <div class="connection-item">
+
+            <h3>
+              A mentor can compress years of learning.
+            </h3>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       03 / BEYOND NETWORKING
+       ========================================================= -->
+
+  <section class="editorial-section ink">
+
+
+    <div class="section-layout">
+
+
+      <!-- LEFT SIDE -->
+
+      <aside class="section-side">
+
+        <div class="section-index">
+          03 / Beyond Networking
+        </div>
+
+        <h2>
+          Environments Where Relevance Meets Opportunity
+        </h2>
+
+      </aside>
+
+
+      <!--
+        Large center gap is created by:
+        grid-template-columns:32% 1fr;
+        column-gap:110px;
+      -->
+
+
+      <!-- RIGHT SIDE -->
+
+      <div class="section-copy">
+
+
+        <div class="environment-list">
+
+
+          <!-- 01 -->
+
+          <div class="environment-row">
+
+            <div class="num">
+              01
+            </div>
+
+            <div>
+
+              <h3>
+                Curated access.
+              </h3>
+
+              <p>
+                Designed around relevance, not volume.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- 02 -->
+
+          <div class="environment-row">
+
+            <div class="num">
+              02
+            </div>
+
+            <div>
+
+              <h3>
+                Shared perspective.
+              </h3>
+
+              <p>
+                Across markets, cultures, industries, and generations.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- 03 -->
+
+          <div class="environment-row">
+
+            <div class="num">
+              03
+            </div>
+
+            <div>
+
+              <h3>
+                Meaningful exchange.
+              </h3>
+
+              <p>
+                Conversations with the potential to become action.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- 04 -->
+
+          <div class="environment-row">
+
+            <div class="num">
+              04
+            </div>
+
+            <div>
+
+              <h3>
+                Long-term value.
+              </h3>
+
+              <p>
+                Relationships built to compound over time.
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       04 / THE LONGER VIEW
+       ========================================================= -->
+
+  <section class="editorial-section longer-view">
+
+
+    <div class="section-layout">
+
+
+      <!-- LEFT -->
+
+      <aside class="section-side">
+
+
+        <div class="section-index">
+          04 / The Longer View
+        </div>
+
+
+        <h2>
+          For Founders With a Longer View
+        </h2>
+
+
+      </aside>
+
+
+      <!-- RIGHT -->
+
+      <div class="section-copy">
+
+
+        <p class="lead">
+          There are people building businesses.
+          There are people building brands.
+          There are people building technology.
+          There are people building institutions.
+        </p>
+
+
+        <p class="body-copy">
+
+          <strong>THE WHITE FOUNDERS</strong> is built for people who think beyond the immediate.
+          People who understand that meaningful companies take conviction.
+          That meaningful relationships take time.
+          That meaningful influence is earned.
+          That meaningful work leaves something behind.
+
+        </p>
+
+
+        <!-- IMAGE + QUOTE -->
+
+        <div class="longer-feature">
+
+
+          <div class="portrait">
+
+            <!--
+              FULL COLOR IMAGE
+            -->
+
+            <img
+              src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1100&q=88"
+              alt="Founders in a strategy meeting"
+            >
+
+          </div>
+
+
+          <div class="longer-quote">
+
+            <p>
+              We are interested in what endures.
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+        <!-- THESIS LIST -->
+
+        <div class="thesis-list">
+
+
+          <div class="thesis-line">
+
+            <span>
+              Meaningful companies take conviction.
+            </span>
+
+          </div>
+
+
+          <div class="thesis-line">
+
+            <span>
+              Meaningful relationships take time.
+            </span>
+
+          </div>
+
+
+          <div class="thesis-line">
+
+            <span>
+              Meaningful influence is earned.
+            </span>
+
+          </div>
+
+
+          <div class="thesis-line">
+
+            <span>
+              Meaningful work leaves something behind.
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       CLOSING
+       ========================================================= -->
+
+  <section class="closer">
+
+
+    <div class="closer-grid">
+
+
+      <div class="closer-kicker">
+      </div>
+
+
+      <div>
+
+
+        <h2>
+          Where Exceptional People Meet.
+        </h2>
+
+
+        <p>
+          Where global perspective meets ambition.<br>
+          Where relationships become opportunity.<br>
+          Where The White Standard™ becomes the way forward.
+        </p>
+
+
+      </div>
+
+
+    </div>
+
+
+    <div class="closer-bottom">
+
+
+      <span>
+        The Global Founder Room
+      </span>
+
+
+      <span>
+        One World. One Collective. A Higher Standard.
+      </span>
+
+
+    </div>
+
+
+  </section>
+
+
+  <!-- =========================================================
+       MARQUEE
+       ========================================================= -->
+
+  <div
+    class="marquee"
+    aria-label="Global by design"
+  >
+
+
+    <div class="marquee-track">
+
+
+      <span>
+        GLOBAL &nbsp; BY &nbsp; DESIGN &nbsp; • &nbsp;
+        SELECTIVE &nbsp; BY &nbsp; INTENT &nbsp; • &nbsp;
+        BUILT &nbsp; FOR &nbsp; WHAT'S &nbsp; NEXT
+      </span>
+
+
+      <span>
+        GLOBAL &nbsp; BY &nbsp; DESIGN &nbsp; • &nbsp;
+        SELECTIVE &nbsp; BY &nbsp; INTENT &nbsp; • &nbsp;
+        BUILT &nbsp; FOR &nbsp; WHAT'S &nbsp; NEXT
+      </span>
+
+
+      <span>
+        GLOBAL &nbsp; BY &nbsp; DESIGN &nbsp; • &nbsp;
+        SELECTIVE &nbsp; BY &nbsp; INTENT &nbsp; • &nbsp;
+        BUILT &nbsp; FOR &nbsp; WHAT'S &nbsp; NEXT
+      </span>
+
+
+      <span>
+        GLOBAL &nbsp; BY &nbsp; DESIGN &nbsp; • &nbsp;
+        SELECTIVE &nbsp; BY &nbsp; INTENT &nbsp; • &nbsp;
+        BUILT &nbsp; FOR &nbsp; WHAT'S &nbsp; NEXT
+      </span>
+
+
+    </div>
+
+  </div>
+
+
+</main>
+
+</body>
+</html>

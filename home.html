@@ -1300,7 +1300,7 @@
        ========================================================= */
 
     .founders {
-      padding: 60px 30px;
+      padding: 60px 30px 0;
       background: var(--paper);
     }
 
@@ -1308,7 +1308,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 55px;
-      margin-bottom: 45px;
+      margin-bottom: 0;
     }
 
     .founder-top h2 {
@@ -1323,6 +1323,189 @@
       align-self: end;
       font-size: 10px;
       line-height: 1.5;
+    }
+
+    .founder-left-description {
+      max-width: 450px;
+      margin-top: 28px;
+      font-size: 10px;
+      line-height: 1.5;
+    }
+
+    /* =========================================================
+       FOUNDER VIEW MORE BUTTON — SLIDING PILL
+       ========================================================= */
+
+    .founder-view-more {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 160px;
+      height: 48px;
+      margin-top: 22px;
+      padding: 0 34px 0 48px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--yellow);
+      text-decoration: none;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      overflow: hidden;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .founder-view-more .founder-view-more-circle {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: left .45s cubic-bezier(.77,0,.18,1);
+      z-index: 2;
+    }
+
+    .founder-view-more .founder-view-more-arrow {
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1;
+      display: block;
+    }
+
+    .founder-view-more > span:first-child {
+      position: relative;
+      z-index: 1;
+      white-space: nowrap;
+      transition: transform .45s cubic-bezier(.77,0,.18,1);
+    }
+
+    .founder-view-more:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(46,44,31,.16);
+    }
+
+    .founder-view-more:hover .founder-view-more-circle {
+      left: calc(100% - 40px);
+    }
+
+    .founder-view-more:hover > span:first-child {
+      transform: translateX(-6px);
+    }
+
+    @media (max-width: 560px) {
+      .founder-view-more {
+        width: 150px;
+        height: 46px;
+        margin-top: 18px;
+        font-size: 8px;
+      }
+    }
+
+    /* =========================================================
+       FOUNDERS EXPANDABLE ITEMS
+       ========================================================= */
+
+    .founder-expand-list {
+      margin-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+
+    .founder-expand-item {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .founder-expand-trigger {
+      width: 100%;
+      padding: 13px 0;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      text-align: left;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .founder-expand-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .founder-expand-arrow {
+      width: 24px;
+      height: 24px;
+      flex: 0 0 24px;
+      border: 1px solid var(--ink);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      line-height: 1;
+      transition: transform .35s ease, background .35s ease, color .35s ease;
+    }
+
+    .founder-expand-trigger:hover .founder-expand-arrow {
+      background: var(--ink);
+      color: var(--yellow);
+    }
+
+    .founder-expand-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows .4s ease;
+    }
+
+    .founder-expand-content-inner {
+      overflow: hidden;
+    }
+
+    .founder-expand-content p {
+      max-width: 430px;
+      padding: 0 42px 0 0;
+      font-size: 9px;
+      line-height: 1.5;
+      color: rgba(46,44,31,.72);
+    }
+
+    .founder-expand-item.open .founder-expand-content {
+      grid-template-rows: 1fr;
+    }
+
+    .founder-expand-item.open .founder-expand-content p {
+      padding-bottom: 14px;
+    }
+
+    .founder-expand-item.open .founder-expand-arrow {
+      transform: rotate(45deg);
+    }
+
+    @media (max-width: 560px) {
+      .founder-expand-list {
+        margin-top: 22px;
+      }
+
+      .founder-expand-title {
+        font-size: 9px;
+      }
+
+      .founder-expand-content p {
+        font-size: 8px;
+        padding-right: 30px;
+      }
     }
 
     .community-grid {
@@ -1365,6 +1548,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       min-height: 480px;
+      margin-top: 18px;
     }
 
     .woman-image {
@@ -2523,6 +2707,8 @@
         <a href="index.html">Home</a>
 
         <a href="#about">About</a>
+
+          <a href="event.html">Events</a>
 
         <a href="#method">Framework</a>
 
@@ -3689,102 +3875,93 @@
           The White Founders
         </h2>
 
+        <p class="founder-left-description">
+          A curated network of founders, entrepreneurs, creators and
+          ambitious minds connected by one shared instinct: the desire
+          to build something meaningful.
+        </p>
+
       </div>
 
-      <p>
-        A curated network of founders, entrepreneurs, creators and
-        ambitious minds connected by one shared instinct: the desire
-        to build something meaningful.
-      </p>
+      <div class="founder-right-content">
+        <div class="founder-expand-list">
+
+          <div class="founder-expand-item">
+            <button class="founder-expand-trigger" type="button" aria-expanded="false">
+              <span class="founder-expand-title">Connect</span>
+              <span class="founder-expand-arrow" aria-hidden="true">↗</span>
+            </button>
+            <div class="founder-expand-content">
+              <div class="founder-expand-content-inner">
+                <p>Build relationships with ambitious people.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="founder-expand-item">
+            <button class="founder-expand-trigger" type="button" aria-expanded="false">
+              <span class="founder-expand-title">Collaborate</span>
+              <span class="founder-expand-arrow" aria-hidden="true">↗</span>
+            </button>
+            <div class="founder-expand-content">
+              <div class="founder-expand-content-inner">
+                <p>Exchange capabilities &amp; opportunities.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="founder-expand-item">
+            <button class="founder-expand-trigger" type="button" aria-expanded="false">
+              <span class="founder-expand-title">Learn</span>
+              <span class="founder-expand-arrow" aria-hidden="true">↗</span>
+            </button>
+            <div class="founder-expand-content">
+              <div class="founder-expand-content-inner">
+                <p>Share experiences &amp; gain perspective.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="founder-expand-item">
+            <button class="founder-expand-trigger" type="button" aria-expanded="false">
+              <span class="founder-expand-title">Discover</span>
+              <span class="founder-expand-arrow" aria-hidden="true">↗</span>
+            </button>
+            <div class="founder-expand-content">
+              <div class="founder-expand-content-inner">
+                <p>Be exposed to new conversations.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="founder-expand-item">
+            <button class="founder-expand-trigger" type="button" aria-expanded="false">
+              <span class="founder-expand-title">Grow</span>
+              <span class="founder-expand-arrow" aria-hidden="true">↗</span>
+            </button>
+            <div class="founder-expand-content">
+              <div class="founder-expand-content-inner">
+                <p>Build lasting valuable relationships.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a href="founder.html" class="founder-view-more" aria-label="View more founders">
+          <span>View More</span>
+          <span class="founder-view-more-circle" aria-hidden="true">
+            <span class="founder-view-more-arrow">→</span>
+          </span>
+        </a>
+      </div>
 
     </div>
 
 
     <div class="community-grid">
 
-      <article class="community-card">
-
-        <div class="section-number">
-          01
-        </div>
-
-        <h3>
-          Connect
-        </h3>
-
-        <p>
-          Build relationships with ambitious people.
-        </p>
-
-      </article>
-
-
-      <article class="community-card">
-
-        <div class="section-number">
-          02
-        </div>
-
-        <h3>
-          Collaborate
-        </h3>
-
-        <p>
-          Exchange capabilities and opportunities.
-        </p>
-
-      </article>
-
-
-      <article class="community-card">
-
-        <div class="section-number">
-          03
-        </div>
-
-        <h3>
-          Learn
-        </h3>
-
-        <p>
-          Share experiences and gain perspective.
-        </p>
-
-      </article>
-
-
-      <article class="community-card">
-
-        <div class="section-number">
-          04
-        </div>
-
-        <h3>
-          Discover
-        </h3>
-
-        <p>
-          Be exposed to new conversations.
-        </p>
-
-      </article>
-
-
-      <article class="community-card">
-
-        <div class="section-number">
-          05
-        </div>
-
-        <h3>
-          Grow
-        </h3>
-
-        <p>
-          Build lasting valuable relationships.
-        </p>
-
-      </article>
+  
 
     </div>
 
@@ -4625,6 +4802,39 @@
 
 </script>
 
+
+
+<!-- =========================================================
+     FOUNDERS EXPANDABLE ITEMS SCRIPT
+     ========================================================= -->
+<script>
+(function () {
+  const items = document.querySelectorAll('.founder-expand-item');
+
+  items.forEach(function (item) {
+    const trigger = item.querySelector('.founder-expand-trigger');
+
+    if (!trigger) return;
+
+    trigger.addEventListener('click', function () {
+      const isOpen = item.classList.contains('open');
+
+      items.forEach(function (otherItem) {
+        otherItem.classList.remove('open');
+        const otherTrigger = otherItem.querySelector('.founder-expand-trigger');
+        if (otherTrigger) {
+          otherTrigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      if (!isOpen) {
+        item.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+})();
+</script>
 
 </body>
 
