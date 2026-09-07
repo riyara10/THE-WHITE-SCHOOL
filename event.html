@@ -1,2402 +1,4252 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The White Founders™ — The Rise Edition</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap"
-    rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --ink: #2e2c1f;
-      --olive: #736e4e;
-      --paper: #ffffff;
-      --soft: #eae9e5;
-      --yellow: #fff18f;
-      --muted: #b8b49c;
-    }
-
-    body {
-      background: var(--paper);
-      color: var(--olive);
-      font-family: "Inter", Arial, Helvetica, sans-serif;
-      overflow-x: hidden;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ---------- NAVBAR ---------- */
-    .navbar {
-      width: 100%;
-      min-height: 92px;
-      padding: 0 4vw;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--paper);
-      border-bottom: 1px solid rgba(115, 110, 78, .20);
-      position: relative;
-      z-index: 20;
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      gap: 48px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-    }
-
-    .brand-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--yellow);
-      box-shadow: 0 0 0 4px rgba(115, 110, 78, .08);
-    }
-
-    .brand-name {
-      font-family: "DM Serif Display", serif;
-      font-size: 27px;
-      line-height: 1;
-      color: var(--olive);
-    }
-
-    .brand-tag {
-      border: 1px solid rgba(115, 110, 78, .35);
-      border-radius: 4px;
-      padding: 7px 10px;
-      color: var(--olive);
-      font-family: "Space Mono", monospace;
-      font-size: 10px;
-      letter-spacing: 3px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-
-    .nav-links a {
-      color: var(--olive);
-      font-family: "Space Mono", monospace;
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      transition: .25s ease;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The White Startup™ — Kerala Flag Edition</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+
+<style>
+
+:root{
+    --ink:#2e2c1f;
+    --olive:#736e4e;
+    --paper:#ffffff;
+    --soft:#eae9e5;
+    --yellow:#fff18f;
+    --muted:#b8b49c;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:var(--ink);
+    color:#fff;
+    font-family:"Inter",Arial,sans-serif;
+    overflow-x:hidden;
+}
+
+body.modal-open{
+    overflow:hidden;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.event-hero{
+    position:relative;
+    width:100%;
+    height:68vh;
+    min-height:520px;
+    max-height:680px;
+    overflow:hidden;
+    isolation:isolate;
+}
+
+.event-hero-image{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center center;
+    transform:scale(1.10);
+    z-index:-3;
+}
+
+.event-hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(46,44,31,.90) 0%,
+            rgba(46,44,31,.72) 35%,
+            rgba(46,44,31,.42) 67%,
+            rgba(46,44,31,.25) 100%
+        );
+
+    z-index:-2;
+}
+
+.hero-content{
+    position:relative;
+    z-index:3;
+    height:100%;
+
+    display:flex;
+    align-items:center;
+
+    padding:100px 7vw 105px 4vw;
+}
+
+.hero-copy{
+    max-width:650px;
+}
 
-    .nav-links a:hover {
-      color: var(--ink);
-    }
-
-    .apply-nav {
-      padding: 17px 25px;
-      background: var(--yellow);
-      color: var(--ink);
-      border-radius: 40px;
-      font-family: "Space Mono", monospace;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-align: center;
-      cursor: pointer;
-    }
+.hero-label{
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    margin-bottom:18px;
+    color:#fff;
+}
+
+.hero-title{
+    font-weight:800;
+    font-size:clamp(60px,8vw,115px);
+    line-height:.84;
+    letter-spacing:-.055em;
+    text-transform:uppercase;
+}
+
+.hero-title .yellow{
+    color:var(--yellow);
+}
+
+.hero-tagline{
+    margin-top:27px;
+
+    font-size:11px;
+    line-height:1.5;
+
+    font-weight:600;
+    letter-spacing:.18em;
+
+    max-width:430px;
+
+    text-transform:uppercase;
+}
+
+.register-btn{
+    position:relative;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:28px;
+
+    margin-top:28px;
+
+    padding:14px 16px 14px 22px;
+
+    min-width:190px;
+    height:52px;
+
+    background:var(--yellow);
+    color:var(--ink);
+
+    text-decoration:none;
+    text-transform:uppercase;
+
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.16em;
+
+    border:1px solid var(--yellow);
+    border-radius:3px;
+
+    overflow:hidden;
+
+    transition:
+        color .45s ease,
+        background .45s ease,
+        border-color .45s ease;
+}
+
+.register-btn span{
+    position:relative;
+    z-index:2;
+}
+
+.register-btn .register-arrow{
+    position:relative;
+    z-index:2;
+
+    width:28px;
+    height:28px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:var(--ink);
+    color:#fff;
+
+    font-size:14px;
+    line-height:1;
+
+    transition:
+        transform .45s ease,
+        background .45s ease,
+        color .45s ease;
+}
+
+.register-btn::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:var(--olive);
+
+    transform:translateX(-101%);
+
+    transition:
+        transform .45s cubic-bezier(.77,0,.18,1);
+
+    z-index:1;
+}
+
+.register-btn:hover::before{
+    transform:translateX(0);
+}
+
+.register-btn:hover{
+    color:#fff;
+    border-color:var(--olive);
+}
+
+.register-btn:hover .register-arrow{
+    background:var(--yellow);
+    color:var(--ink);
+    transform:translateX(3px);
+}
+
+
+/* =========================================================
+   EVENT CARD
+========================================================= */
+
+.hero-details{
+    position:absolute;
+    z-index:5;
+
+    right:3vw;
+    top:250px;
+
+    width:min(430px,42vw);
+}
+
+.event-card{
+    background:#f7f7f7;
+    color:var(--ink);
+
+    border-radius:10px;
+    overflow:hidden;
+
+    box-shadow:
+        0 24px 55px rgba(0,0,0,.25);
+
+    border:1px solid rgba(255,255,255,.3);
+}
+
+.event-date-row{
+    display:grid;
+    grid-template-columns:125px 1fr;
+
+    min-height:125px;
+}
+
+.event-date{
+    background:#736e4e;
+    color:#fff;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+}
+
+.event-date .day{
+    font-size:48px;
+    font-weight:800;
+    line-height:.9;
+    letter-spacing:-.05em;
+}
+
+.event-date .month{
+    margin-top:7px;
+
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+}
+
+.event-time{
+    padding:25px 28px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.event-time-label{
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+    color:#8a887d;
+
+    margin-bottom:7px;
+}
+
+.event-time-value{
+    font-size:26px;
+    font-weight:700;
+
+    letter-spacing:-.04em;
+
+    color:#25251f;
+}
+
+.event-time-note{
+    margin-top:6px;
+
+    font-size:9px;
+    font-weight:600;
+
+    letter-spacing:.12em;
+
+    color:#8a887d;
+
+    text-transform:uppercase;
+}
+
+.event-meta{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    border-top:1px solid #dddcd7;
+}
+
+.event-meta-item{
+    padding:20px 22px;
+}
+
+.event-meta-item + .event-meta-item{
+    border-left:1px solid #dddcd7;
+}
+
+.event-meta-label{
+    font-size:8px;
+    font-weight:700;
+
+    letter-spacing:.18em;
+
+    color:#8b897e;
+
+    text-transform:uppercase;
+
+    margin-bottom:7px;
+}
+
+.event-meta-value{
+    font-size:13px;
+    font-weight:700;
+
+    line-height:1.3;
+
+    color:#25251f;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro-section{
+    background:var(--paper);
+    color:var(--ink);
+
+    padding:110px 5vw;
+
+    overflow:hidden;
+}
+
+.intro-inner{
+    width:100%;
+    max-width:1400px;
+
+    margin:0 auto;
+
+    display:grid;
+    grid-template-columns:46% 54%;
+
+    align-items:center;
+
+    gap:45px;
+}
+
+.intro-left{
+    padding-right:20px;
+}
+
+.intro-title{
+    font-size:clamp(42px,5.5vw,78px);
+
+    line-height:.95;
+
+    font-weight:800;
+
+    max-width:700px;
+
+    letter-spacing:-.05em;
+}
+
+.generation-text{
+    margin-top:42px;
+
+    font-size:17px;
+    font-weight:700;
+
+    letter-spacing:-.02em;
+
+    color:var(--ink);
+
+    line-height:1.4;
+}
+
+.category-list{
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin-top:22px;
+
+    max-width:700px;
+}
+
+.category-box{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-height:43px;
+
+    padding:11px 15px;
+
+    border:1px solid #c9c7bd;
+
+    background:#fff;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+    color:var(--ink);
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        border-color .3s ease,
+        transform .3s ease;
+}
+
+.category-box:hover{
+    background:var(--olive);
+    border-color:var(--olive);
+    color:#fff;
+
+    transform:translateY(-3px);
+}
+
+
+/* =========================================================
+   IMAGE COLLAGE
+========================================================= */
+
+.image-collage{
+    width:100%;
+    height:500px;
+
+    display:grid;
+
+    grid-template-columns:1.15fr .85fr;
+    grid-template-rows:1fr 1fr;
+
+    gap:10px;
+}
+
+.collage-image{
+    position:relative;
+
+    overflow:hidden;
+
+    background:#e5e3dc;
+}
+
+.collage-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:transform .6s ease;
+}
+
+.collage-image:hover img{
+    transform:scale(1.06);
+}
+
+.collage-image:nth-child(1){
+    grid-column:1;
+    grid-row:1;
+}
+
+.collage-image:nth-child(2){
+    grid-column:2;
+    grid-row:1;
+}
+
+.collage-image:nth-child(3){
+    grid-column:1;
+    grid-row:2;
+}
+
+.collage-image:nth-child(4){
+    grid-column:2;
+    grid-row:2;
+}
+
+.collage-image::after{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    height:30%;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.25)
+        );
+
+    pointer-events:none;
+}
+
+
+/* =========================================================
+   PROGRAM
+========================================================= */
+
+.program-section{
+    position:relative;
+
+    width:100%;
+
+    background:#ffffff;
+    color:var(--ink);
+
+    padding:110px 5vw 120px;
+
+    overflow:hidden;
+}
+
+.program-inner{
+    width:100%;
+    max-width:1400px;
+
+    margin:0 auto;
+
+    display:grid;
+
+    grid-template-columns:60% 30%;
+
+    column-gap:10%;
+
+    align-items:start;
+}
+
+.program-heading{
+    position:sticky;
+
+    top:80px;
+
+    align-self:start;
+
+    width:100%;
+}
+
+.program-title{
+    font-size:clamp(48px,5.5vw,82px);
+
+    line-height:.88;
+
+    font-weight:800;
+
+    letter-spacing:-.06em;
+
+    text-transform:uppercase;
+
+    max-width:850px;
+
+    color:var(--ink);
+}
+
+.program-title .program-yellow{
+    color:var(--olive);
+}
+
+.program-heading-text{
+    margin-top:27px;
+
+    max-width:520px;
+
+    font-size:11px;
+
+    line-height:1.65;
+
+    color:#68675e;
+}
+
+.program-content{
+    width:100%;
+}
+
+.program-list{
+    width:100%;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:8px;
+}
+
+.program-item{
+    width:100%;
+
+    min-height:72px;
+
+    padding:15px 16px;
+
+    border:1px solid #d4d2c9;
+
+    background:#f7f7f4;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:flex-start;
+
+    gap:6px;
+
+    transition:
+        background .35s ease,
+        border-color .35s ease,
+        transform .35s ease;
+}
+
+.program-item:hover{
+    background:#f0efdf;
+
+    border-color:var(--olive);
+
+    transform:translateX(5px);
+}
+
+.program-item-title{
+    font-size:10px;
+
+    font-weight:800;
+
+    line-height:1.1;
+
+    letter-spacing:.01em;
+
+    text-transform:uppercase;
+
+    color:var(--ink);
+}
+
+.program-item-text{
+    font-size:8.5px;
+
+    line-height:1.45;
+
+    font-weight:400;
+
+    color:#77756b;
+
+    max-width:100%;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer-section{
+    position:relative;
+
+    width:100%;
+
+    min-height:850px;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(46,44,31,.88) 0%,
+            rgba(46,44,31,.72) 50%,
+            rgba(46,44,31,.84) 100%
+        ),
+        url("assets/footer.jpg") center center / cover no-repeat;
+
+    padding:95px 5vw 45px;
+
+    overflow:hidden;
+}
+
+.footer-inner{
+    width:100%;
+    max-width:1400px;
+
+    margin:0 auto;
+}
+
+.footer-statement{
+    width:100%;
+
+    font-size:clamp(38px,5.2vw,78px);
+
+    line-height:.90;
+
+    font-weight:800;
+
+    letter-spacing:-.055em;
+
+    text-transform:uppercase;
+
+    margin-bottom:75px;
+
+    max-width:1100px;
+}
+
+.footer-statement span{
+    color:var(--yellow);
+}
+
+.footer-boxes{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:18px;
+
+    width:100%;
+}
+
+.footer-box{
+    min-height:390px;
+
+    padding:38px 38px 40px;
+
+    border:1px solid rgba(255,255,255,.32);
+
+    background:rgba(46,44,31,.38);
+
+    backdrop-filter:blur(3px);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    transition:
+        background .35s ease,
+        border-color .35s ease,
+        transform .35s ease;
+}
+
+.footer-box:hover{
+    background:rgba(46,44,31,.55);
+
+    border-color:var(--yellow);
+
+    transform:translateY(-4px);
+}
+
+.footer-label{
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:.20em;
+
+    text-transform:uppercase;
+
+    color:var(--yellow);
+
+    margin-bottom:32px;
+}
+
+.footer-heading{
+    font-size:clamp(35px,4vw,60px);
+
+    line-height:.90;
+
+    font-weight:800;
+
+    letter-spacing:-.055em;
+
+    text-transform:uppercase;
+
+    margin-bottom:28px;
+}
+
+.footer-heading span{
+    color:var(--yellow);
+}
+
+.footer-description{
+    max-width:500px;
+
+    font-size:12px;
+
+    line-height:1.75;
+
+    color:rgba(255,255,255,.78);
+
+    margin-top:auto;
+}
+
+.footer-keywords{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:7px;
+
+    margin-top:5px;
+
+    margin-bottom:30px;
+}
+
+.footer-keywords div{
+    padding:9px 12px;
+
+    border:1px solid rgba(255,255,255,.30);
+
+    font-size:8px;
+
+    font-weight:700;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+    color:#fff;
+
+    background:rgba(255,255,255,.035);
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        border-color .3s ease;
+}
+
+.footer-keywords div:hover{
+    background:var(--yellow);
+
+    color:var(--ink);
+
+    border-color:var(--yellow);
+}
+
+
+/* =========================================================
+   FOOTER CTA
+========================================================= */
+
+.footer-cta{
+    width:100%;
+
+    margin-top:85px;
+
+    padding-top:35px;
+
+    display:grid;
+
+    grid-template-columns:1fr auto;
+
+    gap:40px;
+
+    align-items:end;
+}
+
+.reserve-btn{
+    position:relative;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:35px;
+
+    min-width:235px;
+
+    height:58px;
+
+    padding:0 8px 0 22px;
+
+    background:transparent;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    text-transform:uppercase;
+
+    font-size:9px;
+
+    font-weight:800;
+
+    letter-spacing:.17em;
+
+    border:1px solid rgba(255,255,255,.65);
+
+    border-radius:0;
+
+    overflow:hidden;
+
+    transition:
+        color .4s ease,
+        border-color .4s ease;
+}
+
+.reserve-btn::before{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:var(--yellow);
+
+    transform:translateX(-101%);
+
+    transition:
+        transform .45s cubic-bezier(.77,0,.18,1);
+
+    z-index:0;
+}
+
+.reserve-btn span:first-child{
+    position:relative;
+    z-index:2;
+}
+
+.reserve-btn-arrow{
+    position:relative;
+
+    z-index:2;
+
+    width:42px;
+    height:42px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:var(--yellow);
+
+    color:var(--ink);
+
+    font-size:18px;
+
+    transition:
+        transform .4s ease,
+        background .4s ease,
+        color .4s ease;
+}
+
+.reserve-btn:hover{
+    color:var(--ink);
+
+    border-color:var(--yellow);
+}
+
+.reserve-btn:hover::before{
+    transform:translateX(0);
+}
+
+.reserve-btn:hover .reserve-btn-arrow{
+    background:var(--ink);
+
+    color:#fff;
+
+    transform:rotate(45deg);
+}
+
+.footer-cta-title{
+    font-size:clamp(38px,5vw,70px);
+
+    line-height:.88;
+
+    font-weight:800;
+
+    letter-spacing:-.06em;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+}
+
+.footer-cta-title span{
+    color:var(--yellow);
+}
+
+.footer-cta-text{
+    max-width:680px;
+
+    font-size:11px;
+
+    line-height:1.7;
+
+    color:rgba(255,255,255,.72);
+}
+
+
+/* =========================================================
+   REGISTRATION MODAL
+========================================================= */
+
+.registration-modal{
+    position:fixed;
+
+    inset:0;
+
+    z-index:9999;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:24px;
+
+    background:rgba(25,24,17,.78);
+
+    backdrop-filter:blur(10px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:
+        opacity .4s ease,
+        visibility .4s ease;
+}
+
+.registration-modal.active{
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+}
+
+
+/* =========================================================
+   MODAL CONTAINER
+========================================================= */
+
+.registration-modal-container{
+    position:relative;
+
+    width:min(1180px,100%);
+
+    height:min(92vh,900px);
+
+    max-height:92vh;
+
+    min-height:0;
+
+    background:#fff;
+
+    color:var(--ink);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    display:grid;
+
+    grid-template-columns:43% 57%;
+
+    box-shadow:
+        0 35px 100px rgba(0,0,0,.4);
+
+    transform:
+        translateY(30px)
+        scale(.97);
+
+    transition:
+        transform .45s cubic-bezier(.77,0,.18,1);
+}
+
+.registration-modal.active
+.registration-modal-container{
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* =========================================================
+   MODAL CLOSE
+========================================================= */
+
+.modal-close{
+    position:absolute;
+
+    top:18px;
+    right:18px;
+
+    z-index:20;
+
+    width:38px;
+    height:38px;
+
+    border:1px solid rgba(46,44,31,.2);
+
+    background:rgba(255,255,255,.94);
+
+    color:var(--ink);
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    line-height:1;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
+}
+
+.modal-close:hover{
+    background:var(--ink);
+
+    color:#fff;
+
+    transform:rotate(90deg);
+}
+
+
+/* =========================================================
+   LEFT IMAGE PANEL
+========================================================= */
+
+.registration-visual{
+    position:relative;
+
+    width:100%;
+    height:100%;
+
+    min-height:0;
+
+    padding:10px;
+
+    background:#ffffff;
+
+    overflow:hidden;
+
+    isolation:isolate;
+}
+
+
+/* =========================================================
+   REGISTRATION IMAGE
+   IMAGE FILLS CARD
+========================================================= */
+
+.registration-visual-image{
+    position:absolute;
+
+    top:10px;
+    left:10px;
+
+    width:calc(100% - 20px);
+    height:calc(100% - 20px);
+
+    display:block;
+
+    /* CHANGED ONLY THIS */
+    object-fit:cover;
+
+    object-position:center center;
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    z-index:1;
+}
+
+
+/* =========================================================
+   IMAGE TOP GRADIENT
+========================================================= */
+
+.registration-visual::after{
+    content:"";
+
+    position:absolute;
+
+    top:10px;
+    left:10px;
+
+    width:calc(100% - 20px);
+
+    height:245px;
+
+    border-radius:20px 20px 0 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.50) 0%,
+            rgba(0,0,0,.25) 42%,
+            rgba(0,0,0,0) 100%
+        );
+
+    pointer-events:none;
+
+    z-index:2;
+}
+
+
+/* =========================================================
+   TEXT ON IMAGE
+========================================================= */
+
+.registration-visual-content{
+    position:absolute;
+
+    top:10px;
+    left:10px;
+
+    z-index:3;
+
+    width:calc(100% - 20px);
+
+    padding:34px 30px 20px;
+
+    color:#fff;
+
+    pointer-events:none;
+}
+
+.registration-visual-label{
+    font-size:9px;
+
+    font-weight:800;
+
+    letter-spacing:.2em;
+
+    text-transform:uppercase;
+
+    color:var(--yellow);
+
+    margin-bottom:18px;
+}
+
+.registration-visual-title{
+    font-size:clamp(40px,4.2vw,64px);
+
+    line-height:.88;
+
+    font-weight:800;
+
+    letter-spacing:-.06em;
+
+    text-transform:uppercase;
+
+    margin:0;
+}
+
+.registration-visual-title span{
+    color:var(--yellow);
+}
+
+.registration-visual-text{
+    margin-top:20px;
+
+    max-width:440px;
+
+    font-size:11px;
+
+    line-height:1.65;
+
+    color:rgba(255,255,255,.90);
+}
+
+.registration-visual-text strong{
+    color:#fff;
+}
+
+
+/* =========================================================
+   RIGHT FORM SIDE
+   ONLY THIS AREA SCROLLS
+========================================================= */
+
+.registration-form-side{
+    width:100%;
+
+    height:100%;
+
+    min-height:0;
+
+    padding:48px 48px 45px;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    background:#fff;
+
+    scrollbar-width:thin;
+
+    scrollbar-color:
+        var(--olive)
+        #f2f2ef;
+}
+
+.registration-form-side::-webkit-scrollbar{
+    width:6px;
+}
+
+.registration-form-side::-webkit-scrollbar-track{
+    background:#f2f2ef;
+}
+
+.registration-form-side::-webkit-scrollbar-thumb{
+    background:var(--olive);
+
+    border-radius:10px;
+}
+
+
+/* =========================================================
+   REGISTRATION TOP
+========================================================= */
+
+.registration-top{
+    margin-bottom:38px;
+}
+
+.registration-eyebrow{
+    font-size:9px;
+
+    font-weight:800;
+
+    letter-spacing:.2em;
+
+    text-transform:uppercase;
+
+    color:var(--olive);
+
+    margin-bottom:12px;
+}
+
+.registration-title{
+    font-size:clamp(35px,4vw,55px);
+
+    line-height:.88;
+
+    font-weight:800;
+
+    letter-spacing:-.055em;
+
+    text-transform:uppercase;
+}
+
+.registration-title span{
+    color:var(--olive);
+}
+
+
+/* =========================================================
+   FORM SECTIONS
+========================================================= */
+
+.form-section{
+    margin-bottom:34px;
+}
+
+.form-section-title{
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:18px;
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+
+    color:var(--ink);
+}
+
+.form-section-title::before{
+    content:"";
+
+    width:24px;
+    height:2px;
+
+    background:var(--olive);
+}
+
+.form-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:16px;
+}
+
+.form-field{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:7px;
+}
+
+.form-field.full{
+    grid-column:1 / -1;
+}
+
+.form-field label{
+    font-size:8px;
+
+    font-weight:800;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+    color:#77756b;
+}
+
+.form-field input,
+.form-field select{
+    width:100%;
+
+    height:46px;
+
+    padding:0 13px;
+
+    border:1px solid #d7d5cc;
+
+    border-radius:4px;
+
+    background:#fafaf8;
+
+    color:var(--ink);
+
+    font-family:"Inter",Arial,sans-serif;
+
+    font-size:11px;
+
+    outline:none;
+
+    transition:
+        border-color .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+}
+
+.form-field input::placeholder{
+    color:#aaa89e;
+}
+
+.form-field input:focus,
+.form-field select:focus{
+    border-color:var(--olive);
+
+    background:#fff;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(115,110,78,.09);
+}
+
+
+/* =========================================================
+   OPTIONS
+========================================================= */
+
+.option-group{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:7px;
+}
+
+.option{
+    position:relative;
+}
+
+.option input{
+    position:absolute;
+
+    opacity:0;
+
+    pointer-events:none;
+}
+
+.option label{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-height:38px;
+
+    padding:9px 13px;
+
+    border:1px solid #d1cfc5;
+
+    background:#fafaf8;
+
+    color:var(--ink);
+
+    border-radius:3px;
+
+    font-size:8px;
+
+    font-weight:700;
+
+    letter-spacing:.07em;
+
+    text-transform:uppercase;
+
+    cursor:pointer;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        color .25s ease,
+        transform .25s ease;
+}
+
+.option label:hover{
+    border-color:var(--olive);
+
+    transform:translateY(-2px);
+}
+
+.option input:checked + label{
+    background:var(--olive);
+
+    border-color:var(--olive);
+
+    color:#fff;
+}
+
+
+/* =========================================================
+   COLLECTIVE
+========================================================= */
+
+.collective-box{
+    padding:18px;
+
+    background:#f5f4ed;
+
+    border:1px solid #dedcd2;
+
+    border-radius:5px;
+}
+
+.collective-question{
+    font-size:10px;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    letter-spacing:.08em;
+
+    margin-bottom:12px;
+}
+
+
+/* =========================================================
+   CONFIRM
+========================================================= */
+
+.confirm-section{
+    margin-top:5px;
 
-    .apply-nav:hover {
-      color: var(--ink) !important;
-      background: #fff8b0;
-    }
+    padding-top:25px;
 
-    .mobile-menu {
-      display: none;
-      width: 45px;
-      height: 45px;
-      border: 1px solid rgba(115, 110, 78, .35);
-      border-radius: 50%;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      position: absolute;
-      right: 4vw;
-      top: 50%;
-      transform: translateY(-50%);
-      background: var(--paper);
-    }
+    border-top:1px solid #e1dfd7;
+}
 
-    .mobile-menu span {
-      width: 18px;
-      height: 2px;
-      background: var(--olive);
-      position: relative;
-      display: block;
-      transition: .25s ease;
-    }
+.confirm-check{
+    display:flex;
 
-    .mobile-menu span::before,
-    .mobile-menu span::after {
-      content: "";
-      position: absolute;
-      width: 18px;
-      height: 2px;
-      background: var(--olive);
-      left: 0;
-      transition: .25s ease;
-    }
+    align-items:flex-start;
 
-    .mobile-menu span::before {
-      top: -6px;
-    }
+    gap:10px;
 
-    .mobile-menu span::after {
-      top: 6px;
-    }
+    cursor:pointer;
+}
 
-    /* ---------- HERO (unchanged) ---------- */
-    .hero {
-      width: 100%;
-      min-height: calc(100vh - 92px);
-      padding: 70px 4vw 90px;
-      display: grid;
-      grid-template-columns: 55% 45%;
-      position: relative;
-      overflow: hidden;
-      background: #ffffff;
-    }
+.confirm-check input{
+    width:15px;
+    height:15px;
 
-    .hero-left {
-      position: relative;
-      z-index: 3;
-      padding-top: 10px;
-    }
+    margin-top:1px;
 
-    .location-label {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 28px;
-    }
+    accent-color:var(--olive);
 
-    .location-line {
-      width: 55px;
-      height: 2px;
-      background: var(--olive);
-    }
+    flex-shrink:0;
+}
 
-    .location-label span {
-      color: var(--olive);
-      font-family: "Space Mono", monospace;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 4px;
-    }
+.confirm-check span{
+    font-size:9px;
 
-    .hero-title {
-      font-family: "Inter", sans-serif;
-      font-weight: 900;
-      text-transform: uppercase;
-      font-size: clamp(55px, 7vw, 125px);
-      line-height: .82;
-      letter-spacing: -6px;
-    }
+    line-height:1.5;
 
-    .title-coffee {
-      color: transparent;
-      -webkit-text-stroke: 2px var(--olive);
-    }
+    color:#77756b;
+}
 
-    .title-founders {
-      color: var(--yellow);
-      text-shadow: 0 1px 0 var(--olive);
-    }
 
-    .title-session {
-      color: var(--olive);
-    }
+/* =========================================================
+   SECURE BUTTON
+========================================================= */
 
-    .hero-description {
-      max-width: 760px;
-      margin-top: 42px;
-      color: var(--olive);
-      font-family: "DM Serif Display", serif;
-      font-style: italic;
-      font-size: clamp(22px, 2vw, 34px);
-      line-height: 1.25;
-    }
+.secure-btn{
+    position:relative;
 
-    .hero-description strong {
-      color: var(--ink);
-      font-style: normal;
-    }
+    width:100%;
 
-    .hero-meta {
-      margin-top: 35px;
-      display: flex;
-      align-items: flex-end;
-      gap: 8px;
-    }
+    height:56px;
 
-    .date-display {
-      display: flex;
-      align-items: baseline;
-      gap: 4px;
-    }
+    margin-top:22px;
 
-    .date-day {
-      font-family: "Inter", sans-serif;
-      font-weight: 900;
-      font-size: clamp(64px, 7vw, 110px);
-      line-height: 0.85;
-      color: var(--olive);
-      letter-spacing: -4px;
-    }
+    border:1px solid var(--ink);
 
-    .date-month {
-      font-family: "Inter", sans-serif;
-      font-weight: 700;
-      font-size: clamp(18px, 1.8vw, 32px);
-      color: var(--olive);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
+    background:var(--ink);
 
-    .date-time {
-      font-family: "Space Mono", monospace;
-      font-size: clamp(14px, 1.2vw, 22px);
-      font-weight: 700;
-      color: var(--muted);
-      letter-spacing: 2px;
-      margin-left: 12px;
-      padding-left: 12px;
-      border-left: 2px solid var(--soft);
-    }
+    color:#fff;
 
-    .meta-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 12px;
-    }
+    display:flex;
 
-    .meta-pill {
-      padding: 12px 17px;
-      border: 1px solid rgba(115, 110, 78, .35);
-      border-radius: 50px;
-      font-family: "Space Mono", monospace;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
+    align-items:center;
 
-    .meta-pill.highlight {
-      background: var(--yellow);
-      border-color: var(--yellow);
-    }
+    justify-content:space-between;
 
-    .hero-right {
-      position: relative;
-      z-index: 5;
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-start;
-    }
+    padding:0 8px 0 20px;
 
-    .event-card {
-      width: min(100%, 650px);
-      background: var(--ink);
-      color: var(--paper);
-      border-radius: 23px;
-      padding: 50px 52px 45px;
-      box-shadow: 0 30px 80px rgba(46, 44, 31, .25);
-      position: relative;
-    }
+    font-family:"Inter",Arial,sans-serif;
 
-    .card-kicker {
-      color: var(--yellow);
-      font-family: "Space Mono", monospace;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      margin-bottom: 18px;
-    }
+    font-size:9px;
 
-    .card-title {
-      color: var(--paper);
-      font-family: "DM Serif Display", serif;
-      font-size: clamp(38px, 3.3vw, 58px);
-      font-weight: 400;
-      line-height: 1;
-    }
+    font-weight:800;
 
-    .card-subtitle {
-      margin-top: 15px;
-      color: rgba(255, 255, 255, .70);
-      font-family: "DM Serif Display", serif;
-      font-style: italic;
-      font-size: 21px;
-      line-height: 1.35;
-    }
+    letter-spacing:.16em;
 
-    .apply-card {
-      margin-top: 25px;
-      padding: 28px 24px 24px;
-      background: var(--paper);
-      color: var(--olive);
-      border-radius: 18px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, .10);
-    }
+    text-transform:uppercase;
 
-    .apply-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-    }
+    cursor:pointer;
 
-    .apply-head h4 {
-      font-family: "Space Mono", monospace;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--olive);
-    }
+    overflow:hidden;
+
+    border-radius:3px;
+
+    transition:
+        color .35s ease,
+        border-color .35s ease;
+}
+
+.secure-btn::before{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:var(--yellow);
+
+    transform:translateX(-101%);
+
+    transition:
+        transform .45s cubic-bezier(.77,0,.18,1);
+}
+
+.secure-btn span{
+    position:relative;
+
+    z-index:2;
+}
+
+.secure-btn-arrow{
+    position:relative;
+
+    z-index:2;
+
+    width:40px;
+    height:40px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
 
-    .apply-badge {
-      background: var(--yellow);
-      color: var(--olive);
-      font-family: "Space Mono", monospace;
-      font-size: 9px;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 20px;
+    background:var(--yellow);
+
+    color:var(--ink);
+
+    font-size:17px;
+
+    transition:
+        transform .35s ease,
+        background .35s ease,
+        color .35s ease;
+}
+
+.secure-btn:hover{
+    color:var(--ink);
+
+    border-color:var(--yellow);
+}
+
+.secure-btn:hover::before{
+    transform:translateX(0);
+}
+
+.secure-btn:hover .secure-btn-arrow{
+    background:var(--ink);
+
+    color:#fff;
+
+    transform:rotate(45deg);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:900px){
+
+    .event-hero{
+        height:650px;
+        min-height:650px;
+        max-height:none;
     }
 
-    .seat-bar-wrap {
-      width: 100%;
-      height: 8px;
-      background: var(--soft);
-      border-radius: 20px;
-      margin: 12px 0 10px;
-      overflow: hidden;
+    .event-hero-image{
+        object-position:58% center;
+        transform:scale(1.08);
     }
 
-    .seat-bar-fill {
-      height: 100%;
-      width: 53.75%;
-      background: var(--olive);
-      border-radius: 20px;
+    .event-hero::after{
+        background:
+            linear-gradient(
+                180deg,
+                rgba(46,44,31,.38) 0%,
+                rgba(46,44,31,.48) 35%,
+                rgba(46,44,31,.86) 72%,
+                rgba(46,44,31,.96) 100%
+            );
     }
+
+    .hero-content{
+        align-items:flex-end;
 
-    .seat-stats {
-      display: flex;
-      justify-content: space-between;
-      font-family: "Space Mono", monospace;
-      font-size: 10px;
-      color: var(--muted);
+        padding:
+            0
+            5vw
+            45px
+            3vw;
     }
 
-    .seat-stats strong {
-      color: var(--olive);
+    .hero-copy{
+        max-width:58%;
     }
 
-    .apply-note {
-      font-size: 13px;
-      line-height: 1.5;
-      margin: 14px 0 16px;
-      color: #5a5642;
+    .hero-title{
+        font-size:
+            clamp(
+                50px,
+                9vw,
+                78px
+            );
     }
+
+    .hero-tagline{
+        font-size:9px;
+
+        max-width:330px;
 
-    .apply-button {
-      display: inline-block;
-      width: 100%;
-      text-align: center;
-      padding: 16px;
-      background: var(--olive);
-      color: var(--paper);
-      border-radius: 50px;
-      font-family: "Space Mono", monospace;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      transition: .25s ease;
+        margin-top:20px;
     }
 
-    .apply-button:hover {
-      background: var(--ink);
-      transform: translateY(-2px);
+    .register-btn{
+        margin-top:22px;
+
+        min-width:175px;
+
+        height:48px;
+
+        padding:
+            12px
+            14px
+            12px
+            19px;
+
+        font-size:9px;
     }
 
-    .countdown-box {
-      margin-top: 15px;
-      padding: 24px 20px;
-      border-radius: 15px;
-      background: var(--yellow);
-      color: var(--olive);
+    .hero-details{
+        right:2vw;
+
+        top:210px;
+
+        width:min(390px,45vw);
     }
 
-    .countdown-label {
-      color: var(--olive);
-      font-family: "Space Mono", monospace;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      margin-bottom: 12px;
+    .intro-section{
+        padding:80px 5vw;
     }
 
-    .countdown {
-      font-family: "Space Mono", monospace;
-      font-size: 21px;
-      font-weight: 700;
-      color: var(--olive);
+    .intro-inner{
+        grid-template-columns:1fr;
+
+        gap:55px;
     }
 
-    .countdown .seconds {
-      color: var(--olive);
+    .intro-left{
+        padding-right:0;
     }
 
-    /* ---------- other sections (unchanged) ---------- */
-    .intro-section {
-      padding: 80px 4vw 70px;
-      background: var(--paper);
-      border-top: 1px solid rgba(115, 110, 78, 0.10);
+    .image-collage{
+        height:480px;
     }
 
-    .intro-container {
-      max-width: 1200px;
-      margin: 0 auto;
+    .program-section{
+        padding:90px 5vw 100px;
     }
+
+    .program-inner{
+        grid-template-columns:1fr;
 
-    .section-kicker {
-      font-family: "Space Mono", monospace;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      color: var(--olive);
-      margin-bottom: 18px;
+        gap:55px;
     }
 
-    .intro-title {
-      max-width: 1050px;
-      font-family: "Inter", sans-serif;
-      font-weight: 900;
-      text-transform: uppercase;
-      color: var(--ink);
-      font-size: clamp(38px, 5vw, 76px);
-      line-height: .92;
-      letter-spacing: -4px;
+    .program-heading{
+        position:relative;
+
+        top:auto;
+
+        order:1;
     }
 
-    .intro-title span {
-      color: var(--yellow);
-      -webkit-text-stroke: 1.5px var(--olive);
+    .program-content{
+        order:2;
     }
 
-    .intro-copy {
-      max-width: 950px;
-      margin-top: 38px;
-      font-family: "DM Serif Display", serif;
-      font-size: clamp(21px, 2vw, 30px);
-      line-height: 1.45;
-      color: var(--olive);
+    .footer-section{
+        min-height:auto;
+
+        padding:80px 5vw 40px;
     }
+
+    .footer-statement{
+        font-size:
+            clamp(
+                36px,
+                6.5vw,
+                62px
+            );
 
-    .intro-copy p+p {
-      margin-top: 24px;
+        margin-bottom:55px;
     }
 
-    .standard-section {
-      padding: 75px 4vw;
-      background: var(--ink);
-      color: var(--paper);
+    .footer-boxes{
+        gap:12px;
     }
 
-    .standard-container {
-      max-width: 1200px;
-      margin: 0 auto;
+    .footer-box{
+        min-height:350px;
+
+        padding:30px;
     }
 
-    .standard-kicker {
-      color: var(--yellow);
-      font-family: "Space Mono", monospace;
-      font-size: 10px;
-      letter-spacing: 3px;
-      font-weight: 700;
-      margin-bottom: 20px;
+    .footer-heading{
+        font-size:
+            clamp(
+                30px,
+                5vw,
+                48px
+            );
     }
+
+    .footer-cta{
+        margin-top:65px;
+
+        padding-top:0;
+
+        grid-template-columns:1fr;
 
-    .standard-title {
-      font-family: "DM Serif Display", serif;
-      font-weight: 400;
-      font-size: clamp(45px, 6vw, 82px);
-      line-height: .95;
-      color: var(--paper);
+        gap:28px;
     }
 
-    .standard-tagline {
-      margin-top: 18px;
-      font-family: "Inter", sans-serif;
-      font-weight: 900;
-      font-size: clamp(20px, 2.5vw, 34px);
-      letter-spacing: 3px;
-      color: var(--yellow);
+
+    /* =====================================================
+       TABLET MODAL
+    ===================================================== */
+
+    .registration-modal{
+        padding:18px;
     }
+
+    .registration-modal-container{
+        width:100%;
+
+        height:94vh;
 
-    .standard-copy {
-      max-width: 850px;
-      margin-top: 28px;
-      color: rgba(255, 255, 255, .72);
-      font-family: "DM Serif Display", serif;
-      font-size: 21px;
-      line-height: 1.5;
+        max-height:94vh;
+
+        min-height:0;
+
+        grid-template-columns:40% 60%;
     }
+
+    .registration-visual{
+        position:relative;
+
+        height:100%;
 
-    .values-grid {
-      margin-top: 55px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
+        min-height:0;
+
+        padding:8px;
+
+        background:#fff;
+
+        overflow:hidden;
     }
+
+    .registration-visual-image{
+        top:8px;
+        left:8px;
 
-    .value-card {
-      padding: 30px;
-      min-height: 190px;
-      border: 1px solid rgba(255, 255, 255, .10);
-      background: rgba(255, 255, 255, .03);
-      transition: .3s ease;
+        width:calc(100% - 16px);
+        height:calc(100% - 16px);
+
+        object-fit:cover;
+
+        object-position:center center;
+
+        border-radius:18px;
     }
+
+    .registration-visual::after{
+        top:8px;
+        left:8px;
 
-    .value-card:hover {
-      background: rgba(255, 241, 143, .08);
-      transform: translateY(-5px);
+        width:calc(100% - 16px);
+
+        height:220px;
+
+        border-radius:18px 18px 0 0;
     }
+
+    .registration-visual-content{
+        top:8px;
+        left:8px;
+
+        width:calc(100% - 16px);
 
-    .value-number {
-      font-family: "Space Mono", monospace;
-      color: var(--yellow);
-      font-size: 11px;
-      letter-spacing: 2px;
-      margin-bottom: 28px;
+        padding:25px;
     }
 
-    .value-card h3 {
-      color: var(--paper);
-      font-family: "Inter", sans-serif;
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: 1px;
+    .registration-visual-title{
+        font-size:40px;
     }
+
+    .registration-form-side{
+        height:100%;
+
+        max-height:none;
+
+        min-height:0;
+
+        overflow-y:auto;
 
-    .value-card p {
-      margin-top: 9px;
-      color: rgba(255, 255, 255, .62);
-      font-size: 14px;
-      line-height: 1.55;
+        padding:38px 30px;
     }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:650px){
+
+    .event-hero{
+        height:auto;
+
+        min-height:0;
+
+        max-height:none;
+
+        display:flex;
+
+        flex-direction:column;
 
-    .belongs-section {
-      padding: 75px 4vw 55px;
-      background: var(--paper);
+        overflow:visible;
+
+        background:var(--ink);
     }
+
+    .event-hero-image{
+        position:absolute;
+
+        inset:0;
+
+        width:100%;
 
-    .belongs-container {
-      max-width: 1200px;
-      margin: 0 auto;
+        height:650px;
+
+        object-position:58% center;
+
+        transform:scale(1.08);
     }
 
-    .belongs-heading {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      gap: 18px;
-      margin-bottom: 45px;
+    .event-hero::after{
+        height:650px;
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(46,44,31,.38) 0%,
+                rgba(46,44,31,.48) 35%,
+                rgba(46,44,31,.86) 72%,
+                rgba(46,44,31,.96) 100%
+            );
     }
+
+    .hero-content{
+        position:relative;
 
-    .belongs-heading h2 {
-      font-family: "DM Serif Display", serif;
-      font-weight: 400;
-      font-size: clamp(36px, 4vw, 58px);
-      color: var(--ink);
+        order:1;
+
+        height:650px;
+
+        display:flex;
+
+        align-items:flex-end;
+
+        padding:
+            0
+            16px
+            45px;
+
+        z-index:3;
     }
 
-    .belongs-heading span {
-      font-family: "Space Mono", monospace;
-      font-size: 10px;
-      letter-spacing: 3px;
-      color: var(--muted);
+    .hero-copy{
+        max-width:100%;
     }
+
+    .hero-label{
+        font-size:8px;
 
-    .belong-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      border-top: 1px solid var(--soft);
+        letter-spacing:.18em;
+
+        margin-bottom:14px;
     }
 
-    .belong-item {
-      padding: 30px 24px;
-      border-bottom: 1px solid var(--soft);
-      border-right: 1px solid var(--soft);
-      min-height: 170px;
+    .hero-title{
+        font-size:
+            clamp(
+                40px,
+                12vw,
+                58px
+            );
     }
+
+    .hero-tagline{
+        font-size:9px;
 
-    .belong-item:nth-child(3n) {
-      border-right: none;
+        max-width:330px;
+
+        margin-top:18px;
     }
+
+    .register-btn{
+        margin-top:20px;
+
+        min-width:170px;
+
+        height:46px;
 
-    .belong-item h3 {
-      color: var(--ink);
-      font-family: "Inter", sans-serif;
-      font-size: 16px;
-      font-weight: 800;
-      letter-spacing: 1px;
+        padding:
+            11px
+            13px
+            11px
+            18px;
+
+        font-size:8px;
     }
+
+    .hero-details{
+        position:relative;
+
+        order:2;
+
+        left:auto;
+        right:auto;
+        top:auto;
 
-    .belong-item p {
-      margin-top: 10px;
-      color: var(--olive);
-      font-size: 13px;
-      line-height: 1.55;
+        width:calc(100% - 32px);
+
+        margin:
+            0
+            16px
+            35px;
+
+        z-index:10;
     }
 
-    .activities-section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 65px 4vw 75px;
-      background: var(--paper);
-      border-top: 1px solid rgba(115, 110, 78, 0.08);
+    .event-card{
+        width:100%;
+
+        border-radius:9px;
     }
+
+    .event-date-row{
+        grid-template-columns:92px 1fr;
 
-    .activities-header {
-      margin-bottom: 48px;
+        min-height:100px;
     }
 
-    .activities-header h2 {
-      font-family: "DM Serif Display", serif;
-      font-size: clamp(38px, 4.5vw, 62px);
-      font-weight: 400;
-      color: var(--ink);
+    .event-date .day{
+        font-size:38px;
     }
 
-    .activities-header p {
-      font-family: "Space Mono", monospace;
-      font-size: 10px;
-      color: var(--muted);
-      letter-spacing: 3px;
-      margin-top: 10px;
+    .event-time{
+        padding:18px 19px;
     }
 
-    .activities-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+    .event-time-value{
+        font-size:21px;
     }
 
-    .activity-card {
-      position: relative;
-      border-radius: 28px;
-      padding: 34px 28px 30px;
-      border: 1px solid rgba(115, 110, 78, 0.10);
-      transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
-      background: rgba(46, 44, 31, 0.03);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+    .event-meta-item{
+        padding:16px 17px;
     }
 
-    .activity-card:hover {
-      transform: translateY(-8px) scale(1.01);
-      border-color: rgba(115, 110, 78, 0.25);
-      box-shadow: 0 24px 60px rgba(46, 44, 31, 0.10);
-      background: rgba(46, 44, 31, 0.06);
+    .event-meta-value{
+        font-size:11px;
     }
 
-    .activity-number {
-      font-family: "Inter", sans-serif;
-      font-weight: 900;
-      font-size: 36px;
-      line-height: 1;
-      color: var(--yellow);
-      opacity: 0.7;
-      margin-bottom: 25px;
-      letter-spacing: -2px;
+
+    /* INTRO */
+
+    .intro-section{
+        padding:75px 20px;
     }
+
+    .intro-inner{
+        display:flex;
+
+        flex-direction:column;
 
-    .activity-card h3 {
-      font-family: "Inter", sans-serif;
-      font-weight: 800;
-      font-size: 18px;
-      color: var(--ink);
-      margin-bottom: 12px;
-      letter-spacing: -.2px;
+        gap:45px;
     }
 
-    .activity-card p {
-      font-family: "Inter", sans-serif;
-      font-size: 14px;
-      line-height: 1.6;
-      color: var(--olive);
+    .intro-left{
+        width:100%;
+
+        padding-right:0;
     }
 
-    .activity-card .activity-label {
-      display: inline-block;
-      margin-bottom: 12px;
-      padding: 5px 11px;
-      border-radius: 30px;
-      background: var(--yellow);
-      color: var(--ink);
-      font-family: "Space Mono", monospace;
-      font-size: 8px;
-      letter-spacing: 1.5px;
-      font-weight: 700;
+    .intro-title{
+        font-size:45px;
     }
+
+    .generation-text{
+        margin-top:30px;
 
-    .program-section {
-      padding: 70px 4vw 50px;
-      background: var(--paper);
-      border-top: 1px solid rgba(115, 110, 78, 0.10);
+        font-size:15px;
     }
 
-    .program-header {
-      max-width: 1200px;
-      margin: 0 auto 35px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 12px;
+    .category-list{
+        gap:7px;
+
+        margin-top:18px;
     }
+
+    .category-box{
+        min-height:40px;
 
-    .program-header h2 {
-      font-family: "DM Serif Display", serif;
-      font-size: clamp(34px, 4vw, 55px);
-      font-weight: 400;
-      color: var(--ink);
-      display: flex;
-      align-items: center;
-      gap: 14px;
+        padding:10px 12px;
+
+        font-size:8px;
     }
+
+    .image-collage{
+        height:400px;
 
-    .program-header h2 .accent-line {
-      width: 45px;
-      height: 4px;
-      background: var(--yellow);
-      border-radius: 4px;
-      display: inline-block;
+        gap:7px;
     }
+
+
+    /* PROGRAM */
 
-    .schedule-date {
-      font-family: "Space Mono", monospace;
-      font-size: 10px;
-      font-weight: 700;
-      color: var(--muted);
-      letter-spacing: 2px;
+    .program-section{
+        padding:75px 20px 85px;
     }
 
-    .schedule-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
+    .program-inner{
+        display:flex;
+
+        flex-direction:column;
+
+        gap:40px;
     }
+
+    .program-heading{
+        order:1;
+
+        position:relative;
 
-    .schedule-row {
-      display: grid;
-      grid-template-columns: 140px 1fr 160px;
-      align-items: center;
-      padding: 16px 18px;
-      border-radius: 12px;
-      background: var(--paper);
-      transition: all .15s ease;
-      border: 1px solid transparent;
-      gap: 6px;
+        top:auto;
     }
 
-    .schedule-row:hover {
-      background: #f8f8f5;
-      border-color: rgba(115, 110, 78, 0.08);
+    .program-title{
+        font-size:
+            clamp(
+                42px,
+                12vw,
+                58px
+            );
     }
 
-    .schedule-time {
-      font-family: "Space Mono", monospace;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--olive);
-      display: flex;
-      align-items: center;
-      gap: 8px;
+    .program-heading-text{
+        margin-top:22px;
+
+        font-size:10px;
     }
 
-    .schedule-time .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--yellow);
-      display: inline-block;
-      flex-shrink: 0;
+    .program-content{
+        order:2;
     }
+
+    .program-item{
+        min-height:70px;
 
-    .schedule-title {
-      font-family: "Inter", sans-serif;
-      font-weight: 700;
-      font-size: 14px;
-      color: var(--ink);
+        padding:15px 16px;
     }
 
-    .schedule-desc {
-      font-family: "Inter", sans-serif;
-      font-size: 12.5px;
-      color: var(--muted);
-      line-height: 1.4;
-      padding-left: 10px;
-      border-left: 2px solid var(--soft);
-      grid-column: 2 / 3;
-      margin-top: 4px;
+    .program-item-text{
+        font-size:9px;
     }
+
+
+    /* FOOTER */
 
-    .schedule-category {
-      font-family: "Space Mono", monospace;
-      font-size: 8.5px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--olive);
-      background: var(--soft);
-      padding: 5px 14px;
-      border-radius: 40px;
-      text-align: center;
-      white-space: nowrap;
-      justify-self: end;
+    .footer-section{
+        padding:65px 20px 30px;
     }
 
-    .schedule-category.highlight {
-      background: var(--yellow);
-      color: var(--ink);
+    .footer-statement{
+        font-size:
+            clamp(
+                32px,
+                9vw,
+                48px
+            );
+
+        margin-bottom:45px;
     }
+
+    .footer-boxes{
+        display:flex;
 
-    .leave-section {
-      padding: 80px 4vw;
-      background: var(--soft);
+        flex-direction:column;
+
+        gap:12px;
     }
+
+    .footer-box{
+        min-height:auto;
 
-    .leave-container {
-      max-width: 1200px;
-      margin: 0 auto;
+        padding:28px 24px 30px;
     }
 
-    .leave-heading {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      gap: 18px;
-      margin-bottom: 45px;
+    .footer-box:hover{
+        transform:none;
     }
 
-    .leave-heading h2 {
-      font-family: "DM Serif Display", serif;
-      font-size: clamp(38px, 4.5vw, 62px);
-      font-weight: 400;
-      color: var(--ink);
+    .footer-heading{
+        font-size:
+            clamp(
+                32px,
+                10vw,
+                48px
+            );
     }
 
-    .leave-heading span {
-      font-family: "Space Mono", monospace;
-      font-size: 10px;
-      letter-spacing: 3px;
-      color: var(--muted);
+    .footer-description{
+        font-size:10px;
+
+        margin-top:0;
     }
+
+    .footer-cta{
+        margin-top:55px;
+
+        display:flex;
+
+        flex-direction:column;
 
-    .leave-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
+        gap:25px;
     }
 
-    .leave-card {
-      background: var(--paper);
-      padding: 30px;
-      min-height: 190px;
-      border: 1px solid rgba(115, 110, 78, .08);
+    .footer-cta-title{
+        font-size:
+            clamp(
+                34px,
+                10vw,
+                48px
+            );
     }
 
-    .leave-card:nth-child(4),
-    .leave-card:nth-child(5),
-    .leave-card:nth-child(6) {
-      margin-top: 22px;
+    .footer-cta-text{
+        font-size:9px;
     }
 
-    .leave-card h3 {
-      font-family: "Inter", sans-serif;
-      font-size: 17px;
-      font-weight: 900;
-      letter-spacing: 1px;
-      color: var(--ink);
+    .reserve-btn{
+        min-width:205px;
+
+        width:max-content;
+
+        height:52px;
     }
+
+
+    /* =====================================================
+       MOBILE MODAL
+    ===================================================== */
 
-    .leave-card p {
-      margin-top: 12px;
-      color: var(--olive);
-      font-size: 14px;
-      line-height: 1.55;
+    .registration-modal{
+        padding:10px;
+
+        align-items:flex-start;
+
+        overflow-y:auto;
     }
+
+    .registration-modal-container{
+        width:100%;
+
+        height:auto;
 
-    .come-section {
-      padding: 85px 4vw;
-      background: var(--paper);
+        max-height:none;
+
+        min-height:0;
+
+        display:flex;
+
+        flex-direction:column;
+
+        border-radius:12px;
+
+        margin:10px 0;
+
+        overflow:hidden;
     }
+
+    .modal-close{
+        top:15px;
+
+        right:15px;
 
-    .come-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      text-align: center;
+        width:34px;
+
+        height:34px;
+
+        font-size:18px;
     }
+
+
+    /* =================================================
+       MOBILE IMAGE
+       IMAGE FILLS CARD
+    ================================================= */
+
+    .registration-visual{
+        position:relative;
+
+        width:100%;
+
+        height:500px;
+        min-height:500px;
+
+        flex-shrink:0;
 
-    .come-title {
-      font-family: "Inter", sans-serif;
-      font-weight: 900;
-      font-size: clamp(48px, 7vw, 100px);
-      line-height: .85;
-      text-transform: uppercase;
-      letter-spacing: -5px;
-      color: var(--ink);
+        padding:8px;
+
+        background:#ffffff;
+
+        overflow:hidden;
     }
+
+    .registration-visual-image{
+        position:absolute;
+
+        top:8px;
+        left:8px;
+
+        width:calc(100% - 16px);
+        height:calc(100% - 16px);
+
+        object-fit:cover;
+
+        object-position:center center;
+
+        background:#ffffff;
 
-    .come-title span {
-      color: var(--yellow);
-      -webkit-text-stroke: 2px var(--olive);
+        border-radius:18px;
+
+        z-index:1;
     }
+
+
+    /* TOP TEXT GRADIENT */
+
+    .registration-visual::after{
+        display:block;
+
+        top:8px;
+        left:8px;
+
+        width:calc(100% - 16px);
+
+        height:220px;
+
+        border-radius:18px 18px 0 0;
 
-    .come-copy {
-      max-width: 850px;
-      margin: 35px auto 0;
-      font-family: "DM Serif Display", serif;
-      font-size: clamp(21px, 2vw, 30px);
-      line-height: 1.45;
-      color: var(--olive);
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0,0,0,.50) 0%,
+                rgba(0,0,0,.20) 55%,
+                rgba(0,0,0,0) 100%
+            );
     }
 
-    .come-copy strong {
-      color: var(--ink);
+
+    /* TEXT */
+
+    .registration-visual-content{
+        position:absolute;
+
+        top:8px;
+        left:8px;
+
+        width:calc(100% - 16px);
+
+        z-index:3;
+
+        padding:
+            25px
+            20px
+            15px;
+
+        max-width:100%;
     }
+
+    .registration-visual-label{
+        font-size:7px;
 
-    /* ---------- CTA BANNER with background image ---------- */
-    .cta-banner {
-      max-width: 1200px;
-      margin: 0 auto 70px;
-      border-radius: 32px;
-      overflow: hidden;
-      position: relative;
-      min-height: 440px;
-      display: flex;
-      align-items: center;
-      background: url("assets/get.jpg") center center / cover no-repeat;
+        margin-bottom:14px;
     }
 
-    .cta-banner::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 80% 20%, rgba(255, 241, 143, .16), transparent 35%),
-        linear-gradient(135deg, rgba(46, 44, 31, .68) 0%, rgba(46, 44, 31, .58) 60%, rgba(115, 110, 78, .38) 100%);
-      z-index: 1;
+    .registration-visual-title{
+        font-size:42px;
     }
 
-    .cta-content {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      padding: 65px 56px;
-      width: 100%;
-      align-items: center;
+    .registration-visual-text{
+        margin-top:17px;
+
+        font-size:9px;
+
+        line-height:1.6;
+
+        max-width:390px;
     }
+
+
+    /* FORM */
+
+    .registration-form-side{
+        width:100%;
+
+        height:auto;
+
+        max-height:none;
 
-    .cta-left {
-      display: flex;
-      flex-direction: column;
+        overflow:visible;
+
+        padding:
+            35px
+            20px
+            28px;
     }
 
-    .cta-title {
-      font-family: "Inter", sans-serif;
-      font-weight: 900;
-      text-transform: uppercase;
-      font-size: clamp(40px, 5vw, 80px);
-      line-height: .85;
-      letter-spacing: -4px;
-      color: var(--paper);
+    .registration-top{
+        margin-bottom:30px;
     }
 
-    .cta-title .with {
-      color: var(--yellow);
+    .registration-eyebrow{
+        font-size:8px;
     }
 
-    .cta-title .coffee {
-      color: transparent;
-      -webkit-text-stroke: 2px var(--yellow);
+    .registration-title{
+        font-size:37px;
     }
 
-    .cta-sub {
-      font-family: "DM Serif Display", serif;
-      font-style: italic;
-      font-size: clamp(18px, 1.8vw, 27px);
-      color: rgba(255, 255, 255, .85);
-      margin-top: 20px;
-      line-height: 1.35;
+    .form-section{
+        margin-bottom:29px;
     }
+
+    .form-grid{
+        grid-template-columns:1fr;
 
-    .cta-right {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 16px;
-      padding-left: 30px;
-      border-left: 2px solid rgba(255, 255, 255, .15);
+        gap:13px;
     }
 
-    .cta-right p {
-      color: rgba(255, 255, 255, .80);
-      font-family: "Inter", sans-serif;
-      font-size: 15px;
-      line-height: 1.65;
-      max-width: 430px;
+    .form-field.full{
+        grid-column:auto;
     }
 
-    .cta-right .cta-button {
-      display: inline-block;
-      padding: 16px 42px;
-      background: var(--yellow);
-      color: var(--ink);
-      border-radius: 50px;
-      font-family: "Space Mono", monospace;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      transition: all .3s ease;
-      border: none;
-      cursor: pointer;
-      margin-top: 6px;
+    .form-field input,
+    .form-field select{
+        height:44px;
     }
 
-    .cta-right .cta-button:hover {
-      transform: translateY(-3px);
-      background: #fff8b0;
+    .option-group{
+        gap:6px;
     }
+
+    .option label{
+        min-height:36px;
+
+        padding:8px 10px;
 
-    .cta-badge {
-      display: inline-block;
-      background: rgba(255, 255, 255, .12);
-      padding: 6px 18px;
-      border-radius: 40px;
-      font-family: "Space Mono", monospace;
-      font-size: 9px;
-      letter-spacing: 2px;
-      color: rgba(255, 255, 255, .70);
-      border: 1px solid rgba(255, 255, 255, .08);
+        font-size:7px;
     }
 
-    /* ---------- APPLICATION SECTION: sticky left + scrollable form (hidden scrollbar) ---------- */
-    .apply-section {
-      padding: 70px 4vw 80px;
-      background: var(--paper);
-      border-top: 1px solid rgba(115, 110, 78, 0.08);
+    .confirm-check span{
+        font-size:8px;
     }
 
-    .apply-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 50px;
-      align-items: start;
+    .secure-btn{
+        height:52px;
+
+        font-size:8px;
     }
+
+    .secure-btn-arrow{
+        width:37px;
 
-    .apply-left {
-      position: sticky;
-      top: 30px;
-      align-self: start;
-      padding-top: 10px;
+        height:37px;
     }
+
+}
+
 
-    .apply-left .section-kicker {
-      margin-bottom: 14px;
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media(max-width:390px){
+
+    .event-hero-image{
+        height:610px;
+
+        object-position:60% center;
+
+        transform:scale(1.10);
     }
 
-    .apply-left h2 {
-      font-family: "Inter", sans-serif;
-      font-weight: 900;
-      font-size: clamp(38px, 4.5vw, 64px);
-      line-height: .9;
-      letter-spacing: -2px;
-      color: var(--ink);
-      text-transform: uppercase;
+    .event-hero::after{
+        height:610px;
     }
 
-    .apply-left h2 span {
-      color: var(--yellow);
-      -webkit-text-stroke: 1.5px var(--olive);
+    .hero-content{
+        height:610px;
+
+        padding:
+            0
+            12px
+            32px;
     }
 
-    .apply-left .apply-desc {
-      margin-top: 28px;
-      font-family: "DM Serif Display", serif;
-      font-size: clamp(18px, 1.8vw, 26px);
-      line-height: 1.4;
-      color: var(--olive);
+    .hero-title{
+        font-size:37px;
     }
 
-    .apply-left .apply-desc strong {
-      color: var(--ink);
-      font-style: normal;
+    .hero-tagline{
+        font-size:8px;
     }
+
+    .register-btn{
+        min-width:160px;
 
-    .apply-left .apply-note-small {
-      margin-top: 20px;
-      font-family: "Space Mono", monospace;
-      font-size: 10px;
-      color: var(--muted);
-      letter-spacing: 1px;
-      border-left: 3px solid var(--yellow);
-      padding-left: 18px;
+        height:44px;
+
+        font-size:7px;
     }
+
+    .hero-details{
+        width:calc(100% - 24px);
 
-    /* ---------- FORM (hidden scrollbar) ---------- */
-    .apply-form {
-      background: var(--paper);
-      border: 1px solid rgba(115, 110, 78, 0.12);
-      border-radius: 28px;
-      padding: 30px 32px 40px;
-      box-shadow: 0 12px 40px rgba(46, 44, 31, 0.04);
-      max-height: 700px;
-      overflow-y: auto;
-      scrollbar-width: none;
-      /* Firefox */
-      -ms-overflow-style: none;
-      /* IE/Edge */
+        margin:
+            0
+            12px
+            30px;
     }
 
-    .apply-form::-webkit-scrollbar {
-      display: none;
-      /* Chrome/Safari/Opera */
+    .event-date-row{
+        grid-template-columns:82px 1fr;
+
+        min-height:91px;
     }
 
-    .apply-form .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px 20px;
-      margin-bottom: 14px;
+    .event-date .day{
+        font-size:33px;
     }
 
-    .apply-form .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      margin-bottom: 14px;
+    .event-time{
+        padding:15px 16px;
     }
 
-    .apply-form .form-group.full {
-      grid-column: 1 / -1;
+    .event-time-value{
+        font-size:19px;
     }
 
-    .apply-form label {
-      font-family: "Inter", sans-serif;
-      font-weight: 600;
-      font-size: 12px;
-      letter-spacing: 0.3px;
-      color: var(--olive);
+    .event-meta-item{
+        padding:14px 13px;
     }
 
-    .apply-form label .required {
-      color: #b33;
-      margin-left: 2px;
+    .event-meta-value{
+        font-size:10px;
     }
 
-    .apply-form input,
-    .apply-form select,
-    .apply-form textarea {
-      font-family: "Inter", sans-serif;
-      font-size: 14px;
-      padding: 12px 15px;
-      border-radius: 12px;
-      border: 1px solid rgba(115, 110, 78, 0.20);
-      background: var(--paper);
-      transition: 0.2s;
-      color: var(--ink);
-      width: 100%;
+    .intro-section{
+        padding:60px 16px;
     }
 
-    .apply-form input:focus,
-    .apply-form select:focus,
-    .apply-form textarea:focus {
-      outline: none;
-      border-color: var(--olive);
-      box-shadow: 0 0 0 3px rgba(115, 110, 78, 0.08);
+    .intro-title{
+        font-size:38px;
     }
 
-    .apply-form textarea {
-      min-height: 70px;
-      resize: vertical;
+    .generation-text{
+        font-size:14px;
     }
+
+    .category-box{
+        min-height:38px;
 
-    .apply-form select {
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%23736e4e' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 15px center;
-      padding-right: 40px;
+        padding:9px 10px;
+
+        font-size:7px;
     }
+
+    .image-collage{
+        height:330px;
 
-    .apply-form .checkbox-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 16px;
-      margin-top: 4px;
+        gap:5px;
     }
 
-    .apply-form .checkbox-group label {
-      font-weight: 400;
-      font-size: 13px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-      color: var(--olive);
+    .program-section{
+        padding:60px 16px 70px;
     }
 
-    .apply-form .checkbox-group input[type="checkbox"] {
-      width: 18px;
-      height: 18px;
-      accent-color: var(--olive);
-      cursor: pointer;
+    .program-title{
+        font-size:37px;
     }
 
-    .apply-form .checkbox-group label .helper {
-      font-size: 11px;
-      color: var(--muted);
-      font-weight: 400;
+    .program-heading-text{
+        font-size:9px;
     }
 
-    .apply-form .helper-text {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 2px;
-      line-height: 1.4;
+    .program-item{
+        min-height:65px;
+
+        padding:13px 14px;
     }
 
-    .apply-form .form-actions {
-      margin-top: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    .program-item-title{
+        font-size:9px;
     }
 
-    .apply-form .submit-btn {
-      padding: 16px 28px;
-      background: var(--ink);
-      color: var(--paper);
-      border: none;
-      border-radius: 60px;
-      font-family: "Space Mono", monospace;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: 0.25s;
-      width: 100%;
+    .program-item-text{
+        font-size:8px;
     }
 
-    .apply-form .submit-btn:hover {
-      background: var(--olive);
-      transform: translateY(-2px);
+    .footer-section{
+        padding:55px 16px 28px;
     }
+
+    .footer-statement{
+        font-size:32px;
 
-    .apply-form .disclaimer {
-      font-size: 11px;
-      color: var(--muted);
-      text-align: center;
-      line-height: 1.5;
-      margin-top: 8px;
+        margin-bottom:38px;
     }
 
-    .apply-form .disclaimer a {
-      color: var(--olive);
-      text-decoration: underline;
+    .footer-box{
+        padding:
+            25px
+            20px
+            27px;
     }
 
-    .apply-form .radio-group {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 4px;
+    .footer-heading{
+        font-size:34px;
     }
 
-    .apply-form .radio-group label {
-      font-weight: 400;
-      font-size: 13px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-      color: var(--olive);
+    .footer-description{
+        font-size:9px;
     }
 
-    .apply-form .radio-group input[type="radio"] {
-      width: 18px;
-      height: 18px;
-      accent-color: var(--olive);
-      cursor: pointer;
+    .footer-cta{
+        margin-top:45px;
     }
 
-    /* phone input with country code */
-    .phone-wrapper {
-      display: flex;
-      gap: 8px;
-      align-items: center;
+    .footer-cta-title{
+        font-size:34px;
     }
 
-    .phone-wrapper select {
-      width: 110px;
-      flex-shrink: 0;
-      padding: 12px 10px;
-      border-radius: 12px;
-      border: 1px solid rgba(115, 110, 78, 0.20);
-      background: var(--paper);
-      font-family: "Inter", sans-serif;
-      font-size: 14px;
-      color: var(--ink);
+    .footer-cta-text{
+        font-size:8px;
     }
+
+    .reserve-btn{
+        min-width:190px;
+
+        height:49px;
 
-    .phone-wrapper input {
-      flex: 1;
+        font-size:7px;
     }
 
-    /* ---------- RESPONSIVE ---------- */
-    @media (max-width: 1100px) {
-      .nav-links {
-        display: none;
-      }
 
-      .mobile-menu {
-        display: flex;
-      }
+    /* =====================================================
+       SMALL PHONE MODAL
+    ===================================================== */
 
-      .nav-links.mobile-active {
-        display: flex;
-        position: absolute;
-        top: 92px;
-        left: 0;
-        width: 100%;
-        padding: 24px 20px;
-        background: var(--paper);
-        border-bottom: 1px solid rgba(115, 110, 78, .20);
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-      }
+    .registration-visual{
+        height:460px;
 
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 65px;
-      }
+        min-height:460px;
 
-      .hero-right {
-        justify-content: center;
-      }
+        padding:7px;
+    }
 
-      .event-card {
-        width: min(100%, 700px);
-      }
+    .registration-visual-image{
+        top:7px;
+        left:7px;
 
-      .values-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+        width:calc(100% - 14px);
+        height:calc(100% - 14px);
 
-      .belong-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+        object-fit:cover;
 
-      .belong-item:nth-child(3n) {
-        border-right: 1px solid var(--soft);
-      }
+        object-position:center center;
 
-      .belong-item:nth-child(2n) {
-        border-right: none;
-      }
+        border-radius:16px;
+    }
 
-      .activities-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+    .registration-visual::after{
+        top:7px;
+        left:7px;
 
-      .leave-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+        width:calc(100% - 14px);
 
-      .schedule-row {
-        grid-template-columns: 120px 1fr 110px;
-        padding: 10px 14px;
-      }
+        height:195px;
 
-      .schedule-desc {
-        grid-column: 1 / 4;
-        border-left: none;
-        padding-left: 0;
-        margin-top: 2px;
-      }
+        border-radius:16px 16px 0 0;
+    }
 
-      .cta-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 50px 32px;
-        text-align: center;
-      }
+    .registration-visual-content{
+        top:7px;
+        left:7px;
 
-      .cta-right {
-        padding-left: 0;
-        border-left: none;
-        align-items: center;
-        text-align: center;
-      }
+        width:calc(100% - 14px);
 
-      .cta-right p {
-        max-width: 100%;
-      }
+        padding:
+            22px
+            17px
+            15px;
+    }
 
-      .apply-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
+    .registration-visual-title{
+        font-size:36px;
+    }
 
-      .apply-left {
-        position: static;
-      }
+    .registration-visual-text{
+        font-size:8px;
+    }
 
-      .apply-form {
-        max-height: none;
-        overflow-y: visible;
-      }
+    .registration-form-side{
+        padding:
+            30px
+            16px
+            24px;
+    }
 
-      .apply-form .form-row {
-        grid-template-columns: 1fr;
-      }
+    .registration-title{
+        font-size:34px;
     }
 
-    @media (max-width: 700px) {
-      .navbar {
-        min-height: 78px;
-        padding: 0 20px;
-      }
+    .form-section-title{
+        font-size:9px;
+    }
 
-      .mobile-menu {
-        right: 20px;
-      }
+    .option label{
+        font-size:6.5px;
 
-      .nav-links {
-        top: 78px;
-      }
+        padding:
+            8px
+            9px;
+    }
 
-      .brand-name {
-        font-size: 22px;
-      }
+}
 
-      .brand-tag,
-      .apply-nav {
-        display: none;
-      }
-
-      .nav-links .apply-nav {
-        display: inline-block;
-      }
-
-      .hero {
-        padding: 45px 20px 75px;
-        gap: 55px;
-      }
-
-      .hero-title {
-        font-size: clamp(48px, 15vw, 85px);
-        letter-spacing: -4px;
-      }
-
-      .hero-description {
-        margin-top: 30px;
-        font-size: 24px;
-      }
-
-      .hero-meta {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-
-      .date-time {
-        margin-left: 0;
-        padding-left: 0;
-        border-left: none;
-      }
-
-      .event-card {
-        padding: 35px 24px 30px;
-        border-radius: 18px;
-      }
-
-      .card-title {
-        font-size: 40px;
-      }
-
-      .intro-section,
-      .standard-section,
-      .belongs-section,
-      .come-section,
-      .leave-section {
-        padding: 55px 20px;
-      }
-
-      .intro-title {
-        font-size: 42px;
-        letter-spacing: -2px;
-      }
-
-      .intro-copy {
-        font-size: 21px;
-      }
-
-      .standard-title {
-        font-size: 46px;
-      }
-
-      .standard-tagline {
-        font-size: 18px;
-        letter-spacing: 1px;
-      }
-
-      .values-grid,
-      .belong-grid,
-      .activities-grid,
-      .leave-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .belong-item,
-      .belong-item:nth-child(3n),
-      .belong-item:nth-child(2n) {
-        border-right: none;
-      }
-
-      .leave-card:nth-child(4),
-      .leave-card:nth-child(5),
-      .leave-card:nth-child(6) {
-        margin-top: 0;
-      }
-
-      .activities-section {
-        padding: 50px 20px;
-      }
-
-      .activities-grid {
-        gap: 16px;
-      }
-
-      .activity-card {
-        padding: 25px 20px;
-      }
-
-      .program-section {
-        padding: 50px 20px 30px;
-      }
-
-      .program-header {
-        margin-bottom: 20px;
-      }
-
-      .program-header h2 {
-        font-size: 38px;
-      }
-
-      .schedule-row {
-        grid-template-columns: 1fr;
-        gap: 4px;
-        padding: 14px;
-        border-bottom: 1px solid var(--soft);
-        border-radius: 0;
-      }
-
-      .schedule-title {
-        font-size: 13px;
-      }
-
-      .schedule-desc {
-        grid-column: auto;
-        border-left: none;
-        padding-left: 0;
-        font-size: 12px;
-      }
-
-      .schedule-category {
-        justify-self: start;
-        margin-top: 5px;
-      }
-
-      .cta-banner {
-        margin: 0 0 40px;
-        border-radius: 20px;
-      }
-
-      .cta-content {
-        padding: 40px 24px;
-      }
-
-      .cta-title {
-        font-size: clamp(38px, 13vw, 58px);
-        letter-spacing: -2px;
-      }
-
-      .cta-sub {
-        font-size: 18px;
-      }
-
-      .apply-section {
-        padding: 50px 20px;
-      }
-
-      .apply-form {
-        padding: 24px 18px;
-      }
-
-      .apply-left h2 {
-        font-size: 38px;
-      }
-
-      .phone-wrapper {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .phone-wrapper select {
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 430px) {
-      .hero-title {
-        font-size: 48px;
-        letter-spacing: -3px;
-      }
-
-      .hero-description {
-        font-size: 22px;
-      }
-
-      .card-title {
-        font-size: 36px;
-      }
-
-      .countdown {
-        font-size: 16px;
-      }
-    }
-  </style>
+</style>
 </head>
+
 
 <body>
 
-  <!-- ===== NAVBAR ===== -->
-  <nav class="navbar">
-    <div class="nav-inner">
-      <div class="brand"></div>
-      <div class="nav-links" id="navLinks">
-        <a href="#about">THE RISE</a>
-        <a href="#standard">STANDARD</a>
-        <a href="#belongs">WHO BELONGS</a>
-        <a href="#schedule">SCHEDULE</a>
-        <a href="#expect">WHAT TO EXPECT</a>
-        <a href="#register" class="apply-nav">REGISTER NOW</a>
-      </div>
-    </div>
-    <button class="mobile-menu" id="mobileMenu" aria-label="Toggle navigation" aria-expanded="false"
-      type="button"><span></span></button>
-  </nav>
 
-  <!-- ===== HERO ===== -->
-  <main class="hero">
-    <section class="hero-left">
-      <div class="location-label"></div>
-      <h1 class="hero-title">
-        <div class="title-coffee">THE</div>
-        <div class="title-founders">RISE</div>
-        <div class="title-session">EDITION</div>
-      </h1>
-      <div class="hero-description">
-        The room where the next move begins.<br>
-        <strong>One room. One standard. One powerful day.</strong>
-      </div>
-      <div class="hero-meta">
-        <div class="date-display"><span class="date-day">12</span><span class="date-month">September</span></div>
-        <span class="date-time">1:00 PM — 9:00 PM</span>
-      </div>
-      <div class="meta-pills">
-        <div class="meta-pill highlight">FOUNDERS</div>
-        <div class="meta-pill">ENTREPRENEURS</div>
-        <div class="meta-pill">BUILDERS</div>
-        <div class="meta-pill">CREATORS</div>
-      </div>
-    </section>
-    <section class="hero-right">
-      <div class="event-card">
-        <div class="card-kicker">THE WHITE FOUNDERS</div>
-        <h2 class="card-title">The Rise Edition.</h2>
-        <div class="card-subtitle">The room where the next move begins.</div>
-        <div class="apply-card">
-          <div class="apply-head">
-            <h4>ONE ROOM. ONE STANDARD.</h4><span class="apply-badge">LIMITED</span>
-          </div>
-          <div class="seat-bar-wrap">
-            <div class="seat-bar-fill" style="width:70%;"></div>
-          </div>
-          <div class="seat-stats"><span><strong>SATURDAY</strong></span><span><strong>SEPT 12</strong></span></div>
-          <p class="apply-note">One powerful day built around the people shaping what comes next.</p>
-          <a href="#register" class="apply-button">REGISTER NOW →</a>
-        </div>
-        <div class="countdown-box">
-          <div class="countdown-label">THE RISE BEGINS IN</div>
-          <div id="countdown" class="countdown">Loading...</div>
-        </div>
-      </div>
-    </section>
-  </main>
+<!-- =====================================================
+     HERO
+====================================================== -->
 
-  <!-- ===== INTRO ===== -->
-  <section class="intro-section" id="about">
-    <div class="intro-container">
-      <div class="section-kicker">THIS ISN’T ANOTHER EVENT</div>
-      <h2 class="intro-title">THIS ISN’T ANOTHER EVENT.<br>IT’S A ROOM BUILT FOR PEOPLE WHO ARE BUILDING.</h2>
-      <div class="intro-copy">
-        <p>The entrepreneurial journey can feel solitary. You build in the early mornings. You make decisions nobody
-          else understands. You take risks before anyone can see the outcome. You keep going when the room gets quiet.
-        </p>
-        <p>The Rise Edition exists to change the room. For one powerful day, ambitious minds come together to exchange
-          ideas, challenge perspectives, share experiences, and create relationships that can extend far beyond the
-          event.</p>
-        <p>No unnecessary noise. No manufactured hype. Just people with ambition, surrounded by people with ambition.
-        </p>
-      </div>
-    </div>
-  </section>
+<section class="event-hero">
 
-  <!-- ===== WHERE AMBITION MEETS OPPORTUNITY ===== -->
-  <section class="intro-section">
-    <div class="intro-container">
-      <div class="section-kicker">WHERE AMBITION MEETS OPPORTUNITY.</div>
-      <h2 class="intro-title">THE MOMENT YOU DECIDE TO START.</h2>
-      <div class="intro-copy">
-        <p>Every founder has a moment when they decide to stop waiting. To start. To build. To take the first risk. To
-          make the next move.</p>
-        <p>The Rise Edition is built around that moment. Whether you’re running a company, building your first venture,
-          developing an idea, growing a brand, or searching for the right collaborators—there is a place for you in this
-          room.</p>
-      </div>
-    </div>
-  </section>
+    <img
+        src="assets/get.jpg"
+        alt="The White Startup Kerala Flag Edition"
+        class="event-hero-image"
+    >
 
-  <!-- ===== STANDARD ===== -->
-  <section class="standard-section" id="standard">
-    <div class="standard-container">
-      <div class="standard-kicker">THE WHITE STANDARD</div>
-      <h2 class="standard-title">THINK BIGGER.<br>BUILD BETTER.<br>MOVE WITH INTENT.</h2>
-      <div class="standard-tagline">THE QUALITY OF THE ROOM SHAPES THE QUALITY OF THE CONVERSATION.</div>
-      <div class="standard-copy">The White Startup™ is built around a simple belief: The quality of the room shapes the
-        quality of the conversation.<br><br>That’s why The White Founders™ isn’t designed simply to fill seats. It
-        brings together people with ambition, curiosity, courage, creativity, integrity and execution.</div>
-      <div class="values-grid">
-        <div class="value-card">
-          <div class="value-number">01</div>
-          <h3>AMBITION</h3>
-          <p>The desire to build something meaningful.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-number">02</div>
-          <h3>CURIOSITY</h3>
-          <p>The willingness to question, learn, and explore.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-number">03</div>
-          <h3>COURAGE</h3>
-          <p>The ability to act before certainty arrives.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-number">04</div>
-          <h3>CREATIVITY</h3>
-          <p>The imagination to see what others don’t.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-number">05</div>
-          <h3>INTEGRITY</h3>
-          <p>The standard to build without compromising.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-number">06</div>
-          <h3>EXECUTION</h3>
-          <p>The discipline to turn ideas into reality.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <div class="hero-content">
 
-  <!-- ===== WHO BELONGS ===== -->
-  <section class="belongs-section" id="belongs">
-    <div class="belongs-container">
-      <div class="belongs-heading">
-        <h2>WHO BELONGS IN THE ROOM?</h2>
-      </div>
-      <div class="belong-grid">
-        <div class="belong-item">
-          <h3>FOUNDERS</h3>
-          <p>People building companies, products, brands and ventures.</p>
-        </div>
-        <div class="belong-item">
-          <h3>ENTREPRENEURS</h3>
-          <p>People turning opportunities into businesses.</p>
-        </div>
-        <div class="belong-item">
-          <h3>FUTURE FOUNDERS</h3>
-          <p>People with the ambition to make the leap from idea to execution.</p>
-        </div>
-        <div class="belong-item">
-          <h3>CREATORS</h3>
-          <p>People building audiences, communities and creative businesses.</p>
-        </div>
-        <div class="belong-item">
-          <h3>VISIONARIES</h3>
-          <p>People who see an opportunity where others see a problem.</p>
-        </div>
-        <div class="belong-item">
-          <h3>BUSINESS LEADERS</h3>
-          <p>People responsible for teams, growth, strategy and transformation.</p>
-        </div>
-        <div class="belong-item">
-          <h3>MARKETERS</h3>
-          <p>People shaping brands and influencing how businesses are perceived.</p>
-        </div>
-        <div class="belong-item">
-          <h3>PROFESSIONALS</h3>
-          <p>People ready to expand their network, perspective and possibilities.</p>
-        </div>
-        <div class="belong-item">
-          <h3>STUDENTS</h3>
-          <p>Young minds who want to experience entrepreneurship beyond classrooms.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        <div class="hero-copy">
 
-  <!-- ===== WHAT TO EXPECT ===== -->
-  <section class="activities-section" id="expect">
-    <div class="activities-header">
-      <h2>WHAT TO EXPECT</h2>
-      <p>A DAY DESIGNED FOR MOVEMENT</p>
-    </div>
-    <div class="activities-grid">
-      <div class="activity-card">
-        <div class="activity-number">01</div><span class="activity-label">THE FOUNDERS ROOM™</span>
-        <h3>Meaningful Founder Conversations</h3>
-        <p>An intimate environment for meaningful founder conversations. Hear what happens behind the headlines:
-          decisions, failures, breakthroughs, pivots, and lessons. Real business. Real experiences.</p>
-      </div>
-      <div class="activity-card">
-        <div class="activity-number">02</div><span class="activity-label">FOUNDER STORIES™</span>
-        <h3>The Journeys Behind the Build</h3>
-        <p>Success rarely happens in a straight line. Listen to the real journeys behind the businesses—the moments that
-          tested the founder, changed the strategy, and shaped the company.</p>
-      </div>
-      <div class="activity-card">
-        <div class="activity-number">03</div><span class="activity-label">THE BUSINESS ROOM</span>
-        <h3>The Realities of Building</h3>
-        <p>A focused conversation around Strategy, Execution, Brand, Growth, Leadership, Capital, People, and
-          Opportunity. Learning how to ask better questions.</p>
-      </div>
-      <div class="activity-card">
-        <div class="activity-number">04</div><span class="activity-label">THE CONNECTION ROOM</span>
-        <h3>Don’t Just Network. Connect.</h3>
-        <p>Meet people outside your usual circle, start conversations, exchange ideas, and discover unexpected
-          opportunities for your next business partnership.</p>
-      </div>
-      <div class="activity-card">
-        <div class="activity-number">05</div><span class="activity-label">THE OPEN MIC™</span>
-        <h3>Your Idea Deserves a Moment.</h3>
-        <p>Selected participants step forward to introduce themselves, their business, or their vision. One introduction
-          can create a life-changing connection.</p>
-      </div>
-      <div class="activity-card">
-        <div class="activity-number">06</div><span class="activity-label">THE RISE CONVERSATION</span>
-        <h3>What Comes Next?</h3>
-        <p>A high-energy conversation around ambition, entrepreneurship, and decisions defining the next chapter. Bigger
-          vision, sharper decisions, and stronger execution.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SCHEDULE ===== -->
-  <section class="program-section" id="schedule">
-    <div class="program-header">
-      <h2><span>THE SCHEDULE</span><span class="accent-line"></span></h2>
-      <span class="schedule-date">SATURDAY, SEPTEMBER 12, 2026</span>
-    </div>
-    <div class="schedule-grid">
-      <div class="schedule-row"><span class="schedule-time"><span class="dot"></span>1:00 PM</span><span
-          class="schedule-title">ARRIVAL & REGISTRATION</span><span class="schedule-desc">The room opens. Your
-          experience begins.</span><span class="schedule-category welcome">ARRIVAL</span></div>
-      <div class="schedule-row"><span class="schedule-time"><span class="dot"></span>1:30 PM</span><span
-          class="schedule-title">THE OPENING — THE RISE</span><span class="schedule-desc">Welcome to The White
-          Founders™. The standard is set.</span><span class="schedule-category highlight">OPENING</span></div>
-      <div class="schedule-row"><span class="schedule-time"><span class="dot"></span>2:00 PM</span><span
-          class="schedule-title">THE FOUNDERS ROOM™</span><span class="schedule-desc">Founder conversations and
-          real-world perspectives.</span><span class="schedule-category highlight">FOUNDERS</span></div>
-      <div class="schedule-row"><span class="schedule-time"><span class="dot"></span>3:00 PM</span><span
-          class="schedule-title">FOUNDER STORIES™</span><span class="schedule-desc">The people. The businesses. The
-          journeys behind the build.</span><span class="schedule-category">STORIES</span></div>
-      <div class="schedule-row"><span class="schedule-time"><span class="dot"></span>4:00 PM</span><span
-          class="schedule-title">THE BUSINESS ROOM™</span><span class="schedule-desc">Strategy, execution, growth, brand
-          and opportunity.</span><span class="schedule-category highlight">BUSINESS</span></div>
-      <div class="schedule-row"><span class="schedule-time"><span class="dot"></span>5:00 PM</span><span
-          class="schedule-title">THE CONNECTION ROOM™</span><span class="schedule-desc">Meet the room. Start the
-          conversations. Build the relationships.</span><span class="schedule-category">CONNECT</span></div>
-      <div class="schedule-row"><span class="schedule-time"><span class="dot"></span>6:00 PM</span><span
-          class="schedule-title">THE OPEN MIC™</span><span class="schedule-desc">Ideas take the stage. Selected pitches
-          and introductions.</span><span class="schedule-category highlight">OPEN MIC</span></div>
-      <div class="schedule-row"><span class="schedule-time"><span class="dot"></span>7:00 PM</span><span
-          class="schedule-title">THE RISE CONVERSATION™</span><span class="schedule-desc">A powerful conversation about
-          ambition, entrepreneurship, and what comes next.</span><span
-          class="schedule-category highlight">CONVERSATION</span></div>
-      <div class="schedule-row"><span class="schedule-time"><span class="dot"></span>8:00 PM</span><span
-          class="schedule-title">THE RISE MOMENT™</span><span class="schedule-desc">One room. One question: What are you
-          going to build next?</span><span class="schedule-category">THE RISE</span></div>
-      <div class="schedule-row"><span class="schedule-time"><span class="dot"></span>8:30 PM</span><span
-          class="schedule-title">COMMUNITY CONNECT</span><span class="schedule-desc">The formal program begins to close.
-          The conversations continue.</span><span class="schedule-category">COMMUNITY</span></div>
-      <div class="schedule-row"><span class="schedule-time"><span class="dot"></span>9:00 PM</span><span
-          class="schedule-title">CLOSE</span><span class="schedule-desc">The event ends. The journey
-          doesn’t.</span><span class="schedule-category highlight">CLOSE</span></div>
-    </div>
-  </section>
-
-  <!-- ===== WHAT YOU LEAVE WITH ===== -->
-  <section class="leave-section">
-    <div class="leave-container">
-      <div class="leave-heading">
-        <h2>WHAT YOU LEAVE WITH</h2>
-      </div>
-      <div class="leave-grid">
-        <div class="leave-card">
-          <h3>NEW CONNECTIONS</h3>
-          <p>People who could become partners, collaborators, clients, mentors or friends.</p>
-        </div>
-        <div class="leave-card">
-          <h3>NEW PERSPECTIVE</h3>
-          <p>A broader, sharper view of what is possible in business.</p>
-        </div>
-        <div class="leave-card">
-          <h3>NEW ENERGY</h3>
-          <p>The momentum that comes from surrounding yourself with builders.</p>
-        </div>
-        <div class="leave-card">
-          <h3>NEW CLARITY</h3>
-          <p>A clearer understanding of your strategic next move.</p>
-        </div>
-        <div class="leave-card">
-          <h3>NEW OPPORTUNITIES</h3>
-          <p>Possibilities that often begin with a single conversation.</p>
-        </div>
-        <div class="leave-card">
-          <h3>BIGGER STANDARD</h3>
-          <p>A stronger belief in what you can build and execute.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== COME AS YOU ARE ===== -->
-  <section class="come-section">
-    <div class="come-container">
-      <h2 class="come-title">COME AS YOU ARE</h2>
-      <div class="come-copy">
-        <p>You don’t need to have a million-dollar company. You don’t need a perfect pitch. You don’t need everything
-          figured out.</p>
-        <p>You need <strong>ambition, curiosity,</strong> and the willingness to step forward.</p>
-        <p>Bring the idea, the questions, the vision, and the ambition. <strong>We’ll bring the room.</strong></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CTA BANNER with background image ===== -->
-  <div class="cta-banner">
-    <div class="cta-content">
-      <div class="cta-left">
-        <div class="cta-title">
-          <div class="with">BE</div>
-          <div class="coffee">IN</div>
-          <div>THE ROOM.</div>
-        </div>
-        <div class="cta-sub">The room where the next move begins.<br>One powerful day built around the people shaping
-          what comes next.</div>
-      </div>
-      <div class="cta-right">
-        <span class="cta-badge">LIMITED PARTICIPATION</span>
-        <p>Join The White Founders™ — The Rise Edition.<br><br>Saturday, September 12, 2026 &nbsp;|&nbsp; 1:00 PM — 9:00
-          PM &nbsp;|&nbsp; Business Park</p>
-        <a href="#register" class="cta-button">REGISTER NOW →</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============================================================ -->
-  <!-- ===== APPLICATION SECTION: sticky left + scrollable form (no scrollbar) ===== -->
-  <!-- ============================================================ -->
-  <section class="apply-section" id="register">
-    <div class="apply-grid">
-      <!-- left column: sticky -->
-      <div class="apply-left">
-        <div class="section-kicker">APPLY</div>
-        <h2>TELL US WHO YOU ARE</h2>
-        <div class="apply-desc">
-          We read every application by hand.
-        </div>
-
-        <div
-          style="margin-top:30px; font-size:14px; color:var(--muted); line-height:1.6; border-top:1px solid var(--soft); padding-top:24px;">
-          <p style="font-weight:600; color:var(--olive);">Why apply?</p>
-          <p>This is a curated room. We hand-select each participant to ensure the quality of conversation, connection,
-            and opportunity. Your application helps us understand who you are and what you’re building — so we can make
-            sure this room is right for you.</p>
-        </div>
-      </div>
-
-      <!-- right column: scrollable form (scrollbar hidden) -->
-      <div class="apply-form">
-        <form id="applicationForm">
-          <!-- row: First Name + Last Name -->
-          <div class="form-row">
-            <div class="form-group">
-              <label for="firstName">First Name</label>
-              <input type="text" id="firstName" placeholder="Enter your first name" />
+            <div class="hero-label">
+                THE WHITE STARTUP PRESENTS
             </div>
-            <div class="form-group">
-              <label for="lastName">Last Name</label>
-              <input type="text" id="lastName" placeholder="Enter your last name" />
-            </div>
-          </div>
 
-          <!-- Email -->
-          <div class="form-group">
-            <label for="email">Email <span class="required">*</span></label>
-            <input type="email" id="email" placeholder="your@email.com" required />
-          </div>
+            <h1 class="hero-title">
 
-          <!-- WhatsApp with country code -->
-          <div class="form-group">
-            <label for="whatsapp">WhatsApp Number <span class="required">*</span></label>
-            <div class="phone-wrapper">
-              <select id="countryCode">
-                <option value="+1">🇺🇸 +1</option>
-                <option value="+44">🇬🇧 +44</option>
-                <option value="+91" selected>🇮🇳 +91</option>
-                <option value="+61">🇦🇺 +61</option>
-                <option value="+81">🇯🇵 +81</option>
-                <option value="+86">🇨🇳 +86</option>
-                <option value="+49">🇩🇪 +49</option>
-                <option value="+33">🇫🇷 +33</option>
-                <option value="+39">🇮🇹 +39</option>
-                <option value="+55">🇧🇷 +55</option>
-                <option value="+82">🇰🇷 +82</option>
-                <option value="+52">🇲🇽 +52</option>
-                <option value="+31">🇳🇱 +31</option>
-                <option value="+34">🇪🇸 +34</option>
-                <option value="+41">🇨🇭 +41</option>
-                <option value="+46">🇸🇪 +46</option>
-                <option value="+47">🇳🇴 +47</option>
-                <option value="+45">🇩🇰 +45</option>
-                <option value="+358">🇫🇮 +358</option>
-                <option value="+64">🇳🇿 +64</option>
-                <option value="+27">🇿🇦 +27</option>
-                <option value="+54">🇦🇷 +54</option>
-                <option value="+56">🇨🇱 +56</option>
-                <option value="+57">🇨🇴 +57</option>
-                <option value="+60">🇲🇾 +60</option>
-                <option value="+63">🇵🇭 +63</option>
-                <option value="+65">🇸🇬 +65</option>
-                <option value="+66">🇹🇭 +66</option>
-                <option value="+84">🇻🇳 +84</option>
-                <option value="+971">🇦🇪 +971</option>
-                <option value="+966">🇸🇦 +966</option>
-                <option value="+972">🇮🇱 +972</option>
-                <option value="+98">🇮🇷 +98</option>
-                <option value="+90">🇹🇷 +90</option>
-                <option value="+48">🇵🇱 +48</option>
-                <option value="+420">🇨🇿 +420</option>
-                <option value="+36">🇭🇺 +36</option>
-                <option value="+40">🇷🇴 +40</option>
-                <option value="+7">🇷🇺 +7</option>
-              </select>
-              <input type="tel" id="whatsapp" placeholder="555-000-0000" required />
-            </div>
-          </div>
+                THE KERALA
 
-          <!-- Instagram / LinkedIn -->
-          <div class="form-group">
-            <label for="social">Instagram / LinkedIn Profile <span class="required">*</span></label>
-            <input type="text" id="social" placeholder="@yourhandle or LinkedIn URL" required />
-          </div>
+                <br>
 
-          <!-- Which best describes you? -->
-          <div class="form-group">
-            <label for="describe">Which best describes you? <span class="required">*</span></label>
-            <select id="describe" required>
-              <option value="">Select...</option>
-              <option>Founder / Co-founder</option>
-              <option>Entrepreneur</option>
-              <option>Future Founder</option>
-              <option>Creator / Influencer</option>
-              <option>Business Leader</option>
-              <option>Professional</option>
-              <option>Student</option>
-              <option>Other</option>
-            </select>
-          </div>
+                <span class="yellow">
+                    FLAG EDITION
+                </span>
 
-          <!-- Company / Brand / Project Name -->
-          <div class="form-group">
-            <label for="company">Company / Brand / Project Name <span class="required">*</span></label>
-            <input type="text" id="company" placeholder="Enter your text" required />
-          </div>
+            </h1>
 
-          <!-- Company website -->
-          <div class="form-group">
-            <label for="website">What's your company website? <span class="required">*</span></label>
-            <input type="url" id="website" placeholder="https://yourwebsite.com" required />
-          </div>
+            <p class="hero-tagline">
+                ONE ROOM. ONE STATE. ONE BIGGER AMBITION.
+            </p>
 
-          <!-- What are you currently building? -->
-          <div class="form-group">
-            <label for="building">What are you currently building or working on? <span class="required">*</span></label>
-            <textarea id="building" rows="2" placeholder="Enter your text" required></textarea>
-          </div>
+            <a
+                href="#register"
+                class="register-btn"
+            >
 
-          <!-- What stage are you at? (checkboxes) -->
-          <div class="form-group">
-            <label>What stage are you currently at? <span class="required">*</span></label>
-            <div class="checkbox-group" id="stageGroup">
-              <label><input type="checkbox" value="Idea" /> Idea</label>
-              <label><input type="checkbox" value="MVP" /> MVP</label>
-              <label><input type="checkbox" value="Early traction" /> Early traction</label>
-              <label><input type="checkbox" value="Scaling" /> Scaling</label>
-              <label><input type="checkbox" value="Established" /> Established</label>
-              <label><input type="checkbox" value="Other" /> Other</label>
-            </div>
-          </div>
+                <span>
+                    REGISTER NOW
+                </span>
 
-          <!-- What would make this meetup valuable? (checkboxes) -->
-          <div class="form-group">
-            <label>What would make this meetup valuable for you? <span class="required">*</span></label>
-            <div class="checkbox-group" id="valueGroup">
-              <label><input type="checkbox" value="Get our product into attendees' hands" /> Get our product into
-                attendees' hands</label>
-              <label><input type="checkbox" value="Meet potential customers" /> Meet potential customers</label>
-              <label><input type="checkbox" value="Meet founders & decision-makers" /> Meet founders &
-                decision-makers</label>
-              <label><input type="checkbox" value="Creator / influencer relationships" /> Creator / influencer
-                relationships</label>
-              <label><input type="checkbox" value="Brand awareness" /> Brand awareness</label>
-              <label><input type="checkbox" value="Content from the event" /> Content from the event</label>
-              <label><input type="checkbox" value="Generate partnerships" /> Generate partnerships</label>
-              <label><input type="checkbox" value="Investor / ecosystem visibility" /> Investor / ecosystem
-                visibility</label>
-            </div>
-          </div>
+                <span class="register-arrow">
+                    ↗
+                </span>
 
-          <!-- What can you bring to the room? -->
-          <div class="form-group">
-            <label for="bring">What can you bring to the room? <span class="required">*</span></label>
-            <textarea id="bring" rows="2"
-              placeholder="Experience, expertise, connections, opportunities, ideas — anything you think other attendees would value."
-              required></textarea>
-            <div class="helper-text">Helper: Experience, expertise, connections, opportunities, ideas — anything you
-              think other attendees would value.</div>
-          </div>
+            </a>
 
-          <div id="formStatus" style="display:none; margin-bottom:14px; font-size:13px; line-height:1.5;"></div>
+        </div>
 
-          <div class="form-actions">
-            <button type="submit" class="submit-btn" id="submitBtn">APPLY FOR A SEAT</button>
-          </div>
-        </form>
-      </div>
     </div>
-  </section>
 
-  <!-- ===== FOOTER ===== -->
-  <div style="padding: 30px 4vw 50px; text-align: center; border-top: 1px solid var(--soft);">
-    <div style="max-width:800px; margin:0 auto;">
-      <h3 style="font-family:'DM Serif Display',serif; font-size:24px; color:var(--ink);">The White Founders</h3>
-      <p style="font-size:13px; color:var(--muted); margin-top:6px;">The Rise Edition — One room. One standard. One
-        powerful day.</p>
+
+    <!-- EVENT CARD -->
+
+    <div class="hero-details">
+
+        <div class="event-card">
+
+            <div class="event-date-row">
+
+                <div class="event-date">
+
+                    <div class="day">
+                        19
+                    </div>
+
+                    <div class="month">
+                        SEPT 2026
+                    </div>
+
+                </div>
+
+
+                <div class="event-time">
+
+                    <div class="event-time-label">
+                        TIME
+                    </div>
+
+                    <div class="event-time-value">
+                        01:00 PM - 9:00 PM
+                    </div>
+
+                    <div class="event-time-note">
+                        DOORS OPEN
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="event-meta">
+
+                <div class="event-meta-item">
+
+                    <div class="event-meta-label">
+                        VENUE
+                    </div>
+
+                    <div class="event-meta-value">
+                        THE RAVIZ
+                    </div>
+
+                </div>
+
+
+                <div class="event-meta-item">
+
+                    <div class="event-meta-label">
+                        HOST
+                    </div>
+
+                    <div class="event-meta-value">
+                        THE WHITE STARTUP
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
-  </div>
 
-  <!-- ===== SUPABASE (backend for the application form) ===== -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script>
-    // 1) Paste your own Project URL and anon public key from
-    //    Supabase → Project Settings → API. Safe to expose in client code.
-    const SUPABASE_URL = "https://hebenhpsfhpqwazawscx.supabase.co";
-    const SUPABASE_ANON_KEY = "sb_publishable_jbYZ38FDLz4TgzX3k9TMLw_h6dEXKP-";
+</section>
 
-    // 2) Paste your Web3Forms access key (free, from https://web3forms.com)
-    //    This sends YOU an email every time someone submits the form.
-    //    It never blocks or breaks the submission if it fails.
-    const WEB3FORMS_ACCESS_KEY = "7744d23b-3cbb-409c-92fa-af08ae3be2d3";
 
-    const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+<!-- =====================================================
+     INTRO
+====================================================== -->
 
-    async function sendEmailNotification(payload) {
-      try {
-        await fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({
-            access_key: WEB3FORMS_ACCESS_KEY,
-            subject: "New event application — " + payload.first_name + " " + payload.last_name,
-            from_name: "The White Founders — Event Applications",
-            ...payload,
-            stage: payload.stage.join(", "),
-            meetup_value: payload.meetup_value.join(", "),
-          }),
-        });
-      } catch (err) {
-        // Email is best-effort — the application is already safely saved in
-        // Supabase, so a failed notification email should never block the user.
-        console.error("Email notification failed (application was still saved):", err);
-      }
-    }
+<section
+    class="intro-section"
+    id="register"
+>
 
-    const applicationForm = document.getElementById("applicationForm");
-    const submitBtn = document.getElementById("submitBtn");
-    const formStatus = document.getElementById("formStatus");
+    <div class="intro-inner">
 
-    function showStatus(message, isError) {
-      formStatus.textContent = message;
-      formStatus.style.display = "block";
-      formStatus.style.color = isError ? "#b3261e" : "var(--olive)";
-    }
+        <div class="intro-left">
 
-    applicationForm.addEventListener("submit", async function (event) {
-      event.preventDefault();
+            <h2 class="intro-title">
 
-      const stage = Array.from(document.querySelectorAll("#stageGroup input:checked")).map(cb => cb.value);
-      const meetupValue = Array.from(document.querySelectorAll("#valueGroup input:checked")).map(cb => cb.value);
+                KERALA'S NEXT GENERATION
+                OF FOUNDERS.
 
-      if (stage.length === 0 || meetupValue.length === 0) {
-        showStatus("Please select at least one option in each checkbox section.", true);
-        return;
-      }
+            </h2>
 
-      const payload = {
-        first_name: document.getElementById("firstName").value.trim(),
-        last_name: document.getElementById("lastName").value.trim(),
-        email: document.getElementById("email").value.trim(),
-        whatsapp: document.getElementById("countryCode").value + " " + document.getElementById("whatsapp").value.trim(),
-        social: document.getElementById("social").value.trim(),
-        describe: document.getElementById("describe").value,
-        company: document.getElementById("company").value.trim(),
-        website: document.getElementById("website").value.trim(),
-        building: document.getElementById("building").value.trim(),
-        stage: stage,
-        meetup_value: meetupValue,
-        bring: document.getElementById("bring").value.trim(),
-      };
+            <p class="generation-text">
+                A new generation is stepping forward.
+            </p>
 
-      submitBtn.disabled = true;
-      submitBtn.textContent = "SUBMITTING...";
-      formStatus.style.display = "none";
+            <div class="category-list">
 
-      const { error } = await supabaseClient.from("event_applications").insert([payload]);
+                <div class="category-box">
+                    FOUNDERS
+                </div>
 
-      if (error) {
-        console.error("Supabase insert failed:", error);
-        showStatus("Something went wrong submitting your application. Please try again.", true);
-        submitBtn.disabled = false;
-        submitBtn.textContent = "APPLY FOR A SEAT";
-        return;
-      }
+                <div class="category-box">
+                    ENTREPRENEURS
+                </div>
 
-      showStatus("Application submitted! We'll review it within 48 hours.", false);
-      applicationForm.reset();
-      submitBtn.disabled = false;
-      submitBtn.textContent = "APPLY FOR A SEAT";
+                <div class="category-box">
+                    CREATORS
+                </div>
 
-      // Fire the email notification after the user already sees success —
-      // it's a "nice to have," not something the applicant should wait on.
-      sendEmailNotification(payload);
-    });
-  </script>
+                <div class="category-box">
+                    INVESTORS
+                </div>
 
-  <!-- ===== JAVASCRIPT (countdown + mobile) ===== -->
-  <script>
-    // countdown
-    const targetDate = new Date("September 12, 2026 13:00:00").getTime();
-    const countdownEl = document.getElementById("countdown");
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-      if (distance <= 0) { countdownEl.innerHTML = "THE RISE IS LIVE"; return; }
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      countdownEl.innerHTML = `${days}d ${String(hours).padStart(2, "0")}h ${String(minutes).padStart(2, "0")}m <span class="seconds">${String(seconds).padStart(2, "0")}s</span>`;
-    }
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+                <div class="category-box">
+                    BUSINESS LEADERS
+                </div>
 
-    // mobile nav
-    const mobileMenu = document.getElementById("mobileMenu");
-    const navLinks = document.getElementById("navLinks");
-    mobileMenu.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("mobile-active");
-      mobileMenu.setAttribute("aria-expanded", isOpen);
-    });
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        if (window.innerWidth <= 1100) {
-          navLinks.classList.remove("mobile-active");
-          mobileMenu.setAttribute("aria-expanded", "false");
+                <div class="category-box">
+                    FUTURE FOUNDERS
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="image-collage">
+
+            <div class="collage-image">
+
+                <img
+                    src="assets/think.jpg"
+                    alt="Think"
+                >
+
+            </div>
+
+
+            <div class="collage-image">
+
+                <img
+                    src="assets/entreprenuer.jpg"
+                    alt="Entrepreneur"
+                >
+
+            </div>
+
+
+            <div class="collage-image">
+
+                <img
+                    src="assets/founders.jpg"
+                    alt="Founders"
+                >
+
+            </div>
+
+
+            <div class="collage-image">
+
+                <img
+                    src="assets/creators.jpg"
+                    alt="Creators"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROGRAM
+====================================================== -->
+
+<section class="program-section">
+
+    <div class="program-inner">
+
+        <div class="program-heading">
+
+            <h2 class="program-title">
+
+                MORE THAN
+
+                <br>
+
+                <span class="program-yellow">
+                    A PROGRAM.
+                </span>
+
+                <br>
+
+                A ROOM BUILT
+                AROUND PEOPLE.
+
+            </h2>
+
+            <p class="program-heading-text">
+
+                This is where ideas meet people, businesses meet
+                opportunity, and founders find the conversations
+                that move them forward.
+
+            </p>
+
+        </div>
+
+
+        <div class="program-content">
+
+            <div class="program-list">
+
+                <div class="program-item">
+
+                    <div class="program-item-title">
+                        THE FOUNDERS ROOM
+                    </div>
+
+                    <div class="program-item-text">
+                        Real stories. Real decisions. Real lessons.
+                    </div>
+
+                </div>
+
+
+                <div class="program-item">
+
+                    <div class="program-item-title">
+                        THE BUSINESS ROOM
+                    </div>
+
+                    <div class="program-item-text">
+                        Strategy, growth, leadership, brand,
+                        execution, and opportunity.
+                    </div>
+
+                </div>
+
+
+                <div class="program-item">
+
+                    <div class="program-item-title">
+                        FOUNDER STORIES
+                    </div>
+
+                    <div class="program-item-text">
+                        The breakthroughs, setbacks, and decisions
+                        behind the business.
+                    </div>
+
+                </div>
+
+
+                <div class="program-item">
+
+                    <div class="program-item-title">
+                        THE CONNECTION ROOM
+                    </div>
+
+                    <div class="program-item-text">
+                        Meet people. Build relationships.
+                        Create possibilities.
+                    </div>
+
+                </div>
+
+
+                <div class="program-item">
+
+                    <div class="program-item-title">
+                        THE OPEN MIC
+                    </div>
+
+                    <div class="program-item-text">
+                        Put your business, idea, or next move
+                        on the table.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<section class="footer-section">
+
+    <div class="footer-inner">
+
+        <div class="footer-statement">
+
+            THE PROGRAM IS ONE DAY.
+
+            <br>
+
+            <span>
+                THE NETWORK GOES FURTHER.
+            </span>
+
+        </div>
+
+
+        <div class="footer-boxes">
+
+            <div class="footer-box">
+
+                <div class="footer-label">
+                    THE WHITE FOUNDERS COLLECTIVE
+                </div>
+
+                <h2 class="footer-heading">
+
+                    THE NETWORK
+
+                    <br>
+
+                    <span>
+                        BEHIND THE EXPERIENCE.
+                    </span>
+
+                </h2>
+
+                <p class="footer-description">
+
+                    A curated collective of founders,
+                    entrepreneurs, creators, investors,
+                    and business leaders building what’s next.
+
+                </p>
+
+                <div class="footer-keywords">
+
+                    <div>
+                        CONNECT.
+                    </div>
+
+                    <div>
+                        EXCHANGE.
+                    </div>
+
+                    <div>
+                        COLLABORATE.
+                    </div>
+
+                    <div>
+                        BUILD.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-box">
+
+                <div class="footer-label">
+                    THE WHITE STANDARD
+                </div>
+
+                <h2 class="footer-heading">
+
+                    THINK BIGGER.
+
+                    <br>
+
+                    BUILD BETTER.
+
+                    <br>
+
+                    <span>
+                        MOVE WITH INTENT.
+                    </span>
+
+                </h2>
+
+                <p class="footer-description">
+
+                    Build businesses that matter.
+                    Solve problems worth solving.
+                    Create value that lasts.
+                    That is the standard.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- CTA -->
+
+        <div class="footer-cta">
+
+            <div class="footer-cta-copy">
+
+                <h2 class="footer-cta-title">
+
+                    YOUR NEXT MOVE
+
+                    <br>
+
+                    <span>
+                        STARTS HERE.
+                    </span>
+
+                </h2>
+
+                <p class="footer-cta-text">
+
+                    A conversation can become a partnership.
+                    An introduction can become an opportunity.
+                    An idea can become a company.
+
+                </p>
+
+            </div>
+
+
+            <a
+                href="#register"
+                class="reserve-btn"
+            >
+
+                <span>
+                    RESERVE YOUR PLACE
+                </span>
+
+                <span class="reserve-btn-arrow">
+                    ↗
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     REGISTRATION MODAL
+====================================================== -->
+
+<div
+    class="registration-modal"
+    id="registrationModal"
+    aria-hidden="true"
+>
+
+    <div class="registration-modal-container">
+
+        <button
+            type="button"
+            class="modal-close"
+            id="modalClose"
+            aria-label="Close registration"
+        >
+            ×
+        </button>
+
+
+        <!-- =================================================
+             LEFT FIXED IMAGE
+        ================================================== -->
+
+        <div class="registration-visual">
+
+            <img
+                src="assets/reg.jpeg"
+                alt="The White Startup Registration"
+                class="registration-visual-image"
+            >
+
+
+            <div class="registration-visual-content">
+
+             
+
+
+                <h2 class="registration-visual-title">
+
+                    REGISTER
+
+                    <br>
+
+                    <span>
+                        YOUR PLACE.
+                    </span>
+
+                </h2>
+
+
+                <p class="registration-visual-text">
+
+                    <strong>
+                        YOUR NEXT MOVE STARTS HERE.
+                    </strong>
+
+                    <br><br>
+
+                    A conversation can become a partnership.
+                    An introduction can become an opportunity.
+                    An idea can become a company.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             RIGHT SCROLLING FORM
+        ================================================== -->
+
+        <div class="registration-form-side">
+
+            <div class="registration-top">
+
+              
+
+
+                <h2 class="registration-title">
+
+                    YOUR
+
+                    <br>
+
+                    <span>
+                        DETAILS.
+                    </span>
+
+                </h2>
+
+            </div>
+
+
+            <form id="registrationForm">
+
+
+                <!-- YOUR DETAILS -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+                        YOUR DETAILS
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-field">
+
+                            <label for="fullName">
+                                FULL NAME *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="full_name"
+                                placeholder="Your full name"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="email">
+                                EMAIL ADDRESS *
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Your email address"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="mobile">
+                                MOBILE / WHATSAPP *
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="mobile"
+                                name="mobile"
+                                placeholder="Your mobile number"
+                                autocomplete="tel"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="city">
+                                CITY *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="city"
+                                name="city"
+                                placeholder="Your city"
+                                autocomplete="address-level2"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROFILE -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+                        YOUR PROFILE
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-field">
+
+                            <label for="designation">
+                                DESIGNATION / ROLE *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="designation"
+                                name="designation"
+                                placeholder="Your role"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="company">
+                                COMPANY / BRAND
+                            </label>
+
+                            <input
+                                type="text"
+                                id="company"
+                                name="company"
+                                placeholder="Company / brand"
+                            >
+
+                        </div>
+
+
+                        <div class="form-field full">
+
+                            <label for="industry">
+                                INDUSTRY *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="industry"
+                                name="industry"
+                                placeholder="Your industry"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- I AM A -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+                        I AM A
+                    </div>
+
+
+                    <div class="option-group">
+
+                        <div class="option">
+
+                            <input
+                                type="radio"
+                                name="profile"
+                                id="founder"
+                                value="Founder"
+                                required
+                            >
+
+                            <label for="founder">
+                                Founder
+                            </label>
+
+                        </div>
+
+
+                        <div class="option">
+
+                            <input
+                                type="radio"
+                                name="profile"
+                                id="entrepreneur"
+                                value="Entrepreneur"
+                            >
+
+                            <label for="entrepreneur">
+                                Entrepreneur
+                            </label>
+
+                        </div>
+
+
+                        <div class="option">
+
+                            <input
+                                type="radio"
+                                name="profile"
+                                id="investor"
+                                value="Investor"
+                            >
+
+                            <label for="investor">
+                                Investor
+                            </label>
+
+                        </div>
+
+
+                        <div class="option">
+
+                            <input
+                                type="radio"
+                                name="profile"
+                                id="creator"
+                                value="Creator"
+                            >
+
+                            <label for="creator">
+                                Creator
+                            </label>
+
+                        </div>
+
+
+                        <div class="option">
+
+                            <input
+                                type="radio"
+                                name="profile"
+                                id="businessLeader"
+                                value="Business Leader"
+                            >
+
+                            <label for="businessLeader">
+                                Business Leader
+                            </label>
+
+                        </div>
+
+
+                        <div class="option">
+
+                            <input
+                                type="radio"
+                                name="profile"
+                                id="professional"
+                                value="Professional"
+                            >
+
+                            <label for="professional">
+                                Professional
+                            </label>
+
+                        </div>
+
+
+                        <div class="option">
+
+                            <input
+                                type="radio"
+                                name="profile"
+                                id="futureFounder"
+                                value="Future Founder"
+                            >
+
+                            <label for="futureFounder">
+                                Future Founder
+                            </label>
+
+                        </div>
+
+
+                        <div class="option">
+
+                            <input
+                                type="radio"
+                                name="profile"
+                                id="student"
+                                value="Student"
+                            >
+
+                            <label for="student">
+                                Student
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INTEREST -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+                        YOUR INTEREST
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label>
+                            WHAT BRINGS YOU TO THE PROGRAM? *
+                        </label>
+
+
+                        <div class="option-group">
+
+                            <div class="option">
+
+                                <input
+                                    type="checkbox"
+                                    name="interest"
+                                    id="networking"
+                                    value="Networking"
+                                >
+
+                                <label for="networking">
+                                    Networking
+                                </label>
+
+                            </div>
+
+
+                            <div class="option">
+
+                                <input
+                                    type="checkbox"
+                                    name="interest"
+                                    id="businessGrowth"
+                                    value="Business Growth"
+                                >
+
+                                <label for="businessGrowth">
+                                    Business Growth
+                                </label>
+
+                            </div>
+
+
+                            <div class="option">
+
+                                <input
+                                    type="checkbox"
+                                    name="interest"
+                                    id="collaboration"
+                                    value="Collaboration"
+                                >
+
+                                <label for="collaboration">
+                                    Collaboration
+                                </label>
+
+                            </div>
+
+
+                            <div class="option">
+
+                                <input
+                                    type="checkbox"
+                                    name="interest"
+                                    id="investment"
+                                    value="Investment"
+                                >
+
+                                <label for="investment">
+                                    Investment
+                                </label>
+
+                            </div>
+
+
+                            <div class="option">
+
+                                <input
+                                    type="checkbox"
+                                    name="interest"
+                                    id="learning"
+                                    value="Learning"
+                                >
+
+                                <label for="learning">
+                                    Learning
+                                </label>
+
+                            </div>
+
+
+                            <div class="option">
+
+                                <input
+                                    type="checkbox"
+                                    name="interest"
+                                    id="entrepreneurship"
+                                    value="Entrepreneurship"
+                                >
+
+                                <label for="entrepreneurship">
+                                    Entrepreneurship
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- COLLECTIVE -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+                        THE WHITE FOUNDERS™ COLLECTIVE
+                    </div>
+
+
+                    <div class="collective-box">
+
+                        <div class="collective-question">
+                            INTERESTED IN JOINING THE COLLECTIVE?
+                        </div>
+
+
+                        <div class="option-group">
+
+                            <div class="option">
+
+                                <input
+                                    type="radio"
+                                    name="collective"
+                                    id="collectiveYes"
+                                    value="Yes"
+                                >
+
+                                <label for="collectiveYes">
+                                    Yes
+                                </label>
+
+                            </div>
+
+
+                            <div class="option">
+
+                                <input
+                                    type="radio"
+                                    name="collective"
+                                    id="collectiveMore"
+                                    value="Tell Me More"
+                                >
+
+                                <label for="collectiveMore">
+                                    Tell Me More
+                                </label>
+
+                            </div>
+
+
+                            <div class="option">
+
+                                <input
+                                    type="radio"
+                                    name="collective"
+                                    id="collectiveNo"
+                                    value="Not Now"
+                                >
+
+                                <label for="collectiveNo">
+                                    Not Now
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONFIRM -->
+
+                <div class="confirm-section">
+
+                    <div class="form-section-title">
+                        CONFIRM
+                    </div>
+
+
+                    <label class="confirm-check">
+
+                        <input
+                            type="checkbox"
+                            name="updates"
+                            required
+                        >
+
+                        <span>
+                            I agree to receive event-related updates
+                            from THE WHITE STARTUP™ and
+                            THE WHITE FOUNDERS™.
+                        </span>
+
+                    </label>
+
+
+                    <button
+                        type="submit"
+                        class="secure-btn"
+                    >
+
+                        <span>
+                            SECURE MY PLACE
+                        </span>
+
+                        <span class="secure-btn-arrow">
+                            ↗
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        const modal =
+            document.getElementById(
+                "registrationModal"
+            );
+
+        const closeButton =
+            document.getElementById(
+                "modalClose"
+            );
+
+        const registrationForm =
+            document.getElementById(
+                "registrationForm"
+            );
+
+
+        const registerButtons =
+            document.querySelectorAll(
+                ".register-btn, .reserve-btn"
+            );
+
+
+        function openRegistrationModal(){
+
+            modal.classList.add("active");
+
+            modal.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            document.body.classList.add(
+                "modal-open"
+            );
+
         }
-      });
-    });
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 1100) {
-        navLinks.classList.remove("mobile-active");
-        mobileMenu.setAttribute("aria-expanded", "false");
-      }
-    });
-  </script>
-</body>
 
+
+        function closeRegistrationModal(){
+
+            modal.classList.remove("active");
+
+            modal.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            document.body.classList.remove(
+                "modal-open"
+            );
+
+        }
+
+
+        registerButtons.forEach(
+            function(button){
+
+                button.addEventListener(
+                    "click",
+                    function(event){
+
+                        event.preventDefault();
+
+                        openRegistrationModal();
+
+                    }
+                );
+
+            }
+        );
+
+
+        closeButton.addEventListener(
+            "click",
+            function(){
+
+                closeRegistrationModal();
+
+            }
+        );
+
+
+        modal.addEventListener(
+            "click",
+            function(event){
+
+                if(
+                    event.target === modal
+                ){
+
+                    closeRegistrationModal();
+
+                }
+
+            }
+        );
+
+
+        document.addEventListener(
+            "keydown",
+            function(event){
+
+                if(
+                    event.key === "Escape" &&
+                    modal.classList.contains("active")
+                ){
+
+                    closeRegistrationModal();
+
+                }
+
+            }
+        );
+
+
+        registrationForm.addEventListener(
+            "submit",
+            function(event){
+
+                event.preventDefault();
+
+
+                const button =
+                    registrationForm.querySelector(
+                        ".secure-btn"
+                    );
+
+
+                const buttonText =
+                    button.querySelector(
+                        "span:first-child"
+                    );
+
+
+                buttonText.textContent =
+                    "PLACE RESERVED ✓";
+
+
+                button.style.background =
+                    "#736e4e";
+
+
+                button.style.borderColor =
+                    "#736e4e";
+
+
+                setTimeout(
+                    function(){
+
+                        registrationForm.reset();
+
+
+                        buttonText.textContent =
+                            "SECURE MY PLACE";
+
+
+                        button.style.background =
+                            "";
+
+
+                        button.style.borderColor =
+                            "";
+
+
+                        closeRegistrationModal();
+
+                    },
+                    1800
+                );
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+
+</body>
 </html>
