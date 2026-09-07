@@ -1,1941 +1,3474 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>The White Founders™ — The Global Founder Room</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-  href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap"
-  rel="stylesheet"
->
-
-<style>
-
-/* =========================================================
-   ROOT
-   ========================================================= */
-
-:root{
-  --ink:#2e2c1f;
-  --olive:#736e4e;
-  --paper:#ffffff;
-  --soft:#eae9e5;
-  --yellow:#fff18f;
-  --muted:#b8b49c;
-  --line:rgba(46,44,31,.16);
-
-  --max:1240px;
-}
-
-
-/* =========================================================
-   RESET
-   ========================================================= */
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  background:var(--ink);
-  color:var(--ink);
-  font-family:"Inter",Arial,sans-serif;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
-
-img{
-  display:block;
-  width:100%;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-
-/* =========================================================
-   MAIN SITE
-   ========================================================= */
-
-.site{
-  width:min(100%,var(--max));
-  margin:auto;
-  background:var(--paper);
-}
-
-
-/* =========================================================
-   EDITORIAL OPENING
-   ========================================================= */
-
-.editorial-opening{
-  padding:0 0 58px;
-  background:var(--paper);
-  border-bottom:none;
-}
-
-.opening-meta{
-  display:none;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
-  margin-bottom:64px;
-}
-
-.eyebrow,
-.section-index,
-.small-label{
-  font-size:8px;
-  line-height:1.1;
-  font-weight:700;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-}
-
-.issue{
-  font-size:8px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:rgba(46,44,31,.48);
-}
-
-
-/* =========================================================
-   OPENING IMAGE
-   ========================================================= */
-
-.opening-image{
-  margin-top:0;
-  height:620px;
-  overflow:hidden;
-  position:relative;
-  background:#ddd;
-}
-
-.opening-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-
-  /*
-    Face-safe crop.
-    Keeps the people/faces from being pushed
-    too far toward the top or bottom.
-  */
-  object-position:center 38%;
-
-  filter:none;
-  transform:none;
-}
-
-
-/* =========================================================
-   OPENING IMAGE OVERLAY
-   ========================================================= */
-
-.opening-image::before{
-  content:"";
-  position:absolute;
-  inset:0;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(20,19,14,.08) 0%,
-      rgba(20,19,14,.12) 35%,
-      rgba(20,19,14,.70) 100%
-    );
-
-  z-index:1;
-}
-
-
-/* =========================================================
-   OPENING OVERLAY
-   ========================================================= */
-
-.opening-overlay{
-  position:absolute;
-  inset:0;
-  z-index:2;
-
-  display:grid;
-  grid-template-columns:1.35fr .65fr;
-
-  align-items:end;
-
-  gap:50px;
-
-  padding:34px 32px;
-
-  color:#fff;
-}
-
-
-/* =========================================================
-   OPENING TITLE
-   ========================================================= */
-
-.opening-title{
-  max-width:900px;
-
-  font-size:clamp(54px,7.2vw,94px);
-
-  line-height:.79;
-
-  letter-spacing:-.09em;
-
-  font-weight:700;
-
-  text-transform:uppercase;
-}
-
-.opening-title span{
-  display:block;
-}
-
-.opening-title .highlight{
-  position:relative;
-  display:inline-block;
-  z-index:1;
-}
-
-.opening-title .highlight::after{
-  content:"";
-
-  position:absolute;
-
-  left:0;
-  right:9%;
-  bottom:-4px;
-
-  height:9px;
-
-  background:var(--yellow);
-
-  z-index:-1;
-}
-
-
-/* =========================================================
-   OPENING TITLE ON IMAGE
-   ========================================================= */
-
-.opening-overlay .opening-title{
-  color:#fff;
-
-  text-shadow:
-    0 4px 24px rgba(0,0,0,.22);
-}
-
-.opening-overlay .opening-title .highlight{
-  color:var(--yellow);
-}
-
-.opening-overlay .opening-title .highlight::after{
-  display:none;
-}
-
-
-/* =========================================================
-   OPENING NOTE
-   ========================================================= */
-
-.opening-note{
-  max-width:360px;
-
-  padding-left:24px;
-
-  border-left:1px solid rgba(255,255,255,.38);
-
-  color:#fff;
-}
-
-.opening-note .small-label{
-  color:var(--yellow);
-  margin-bottom:14px;
-}
-
-.opening-note p{
-  font-size:10px;
-  line-height:1.65;
-  color:rgba(255,255,255,.88);
-}
-
-
-/* =========================================================
-   GENERAL EDITORIAL SECTIONS
-   ========================================================= */
-
-.editorial-section{
-  padding:78px 30px;
-}
-
-.editorial-section.soft{
-  background:var(--soft);
-}
-
-.editorial-section.ink{
-  background:var(--ink);
-  color:var(--paper);
-}
-
-
-/* =========================================================
-   STANDARD SECTION LAYOUT
-   ========================================================= */
-
-.section-layout{
-  display:grid;
-
-  grid-template-columns:28% 1fr;
-
-  column-gap:70px;
-
-  align-items:start;
-}
-
-.section-side{
-  position:relative;
-  align-self:start;
-}
-
-.section-index{
-  margin-bottom:17px;
-  color:rgba(46,44,31,.5);
-}
-
-.ink .section-index{
-  color:rgba(255,255,255,.5);
-}
-
-.section-side h2{
-  max-width:420px;
-
-  font-size:clamp(30px,4vw,54px);
-
-  line-height:.83;
-
-  letter-spacing:-.07em;
-
-  text-transform:uppercase;
-}
-
-.section-side-detail{
-  max-width:330px;
-
-  margin-top:28px;
-
-  padding-top:18px;
-
-  border-top:1px solid var(--line);
-}
-
-.section-side-detail .side-lead{
-  font-size:16px;
-
-  line-height:1.02;
-
-  letter-spacing:-.035em;
-
-  margin-bottom:16px;
-}
-
-.section-side-detail p:not(.side-lead){
-  font-size:9px;
-
-  line-height:1.6;
-
-  color:rgba(46,44,31,.68);
-}
-
-.ink .section-side h2{
-  color:var(--yellow);
-}
-
-.section-copy{
-  max-width:740px;
-}
-
-
-/* =========================================================
-   LEAD / BODY
-   ========================================================= */
-
-.lead{
-  max-width:690px;
-
-  font-size:clamp(23px,2.65vw,35px);
-
-  line-height:.96;
-
-  letter-spacing:-.055em;
-
-  text-transform:uppercase;
-}
-
-.body-copy{
-  max-width:650px;
-
-  margin-top:24px;
-
-  font-size:10px;
-
-  line-height:1.68;
-
-  color:rgba(46,44,31,.72);
-}
-
-.ink .body-copy{
-  color:rgba(255,255,255,.72);
-}
-
-.body-copy strong{
-  color:var(--ink);
-}
-
-.ink .body-copy strong{
-  color:var(--yellow);
-}
-
-
-/* =========================================================
-   GLOBAL FOUNDER ROOM
-   ========================================================= */
-
-.world-feature{
-  margin-top:45px;
-
-  display:grid;
-
-  grid-template-columns:1.15fr .85fr;
-
-  gap:12px;
-}
-
-.world-feature img{
-  width:100%;
-
-  height:290px;
-
-  object-fit:cover;
-
-  object-position:center;
-
-  filter:none;
-}
-
-.world-feature .feature-text{
-  min-height:290px;
-
-  background:var(--ink);
-
-  color:#fff;
-
-  padding:25px;
-
-  display:flex;
-
-  flex-direction:column;
-
-  justify-content:space-between;
-}
-
-.feature-text .small-label{
-  color:var(--yellow);
-}
-
-.feature-text h3{
-  max-width:370px;
-
-  color:var(--yellow);
-
-  font-size:clamp(30px,4vw,53px);
-
-  line-height:.82;
-
-  letter-spacing:-.07em;
-
-  text-transform:uppercase;
-}
-
-.feature-text p{
-  max-width:360px;
-
-  font-size:9px;
-
-  line-height:1.5;
-
-  color:rgba(255,255,255,.72);
-}
-
-
-/* =========================================================
-   VALUE OF CONNECTION
-   ========================================================= */
-
-.connection-section{
-  align-items:start;
-}
-
-.connection-section .section-side{
-  align-self:start;
-  padding-top:0;
-}
-
-
-/* LEFT SIDE */
-
-.connection-main-text{
-  max-width:330px;
-
-  margin-top:25px;
-
-  font-size:15px;
-
-  line-height:1.12;
-
-  letter-spacing:-.035em;
-
-  text-transform:uppercase;
-
-  color:var(--ink);
-}
-
-
-/* RIGHT SIDE */
-
-.connection-list{
-  width:100%;
-
-  display:flex;
-
-  flex-direction:column;
-
-  padding-top:0;
-
-  margin-top:0;
-
-  /*
-    Keeps right side aligned with
-    the top of the left section.
-  */
-  align-self:start;
-}
-
-
-/*
-  No lines between items.
-  Clean consistent spacing.
-*/
-
-.connection-item{
-  display:block;
-
-  margin:0 0 24px;
-
-  padding:0;
-
-  border:none;
-}
-
-.connection-item:last-child{
-  margin-bottom:0;
-}
-
-.connection-item h3{
-  max-width:720px;
-
-  font-size:24px;
-
-  line-height:.95;
-
-  letter-spacing:-.045em;
-
-  text-transform:uppercase;
-
-  color:var(--olive);
-}
-
-
-/* =========================================================
-   03 / BEYOND NETWORKING
-   ========================================================= */
-
-/*
-   Desktop:
-
-   LEFT                         RIGHT
-
-   03 / Beyond Networking      01 Curated access.
-   Environments Where          Designed around...
-   Relevance Meets             02 Shared perspective.
-   Opportunity                 ...
-   
-              LARGE CENTER GAP
-*/
-
-.editorial-section.ink .section-layout{
-  grid-template-columns:32% 1fr;
-
-  column-gap:110px;
-
-  row-gap:0;
-
-  align-items:start;
-}
-
-
-/* LEFT */
-
-.editorial-section.ink .section-side{
-  align-self:start;
-
-  padding-right:20px;
-}
-
-
-/* RIGHT */
-
-.editorial-section.ink .section-copy{
-  width:100%;
-
-  max-width:700px;
-
-  margin:0;
-
-  align-self:start;
-}
-
-
-/* =========================================================
-   ENVIRONMENT LIST
-   ========================================================= */
-
-.environment-list{
-  width:100%;
-
-  margin:0;
-
-  padding:0;
-
-  border:none;
-}
-
-
-/* =========================================================
-   ENVIRONMENT ROW
-   ========================================================= */
-
-.environment-row{
-
-  /*
-    Number + text only.
-    Arrow removed.
-  */
-
-  display:grid;
-
-  grid-template-columns:55px 1fr;
-
-  column-gap:25px;
-
-  align-items:start;
-
-  padding:18px 0;
-
-  border:none;
-}
-
-
-/*
-  First row starts at the exact top
-  of the right-side column.
-*/
-
-.environment-row:first-child{
-  padding-top:0;
-}
-
-.environment-row .num{
-  font-size:8px;
-
-  line-height:1.2;
-
-  letter-spacing:.13em;
-
-  color:rgba(255,255,255,.45);
-
-  font-weight:700;
-}
-
-.environment-row h3{
-  font-size:18px;
-
-  line-height:.95;
-
-  letter-spacing:-.045em;
-
-  text-transform:uppercase;
-
-  color:var(--yellow);
-}
-
-.environment-row p{
-  margin-top:7px;
-
-  font-size:9px;
-
-  line-height:1.45;
-
-  color:rgba(255,255,255,.63);
-
-  max-width:500px;
-}
-
-
-/*
-  Arrow element completely hidden.
-*/
-
-.environment-row .row-mark{
-  display:none !important;
-}
-
-
-/* =========================================================
-   LONGER VIEW
-   ========================================================= */
-
-.longer-view{
-  background:var(--paper);
-}
-
-.longer-feature{
-  margin-top:42px;
-
-  display:grid;
-
-  grid-template-columns:.82fr 1.18fr;
-
-  gap:16px;
-
-  align-items:stretch;
-}
-
-.longer-feature .portrait{
-  height:330px;
-
-  overflow:hidden;
-}
-
-
-/*
-  FULL COLOR IMAGE
-*/
-
-.longer-feature .portrait img{
-  width:100%;
-
-  height:100%;
-
-  object-fit:cover;
-
-  /*
-    Full color — grayscale removed.
-  */
-  filter:none;
-
-  object-position:center;
-}
-
-.longer-quote{
-  background:var(--soft);
-
-  padding:28px;
-
-  display:flex;
-
-  align-items:flex-end;
-}
-
-.longer-quote p{
-  max-width:460px;
-
-  font-family:"DM Serif Display",Georgia,serif;
-
-  font-size:clamp(26px,3.2vw,43px);
-
-  line-height:.95;
-
-  letter-spacing:-.035em;
-}
-
-
-/* =========================================================
-   THESIS LIST
-   ========================================================= */
-
-.thesis-list{
-  margin-top:40px;
-
-  border-top:1px solid var(--line);
-}
-
-.thesis-line{
-
-  /*
-    Text only.
-    No arrow.
-  */
-
-  display:block;
-
-  padding:18px 0;
-
-  border-bottom:1px solid var(--line);
-}
-
-.thesis-line span:first-child{
-  display:block;
-
-  font-size:10px;
-
-  line-height:1.35;
-
-  text-transform:uppercase;
-
-  letter-spacing:.02em;
-}
-
-
-/*
-  Hide any arrow if present.
-*/
-
-.thesis-arrow{
-  display:none !important;
-}
-
-
-/* =========================================================
-   CLOSING
-   ========================================================= */
-
-.closer{
-  background:var(--yellow);
-
-  color:var(--ink);
-
-  padding:70px 30px 28px;
-}
-
-.closer-grid{
-  display:grid;
-
-  grid-template-columns:28% 1fr;
-
-  column-gap:70px;
-
-  align-items:start;
-}
-
-.closer-kicker{
-  font-size:8px;
-
-  font-weight:700;
-
-  letter-spacing:.13em;
-
-  text-transform:uppercase;
-}
-
-.closer h2{
-  max-width:920px;
-
-  font-size:clamp(42px,6.1vw,82px);
-
-  line-height:.78;
-
-  letter-spacing:-.085em;
-
-  text-transform:uppercase;
-}
-
-.closer p{
-  max-width:700px;
-
-  margin-top:28px;
-
-  font-size:10px;
-
-  line-height:1.6;
-
-  text-transform:uppercase;
-}
-
-.closer-bottom{
-  margin-top:58px;
-
-  padding-top:15px;
-
-  border-top:1px solid rgba(46,44,31,.24);
-
-  display:flex;
-
-  justify-content:space-between;
-
-  gap:20px;
-
-  font-size:8px;
-
-  letter-spacing:.12em;
-
-  text-transform:uppercase;
-}
-
-
-/* =========================================================
-   MARQUEE
-   ========================================================= */
-
-.marquee{
-  overflow:hidden;
-
-  background:var(--ink);
-
-  color:var(--yellow);
-
-  border-top:1px solid rgba(255,255,255,.12);
-
-  border-bottom:1px solid rgba(255,255,255,.12);
-}
-
-.marquee-track{
-  display:flex;
-
-  width:max-content;
-
-  animation:marquee 24s linear infinite;
-}
-
-.marquee-track span{
-  padding:13px 28px;
-
-  font-size:8px;
-
-  letter-spacing:.18em;
-
-  white-space:nowrap;
-
-  text-transform:uppercase;
-}
-
-@keyframes marquee{
-
-  from{
-    transform:translateX(0);
-  }
-
-  to{
-    transform:translateX(-50%);
-  }
-
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media(max-width:900px){
-
-  .opening-grid,
-  .section-layout,
-  .closer-grid{
-
-    grid-template-columns:1fr;
-
-    gap:28px;
-  }
-
-
-  /* WORLD */
-
-  .world-feature,
-  .longer-feature{
-
-    grid-template-columns:1fr;
-  }
-
-  .world-feature img,
-  .world-feature .feature-text{
-
-    height:auto;
-
-    min-height:240px;
-  }
-
-
-  .section-side h2{
-    max-width:700px;
-  }
-
-
-  /* OPENING */
-
-  .opening-image{
-    height:500px;
-  }
-
-  .opening-image img{
-    object-position:center 38%;
-  }
-
-
-  /* OPENING OVERLAY */
-
-  .opening-overlay{
-
-    grid-template-columns:1fr;
-
-    gap:22px;
-
-    padding:28px 24px;
-  }
-
-  .opening-overlay .opening-note{
-
-    max-width:520px;
-
-    padding-left:0;
-
-    border-left:0;
-
-    border-top:1px solid rgba(255,255,255,.38);
-
-    padding-top:16px;
-  }
-
-
-  /* CONNECTION */
-
-  .connection-section{
-    gap:28px;
-  }
-
-  .connection-main-text{
-    max-width:520px;
-  }
-
-
-  /* =====================================================
-     BEYOND NETWORKING
-     ===================================================== */
-
-  .editorial-section.ink .section-layout{
-
-    grid-template-columns:1fr;
-
-    column-gap:0;
-
-    row-gap:42px;
-  }
-
-  .editorial-section.ink .section-side{
-
-    padding-right:0;
-  }
-
-  .editorial-section.ink .section-copy{
-
-    max-width:700px;
-  }
-
-
-  .environment-row{
-
-    grid-template-columns:55px 1fr;
-
-    column-gap:18px;
-  }
-
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media(max-width:560px){
-
-  .editorial-opening,
-  .editorial-section,
-  .closer{
-
-    padding-left:18px;
-
-    padding-right:18px;
-  }
-
-
-  /* OPENING */
-
-  .editorial-opening{
-
-    padding-top:0;
-
-    padding-bottom:42px;
-  }
-
-  .opening-meta{
-    margin-bottom:48px;
-  }
-
-  .opening-title{
-
-    font-size:41px;
-
-    line-height:.86;
-  }
-
-
-  .opening-image{
-
-    height:500px;
-
-    margin-top:0;
-  }
-
-  .opening-image img{
-
-    object-position:center 35%;
-  }
-
-
-  .opening-overlay{
-
-    padding:22px 18px 22px;
-
-    gap:18px;
-  }
-
-  .opening-overlay .opening-note p{
-
-    font-size:9px;
-
-    line-height:1.55;
-  }
-
-
-  /* GENERAL */
-
-  .editorial-section{
-
-    padding-top:52px;
-
-    padding-bottom:52px;
-  }
-
-  .section-layout{
-
-    gap:30px;
-  }
-
-
-  .section-side h2{
-
-    font-size:37px;
-  }
-
-
-  /* SIDE DETAIL */
-
-  .section-side-detail{
-
-    max-width:100%;
-
-    margin-top:20px;
-
-    padding-top:15px;
-  }
-
-  .section-side-detail .side-lead{
-
-    font-size:20px;
-  }
-
-
-  /* CONNECTION */
-
-  .connection-main-text{
-
-    max-width:100%;
-
-    margin-top:20px;
-
-    font-size:18px;
-  }
-
-  .connection-list{
-
-    padding-top:0;
-  }
-
-  .connection-item{
-
-    margin-bottom:18px;
-  }
-
-  .connection-item h3{
-
-    font-size:21px;
-
-    line-height:.95;
-  }
-
-
-  /* =====================================================
-     BEYOND NETWORKING MOBILE
-     ===================================================== */
-
-  .editorial-section.ink .section-layout{
-
-    grid-template-columns:1fr;
-
-    column-gap:0;
-
-    row-gap:34px;
-  }
-
-  .editorial-section.ink .section-side{
-
-    padding-right:0;
-  }
-
-  .editorial-section.ink .section-copy{
-
-    max-width:100%;
-  }
-
-
-  .environment-row{
-
-    grid-template-columns:38px 1fr;
-
-    column-gap:12px;
-
-    padding:16px 0;
-  }
-
-  .environment-row:first-child{
-
-    padding-top:0;
-  }
-
-  .environment-row h3{
-
-    font-size:18px;
-  }
-
-  .environment-row p{
-
-    font-size:9px;
-  }
-
-
-  /* LONGER VIEW */
-
-  .longer-feature .portrait{
-
-    height:260px;
-  }
-
-  .longer-quote{
-
-    min-height:230px;
-
-    padding:22px;
-  }
-
-  .longer-quote p{
-
-    font-size:31px;
-  }
-
-
-  .thesis-line{
-
-    padding:16px 0;
-  }
-
-
-  /* CLOSING */
-
-  .closer{
-
-    padding-top:55px;
-
-    padding-bottom:24px;
-  }
-
-  .closer h2{
-
-    font-size:52px;
-  }
-
-  .closer-bottom{
-
-    flex-direction:column;
-
-    gap:7px;
-
-    margin-top:44px;
-  }
-
-}
-
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>The White Founders™ — Global Founder Room</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+
+    :root {
+      --ink: #2e2c1f;
+      --olive: #736e4e;
+      --paper: #ffffff;
+      --soft: #eae9e5;
+      --yellow: #fff18f;
+      --muted: #b8b49c;
+      --line: rgba(46, 44, 31, 0.16);
+      --max: 1240px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--ink);
+      color: var(--ink);
+      font-family: "Inter", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site {
+      width: min(100%, var(--max));
+      margin: auto;
+      background: var(--paper);
+    }
+
+    .editorial-opening {
+      padding: 0 0 58px;
+      background: var(--paper);
+      border-bottom: none;
+    }
+
+    .opening-meta {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .eyebrow,
+    .section-index,
+    .small-label {
+      font-size: 8px;
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .issue {
+      font-size: 8px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(46, 44, 31, 0.48);
+    }
+
+    .opening-image {
+      margin-top: 0;
+      height: 620px;
+      overflow: hidden;
+      position: relative;
+      background: #ddd;
+    }
+
+    .opening-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 38%;
+      filter: none;
+      transform: none;
+    }
+
+    .opening-image::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(20, 19, 14, 0.08) 0%,
+          rgba(20, 19, 14, 0.12) 35%,
+          rgba(20, 19, 14, 0.70) 100%
+        );
+      z-index: 1;
+    }
+
+    .join-button {
+      position: absolute;
+      top: 24px;
+      right: 28px;
+      z-index: 5;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 25px;
+      background: var(--yellow);
+      color: var(--ink);
+      border: 1px solid var(--yellow);
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .join-button:hover {
+      background: #fff;
+      color: var(--ink);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+    }
+
+    .opening-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      align-items: end;
+      gap: 50px;
+      padding: 34px 32px;
+      color: #fff;
+    }
+
+    .opening-title {
+      max-width: 900px;
+      font-size: clamp(54px, 7.2vw, 94px);
+      line-height: 0.79;
+      letter-spacing: -0.09em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .opening-title span {
+      display: block;
+    }
+
+    .opening-title .highlight {
+      position: relative;
+      display: inline-block;
+      z-index: 1;
+    }
+
+    .opening-overlay .opening-title {
+      color: #fff;
+      text-shadow: 0 4px 24px rgba(0, 0, 0, 0.22);
+    }
+
+    .opening-overlay .opening-title .highlight {
+      color: var(--yellow);
+    }
+
+    .opening-note {
+      max-width: 360px;
+      padding-left: 24px;
+      border-left: 1px solid rgba(255, 255, 255, 0.38);
+      color: #fff;
+    }
+
+    .opening-note .small-label {
+      color: var(--yellow);
+      margin-bottom: 14px;
+    }
+
+    .opening-note p {
+      font-size: 10px;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .editorial-section {
+      padding: 78px 30px;
+    }
+
+    .editorial-section.soft {
+      background: var(--soft);
+    }
+
+    .editorial-section.ink {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .section-layout {
+      display: grid;
+      grid-template-columns: 28% 1fr;
+      column-gap: 70px;
+      align-items: start;
+    }
+
+    .section-side {
+      position: relative;
+      align-self: start;
+    }
+
+    .section-index {
+      margin-bottom: 17px;
+      color: rgba(46, 44, 31, 0.5);
+    }
+
+    .ink .section-index {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .section-side h2 {
+      max-width: 420px;
+      font-size: clamp(30px, 4vw, 54px);
+      line-height: 0.83;
+      letter-spacing: -0.07em;
+      text-transform: uppercase;
+    }
+
+    .section-side-detail {
+      max-width: 330px;
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-side-detail .side-lead {
+      font-size: 16px;
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+      margin-bottom: 16px;
+    }
+
+    .section-side-detail p:not(.side-lead) {
+      font-size: 9px;
+      line-height: 1.6;
+      color: rgba(46, 44, 31, 0.68);
+    }
+
+    .ink .section-side h2 {
+      color: var(--yellow);
+    }
+
+    .section-copy {
+      max-width: 740px;
+    }
+
+    .lead {
+      max-width: 690px;
+      font-size: clamp(23px, 2.65vw, 35px);
+      line-height: 0.96;
+      letter-spacing: -0.055em;
+      text-transform: uppercase;
+    }
+
+    .body-copy {
+      max-width: 650px;
+      margin-top: 24px;
+      font-size: 10px;
+      line-height: 1.68;
+      color: rgba(46, 44, 31, 0.72);
+    }
+
+    .ink .body-copy {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .body-copy strong {
+      color: var(--ink);
+    }
+
+    .ink .body-copy strong {
+      color: var(--yellow);
+    }
+
+    .world-feature {
+      margin-top: 45px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 12px;
+    }
+
+    .world-feature img {
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+      object-position: center;
+      filter: none;
+    }
+
+    .world-feature .feature-text {
+      min-height: 290px;
+      background: var(--ink);
+      color: #fff;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .feature-text .small-label {
+      color: var(--yellow);
+    }
+
+    .feature-text h3 {
+      max-width: 370px;
+      color: var(--yellow);
+      font-size: clamp(30px, 4vw, 53px);
+      line-height: 0.82;
+      letter-spacing: -0.07em;
+      text-transform: uppercase;
+    }
+
+    .feature-text p {
+      max-width: 360px;
+      font-size: 9px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .connection-section {
+      align-items: start;
+    }
+
+    .connection-section .section-side {
+      align-self: start;
+      padding-top: 0;
+    }
+
+    .connection-main-text {
+      max-width: 330px;
+      margin-top: 25px;
+      font-size: 15px;
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .connection-list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding-top: 0;
+      margin-top: 0;
+      align-self: start;
+    }
+
+    .connection-item {
+      display: block;
+      margin: 0 0 24px;
+      padding: 0;
+      border: none;
+    }
+
+    .connection-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .connection-item h3 {
+      max-width: 720px;
+      font-size: 24px;
+      line-height: 0.95;
+      letter-spacing: -0.045em;
+      text-transform: uppercase;
+      color: var(--olive);
+    }
+
+    .editorial-section.ink .section-layout {
+      grid-template-columns: 32% 1fr;
+      column-gap: 110px;
+      row-gap: 0;
+      align-items: start;
+    }
+
+    .editorial-section.ink .section-side {
+      align-self: start;
+      padding-right: 20px;
+    }
+
+    .editorial-section.ink .section-copy {
+      width: 100%;
+      max-width: 700px;
+      margin: 0;
+      align-self: start;
+    }
+
+    .environment-list {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+
+    .environment-row {
+      display: grid;
+      grid-template-columns: 55px 1fr;
+      column-gap: 25px;
+      align-items: start;
+      padding: 18px 0;
+      border: none;
+    }
+
+    .environment-row:first-child {
+      padding-top: 0;
+    }
+
+    .environment-row .num {
+      font-size: 8px;
+      line-height: 1.2;
+      letter-spacing: 0.13em;
+      color: rgba(255, 255, 255, 0.45);
+      font-weight: 700;
+    }
+
+    .environment-row h3 {
+      font-size: 18px;
+      line-height: 0.95;
+      letter-spacing: -0.045em;
+      text-transform: uppercase;
+      color: var(--yellow);
+    }
+
+    .environment-row p {
+      margin-top: 7px;
+      font-size: 9px;
+      line-height: 1.45;
+      color: rgba(255, 255, 255, 0.63);
+      max-width: 500px;
+    }
+
+    .environment-row .row-mark {
+      display: none !important;
+    }
+
+    .longer-view {
+      background: var(--paper);
+    }
+
+    .longer-feature {
+      margin-top: 42px;
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .longer-feature .portrait {
+      height: 330px;
+      overflow: hidden;
+    }
+
+    .longer-feature .portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: none;
+      object-position: center;
+    }
+
+    .longer-quote {
+      background: var(--soft);
+      padding: 28px;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .longer-quote p {
+      max-width: 460px;
+      font-family: "DM Serif Display", Georgia, serif;
+      font-size: clamp(26px, 3.2vw, 43px);
+      line-height: 0.95;
+      letter-spacing: -0.035em;
+    }
+
+    .thesis-list {
+      margin-top: 40px;
+      border-top: 1px solid var(--line);
+    }
+
+    .thesis-line {
+      display: block;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .thesis-line span:first-child {
+      display: block;
+      font-size: 10px;
+      line-height: 1.35;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .thesis-arrow {
+      display: none !important;
+    }
+
+    /* =========================================================
+       PHOTO GALLERY
+       ONLY THE IMAGE AT THE CENTER ZOOMS
+    ========================================================= */
+
+    .editorial-photo-section {
+      position: relative;
+      background: #ffffff;
+      padding: 80px 0 90px;
+      overflow: hidden;
+    }
+
+    .photo-gallery-viewport {
+      position: relative;
+      width: 100%;
+      height: 560px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+    }
+
+    .photo-gallery-center {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 430px;
+      height: 440px;
+      transform: translate(-50%, -50%);
+      background: var(--olive);
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    /* Vertical center line removed */
+
+    .photo-gallery-track {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      width: max-content;
+      will-change: transform;
+      animation: galleryMove 28s linear infinite;
+    }
+
+    /* ALL IMAGES SAME SIZE */
+    .gallery-image {
+      position: relative;
+      flex-shrink: 0;
+      width: 150px;
+      height: 220px;
+      overflow: hidden;
+      background: #ddd;
+      transform: scale(1);
+      transform-origin: center center;
+      transition:
+        transform 0.7s cubic-bezier(0.77, 0, 0.18, 1),
+        box-shadow 0.7s ease;
+    }
+
+    /* Remove different sizes */
+    .gallery-image:nth-child(2n),
+    .gallery-image:nth-child(3n),
+    .gallery-image:nth-child(4n) {
+      width: 150px;
+      height: 220px;
+    }
+
+    .gallery-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition:
+        transform 0.8s ease,
+        filter 0.6s ease;
+    }
+
+    .gallery-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(46,44,31,0.08);
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+
+    /* ONLY CENTER IMAGE ZOOMS */
+    .gallery-image.active {
+      width: 150px;
+      height: 220px;
+      transform: scale(1.85);
+      z-index: 10;
+      box-shadow: 0 20px 50px rgba(46, 44, 31, 0.18);
+    }
+
+    .gallery-image.active img {
+      transform: scale(1.03);
+    }
+
+    .gallery-image.active::after {
+      opacity: 0;
+    }
+
+    .gallery-label {
+      position: absolute;
+      left: 30px;
+      top: 28px;
+      z-index: 20;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--olive);
+    }
+
+    .gallery-page-number {
+      position: absolute;
+      right: 30px;
+      top: 28px;
+      z-index: 20;
+      font-size: 18px;
+      letter-spacing: -0.04em;
+      color: var(--ink);
+    }
+
+    .gallery-page-number span {
+      color: #aaa8a3;
+      font-size: 13px;
+    }
+
+    .gallery-statement {
+      position: absolute;
+      left: 50%;
+      bottom: 25px;
+      transform: translateX(-50%);
+      z-index: 20;
+      width: 100%;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .gallery-statement span {
+      display: inline-block;
+      padding: 9px 15px;
+      background: rgba(255,255,255,0.94);
+      color: #302e27;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    @keyframes galleryMove {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .closer {
+      background: var(--yellow);
+      color: var(--ink);
+      padding: 70px 30px 28px;
+    }
+
+    .closer-grid {
+      display: grid;
+      grid-template-columns: 28% 1fr;
+      column-gap: 70px;
+      align-items: start;
+    }
+
+    .closer-kicker {
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .closer h2 {
+      max-width: 920px;
+      font-size: clamp(42px, 6.1vw, 82px);
+      line-height: 0.78;
+      letter-spacing: -0.085em;
+      text-transform: uppercase;
+    }
+
+    .closer p {
+      max-width: 700px;
+      margin-top: 28px;
+      font-size: 10px;
+      line-height: 1.6;
+      text-transform: uppercase;
+    }
+
+    .closer-bottom {
+      margin-top: 58px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(46, 44, 31, 0.24);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 8px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .marquee {
+      overflow: hidden;
+      background: var(--ink);
+      color: var(--yellow);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 24s linear infinite;
+    }
+
+    .marquee-track span {
+      padding: 13px 28px;
+      font-size: 8px;
+      letter-spacing: 0.18em;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* =========================================================
+       REGISTRATION MODAL
+    ========================================================= */
+
+    .registration-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(25, 24, 17, 0.78);
+      backdrop-filter: blur(10px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition:
+        opacity 0.4s ease,
+        visibility 0.4s ease;
+    }
+
+    .registration-modal.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .registration-modal-container {
+      position: relative;
+      width: min(1180px, 100%);
+      height: min(92vh, 900px);
+      max-height: 92vh;
+      min-height: 0;
+      background: #fff;
+      color: var(--ink);
+      border-radius: 18px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 43% 57%;
+      box-shadow: 0 35px 100px rgba(0, 0, 0, 0.4);
+      transform: translateY(30px) scale(0.97);
+      transition:
+        transform 0.45s cubic-bezier(0.77, 0, 0.18, 1);
+    }
+
+    .registration-modal.active .registration-modal-container {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      z-index: 20;
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(46, 44, 31, 0.2);
+      background: rgba(255, 255, 255, 0.94);
+      color: var(--ink);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 1;
+      transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+    }
+
+    .modal-close:hover {
+      background: var(--ink);
+      color: #fff;
+      transform: rotate(90deg);
+    }
+
+    .registration-visual {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      padding: 10px;
+      background: #ffffff;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .registration-visual-image {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: calc(100% - 20px);
+      height: calc(100% - 20px);
+      display: block;
+      object-fit: cover;
+      object-position: center center;
+      background: #ffffff;
+      border-radius: 20px;
+      z-index: 1;
+    }
+
+    .registration-visual::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: calc(100% - 20px);
+      height: 245px;
+      border-radius: 20px 20px 0 0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.50) 0%,
+          rgba(0, 0, 0, 0.25) 42%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .registration-visual-content {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 3;
+      width: calc(100% - 20px);
+      padding: 34px 30px 20px;
+      color: #fff;
+      pointer-events: none;
+    }
+
+    .registration-visual-label {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 18px;
+    }
+
+    .registration-visual-title {
+      font-size: clamp(40px, 4.2vw, 64px);
+      line-height: 0.88;
+      font-weight: 800;
+      letter-spacing: -0.06em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .registration-visual-title span {
+      color: var(--yellow);
+    }
+
+    .registration-visual-text {
+      margin-top: 20px;
+      max-width: 440px;
+      font-size: 11px;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.90);
+    }
+
+    .registration-visual-text strong {
+      color: #fff;
+    }
+
+    .registration-form-side {
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      padding: 48px 48px 45px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background: #fff;
+      scrollbar-width: thin;
+      scrollbar-color: var(--olive) #f2f2ef;
+    }
+
+    .registration-form-side::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .registration-form-side::-webkit-scrollbar-track {
+      background: #f2f2ef;
+    }
+
+    .registration-form-side::-webkit-scrollbar-thumb {
+      background: var(--olive);
+      border-radius: 10px;
+    }
+
+    .registration-top {
+      margin-bottom: 38px;
+    }
+
+    .registration-eyebrow {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 12px;
+    }
+
+    .registration-title {
+      font-size: clamp(35px, 4vw, 55px);
+      line-height: 0.88;
+      font-weight: 800;
+      letter-spacing: -0.055em;
+      text-transform: uppercase;
+    }
+
+    .registration-title span {
+      color: var(--olive);
+    }
+
+    .form-section {
+      margin-bottom: 34px;
+    }
+
+    .form-section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .form-section-title::before {
+      content: "";
+      width: 24px;
+      height: 2px;
+      background: var(--olive);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .form-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field label {
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #77756b;
+    }
+
+    .form-field input,
+    .form-field select {
+      width: 100%;
+      height: 46px;
+      padding: 0 13px;
+      border: 1px solid #d7d5cc;
+      border-radius: 4px;
+      background: #fafaf8;
+      color: var(--ink);
+      font-family: "Inter", Arial, sans-serif;
+      font-size: 11px;
+      outline: none;
+      transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .form-field input::placeholder {
+      color: #aaa89e;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus {
+      border-color: var(--olive);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(115, 110, 78, 0.09);
+    }
+
+    /* MOBILE NUMBER + COUNTRY CODE */
+
+    .phone-input-group {
+      display: grid;
+      grid-template-columns: 125px minmax(0, 1fr);
+      gap: 8px;
+      width: 100%;
+    }
+
+    .phone-input-group select,
+    .phone-input-group input {
+      min-width: 0;
+    }
+
+    .phone-input-group select {
+      padding-left: 9px;
+      padding-right: 8px;
+      font-size: 10px;
+      cursor: pointer;
+    }
+
+    .phone-input-group input {
+      width: 100%;
+    }
+
+    .option-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .option {
+      position: relative;
+    }
+
+    .option input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .option label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 9px 13px;
+      border: 1px solid #d1cfc5;
+      background: #fafaf8;
+      color: var(--ink);
+      border-radius: 3px;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .option label:hover {
+      border-color: var(--olive);
+      transform: translateY(-2px);
+    }
+
+    .option input:checked + label {
+      background: var(--olive);
+      border-color: var(--olive);
+      color: #fff;
+    }
+
+    .collective-box {
+      padding: 18px;
+      background: #f5f4ed;
+      border: 1px solid #dedcd2;
+      border-radius: 5px;
+    }
+
+    .collective-question {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+
+    .confirm-section {
+      margin-top: 5px;
+      padding-top: 25px;
+      border-top: 1px solid #e1dfd7;
+    }
+
+    .confirm-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .confirm-check input {
+      width: 15px;
+      height: 15px;
+      margin-top: 1px;
+      accent-color: var(--olive);
+      flex-shrink: 0;
+    }
+
+    .confirm-check span {
+      font-size: 9px;
+      line-height: 1.5;
+      color: #77756b;
+    }
+
+    .secure-btn {
+      position: relative;
+      width: 100%;
+      height: 56px;
+      margin-top: 22px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 8px 0 20px;
+      font-family: "Inter", Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 3px;
+      transition:
+        color 0.35s ease,
+        border-color 0.35s ease;
+    }
+
+    .secure-btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--yellow);
+      transform: translateX(-101%);
+      transition:
+        transform 0.45s cubic-bezier(0.77, 0, 0.18, 1);
+    }
+
+    .secure-btn span {
+      position: relative;
+      z-index: 2;
+    }
+
+    .secure-btn-arrow {
+      position: relative;
+      z-index: 2;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--yellow);
+      color: var(--ink);
+      font-size: 17px;
+      transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        color 0.35s ease;
+    }
+
+    .secure-btn:hover {
+      color: var(--ink);
+      border-color: var(--yellow);
+    }
+
+    .secure-btn:hover::before {
+      transform: translateX(0);
+    }
+
+    .secure-btn:hover .secure-btn-arrow {
+      background: var(--ink);
+      color: #fff;
+      transform: rotate(45deg);
+    }
+
+    @media (max-width: 900px) {
+
+      .registration-modal-container {
+        grid-template-columns: 40% 60%;
+      }
+
+      .registration-visual-title {
+        font-size: 40px;
+      }
+
+      .registration-form-side {
+        padding: 38px 30px;
+      }
+
+      .registration-visual::after {
+        height: 220px;
+      }
+
+      .opening-grid,
+      .section-layout,
+      .closer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .world-feature,
+      .longer-feature {
+        grid-template-columns: 1fr;
+      }
+
+      .world-feature img,
+      .world-feature .feature-text {
+        height: auto;
+        min-height: 240px;
+      }
+
+      .section-side h2 {
+        max-width: 700px;
+      }
+
+      .opening-image {
+        height: 500px;
+      }
+
+      .opening-image img {
+        object-position: center 38%;
+      }
+
+      .opening-overlay {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 28px 24px;
+      }
+
+      .opening-overlay .opening-note {
+        max-width: 520px;
+        padding-left: 0;
+        border-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.38);
+        padding-top: 16px;
+      }
+
+      .connection-section {
+        gap: 28px;
+      }
+
+      .connection-main-text {
+        max-width: 520px;
+      }
+
+      .editorial-section.ink .section-layout {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        row-gap: 42px;
+      }
+
+      .editorial-section.ink .section-side {
+        padding-right: 0;
+      }
+
+      .editorial-section.ink .section-copy {
+        max-width: 700px;
+      }
+
+      .environment-row {
+        grid-template-columns: 55px 1fr;
+        column-gap: 18px;
+      }
+
+      .photo-gallery-viewport {
+        height: 500px;
+      }
+
+      .photo-gallery-center {
+        width: 340px;
+        height: 390px;
+      }
+
+      /* SAME SIZE ON TABLET */
+      .gallery-image {
+        width: 125px;
+        height: 190px;
+        transform: scale(1);
+      }
+
+      .gallery-image:nth-child(2n),
+      .gallery-image:nth-child(3n),
+      .gallery-image:nth-child(4n) {
+        width: 125px;
+        height: 190px;
+      }
+
+      /* ONLY CENTER IMAGE ZOOMS */
+      .gallery-image.active {
+        width: 125px;
+        height: 190px;
+        transform: scale(1.85);
+      }
+    }
+
+    @media (max-width: 650px) {
+
+      .registration-modal {
+        padding: 10px;
+        align-items: flex-start;
+        overflow-y: auto;
+      }
+
+      .registration-modal-container {
+        grid-template-columns: 1fr;
+        height: auto;
+        max-height: none;
+        border-radius: 12px;
+        margin: 10px 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .registration-visual {
+        height: 500px;
+        min-height: 500px;
+        flex-shrink: 0;
+        padding: 8px;
+      }
+
+      .registration-visual-image {
+        top: 8px;
+        left: 8px;
+        width: calc(100% - 16px);
+        height: calc(100% - 16px);
+        border-radius: 18px;
+      }
+
+      .registration-visual::after {
+        top: 8px;
+        left: 8px;
+        width: calc(100% - 16px);
+        height: 220px;
+        border-radius: 18px 18px 0 0;
+      }
+
+      .registration-visual-content {
+        top: 8px;
+        left: 8px;
+        width: calc(100% - 16px);
+        padding: 25px 20px 15px;
+      }
+
+      .registration-visual-title {
+        font-size: 42px;
+      }
+
+      .registration-form-side {
+        padding: 35px 20px 28px;
+        overflow: visible;
+        height: auto;
+        max-height: none;
+      }
+
+      .registration-title {
+        font-size: 37px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-field.full {
+        grid-column: auto;
+      }
+
+      .modal-close {
+        top: 15px;
+        right: 15px;
+        width: 34px;
+        height: 34px;
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 560px) {
+
+      .editorial-opening,
+      .editorial-section,
+      .closer {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .editorial-opening {
+        padding-top: 0;
+        padding-bottom: 42px;
+      }
+
+      .opening-meta {
+        margin-bottom: 48px;
+      }
+
+      .opening-title {
+        font-size: 41px;
+        line-height: 0.86;
+      }
+
+      .opening-image {
+        height: 500px;
+        margin-top: 0;
+      }
+
+      .opening-image img {
+        object-position: center 35%;
+      }
+
+      .join-button {
+        top: 16px;
+        right: 16px;
+        padding: 9px 18px;
+        font-size: 9px;
+      }
+
+      .opening-overlay {
+        padding: 22px 18px 22px;
+        gap: 18px;
+      }
+
+      .opening-overlay .opening-note p {
+        font-size: 9px;
+        line-height: 1.55;
+      }
+
+      .editorial-section {
+        padding-top: 52px;
+        padding-bottom: 52px;
+      }
+
+      .section-layout {
+        gap: 30px;
+      }
+
+      .section-side h2 {
+        font-size: 37px;
+      }
+
+      .section-side-detail {
+        max-width: 100%;
+        margin-top: 20px;
+        padding-top: 15px;
+      }
+
+      .section-side-detail .side-lead {
+        font-size: 20px;
+      }
+
+      .connection-main-text {
+        max-width: 100%;
+        margin-top: 20px;
+        font-size: 18px;
+      }
+
+      .connection-list {
+        padding-top: 0;
+      }
+
+      .connection-item {
+        margin-bottom: 18px;
+      }
+
+      .connection-item h3 {
+        font-size: 21px;
+        line-height: 0.95;
+      }
+
+      .editorial-section.ink .section-layout {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        row-gap: 34px;
+      }
+
+      .editorial-section.ink .section-side {
+        padding-right: 0;
+      }
+
+      .editorial-section.ink .section-copy {
+        max-width: 100%;
+      }
+
+      .environment-row {
+        grid-template-columns: 38px 1fr;
+        column-gap: 12px;
+        padding: 16px 0;
+      }
+
+      .environment-row:first-child {
+        padding-top: 0;
+      }
+
+      .environment-row h3 {
+        font-size: 18px;
+      }
+
+      .environment-row p {
+        font-size: 9px;
+      }
+
+      .longer-feature .portrait {
+        height: 260px;
+      }
+
+      .longer-quote {
+        min-height: 230px;
+        padding: 22px;
+      }
+
+      .longer-quote p {
+        font-size: 31px;
+      }
+
+      .thesis-line {
+        padding: 16px 0;
+      }
+
+      .editorial-photo-section {
+        padding: 55px 0 65px;
+      }
+
+      .photo-gallery-viewport {
+        height: 430px;
+      }
+
+      .photo-gallery-center {
+        width: 245px;
+        height: 315px;
+      }
+
+      .photo-gallery-track {
+        gap: 14px;
+        animation-duration: 22s;
+      }
+
+      /* ALL MOBILE IMAGES SAME SIZE */
+      .gallery-image {
+        width: 90px;
+        height: 145px;
+        transform: scale(1);
+      }
+
+      .gallery-image:nth-child(2n),
+      .gallery-image:nth-child(3n),
+      .gallery-image:nth-child(4n) {
+        width: 90px;
+        height: 145px;
+      }
+
+      /* ONLY CENTER IMAGE ZOOMS */
+      .gallery-image.active {
+        width: 90px;
+        height: 145px;
+        transform: scale(1.85);
+      }
+
+      .gallery-label {
+        left: 18px;
+        top: 20px;
+      }
+
+      .gallery-page-number {
+        right: 18px;
+        top: 20px;
+      }
+
+      .gallery-statement {
+        bottom: 18px;
+      }
+
+      .gallery-statement span {
+        font-size: 7px;
+      }
+
+      .closer {
+        padding-top: 55px;
+        padding-bottom: 24px;
+      }
+
+      .closer h2 {
+        font-size: 52px;
+      }
+
+      .closer-bottom {
+        flex-direction: column;
+        gap: 7px;
+        margin-top: 44px;
+      }
+    }
+
+    @media (max-width: 390px) {
+
+      .registration-visual {
+        height: 460px;
+        min-height: 460px;
+        padding: 7px;
+      }
+
+      .registration-visual-image {
+        top: 7px;
+        left: 7px;
+        width: calc(100% - 14px);
+        height: calc(100% - 14px);
+        border-radius: 16px;
+      }
+
+      .registration-visual::after {
+        top: 7px;
+        left: 7px;
+        width: calc(100% - 14px);
+        height: 195px;
+        border-radius: 16px 16px 0 0;
+      }
+
+      .registration-visual-content {
+        top: 7px;
+        left: 7px;
+        width: calc(100% - 14px);
+        padding: 22px 17px 15px;
+      }
+
+      .registration-visual-title {
+        font-size: 36px;
+      }
+
+      .registration-form-side {
+        padding: 30px 16px 24px;
+      }
+
+      .registration-title {
+        font-size: 34px;
+      }
+
+      .phone-input-group {
+        grid-template-columns: 105px minmax(0, 1fr);
+      }
+
+      .phone-input-group select {
+        font-size: 9px;
+        padding-left: 7px;
+        padding-right: 5px;
+      }
+
+      .photo-gallery-viewport {
+        height: 400px;
+      }
+
+      .photo-gallery-center {
+        width: 215px;
+        height: 285px;
+      }
+
+      /* ALL SMALL MOBILE IMAGES SAME SIZE */
+      .gallery-image {
+        width: 70px;
+        height: 115px;
+        transform: scale(1);
+      }
+
+      .gallery-image:nth-child(2n),
+      .gallery-image:nth-child(3n),
+      .gallery-image:nth-child(4n) {
+        width: 70px;
+        height: 115px;
+      }
+
+      /* ONLY CENTER IMAGE ZOOMS */
+      .gallery-image.active {
+        width: 70px;
+        height: 115px;
+        transform: scale(1.8);
+      }
+    }
+
+  </style>
 </head>
-
 
 <body>
 
-<main class="site">
+  <main class="site">
 
+    <!-- OPENING -->
 
-  <!-- =========================================================
-       OPENING
-       ========================================================= -->
+    <section class="editorial-opening">
 
-  <section class="editorial-opening">
+      <div class="opening-meta"></div>
 
-    <div class="opening-meta">
-    </div>
+      <div class="opening-image">
 
+        <img
+          src="https://images.unsplash.com/photo-1752650736187-3e0c20a5796f?auto=format&fit=crop&fm=jpg&q=88&w=1800"
+          alt="Two women discussing something over a laptop"
+        >
 
-    <div class="opening-image">
+        <a
+          href="#join"
+          class="join-button"
+          id="openModalBtn"
+        >
+          Join
+        </a>
 
-      <!--
-        Opening image.
-        Crop is adjusted so the faces are not unnecessarily cut.
-      -->
+        <div class="opening-overlay">
 
-       <img
-        src="https://images.unsplash.com/photo-1752650736187-3e0c20a5796f?auto=format&fit=crop&fm=jpg&q=88&w=1800"
-        alt="Two women discussing something over a laptop"
-      >
+          <h1 class="opening-title">
 
+            <span>One World.</span>
 
+            <span class="highlight">
+              One Collective.
+            </span>
 
-      <div class="opening-overlay">
+            <span>A Higher Standard.</span>
 
+          </h1>
 
-        <h1 class="opening-title">
-
-          <span>
-            One World.
-          </span>
-
-          <span class="highlight">
-            One Collective.
-          </span>
-
-          <span>
-            A Higher Standard.
-          </span>
-
-        </h1>
-
-
-        <div class="opening-note">
-
-          <div class="small-label">
-            Global by design
-          </div>
-
-          <p>
-            The boundaries of business have changed.
-            Companies are global from day one.
-            Talent is borderless.
-            Capital is mobile.
-            Ideas move at the speed of technology.
-            Opportunity can emerge anywhere.
-          </p>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================================================
-       01 / THE REALITY
-       ========================================================= -->
-
-  <section class="editorial-section">
-
-
-    <div class="section-layout">
-
-
-      <!-- LEFT -->
-
-      <aside class="section-side">
-
-        <div class="section-index">
-          01 / The Reality
-        </div>
-
-        <h2>
-          The Global Founder Room
-        </h2>
-
-
-        <div class="section-side-detail">
-
-          <p class="side-lead">
-            A global network for the reality of modern entrepreneurship.
-          </p>
-
-          <p>
-            <strong>THE WHITE FOUNDERS</strong> is designed for this reality—a global network
-            connecting exceptional people across markets, cultures, industries, and generations
-            of entrepreneurship.
-          </p>
-
-        </div>
-
-      </aside>
-
-
-      <!-- RIGHT -->
-
-      <div class="section-copy">
-
-
-        <div class="world-feature">
-
-
-          <!--
-            LOCAL IMAGE
-            Place abs.jpeg inside the assets folder.
-          -->
-
-          <img
-            src="assets/abs.jpeg"
-            alt="Entrepreneurs in conversation"
-          >
-
-
-          <div class="feature-text">
+          <div class="opening-note">
 
             <div class="small-label">
-              Across borders
+              Global by design
             </div>
 
-            <h3>
-              Opportunity can emerge anywhere.
-            </h3>
-
             <p>
-              Different markets.
-              Different perspectives.
-              One room built around what comes next.
+              The boundaries of business have changed.
+              Companies are global from day one.
+              Talent is borderless.
+              Capital is mobile.
+              Ideas move at the speed of technology.
+              Opportunity can emerge anywhere.
             </p>
 
           </div>
 
-
         </div>
-
 
       </div>
 
-    </div>
+    </section>
 
-  </section>
+    <!-- 01 -->
 
+    <section class="editorial-section">
 
-  <!-- =========================================================
-       02 / THE VALUE
-       ========================================================= -->
+      <div class="section-layout">
 
-  <section class="editorial-section soft">
+        <aside class="section-side">
 
+          <div class="section-index">
+            01 / The Reality
+          </div>
 
-    <div class="section-layout connection-section">
+          <h2>
+            The Global Founder Room
+          </h2>
 
+          <div class="section-side-detail">
 
-      <!-- LEFT SIDE -->
+            <p class="side-lead">
+              A global network for the reality of modern entrepreneurship.
+            </p>
 
-      <aside class="section-side">
-
-        <div class="section-index">
-          02 / The Value
-        </div>
-
-        <h2>
-          The Value of the Right Connection
-        </h2>
-
-        <p class="connection-main-text">
-          A powerful relationship can change the trajectory of a business.
-        </p>
-
-      </aside>
-
-
-      <!-- RIGHT SIDE -->
-
-      <div class="section-copy">
-
-
-        <div class="connection-list">
-
-
-          <div class="connection-item">
-
-            <h3>
-              An introduction can open a market.
-            </h3>
+            <p>
+              <strong>THE WHITE FOUNDERS</strong>
+              is designed for this reality—a global network
+              connecting exceptional people across markets,
+              cultures, industries, and generations
+              of entrepreneurship.
+            </p>
 
           </div>
 
+        </aside>
 
-          <div class="connection-item">
+        <div class="section-copy">
 
-            <h3>
-              A conversation can reshape a strategy.
-            </h3>
-
-          </div>
-
-
-          <div class="connection-item">
-
-            <h3>
-              A partnership can accelerate growth.
-            </h3>
-
-          </div>
-
-
-          <div class="connection-item">
-
-            <h3>
-              A mentor can compress years of learning.
-            </h3>
-
-          </div>
-
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================================================
-       03 / BEYOND NETWORKING
-       ========================================================= -->
-
-  <section class="editorial-section ink">
-
-
-    <div class="section-layout">
-
-
-      <!-- LEFT SIDE -->
-
-      <aside class="section-side">
-
-        <div class="section-index">
-          03 / Beyond Networking
-        </div>
-
-        <h2>
-          Environments Where Relevance Meets Opportunity
-        </h2>
-
-      </aside>
-
-
-      <!--
-        Large center gap is created by:
-        grid-template-columns:32% 1fr;
-        column-gap:110px;
-      -->
-
-
-      <!-- RIGHT SIDE -->
-
-      <div class="section-copy">
-
-
-        <div class="environment-list">
-
-
-          <!-- 01 -->
-
-          <div class="environment-row">
-
-            <div class="num">
-              01
-            </div>
-
-            <div>
-
-              <h3>
-                Curated access.
-              </h3>
-
-              <p>
-                Designed around relevance, not volume.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <!-- 02 -->
-
-          <div class="environment-row">
-
-            <div class="num">
-              02
-            </div>
-
-            <div>
-
-              <h3>
-                Shared perspective.
-              </h3>
-
-              <p>
-                Across markets, cultures, industries, and generations.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <!-- 03 -->
-
-          <div class="environment-row">
-
-            <div class="num">
-              03
-            </div>
-
-            <div>
-
-              <h3>
-                Meaningful exchange.
-              </h3>
-
-              <p>
-                Conversations with the potential to become action.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <!-- 04 -->
-
-          <div class="environment-row">
-
-            <div class="num">
-              04
-            </div>
-
-            <div>
-
-              <h3>
-                Long-term value.
-              </h3>
-
-              <p>
-                Relationships built to compound over time.
-              </p>
-
-            </div>
-
-          </div>
-
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================================================
-       04 / THE LONGER VIEW
-       ========================================================= -->
-
-  <section class="editorial-section longer-view">
-
-
-    <div class="section-layout">
-
-
-      <!-- LEFT -->
-
-      <aside class="section-side">
-
-
-        <div class="section-index">
-          04 / The Longer View
-        </div>
-
-
-        <h2>
-          For Founders With a Longer View
-        </h2>
-
-
-      </aside>
-
-
-      <!-- RIGHT -->
-
-      <div class="section-copy">
-
-
-        <p class="lead">
-          There are people building businesses.
-          There are people building brands.
-          There are people building technology.
-          There are people building institutions.
-        </p>
-
-
-        <p class="body-copy">
-
-          <strong>THE WHITE FOUNDERS</strong> is built for people who think beyond the immediate.
-          People who understand that meaningful companies take conviction.
-          That meaningful relationships take time.
-          That meaningful influence is earned.
-          That meaningful work leaves something behind.
-
-        </p>
-
-
-        <!-- IMAGE + QUOTE -->
-
-        <div class="longer-feature">
-
-
-          <div class="portrait">
-
-            <!--
-              FULL COLOR IMAGE
-            -->
+          <div class="world-feature">
 
             <img
-              src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1100&q=88"
-              alt="Founders in a strategy meeting"
+              src="assets/abs.jpeg"
+              alt="Entrepreneurs in conversation"
             >
 
+            <div class="feature-text">
+
+              <div class="small-label">
+                Across borders
+              </div>
+
+              <h3>
+                Opportunity can emerge anywhere.
+              </h3>
+
+              <p>
+                Different markets. Different perspectives.
+                One room built around what comes next.
+              </p>
+
+            </div>
+
           </div>
-
-
-          <div class="longer-quote">
-
-            <p>
-              We are interested in what endures.
-            </p>
-
-          </div>
-
 
         </div>
 
+      </div>
 
-        <!-- THESIS LIST -->
+    </section>
 
-        <div class="thesis-list">
+    <!-- 02 -->
 
+    <section class="editorial-section soft">
 
-          <div class="thesis-line">
+      <div class="section-layout connection-section">
 
-            <span>
-              Meaningful companies take conviction.
-            </span>
+        <aside class="section-side">
 
+          <div class="section-index">
+            02 / The Value
           </div>
 
+          <h2>
+            The Value of the Right Connection
+          </h2>
 
-          <div class="thesis-line">
+          <p class="connection-main-text">
+            A powerful relationship can change the trajectory of a business.
+          </p>
 
-            <span>
-              Meaningful relationships take time.
-            </span>
+        </aside>
+
+        <div class="section-copy">
+
+          <div class="connection-list">
+
+            <div class="connection-item">
+              <h3>
+                An introduction can open a market.
+              </h3>
+            </div>
+
+            <div class="connection-item">
+              <h3>
+                A conversation can reshape a strategy.
+              </h3>
+            </div>
+
+            <div class="connection-item">
+              <h3>
+                A partnership can accelerate growth.
+              </h3>
+            </div>
+
+            <div class="connection-item">
+              <h3>
+                A mentor can compress years of learning.
+              </h3>
+            </div>
 
           </div>
-
-
-          <div class="thesis-line">
-
-            <span>
-              Meaningful influence is earned.
-            </span>
-
-          </div>
-
-
-          <div class="thesis-line">
-
-            <span>
-              Meaningful work leaves something behind.
-            </span>
-
-          </div>
-
 
         </div>
 
+      </div>
+
+    </section>
+
+    <!-- 03 -->
+
+    <section class="editorial-section ink">
+
+      <div class="section-layout">
+
+        <aside class="section-side">
+
+          <div class="section-index">
+            03 / Beyond Networking
+          </div>
+
+          <h2>
+            Environments Where Relevance Meets Opportunity
+          </h2>
+
+        </aside>
+
+        <div class="section-copy">
+
+          <div class="environment-list">
+
+            <div class="environment-row">
+
+              <div class="num">01</div>
+
+              <div>
+                <h3>Curated access.</h3>
+
+                <p>
+                  Designed around relevance, not volume.
+                </p>
+              </div>
+
+            </div>
+
+            <div class="environment-row">
+
+              <div class="num">02</div>
+
+              <div>
+                <h3>Shared perspective.</h3>
+
+                <p>
+                  Across markets, cultures, industries,
+                  and generations.
+                </p>
+              </div>
+
+            </div>
+
+            <div class="environment-row">
+
+              <div class="num">03</div>
+
+              <div>
+                <h3>Meaningful exchange.</h3>
+
+                <p>
+                  Conversations with the potential to become action.
+                </p>
+              </div>
+
+            </div>
+
+            <div class="environment-row">
+
+              <div class="num">04</div>
+
+              <div>
+                <h3>Long-term value.</h3>
+
+                <p>
+                  Relationships built to compound over time.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 04 -->
+
+    <section class="editorial-section longer-view">
+
+      <div class="section-layout">
+
+        <aside class="section-side">
+
+          <div class="section-index">
+            04 / The Longer View
+          </div>
+
+          <h2>
+            For Founders With a Longer View
+          </h2>
+
+        </aside>
+
+        <div class="section-copy">
+
+          <p class="lead">
+            There are people building businesses.
+            There are people building brands.
+            There are people building technology.
+            There are people building institutions.
+          </p>
+
+          <p class="body-copy">
+
+            <strong>THE WHITE FOUNDERS</strong>
+            is built for people who think beyond the immediate.
+            People who understand that meaningful companies take conviction.
+            That meaningful relationships take time.
+            That meaningful influence is earned.
+            That meaningful work leaves something behind.
+
+          </p>
+
+          <div class="longer-feature">
+
+            <div class="portrait">
+
+              <img
+                src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1100&q=88"
+                alt="Founders in a strategy meeting"
+              >
+
+            </div>
+
+            <div class="longer-quote">
+
+              <p>
+                We are interested in what endures.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="thesis-list">
+
+            <div class="thesis-line">
+              <span>Meaningful companies take conviction.</span>
+            </div>
+
+            <div class="thesis-line">
+              <span>Meaningful relationships take time.</span>
+            </div>
+
+            <div class="thesis-line">
+              <span>Meaningful influence is earned.</span>
+            </div>
+
+            <div class="thesis-line">
+              <span>Meaningful work leaves something behind.</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 05 -->
+
+    <section class="editorial-photo-section">
+
+      <div class="gallery-label">
+        The White Founders
+      </div>
+
+      <div class="gallery-page-number">
+     
+      </div>
+
+      <div class="photo-gallery-viewport">
+
+        <div class="photo-gallery-center"></div>
+
+        <div class="photo-gallery-track">
+
+          <div class="gallery-image">
+            <img src="assets/inv1.jpg" alt="Founder portrait">
+          </div>
+
+          <div class="gallery-image">
+            <img src="assets/inv2.jpg" alt="Founder portrait">
+          </div>
+
+          <div class="gallery-image">
+            <img src="assets/inv3.jpg" alt="The White Founders">
+          </div>
+
+          <div class="gallery-image">
+            <img src="assets/inv4.jpg" alt="Founder portrait">
+          </div>
+
+          <div class="gallery-image">
+            <img src="assets/inv5.jpeg" alt="Founder portrait">
+          </div>
+
+          <div class="gallery-image">
+            <img src="assets/inv6.jpg" alt="Founder portrait">
+          </div>
+
+          <div class="gallery-image">
+            <img src="assets/inv7.jpg" alt="Founder portrait">
+          </div>
+
+          <div class="gallery-image">
+            <img src="assets/inv8.jpeg" alt="Founder portrait">
+          </div>
+
+          <div class="gallery-image">
+            <img src="assets/inv1.jpg" alt="Founder portrait">
+          </div>
+
+          <div class="gallery-image">
+            <img src="assets/inv2.jpg" alt="Founder portrait">
+          </div>
+
+          <div class="gallery-image">
+            <img src="assets/inv3.jpg" alt="The White Founders">
+          </div>
+
+          <div class="gallery-image">
+            <img src="assets/inv4.jpg" alt="Founder portrait">
+          </div>
+
+          <div class="gallery-image">
+            <img src="assets/inv5.jpeg" alt="Founder portrait">
+          </div>
+
+          <div class="gallery-image">
+            <img src="assets/inv6.jpg" alt="Founder portrait">
+          </div>
+
+          <div class="gallery-image">
+            <img src="assets/inv7.jpg" alt="Founder portrait">
+          </div>
+
+          <div class="gallery-image">
+            <img src="assets/inv8.jpeg" alt="Founder portrait">
+          </div>
+
+        </div>
+
+        <div class="gallery-statement">
+
+          <span>
+            One World · One Collective · A Higher Standard
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CLOSING -->
+
+    <section class="closer">
+
+      <div class="closer-grid">
+
+        <div class="closer-kicker"></div>
+
+        <div>
+
+          <h2>
+            Where Exceptional People Meet.
+          </h2>
+
+          <p>
+            Where global perspective meets ambition.<br>
+            Where relationships become opportunity.<br>
+            Where The White Standard™ becomes the way forward.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="closer-bottom">
+
+        <span>
+          The Global Founder Room
+        </span>
+
+        <span>
+          One World. One Collective. A Higher Standard.
+        </span>
+
+      </div>
+
+    </section>
+
+    <!-- MARQUEE -->
+
+    <div class="marquee" aria-label="Global by design">
+
+      <div class="marquee-track">
+
+        <span>
+          GLOBAL &nbsp; BY &nbsp; DESIGN
+          &nbsp; • &nbsp;
+          SELECTIVE &nbsp; BY &nbsp; INTENT
+          &nbsp; • &nbsp;
+          BUILT &nbsp; FOR &nbsp; WHAT'S &nbsp; NEXT
+        </span>
+
+        <span>
+          GLOBAL &nbsp; BY &nbsp; DESIGN
+          &nbsp; • &nbsp;
+          SELECTIVE &nbsp; BY &nbsp; INTENT
+          &nbsp; • &nbsp;
+          BUILT &nbsp; FOR &nbsp; WHAT'S &nbsp; NEXT
+        </span>
+
+        <span>
+          GLOBAL &nbsp; BY &nbsp; DESIGN
+          &nbsp; • &nbsp;
+          SELECTIVE &nbsp; BY &nbsp; INTENT
+          &nbsp; • &nbsp;
+          BUILT &nbsp; FOR &nbsp; WHAT'S &nbsp; NEXT
+        </span>
+
+        <span>
+          GLOBAL &nbsp; BY &nbsp; DESIGN
+          &nbsp; • &nbsp;
+          SELECTIVE &nbsp; BY &nbsp; INTENT
+          &nbsp; • &nbsp;
+          BUILT &nbsp; FOR &nbsp; WHAT'S &nbsp; NEXT
+        </span>
 
       </div>
 
     </div>
 
-  </section>
+  </main>
 
-
-  <!-- =========================================================
-       CLOSING
-       ========================================================= -->
-
-  <section class="closer">
-
-
-    <div class="closer-grid">
-
-
-      <div class="closer-kicker">
-      </div>
-
-
-      <div>
-
-
-        <h2>
-          Where Exceptional People Meet.
-        </h2>
-
-
-        <p>
-          Where global perspective meets ambition.<br>
-          Where relationships become opportunity.<br>
-          Where The White Standard™ becomes the way forward.
-        </p>
-
-
-      </div>
-
-
-    </div>
-
-
-    <div class="closer-bottom">
-
-
-      <span>
-        The Global Founder Room
-      </span>
-
-
-      <span>
-        One World. One Collective. A Higher Standard.
-      </span>
-
-
-    </div>
-
-
-  </section>
-
-
-  <!-- =========================================================
-       MARQUEE
-       ========================================================= -->
+  <!-- REGISTRATION MODAL -->
 
   <div
-    class="marquee"
-    aria-label="Global by design"
+    class="registration-modal"
+    id="registrationModal"
+    aria-hidden="true"
   >
 
+    <div class="registration-modal-container">
 
-    <div class="marquee-track">
+      <button
+        type="button"
+        class="modal-close"
+        id="modalClose"
+        aria-label="Close registration"
+      >
+        ×
+      </button>
+
+      <!-- LEFT IMAGE -->
+
+      <div class="registration-visual">
+
+        <img
+          src="assets/reg.jpeg"
+          alt="The White Startup Registration"
+          class="registration-visual-image"
+        >
+
+        <div class="registration-visual-content">
+
+          <h2 class="registration-visual-title">
+
+            JOIN<br>
+
+            <span>
+              THE COLLECTIVE.
+            </span>
+
+          </h2>
+
+          <p class="registration-visual-text">
+
+            <strong>
+              CONNECT. EXCHANGE. COLLABORATE. BUILD.
+            </strong>
+
+            <br>
+            <br>
+
+            A curated collective of founders,
+            entrepreneurs, creators, investors,
+            and business leaders building what’s next.
+
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT FORM -->
+
+      <div class="registration-form-side">
+
+        <div class="registration-top">
+
+          <h2 class="registration-title">
+
+            YOUR<br>
+
+            <span>
+              DETAILS.
+            </span>
+
+          </h2>
+
+        </div>
+
+        <form id="registrationForm">
+
+          <!-- REGISTER AS - MOVED TO TOP -->
+
+          <div class="form-section">
+
+            <div class="form-section-title">
+              REGISTER AS
+            </div>
+
+            <div class="option-group">
+
+              <div class="option">
+
+                <input
+                  type="radio"
+                  name="register_as"
+                  id="registerFounder"
+                  value="Founder"
+                  required
+                >
+
+                <label for="registerFounder">
+                  Founder
+                </label>
+
+              </div>
+
+              <div class="option">
+
+                <input
+                  type="radio"
+                  name="register_as"
+                  id="registerCreator"
+                  value="Creator"
+                >
+
+                <label for="registerCreator">
+                  Creator
+                </label>
+
+              </div>
+
+              <div class="option">
+
+                <input
+                  type="radio"
+                  name="register_as"
+                  id="registerInvestor"
+                  value="Investor"
+                >
+
+                <label for="registerInvestor">
+                  Investor
+                </label>
+
+              </div>
+
+              <div class="option">
 
 
-      <span>
-        GLOBAL &nbsp; BY &nbsp; DESIGN &nbsp; • &nbsp;
-        SELECTIVE &nbsp; BY &nbsp; INTENT &nbsp; • &nbsp;
-        BUILT &nbsp; FOR &nbsp; WHAT'S &nbsp; NEXT
-      </span>
+              </div>
 
+            </div>
 
-      <span>
-        GLOBAL &nbsp; BY &nbsp; DESIGN &nbsp; • &nbsp;
-        SELECTIVE &nbsp; BY &nbsp; INTENT &nbsp; • &nbsp;
-        BUILT &nbsp; FOR &nbsp; WHAT'S &nbsp; NEXT
-      </span>
+          </div>
 
+          <!-- YOUR DETAILS -->
 
-      <span>
-        GLOBAL &nbsp; BY &nbsp; DESIGN &nbsp; • &nbsp;
-        SELECTIVE &nbsp; BY &nbsp; INTENT &nbsp; • &nbsp;
-        BUILT &nbsp; FOR &nbsp; WHAT'S &nbsp; NEXT
-      </span>
+          <div class="form-section">
 
+            <div class="form-section-title">
+              YOUR DETAILS
+            </div>
 
-      <span>
-        GLOBAL &nbsp; BY &nbsp; DESIGN &nbsp; • &nbsp;
-        SELECTIVE &nbsp; BY &nbsp; INTENT &nbsp; • &nbsp;
-        BUILT &nbsp; FOR &nbsp; WHAT'S &nbsp; NEXT
-      </span>
+            <div class="form-grid">
 
+              <div class="form-field">
+
+                <label for="fullName">
+                  FULL NAME *
+                </label>
+
+                <input
+                  type="text"
+                  id="fullName"
+                  name="full_name"
+                  placeholder="Your full name"
+                  autocomplete="name"
+                  required
+                >
+
+              </div>
+
+              <div class="form-field">
+
+                <label for="email">
+                  EMAIL ADDRESS *
+                </label>
+
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Your email address"
+                  autocomplete="email"
+                  required
+                >
+
+              </div>
+
+              <!-- MOBILE + COUNTRY CODE -->
+
+              <div class="form-field">
+
+                <label for="mobile">
+                  MOBILE / WHATSAPP *
+                </label>
+
+                <div class="phone-input-group">
+
+                  <select
+                    id="countryCode"
+                    name="country_code"
+                    aria-label="Country calling code"
+                    required
+                  >
+
+                    <option value="+93">Afghanistan (+93)</option>
+                    <option value="+355">Albania (+355)</option>
+                    <option value="+213">Algeria (+213)</option>
+                    <option value="+1 684">American Samoa (+1 684)</option>
+                    <option value="+376">Andorra (+376)</option>
+                    <option value="+244">Angola (+244)</option>
+                    <option value="+1 264">Anguilla (+1 264)</option>
+                    <option value="+1 268">Antigua and Barbuda (+1 268)</option>
+                    <option value="+54">Argentina (+54)</option>
+                    <option value="+374">Armenia (+374)</option>
+                    <option value="+297">Aruba (+297)</option>
+                    <option value="+247">Ascension Island (+247)</option>
+                    <option value="+61">Australia (+61)</option>
+                    <option value="+43">Austria (+43)</option>
+                    <option value="+994">Azerbaijan (+994)</option>
+
+                    <option value="+1 242">Bahamas (+1 242)</option>
+                    <option value="+973">Bahrain (+973)</option>
+                    <option value="+880">Bangladesh (+880)</option>
+                    <option value="+1 246">Barbados (+1 246)</option>
+                    <option value="+375">Belarus (+375)</option>
+                    <option value="+32">Belgium (+32)</option>
+                    <option value="+501">Belize (+501)</option>
+                    <option value="+229">Benin (+229)</option>
+                    <option value="+1 441">Bermuda (+1 441)</option>
+                    <option value="+975">Bhutan (+975)</option>
+                    <option value="+591">Bolivia (+591)</option>
+                    <option value="+599">Bonaire, Sint Eustatius and Saba (+599)</option>
+                    <option value="+387">Bosnia and Herzegovina (+387)</option>
+                    <option value="+267">Botswana (+267)</option>
+                    <option value="+55">Brazil (+55)</option>
+                    <option value="+246">British Indian Ocean Territory (+246)</option>
+                    <option value="+1 284">British Virgin Islands (+1 284)</option>
+                    <option value="+673">Brunei (+673)</option>
+                    <option value="+359">Bulgaria (+359)</option>
+                    <option value="+226">Burkina Faso (+226)</option>
+                    <option value="+257">Burundi (+257)</option>
+
+                    <option value="+855">Cambodia (+855)</option>
+                    <option value="+237">Cameroon (+237)</option>
+                    <option value="+1">Canada (+1)</option>
+                    <option value="+238">Cape Verde (+238)</option>
+                    <option value="+1 345">Cayman Islands (+1 345)</option>
+                    <option value="+236">Central African Republic (+236)</option>
+                    <option value="+235">Chad (+235)</option>
+                    <option value="+56">Chile (+56)</option>
+                    <option value="+86">China (+86)</option>
+                    <option value="+61">Christmas Island (+61)</option>
+                    <option value="+61">Cocos Islands (+61)</option>
+                    <option value="+57">Colombia (+57)</option>
+                    <option value="+269">Comoros (+269)</option>
+                    <option value="+242">Congo (+242)</option>
+                    <option value="+243">Democratic Republic of the Congo (+243)</option>
+                    <option value="+682">Cook Islands (+682)</option>
+                    <option value="+506">Costa Rica (+506)</option>
+                    <option value="+225">Côte d’Ivoire (+225)</option>
+                    <option value="+385">Croatia (+385)</option>
+                    <option value="+53">Cuba (+53)</option>
+                    <option value="+599">Curaçao (+599)</option>
+                    <option value="+357">Cyprus (+357)</option>
+                    <option value="+420">Czech Republic (+420)</option>
+
+                    <option value="+45">Denmark (+45)</option>
+                    <option value="+253">Djibouti (+253)</option>
+                    <option value="+1 767">Dominica (+1 767)</option>
+                    <option value="+1 809">Dominican Republic (+1 809)</option>
+
+                    <option value="+593">Ecuador (+593)</option>
+                    <option value="+20">Egypt (+20)</option>
+                    <option value="+503">El Salvador (+503)</option>
+                    <option value="+240">Equatorial Guinea (+240)</option>
+                    <option value="+291">Eritrea (+291)</option>
+                    <option value="+372">Estonia (+372)</option>
+                    <option value="+268">Eswatini (+268)</option>
+                    <option value="+251">Ethiopia (+251)</option>
+
+                    <option value="+500">Falkland Islands (+500)</option>
+                    <option value="+298">Faroe Islands (+298)</option>
+                    <option value="+679">Fiji (+679)</option>
+                    <option value="+358">Finland (+358)</option>
+                    <option value="+33">France (+33)</option>
+                    <option value="+594">French Guiana (+594)</option>
+                    <option value="+689">French Polynesia (+689)</option>
+
+                    <option value="+241">Gabon (+241)</option>
+                    <option value="+220">Gambia (+220)</option>
+                    <option value="+995">Georgia (+995)</option>
+                    <option value="+49">Germany (+49)</option>
+                    <option value="+233">Ghana (+233)</option>
+                    <option value="+350">Gibraltar (+350)</option>
+                    <option value="+30">Greece (+30)</option>
+                    <option value="+299">Greenland (+299)</option>
+                    <option value="+1 473">Grenada (+1 473)</option>
+                    <option value="+590">Guadeloupe (+590)</option>
+                    <option value="+1 671">Guam (+1 671)</option>
+                    <option value="+502">Guatemala (+502)</option>
+                    <option value="+44 1481">Guernsey (+44 1481)</option>
+                    <option value="+224">Guinea (+224)</option>
+                    <option value="+245">Guinea-Bissau (+245)</option>
+                    <option value="+592">Guyana (+592)</option>
+
+                    <option value="+509">Haiti (+509)</option>
+                    <option value="+504">Honduras (+504)</option>
+                    <option value="+852">Hong Kong (+852)</option>
+                    <option value="+36">Hungary (+36)</option>
+
+                    <option value="+354">Iceland (+354)</option>
+                    <option value="+91" selected>India (+91)</option>
+                    <option value="+62">Indonesia (+62)</option>
+                    <option value="+98">Iran (+98)</option>
+                    <option value="+964">Iraq (+964)</option>
+                    <option value="+353">Ireland (+353)</option>
+                    <option value="+44 1624">Isle of Man (+44 1624)</option>
+                    <option value="+972">Israel (+972)</option>
+                    <option value="+39">Italy (+39)</option>
+
+                    <option value="+1 876">Jamaica (+1 876)</option>
+                    <option value="+81">Japan (+81)</option>
+                    <option value="+44 1534">Jersey (+44 1534)</option>
+                    <option value="+962">Jordan (+962)</option>
+
+                    <option value="+7">Kazakhstan (+7)</option>
+                    <option value="+254">Kenya (+254)</option>
+                    <option value="+686">Kiribati (+686)</option>
+                    <option value="+383">Kosovo (+383)</option>
+                    <option value="+965">Kuwait (+965)</option>
+                    <option value="+996">Kyrgyzstan (+996)</option>
+
+                    <option value="+856">Laos (+856)</option>
+                    <option value="+371">Latvia (+371)</option>
+                    <option value="+961">Lebanon (+961)</option>
+                    <option value="+266">Lesotho (+266)</option>
+                    <option value="+231">Liberia (+231)</option>
+                    <option value="+218">Libya (+218)</option>
+                    <option value="+423">Liechtenstein (+423)</option>
+                    <option value="+370">Lithuania (+370)</option>
+                    <option value="+352">Luxembourg (+352)</option>
+
+                    <option value="+853">Macao (+853)</option>
+                    <option value="+261">Madagascar (+261)</option>
+                    <option value="+265">Malawi (+265)</option>
+                    <option value="+60">Malaysia (+60)</option>
+                    <option value="+960">Maldives (+960)</option>
+                    <option value="+223">Mali (+223)</option>
+                    <option value="+356">Malta (+356)</option>
+                    <option value="+692">Marshall Islands (+692)</option>
+                    <option value="+596">Martinique (+596)</option>
+                    <option value="+222">Mauritania (+222)</option>
+                    <option value="+230">Mauritius (+230)</option>
+                    <option value="+262">Mayotte (+262)</option>
+                    <option value="+52">Mexico (+52)</option>
+                    <option value="+691">Micronesia (+691)</option>
+                    <option value="+373">Moldova (+373)</option>
+                    <option value="+377">Monaco (+377)</option>
+                    <option value="+976">Mongolia (+976)</option>
+                    <option value="+382">Montenegro (+382)</option>
+                    <option value="+1 664">Montserrat (+1 664)</option>
+                    <option value="+212">Morocco (+212)</option>
+                    <option value="+258">Mozambique (+258)</option>
+                    <option value="+95">Myanmar (+95)</option>
+
+                    <option value="+264">Namibia (+264)</option>
+                    <option value="+674">Nauru (+674)</option>
+                    <option value="+977">Nepal (+977)</option>
+                    <option value="+31">Netherlands (+31)</option>
+                    <option value="+687">New Caledonia (+687)</option>
+                    <option value="+64">New Zealand (+64)</option>
+                    <option value="+505">Nicaragua (+505)</option>
+                    <option value="+227">Niger (+227)</option>
+                    <option value="+234">Nigeria (+234)</option>
+                    <option value="+683">Niue (+683)</option>
+                    <option value="+672">Norfolk Island (+672)</option>
+                    <option value="+850">North Korea (+850)</option>
+                    <option value="+389">North Macedonia (+389)</option>
+                    <option value="+1 670">Northern Mariana Islands (+1 670)</option>
+                    <option value="+47">Norway (+47)</option>
+
+                    <option value="+968">Oman (+968)</option>
+
+                    <option value="+92">Pakistan (+92)</option>
+                    <option value="+680">Palau (+680)</option>
+                    <option value="+970">Palestine (+970)</option>
+                    <option value="+507">Panama (+507)</option>
+                    <option value="+675">Papua New Guinea (+675)</option>
+                    <option value="+595">Paraguay (+595)</option>
+                    <option value="+51">Peru (+51)</option>
+                    <option value="+63">Philippines (+63)</option>
+                    <option value="+48">Poland (+48)</option>
+                    <option value="+351">Portugal (+351)</option>
+                    <option value="+1 787">Puerto Rico (+1 787)</option>
+
+                    <option value="+974">Qatar (+974)</option>
+
+                    <option value="+262">Réunion (+262)</option>
+                    <option value="+40">Romania (+40)</option>
+                    <option value="+7">Russia (+7)</option>
+                    <option value="+250">Rwanda (+250)</option>
+
+                    <option value="+590">Saint Barthélemy (+590)</option>
+                    <option value="+290">Saint Helena (+290)</option>
+                    <option value="+1 869">Saint Kitts and Nevis (+1 869)</option>
+                    <option value="+1 758">Saint Lucia (+1 758)</option>
+                    <option value="+590">Saint Martin (+590)</option>
+                    <option value="+508">Saint Pierre and Miquelon (+508)</option>
+                    <option value="+1 784">Saint Vincent and the Grenadines (+1 784)</option>
+                    <option value="+685">Samoa (+685)</option>
+                    <option value="+378">San Marino (+378)</option>
+                    <option value="+239">São Tomé and Príncipe (+239)</option>
+                    <option value="+966">Saudi Arabia (+966)</option>
+                    <option value="+221">Senegal (+221)</option>
+                    <option value="+381">Serbia (+381)</option>
+                    <option value="+248">Seychelles (+248)</option>
+                    <option value="+232">Sierra Leone (+232)</option>
+                    <option value="+65">Singapore (+65)</option>
+                    <option value="+1 721">Sint Maarten (+1 721)</option>
+                    <option value="+421">Slovakia (+421)</option>
+                    <option value="+386">Slovenia (+386)</option>
+                    <option value="+677">Solomon Islands (+677)</option>
+                    <option value="+252">Somalia (+252)</option>
+                    <option value="+27">South Africa (+27)</option>
+                    <option value="+500">South Georgia and South Sandwich Islands (+500)</option>
+                    <option value="+82">South Korea (+82)</option>
+                    <option value="+211">South Sudan (+211)</option>
+                    <option value="+34">Spain (+34)</option>
+                    <option value="+94">Sri Lanka (+94)</option>
+                    <option value="+249">Sudan (+249)</option>
+                    <option value="+597">Suriname (+597)</option>
+                    <option value="+47">Svalbard and Jan Mayen (+47)</option>
+                    <option value="+46">Sweden (+46)</option>
+                    <option value="+41">Switzerland (+41)</option>
+                    <option value="+963">Syria (+963)</option>
+
+                    <option value="+886">Taiwan (+886)</option>
+                    <option value="+992">Tajikistan (+992)</option>
+                    <option value="+255">Tanzania (+255)</option>
+                    <option value="+66">Thailand (+66)</option>
+                    <option value="+670">Timor-Leste (+670)</option>
+                    <option value="+228">Togo (+228)</option>
+                    <option value="+690">Tokelau (+690)</option>
+                    <option value="+676">Tonga (+676)</option>
+                    <option value="+1 868">Trinidad and Tobago (+1 868)</option>
+                    <option value="+216">Tunisia (+216)</option>
+                    <option value="+90">Türkiye (+90)</option>
+                    <option value="+993">Turkmenistan (+993)</option>
+                    <option value="+1 649">Turks and Caicos Islands (+1 649)</option>
+                    <option value="+688">Tuvalu (+688)</option>
+
+                    <option value="+256">Uganda (+256)</option>
+                    <option value="+380">Ukraine (+380)</option>
+                    <option value="+971">United Arab Emirates (+971)</option>
+                    <option value="+44">United Kingdom (+44)</option>
+                    <option value="+1">United States (+1)</option>
+                    <option value="+1 340">U.S. Virgin Islands (+1 340)</option>
+                    <option value="+598">Uruguay (+598)</option>
+                    <option value="+998">Uzbekistan (+998)</option>
+
+                    <option value="+678">Vanuatu (+678)</option>
+                    <option value="+39">Vatican City (+39)</option>
+                    <option value="+58">Venezuela (+58)</option>
+                    <option value="+84">Vietnam (+84)</option>
+
+                    <option value="+681">Wallis and Futuna (+681)</option>
+                    <option value="+212">Western Sahara (+212)</option>
+
+                    <option value="+967">Yemen (+967)</option>
+
+                    <option value="+260">Zambia (+260)</option>
+                    <option value="+263">Zimbabwe (+263)</option>
+
+                  </select>
+
+                  <input
+                    type="tel"
+                    id="mobile"
+                    name="mobile"
+                    placeholder="Your mobile number"
+                    autocomplete="tel"
+                    required
+                  >
+
+                </div>
+
+              </div>
+
+              <div class="form-field">
+
+                <label for="city">
+                  CITY *
+                </label>
+
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  placeholder="Your city"
+                  autocomplete="address-level2"
+                  required
+                >
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- PROFILE -->
+
+          <div class="form-section">
+
+            <div class="form-section-title">
+              YOUR PROFILE
+            </div>
+
+            <div class="form-grid">
+
+              <div class="form-field">
+
+                <label for="designation">
+                  DESIGNATION / ROLE *
+                </label>
+
+                <input
+                  type="text"
+                  id="designation"
+                  name="designation"
+                  placeholder="Your role"
+                  required
+                >
+
+              </div>
+
+              <div class="form-field">
+
+                <label for="company">
+                  COMPANY / BRAND
+                </label>
+
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder="Company / brand"
+                >
+
+              </div>
+
+              <div class="form-field full">
+
+                <label for="industry">
+                  INDUSTRY *
+                </label>
+
+                <input
+                  type="text"
+                  id="industry"
+                  name="industry"
+                  placeholder="Your industry"
+                  required
+                >
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- I AM A -->
+
+          <div class="form-section">
+
+            <div class="form-section-title">
+              I AM A
+            </div>
+
+            <div class="option-group">
+
+              <div class="option">
+
+                <input
+                  type="radio"
+                  name="profile"
+                  id="founder"
+                  value="Founder"
+                  required
+                >
+
+                <label for="founder">
+                  Founder
+                </label>
+
+              </div>
+
+              <div class="option">
+
+                <input
+                  type="radio"
+                  name="profile"
+                  id="entrepreneur"
+                  value="Entrepreneur"
+                >
+
+                <label for="entrepreneur">
+                  Entrepreneur
+                </label>
+
+              </div>
+
+              <div class="option">
+
+                <input
+                  type="radio"
+                  name="profile"
+                  id="investor"
+                  value="Investor"
+                >
+
+                <label for="investor">
+                  Investor
+                </label>
+
+              </div>
+
+              <div class="option">
+
+                <input
+                  type="radio"
+                  name="profile"
+                  id="creator"
+                  value="Creator"
+                >
+
+                <label for="creator">
+                  Creator
+                </label>
+
+              </div>
+
+              <div class="option">
+
+                <input
+                  type="radio"
+                  name="profile"
+                  id="businessLeader"
+                  value="Business Leader"
+                >
+
+                <label for="businessLeader">
+                  Business Leader
+                </label>
+
+              </div>
+
+              <div class="option">
+
+                <input
+                  type="radio"
+                  name="profile"
+                  id="professional"
+                  value="Professional"
+                >
+
+                <label for="professional">
+                  Professional
+                </label>
+
+              </div>
+
+              <div class="option">
+
+                <input
+                  type="radio"
+                  name="profile"
+                  id="futureFounder"
+                  value="Future Founder"
+                >
+
+                <label for="futureFounder">
+                  Future Founder
+                </label>
+
+              </div>
+
+              <div class="option">
+
+                <input
+                  type="radio"
+                  name="profile"
+                  id="student"
+                  value="Student"
+                >
+
+                <label for="student">
+                  Student
+                </label>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- INTEREST -->
+
+          <div class="form-section">
+
+            <div class="form-section-title">
+              YOUR INTEREST
+            </div>
+
+            <div class="form-field">
+
+              <label>
+                WHAT BRINGS YOU TO THE PROGRAM? *
+              </label>
+
+              <div class="option-group">
+
+                <div class="option">
+
+                  <input
+                    type="checkbox"
+                    name="interest"
+                    id="networking"
+                    value="Networking"
+                  >
+
+                  <label for="networking">
+                    Networking
+                  </label>
+
+                </div>
+
+                <div class="option">
+
+                  <input
+                    type="checkbox"
+                    name="interest"
+                    id="businessGrowth"
+                    value="Business Growth"
+                  >
+
+                  <label for="businessGrowth">
+                    Business Growth
+                  </label>
+
+                </div>
+
+                <div class="option">
+
+                  <input
+                    type="checkbox"
+                    name="interest"
+                    id="collaboration"
+                    value="Collaboration"
+                  >
+
+                  <label for="collaboration">
+                    Collaboration
+                  </label>
+
+                </div>
+
+                <div class="option">
+
+                  <input
+                    type="checkbox"
+                    name="interest"
+                    id="investment"
+                    value="Investment"
+                  >
+
+                  <label for="investment">
+                    Investment
+                  </label>
+
+                </div>
+
+                <div class="option">
+
+                  <input
+                    type="checkbox"
+                    name="interest"
+                    id="learning"
+                    value="Learning"
+                  >
+
+                  <label for="learning">
+                    Learning
+                  </label>
+
+                </div>
+
+                <div class="option">
+
+                  <input
+                    type="checkbox"
+                    name="interest"
+                    id="entrepreneurship"
+                    value="Entrepreneurship"
+                  >
+
+                  <label for="entrepreneurship">
+                    Entrepreneurship
+                  </label>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- COLLECTIVE -->
+
+          <div class="form-section">
+
+            <div class="form-section-title">
+              THE WHITE FOUNDERS COLLECTIVE
+            </div>
+
+            <div class="collective-box">
+
+              <div class="collective-question">
+                INTERESTED IN JOINING THE COLLECTIVE?
+              </div>
+
+              <div class="option-group">
+
+                <div class="option">
+
+                  <input
+                    type="radio"
+                    name="collective"
+                    id="collectiveYes"
+                    value="Yes"
+                  >
+
+                  <label for="collectiveYes">
+                    Yes
+                  </label>
+
+                </div>
+
+                <div class="option">
+
+                  <input
+                    type="radio"
+                    name="collective"
+                    id="collectiveMore"
+                    value="Tell Me More"
+                  >
+
+                  <label for="collectiveMore">
+                    Tell Me More
+                  </label>
+
+                </div>
+
+                <div class="option">
+
+                  <input
+                    type="radio"
+                    name="collective"
+                    id="collectiveNo"
+                    value="Not Now"
+                  >
+
+                  <label for="collectiveNo">
+                    Not Now
+                  </label>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- CONFIRM -->
+
+          <div class="confirm-section">
+
+            <div class="form-section-title">
+              CONFIRM
+            </div>
+
+            <label class="confirm-check">
+
+              <input
+                type="checkbox"
+                name="updates"
+                required
+              >
+
+              <span>
+                I agree to receive event-related updates
+                from THE WHITE STARTUP™ and
+                THE WHITE FOUNDERS™.
+              </span>
+
+            </label>
+
+            <button
+              type="submit"
+              class="secure-btn"
+            >
+
+              <span>
+                SECURE MY PLACE
+              </span>
+
+              <span class="secure-btn-arrow">
+                ↗
+              </span>
+
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
 
     </div>
 
   </div>
 
+  <script>
 
-</main>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const modal =
+        document.getElementById("registrationModal");
+
+      const closeBtn =
+        document.getElementById("modalClose");
+
+      const form =
+        document.getElementById("registrationForm");
+
+      const openBtns =
+        document.querySelectorAll(
+          "#openModalBtn, .join-button"
+        );
+
+      function openModal() {
+
+        modal.classList.add("active");
+
+        modal.setAttribute(
+          "aria-hidden",
+          "false"
+        );
+
+        document.body.classList.add(
+          "modal-open"
+        );
+
+      }
+
+      function closeModal() {
+
+        modal.classList.remove("active");
+
+        modal.setAttribute(
+          "aria-hidden",
+          "true"
+        );
+
+        document.body.classList.remove(
+          "modal-open"
+        );
+
+      }
+
+      openBtns.forEach(function (btn) {
+
+        btn.addEventListener(
+          "click",
+          function (e) {
+
+            e.preventDefault();
+
+            openModal();
+
+          }
+        );
+
+      });
+
+      closeBtn.addEventListener(
+        "click",
+        closeModal
+      );
+
+      modal.addEventListener(
+        "click",
+        function (e) {
+
+          if (e.target === modal) {
+
+            closeModal();
+
+          }
+
+        }
+      );
+
+      document.addEventListener(
+        "keydown",
+        function (e) {
+
+          if (
+            e.key === "Escape" &&
+            modal.classList.contains("active")
+          ) {
+
+            closeModal();
+
+          }
+
+        }
+      );
+
+      form.addEventListener(
+        "submit",
+        function (e) {
+
+          e.preventDefault();
+
+          const btn =
+            form.querySelector(".secure-btn");
+
+          const span =
+            btn.querySelector(
+              "span:first-child"
+            );
+
+          span.textContent =
+            "PLACE RESERVED ✓";
+
+          btn.style.background =
+            "#736e4e";
+
+          btn.style.borderColor =
+            "#736e4e";
+
+          setTimeout(
+            function () {
+
+              form.reset();
+
+              span.textContent =
+                "SECURE MY PLACE";
+
+              btn.style.background =
+                "";
+
+              btn.style.borderColor =
+                "";
+
+              closeModal();
+
+            },
+            1800
+          );
+
+        }
+      );
+
+      /* =========================================================
+         GALLERY ANIMATION
+         ONLY ONE IMAGE — THE CLOSEST TO CENTER — IS ACTIVE
+      ========================================================= */
+
+      const gallery =
+        document.querySelector(
+          ".photo-gallery-viewport"
+        );
+
+      const track =
+        document.querySelector(
+          ".photo-gallery-track"
+        );
+
+      const images =
+        document.querySelectorAll(
+          ".gallery-image"
+        );
+
+      function updateGallery() {
+
+        if (!gallery || !track || !images.length) {
+          return;
+        }
+
+        const galleryRect =
+          gallery.getBoundingClientRect();
+
+        const centerX =
+          galleryRect.left +
+          galleryRect.width / 2;
+
+        let closestImage = null;
+        let closestDistance = Infinity;
+
+        images.forEach(function (image) {
+
+          const rect =
+            image.getBoundingClientRect();
+
+          const imageCenter =
+            rect.left +
+            rect.width / 2;
+
+          const distance =
+            Math.abs(
+              imageCenter - centerX
+            );
+
+          if (distance < closestDistance) {
+
+            closestDistance = distance;
+            closestImage = image;
+
+          }
+
+        });
+
+        images.forEach(function (image) {
+
+          if (image === closestImage) {
+
+            image.classList.add("active");
+
+          } else {
+
+            image.classList.remove("active");
+
+          }
+
+        });
+
+        requestAnimationFrame(
+          updateGallery
+        );
+
+      }
+
+      requestAnimationFrame(
+        updateGallery
+      );
+
+    });
+
+  </script>
 
 </body>
 </html>
