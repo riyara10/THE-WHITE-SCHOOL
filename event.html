@@ -4032,6 +4032,12 @@ body.modal-open{
                     </label>
 
 
+                    <div
+                        id="regFormStatus"
+                        style="display:none; margin-top:14px; font-size:10px; font-weight:700; letter-spacing:.05em; line-height:1.5;"
+                    ></div>
+
+
                     <button
                         type="submit"
                         class="secure-btn"
@@ -4060,6 +4066,12 @@ body.modal-open{
 
 
 <!-- =====================================================
+     SUPABASE (backend for the registration form)
+====================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- =====================================================
      JAVASCRIPT
 ====================================================== -->
 
@@ -4068,6 +4080,36 @@ body.modal-open{
 document.addEventListener(
     "DOMContentLoaded",
     function(){
+
+        // Same Supabase project and Web3Forms account used for
+        // The Rise Edition — this event's registrations go into
+        // their own table, kerala_flag_registrations.
+        const SUPABASE_URL = "https://hebenhpsfhpqwazawscx.supabase.co";
+        const SUPABASE_ANON_KEY = "sb_publishable_jbYZ38FDLz4TgzX3k9TMLw_h6dEXKP-";
+        const WEB3FORMS_ACCESS_KEY = "7744d23b-3cbb-409c-92fa-af08ae3be2d3";
+
+        const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        async function sendEmailNotification(payload) {
+            try {
+                await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", Accept: "application/json" },
+                    body: JSON.stringify({
+                        access_key: WEB3FORMS_ACCESS_KEY,
+                        subject: "New Kerala Flag Edition registration — " + payload.full_name,
+                        from_name: "The White Startup — Kerala Flag Edition",
+                        ...payload,
+                        interest: payload.interest.join(", "),
+                    }),
+                });
+            } catch (err) {
+                // Best-effort — the registration is already saved in
+                // Supabase, so a failed notification email never blocks
+                // the applicant.
+                console.error("Email notification failed (registration was still saved):", err);
+            }
+        }
 
         const modal =
             document.getElementById(
@@ -4083,6 +4125,17 @@ document.addEventListener(
             document.getElementById(
                 "registrationForm"
             );
+
+        const regFormStatus =
+            document.getElementById(
+                "regFormStatus"
+            );
+
+        function showRegStatus(message, isError) {
+            regFormStatus.textContent = message;
+            regFormStatus.style.display = "block";
+            regFormStatus.style.color = isError ? "#b3261e" : "#736e4e";
+        }
 
 
         const registerButtons =
@@ -4186,7 +4239,7 @@ document.addEventListener(
 
         registrationForm.addEventListener(
             "submit",
-            function(event){
+            async function(event){
 
                 event.preventDefault();
 
@@ -4203,6 +4256,65 @@ document.addEventListener(
                     );
 
 
+                // "I am a" is a required radio group (name="profile")
+                const profileInput =
+                    registrationForm.querySelector(
+                        'input[name="profile"]:checked'
+                    );
+
+                // "What brings you to the program?" checkboxes
+                // (name="interest") — not natively required, so
+                // validate at least one is checked before submitting.
+                const interestValues =
+                    Array.from(
+                        registrationForm.querySelectorAll(
+                            'input[name="interest"]:checked'
+                        )
+                    ).map(function(cb){ return cb.value; });
+
+                if (interestValues.length === 0) {
+                    showRegStatus("Please select at least one option for \"What brings you to the program?\"", true);
+                    return;
+                }
+
+                // "Interested in joining the collective?" is optional
+                const collectiveInput =
+                    registrationForm.querySelector(
+                        'input[name="collective"]:checked'
+                    );
+
+                const payload = {
+                    full_name: registrationForm.fullName.value.trim(),
+                    email: registrationForm.email.value.trim(),
+                    mobile: registrationForm.mobile.value.trim(),
+                    city: registrationForm.city.value.trim(),
+                    designation: registrationForm.designation.value.trim(),
+                    company: registrationForm.company.value.trim(),
+                    industry: registrationForm.industry.value.trim(),
+                    profile: profileInput ? profileInput.value : "",
+                    interest: interestValues,
+                    collective: collectiveInput ? collectiveInput.value : null,
+                    agreed_to_updates: registrationForm.updates.checked,
+                };
+
+                button.disabled = true;
+                buttonText.textContent = "SUBMITTING...";
+                regFormStatus.style.display = "none";
+
+                const { error } =
+                    await supabaseClient
+                        .from("kerala_flag_registrations")
+                        .insert([payload]);
+
+                if (error) {
+                    console.error("Supabase insert failed:", error);
+                    showRegStatus("Something went wrong submitting your registration. Please try again.", true);
+                    button.disabled = false;
+                    buttonText.textContent = "SECURE MY PLACE";
+                    return;
+                }
+
+
                 buttonText.textContent =
                     "PLACE RESERVED ✓";
 
@@ -4213,6 +4325,12 @@ document.addEventListener(
 
                 button.style.borderColor =
                     "#736e4e";
+
+
+                // Fire the email notification after the record is
+                // already safely saved — a slow or failed email should
+                // never hold up the applicant's success state.
+                sendEmailNotification(payload);
 
 
                 setTimeout(
@@ -4231,6 +4349,12 @@ document.addEventListener(
 
                         button.style.borderColor =
                             "";
+
+
+                        button.disabled = false;
+
+
+                        regFormStatus.style.display = "none";
 
 
                         closeRegistrationModal();
