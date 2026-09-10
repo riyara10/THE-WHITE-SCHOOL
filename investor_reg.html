@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE WHITE INVESTORS™</title>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BODY — FULL SCREEN
+========================================================= */
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+
+    min-height: 100vh;
+
+    background: #a4a69e;
+
+    font-family:
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 0;
+}
+
+
+/* =========================================================
+   MAIN FRAME — FULL SCREEN
+========================================================= */
+
+.signup-container {
+
+    width: 100vw;
+
+    min-height: 100vh;
+
+    height: 100vh;
+
+    background: #050505;
+
+    border: none;
+
+    border-radius: 0;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: stretch;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   LEFT IMAGE — 40%
+========================================================= */
+
+.image-side {
+
+    width: 40%;
+
+    height: 100vh;
+
+    min-height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 0;
+
+    flex-shrink: 0;
+}
+
+
+.image-side img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    position: absolute;
+
+    inset: 0;
+
+    transition: transform 0.8s ease;
+}
+
+
+.signup-container:hover .image-side img {
+
+    transform: scale(1.025);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.image-side::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.50),
+            rgba(0,0,0,0.08) 45%,
+            rgba(0,0,0,0.38) 100%
+        );
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   IMAGE TEXT
+========================================================= */
+
+.image-text {
+
+    position: absolute;
+
+    z-index: 5;
+
+    top: 50px;
+
+    left: 25px;
+
+    right: 25px;
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.image-text .brand {
+
+    font-size: 17px;
+
+    font-weight: 500;
+
+    letter-spacing: 6px;
+
+    line-height: 1.4;
+
+    margin-bottom: 22px;
+
+    color: #ffffff;
+}
+
+
+.image-text h2 {
+
+    font-size: 20px;
+
+    font-weight: 400;
+
+    letter-spacing: 4px;
+
+    line-height: 1.4;
+
+    margin-bottom: 12px;
+
+    color: #ffffff;
+}
+
+
+.image-text p {
+
+    font-size: 10px;
+
+    font-weight: 400;
+
+    letter-spacing: 3px;
+
+    line-height: 1.6;
+
+    color: rgba(255,255,255,0.88);
+}
+
+
+/* =========================================================
+   RIGHT FORM — 60%
+========================================================= */
+
+.form-side {
+
+    width: 60%;
+
+    height: 100vh;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            145deg,
+            #060606,
+            #050505
+        );
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    padding: 45px 55px;
+
+    flex-shrink: 0;
+
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+
+    scrollbar-color: #687254 #080808;
+}
+
+
+/* =========================================================
+   FORM SCROLLBAR
+========================================================= */
+
+.form-side::-webkit-scrollbar {
+
+    width: 6px;
+}
+
+
+.form-side::-webkit-scrollbar-track {
+
+    background: #080808;
+}
+
+
+.form-side::-webkit-scrollbar-thumb {
+
+    background: #687254;
+
+    border-radius: 10px;
+}
+
+
+.form-side::-webkit-scrollbar-thumb:hover {
+
+    background: #87956b;
+}
+
+
+/* =========================================================
+   FORM WRAPPER
+========================================================= */
+
+.form-wrapper {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    height: auto;
+
+    overflow: visible;
+
+    padding-bottom: 30px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.form-wrapper h1 {
+
+    font-size: 24px;
+
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.3;
+
+    margin-bottom: 8px;
+
+    color: #ffffff;
+}
+
+
+.description {
+
+    color: #777;
+
+    font-size: 9px;
+
+    line-height: 1.7;
+
+    margin-bottom: 24px;
+
+    max-width: 520px;
+}
+
+
+/* =========================================================
+   SECTION TITLES
+========================================================= */
+
+.section-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    color: #b7c69a;
+
+    margin-top: 24px;
+
+    margin-bottom: 12px;
+
+    white-space: nowrap;
+}
+
+
+.section-title::after {
+
+    content: "";
+
+    height: 1px;
+
+    flex: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            #292d25,
+            transparent
+        );
+}
+
+
+/* =========================================================
+   FORM ROW
+========================================================= */
+
+.form-row {
+
+    display: flex;
+
+    gap: 14px;
+
+    width: 100%;
+}
+
+
+.form-row .field {
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   FIELD
+========================================================= */
+
+.field {
+
+    width: 100%;
+
+    margin-bottom: 13px;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+label {
+
+    display: block;
+
+    font-size: 8px;
+
+    font-weight: 500;
+
+    color: #bdbdbd;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 6px;
+
+    transition: color 0.25s ease;
+}
+
+
+.field:focus-within label {
+
+    color: #b7c69a;
+}
+
+
+/* =========================================================
+   ALL FORM FIELDS
+   OLIVE GREEN BORDER
+========================================================= */
+
+input,
+select,
+textarea {
+
+    width: 100%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #151515,
+            #0e0e0e
+        );
+
+    border: 1px solid #7f8f65;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    color: #f5f5f5;
+
+    font-family:
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 0.2px;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.2s ease;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+input {
+
+    height: 40px;
+
+    padding: 0 13px;
+}
+
+
+/* =========================================================
+   INPUT HOVER
+========================================================= */
+
+input:hover {
+
+    border-color: #8fa071;
+
+    background:
+        linear-gradient(
+            145deg,
+            #181a16,
+            #10110f
+        );
+}
+
+
+/* =========================================================
+   INPUT FOCUS
+========================================================= */
+
+input:focus {
+
+    border-color: #b7c69a;
+
+    background:
+        linear-gradient(
+            145deg,
+            #191c17,
+            #10110f
+        );
+
+    box-shadow:
+        0 0 0 1px rgba(183,198,154,0.20),
+        0 0 20px rgba(183,198,154,0.08);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+input::placeholder,
+textarea::placeholder {
+
+    color: #555;
+
+    transition: color 0.25s ease;
+}
+
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+
+    color: #777;
+}
+
+
+/* =========================================================
+   FILLED INPUT
+========================================================= */
+
+input:not(:placeholder-shown) {
+
+    border-color: #7f8f65;
+
+    color: #f1f1f1;
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+textarea {
+
+    min-height: 82px;
+
+    padding: 12px 13px;
+
+    line-height: 1.6;
+
+    resize: none;
+
+    overflow: auto;
+
+    border-radius: 12px;
+
+    border: 1px solid #7f8f65;
+
+    background:
+        linear-gradient(
+            145deg,
+            #151515,
+            #0e0e0e
+        );
+
+    color: #f5f5f5;
+
+    outline: none;
+}
+
+
+/* =========================================================
+   TEXTAREA HOVER
+========================================================= */
+
+textarea:hover {
+
+    border-color: #8fa071;
+
+    background:
+        linear-gradient(
+            145deg,
+            #181a16,
+            #10110f
+        );
+}
+
+
+/* =========================================================
+   TEXTAREA FOCUS
+========================================================= */
+
+textarea:focus {
+
+    border-color: #b7c69a;
+
+    background:
+        linear-gradient(
+            145deg,
+            #191c17,
+            #10110e
+        );
+
+    box-shadow:
+        0 0 0 1px rgba(183,198,154,0.20),
+        0 0 22px rgba(183,198,154,0.08);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   TEXTAREA FILLED
+========================================================= */
+
+textarea:not(:placeholder-shown) {
+
+    border-color: #7f8f65;
+
+    color: #f1f1f1;
+}
+
+
+/* =========================================================
+   VISION TEXTAREAS
+========================================================= */
+
+#bio,
+#overview,
+#building {
+
+    min-height: 82px;
+
+    resize: none;
+}
+
+
+/* =========================================================
+   WHY THE WHITE
+========================================================= */
+
+.why-textarea {
+
+    min-height: 105px;
+
+    border-radius: 14px;
+
+    border: 1px solid #7f8f65;
+
+    resize: none;
+
+    background:
+        linear-gradient(
+            145deg,
+            #151515,
+            #0d0d0d
+        );
+}
+
+
+.why-textarea:hover {
+
+    border-color: #8fa071;
+}
+
+
+.why-textarea:focus {
+
+    border-color: #b7c69a;
+
+    background:
+        linear-gradient(
+            145deg,
+            #191c17,
+            #10110e
+        );
+
+    box-shadow:
+        0 0 0 1px rgba(183,198,154,0.22),
+        0 0 28px rgba(183,198,154,0.10);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+select {
+
+    height: 40px;
+
+    padding: 0 38px 0 13px;
+
+    appearance: none;
+
+    cursor: pointer;
+
+    color: #777;
+
+    border: 1px solid #7f8f65;
+
+    background-color: #111;
+
+    background-image:
+        linear-gradient(
+            45deg,
+            transparent 50%,
+            #aebd8f 50%
+        ),
+        linear-gradient(
+            135deg,
+            #aebd8f 50%,
+            transparent 50%
+        );
+
+    background-position:
+        calc(100% - 17px) 17px,
+        calc(100% - 12px) 17px;
+
+    background-size:
+        5px 5px,
+        5px 5px;
+
+    background-repeat: no-repeat;
+}
+
+
+select:hover {
+
+    border-color: #8fa071;
+}
+
+
+select:focus {
+
+    border-color: #b7c69a;
+
+    background-color: #141614;
+
+    box-shadow:
+        0 0 0 1px rgba(183,198,154,0.18),
+        0 0 20px rgba(183,198,154,0.08);
+}
+
+
+select:valid {
+
+    color: #f5f5f5;
+}
+
+
+select option {
+
+    background: #111111;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   AUTOFILL
+========================================================= */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+
+    -webkit-text-fill-color: #ffffff;
+
+    -webkit-box-shadow:
+        0 0 0 1000px #121412 inset;
+
+    border: 1px solid #7f8f65;
+
+    transition:
+        background-color 5000s ease-in-out 0s;
+}
+
+
+/* =========================================================
+   APPLY BUTTON
+========================================================= */
+
+.create-btn {
+
+    width: 100%;
+
+    height: 46px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b7c69a,
+            #a9b88d
+        );
+
+    color: #181818;
+
+    font-family:
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 5px;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+    margin-top: 10px;
+}
+
+
+.create-btn:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            #c7d5aa,
+            #b7c69a
+        );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(183,198,154,0.16);
+}
+
+
+.create-btn:active {
+
+    transform: translateY(0);
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   MEMBERSHIP NOTE
+========================================================= */
+
+.membership-note {
+
+    text-align: center;
+
+    margin-top: 11px;
+
+    padding-bottom: 10px;
+
+    color: #555;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.message {
+
+    text-align: center;
+
+    font-size: 9px;
+
+    color: #b7c69a;
+
+    margin-top: 8px;
+
+    padding: 10px;
+
+    border-radius: 8px;
+
+    background:
+        rgba(183,198,154,0.06);
+
+    border:
+        1px solid rgba(183,198,154,0.12);
+
+    display: none;
+}
+
+
+/* =========================================================
+   INVALID INPUT
+========================================================= */
+
+input:invalid:not(:placeholder-shown) {
+
+    border-color: #7f8f65;
+}
+
+
+input:invalid:focus {
+
+    border-color: #b7c69a;
+
+    box-shadow:
+        0 0 0 1px rgba(183,198,154,0.12);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    body {
+
+        align-items: flex-start;
+    }
+
+
+    .signup-container {
+
+        width: 100vw;
+
+        min-height: 100vh;
+
+        height: auto;
+
+        flex-direction: column;
+    }
+
+
+    .image-side {
+
+        width: 100%;
+
+        height: 400px;
+
+        min-height: 400px;
+
+        flex-shrink: 0;
+    }
+
+
+    .form-side {
+
+        width: 100%;
+
+        height: auto;
+
+        min-height: calc(100vh - 400px);
+
+        padding: 45px 50px;
+
+        overflow: visible;
+    }
+
+
+    .form-wrapper {
+
+        max-width: 700px;
+
+        margin: 0 auto;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 550px) {
+
+    body {
+
+        background: #999b94;
+
+        align-items: flex-start;
+    }
+
+
+    .signup-container {
+
+        width: 100%;
+
+        min-height: 100vh;
+
+        height: auto;
+
+        border-radius: 0;
+    }
+
+
+    .image-side {
+
+        height: 300px;
+
+        min-height: 300px;
+
+        border-radius: 0;
+    }
+
+
+    .image-text {
+
+        top: 35px;
+
+        left: 18px;
+
+        right: 18px;
+    }
+
+
+    .image-text .brand {
+
+        font-size: 12px;
+
+        letter-spacing: 4px;
+
+        margin-bottom: 16px;
+    }
+
+
+    .image-text h2 {
+
+        font-size: 15px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .image-text p {
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .form-side {
+
+        min-height: auto;
+
+        padding: 35px 22px;
+
+        overflow: visible;
+    }
+
+
+    .form-row {
+
+        flex-direction: column;
+
+        gap: 0;
+    }
+
+
+    .form-wrapper {
+
+        max-width: none;
+    }
+
+
+    .form-wrapper h1 {
+
+        font-size: 19px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .description {
+
+        font-size: 8px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .section-title {
+
+        margin-top: 23px;
+
+        font-size: 7px;
+
+        letter-spacing: 2.5px;
+    }
+
+
+    input,
+    select {
+
+        height: 42px;
+
+        border-radius: 10px;
+    }
+
+
+    textarea {
+
+        min-height: 85px;
+
+        border-radius: 11px;
+
+        resize: none;
+    }
+
+
+    #bio,
+    #overview,
+    #building {
+
+        min-height: 85px;
+    }
+
+
+    .why-textarea {
+
+        min-height: 110px;
+    }
+
+
+    .create-btn {
+
+        height: 48px;
+
+        border-radius: 10px;
+
+        letter-spacing: 4px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .form-side {
+
+        padding: 30px 17px;
+    }
+
+
+    .image-side {
+
+        height: 270px;
+
+        min-height: 270px;
+    }
+
+
+    .image-text .brand {
+
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .image-text h2 {
+
+        font-size: 13px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .image-text p {
+
+        font-size: 7px;
+
+        letter-spacing: 1.5px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="signup-container">
+
+
+    <!-- =====================================================
+         LEFT IMAGE
+    ====================================================== -->
+
+    <div class="image-side">
+
+        <img
+            src="assets/reg.jpeg"
+            alt="THE WHITE INVESTORS"
+        >
+
+
+        <div class="image-text">
+
+            <div class="brand">
+                THE WHITE INVESTORS
+            </div>
+
+
+            <h2>
+                INVESTOR COLLECTIVE
+            </h2>
+
+
+            <p>
+                WHERE CAPITAL MEETS POSSIBILITY
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         RIGHT FORM
+    ====================================================== -->
+
+    <div class="form-side">
+
+        <div class="form-wrapper">
+
+
+            <h1>
+                APPLY TO THE WHITE
+            </h1>
+
+
+            <p class="description">
+                A selective network connecting exceptional
+                founders with capital, partnerships and
+                strategic opportunity.
+            </p>
+
+
+            <form id="applicationForm">
+
+
+                <!-- =================================================
+                     YOUR PROFILE
+                ================================================== -->
+
+                <div class="section-title">
+                    YOUR PROFILE
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="field">
+
+                        <label for="fullName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            placeholder="Your full name"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="field">
+
+                        <label for="phone">
+                            Phone
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="+1 000 000 0000"
+                            autocomplete="tel"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="location">
+                            City / Country
+                        </label>
+
+                        <input
+                            type="text"
+                            id="location"
+                            name="location"
+                            placeholder="City / Country"
+                            autocomplete="country-name"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="linkedin">
+                        LinkedIn
+                    </label>
+
+                    <input
+                        type="url"
+                        id="linkedin"
+                        name="linkedin"
+                        placeholder="linkedin.com/in/yourprofile"
+                    >
+
+                </div>
+
+
+                <!-- =================================================
+                     YOUR BUSINESS
+                ================================================== -->
+
+                <div class="section-title">
+                    YOUR BUSINESS
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="field">
+
+                        <label for="company">
+                            Company Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="company"
+                            name="company"
+                            placeholder="Company name"
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="role">
+                            Title / Role
+                        </label>
+
+                        <input
+                            type="text"
+                            id="role"
+                            name="role"
+                            placeholder="Founder / CEO"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="field">
+
+                        <label for="industry">
+                            Industry
+                        </label>
+
+                        <input
+                            type="text"
+                            id="industry"
+                            name="industry"
+                            placeholder="Industry"
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="website">
+                            Company Website
+                        </label>
+
+                        <input
+                            type="url"
+                            id="website"
+                            name="website"
+                            placeholder="www.yourcompany.com"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="stage">
+                        Business Stage
+                    </label>
+
+                    <select
+                        id="stage"
+                        name="stage"
+                    >
+
+                        <option value="">
+                            Select business stage
+                        </option>
+
+                        <option value="idea">
+                            Idea / Pre-launch
+                        </option>
+
+                        <option value="early">
+                            Early Stage
+                        </option>
+
+                        <option value="growth">
+                            Growth Stage
+                        </option>
+
+                        <option value="scale">
+                            Scale-up
+                        </option>
+
+                        <option value="established">
+                            Established
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- =================================================
+                     YOUR VISION
+                ================================================== -->
+
+                <div class="section-title">
+                    YOUR VISION
+                </div>
+
+
+                <div class="field">
+
+                    <label for="bio">
+                        Founder Bio
+                    </label>
+
+                    <textarea
+                        id="bio"
+                        name="bio"
+                        placeholder="Tell us briefly about yourself..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="overview">
+                        Company Overview
+                    </label>
+
+                    <textarea
+                        id="overview"
+                        name="overview"
+                        placeholder="What does your company do?"
+                    ></textarea>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="building">
+                        What are you building?
+                    </label>
+
+                    <textarea
+                        id="building"
+                        name="building"
+                        placeholder="Describe what you are building..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- =================================================
+                     YOUR OBJECTIVE
+                ================================================== -->
+
+                <div class="section-title">
+                    YOUR OBJECTIVE
+                </div>
+
+
+                <div class="field">
+
+                    <label for="objective">
+                        What are you looking for?
+                    </label>
+
+                    <input
+                        type="text"
+                        id="objective"
+                        name="objective"
+                        placeholder="Capital • Partnerships • Growth • Talent • Market Access • Strategic Connections"
+                    >
+
+                </div>
+
+
+                <!-- =================================================
+                     WHY THE WHITE
+                ================================================== -->
+
+                <div class="section-title">
+                    WHY THE WHITE?
+                </div>
+
+
+                <div class="field">
+
+                    <label for="whyWhite">
+                        Why do you want to join THE WHITE FOUNDERS™?
+                    </label>
+
+                    <textarea
+                        id="whyWhite"
+                        name="whyWhite"
+                        class="why-textarea"
+                        placeholder="Tell us why you want to join..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- =================================================
+                     APPLY
+                ================================================== -->
+
+                <button
+                    type="submit"
+                    class="create-btn"
+                >
+                    APPLY NOW →
+                </button>
+
+
+                <div class="membership-note">
+                    SELECTIVE MEMBERSHIP • SUBJECT TO APPROVAL
+                </div>
+
+
+                <div
+                    class="message"
+                    id="message"
+                    role="status"
+                    aria-live="polite"
+                >
+                    Application received.
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   FORM SUBMIT
+========================================================= */
+
+document
+    .getElementById("applicationForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const message =
+            document.getElementById("message");
+
+        message.style.display = "block";
+
+        message.textContent =
+            "Application received.";
+
+    });
+
+</script>
+
+
+</body>
+
+</html>
