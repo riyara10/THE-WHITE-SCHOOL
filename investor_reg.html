@@ -4,7 +4,6 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>THE WHITE INVESTORS™</title>
@@ -23,7 +22,7 @@
 
 
 /* =========================================================
-   BODY — FULL SCREEN
+   BODY
 ========================================================= */
 
 html,
@@ -45,61 +44,49 @@ body {
 
     display: flex;
 
-    justify-content: center;
-
     align-items: center;
+
+    justify-content: center;
 
     padding: 0;
 }
 
 
 /* =========================================================
-   MAIN FRAME — FULL SCREEN
+   MAIN CONTAINER — 50 / 50
 ========================================================= */
 
 .signup-container {
 
     width: 100vw;
 
-    min-height: 100vh;
-
     height: 100vh;
 
+    min-height: 100vh;
+
     background: #050505;
-
-    border: none;
-
-    border-radius: 0;
-
-    overflow: hidden;
 
     display: flex;
 
     flex-direction: row;
 
-    align-items: stretch;
-
-    box-shadow: none;
+    overflow: hidden;
 }
 
 
 /* =========================================================
-   LEFT IMAGE — 40%
+   LEFT IMAGE — 50%
 ========================================================= */
 
 .image-side {
 
-    width: 40%;
+    width: 50%;
 
     height: 100vh;
-
-    min-height: 100vh;
 
     position: relative;
 
     overflow: hidden;
-
-    border-radius: 0;
 
     flex-shrink: 0;
 }
@@ -113,13 +100,13 @@ body {
 
     object-fit: cover;
 
-    display: block;
-
     position: absolute;
 
     inset: 0;
 
-    transition: transform 0.8s ease;
+    display: block;
+
+    transition: transform 1s ease;
 }
 
 
@@ -144,9 +131,9 @@ body {
     background:
         linear-gradient(
             to bottom,
-            rgba(0,0,0,0.50),
+            rgba(0,0,0,0.55),
             rgba(0,0,0,0.08) 45%,
-            rgba(0,0,0,0.38) 100%
+            rgba(0,0,0,0.50) 100%
         );
 
     z-index: 2;
@@ -165,13 +152,13 @@ body {
 
     z-index: 5;
 
-    top: 50px;
+    top: 48px;
 
-    left: 25px;
+    left: 30px;
 
-    right: 25px;
+    right: 30px;
 
-    color: white;
+    color: #ffffff;
 
     text-align: center;
 }
@@ -183,7 +170,7 @@ body {
 
     font-weight: 500;
 
-    letter-spacing: 6px;
+    letter-spacing: 5px;
 
     line-height: 1.4;
 
@@ -203,7 +190,7 @@ body {
 
     line-height: 1.4;
 
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 
     color: #ffffff;
 }
@@ -211,38 +198,36 @@ body {
 
 .image-text p {
 
-    font-size: 10px;
+    font-size: 9px;
 
     font-weight: 400;
 
-    letter-spacing: 3px;
+    letter-spacing: 2.5px;
 
     line-height: 1.6;
 
-    color: rgba(255,255,255,0.88);
+    color: rgba(255,255,255,0.84);
 }
 
 
 /* =========================================================
-   RIGHT FORM — 60%
+   RIGHT FORM — 50%
 ========================================================= */
 
 .form-side {
 
-    width: 60%;
+    width: 50%;
 
     height: 100vh;
-
-    min-height: 100vh;
 
     background:
         linear-gradient(
             145deg,
-            #060606,
+            #080808,
             #050505
         );
 
-    color: white;
+    color: #ffffff;
 
     display: flex;
 
@@ -250,15 +235,19 @@ body {
 
     align-items: flex-start;
 
-    padding: 45px 55px;
-
-    flex-shrink: 0;
+    padding:
+        42px
+        clamp(35px, 5vw, 75px);
 
     overflow-y: auto;
 
     scrollbar-width: thin;
 
-    scrollbar-color: #687254 #080808;
+    scrollbar-color:
+        #687254
+        #080808;
+
+    flex-shrink: 0;
 }
 
 
@@ -268,7 +257,7 @@ body {
 
 .form-side::-webkit-scrollbar {
 
-    width: 6px;
+    width: 5px;
 }
 
 
@@ -282,7 +271,7 @@ body {
 
     background: #687254;
 
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 
@@ -302,11 +291,7 @@ body {
 
     max-width: 700px;
 
-    height: auto;
-
-    overflow: visible;
-
-    padding-bottom: 30px;
+    padding-bottom: 35px;
 }
 
 
@@ -316,31 +301,31 @@ body {
 
 .form-wrapper h1 {
 
-    font-size: 24px;
+    font-size: 25px;
 
     font-weight: 500;
 
     letter-spacing: 1.5px;
 
-    line-height: 1.3;
-
-    margin-bottom: 8px;
+    line-height: 1.2;
 
     color: #ffffff;
+
+    margin-bottom: 8px;
 }
 
 
 .description {
 
-    color: #777;
+    max-width: 540px;
 
-    font-size: 9px;
+    color: #777777;
 
-    line-height: 1.7;
+    font-size: 10px;
 
-    margin-bottom: 24px;
+    line-height: 1.65;
 
-    max-width: 520px;
+    margin-bottom: 27px;
 }
 
 
@@ -356,6 +341,8 @@ body {
 
     gap: 12px;
 
+    width: 100%;
+
     font-size: 8px;
 
     font-weight: 600;
@@ -364,9 +351,9 @@ body {
 
     color: #b7c69a;
 
-    margin-top: 24px;
+    margin-top: 25px;
 
-    margin-bottom: 12px;
+    margin-bottom: 13px;
 
     white-space: nowrap;
 }
@@ -390,24 +377,19 @@ body {
 
 
 /* =========================================================
-   FORM ROW
+   FORM ROW — DESKTOP TWO COLUMNS
 ========================================================= */
 
 .form-row {
 
-    display: flex;
+    display: grid;
 
-    gap: 14px;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
 
     width: 100%;
-}
-
-
-.form-row .field {
-
-    flex: 1;
-
-    min-width: 0;
 }
 
 
@@ -454,8 +436,7 @@ label {
 
 
 /* =========================================================
-   ALL FORM FIELDS
-   OLIVE GREEN BORDER
+   INPUT / SELECT / TEXTAREA
 ========================================================= */
 
 input,
@@ -464,18 +445,18 @@ textarea {
 
     width: 100%;
 
+    border: 1px solid #657052;
+
+    border-radius: 10px;
+
+    outline: none;
+
     background:
         linear-gradient(
             145deg,
             #151515,
-            #0e0e0e
+            #0d0d0d
         );
-
-    border: 1px solid #7f8f65;
-
-    border-radius: 11px;
-
-    outline: none;
 
     color: #f5f5f5;
 
@@ -502,7 +483,7 @@ textarea {
 
 input {
 
-    height: 40px;
+    height: 41px;
 
     padding: 0 13px;
 }
@@ -514,7 +495,7 @@ input {
 
 input:hover {
 
-    border-color: #8fa071;
+    border-color: #829166;
 
     background:
         linear-gradient(
@@ -541,8 +522,10 @@ input:focus {
         );
 
     box-shadow:
-        0 0 0 1px rgba(183,198,154,0.20),
-        0 0 20px rgba(183,198,154,0.08);
+        0 0 0 1px
+        rgba(183,198,154,0.18),
+        0 0 18px
+        rgba(183,198,154,0.07);
 
     transform: translateY(-1px);
 }
@@ -555,175 +538,14 @@ input:focus {
 input::placeholder,
 textarea::placeholder {
 
-    color: #555;
-
-    transition: color 0.25s ease;
+    color: #555555;
 }
 
 
 input:focus::placeholder,
 textarea:focus::placeholder {
 
-    color: #777;
-}
-
-
-/* =========================================================
-   FILLED INPUT
-========================================================= */
-
-input:not(:placeholder-shown) {
-
-    border-color: #7f8f65;
-
-    color: #f1f1f1;
-}
-
-
-/* =========================================================
-   TEXTAREA
-========================================================= */
-
-textarea {
-
-    min-height: 82px;
-
-    padding: 12px 13px;
-
-    line-height: 1.6;
-
-    resize: none;
-
-    overflow: auto;
-
-    border-radius: 12px;
-
-    border: 1px solid #7f8f65;
-
-    background:
-        linear-gradient(
-            145deg,
-            #151515,
-            #0e0e0e
-        );
-
-    color: #f5f5f5;
-
-    outline: none;
-}
-
-
-/* =========================================================
-   TEXTAREA HOVER
-========================================================= */
-
-textarea:hover {
-
-    border-color: #8fa071;
-
-    background:
-        linear-gradient(
-            145deg,
-            #181a16,
-            #10110f
-        );
-}
-
-
-/* =========================================================
-   TEXTAREA FOCUS
-========================================================= */
-
-textarea:focus {
-
-    border-color: #b7c69a;
-
-    background:
-        linear-gradient(
-            145deg,
-            #191c17,
-            #10110e
-        );
-
-    box-shadow:
-        0 0 0 1px rgba(183,198,154,0.20),
-        0 0 22px rgba(183,198,154,0.08);
-
-    transform: translateY(-1px);
-}
-
-
-/* =========================================================
-   TEXTAREA FILLED
-========================================================= */
-
-textarea:not(:placeholder-shown) {
-
-    border-color: #7f8f65;
-
-    color: #f1f1f1;
-}
-
-
-/* =========================================================
-   VISION TEXTAREAS
-========================================================= */
-
-#bio,
-#overview,
-#building {
-
-    min-height: 82px;
-
-    resize: none;
-}
-
-
-/* =========================================================
-   WHY THE WHITE
-========================================================= */
-
-.why-textarea {
-
-    min-height: 105px;
-
-    border-radius: 14px;
-
-    border: 1px solid #7f8f65;
-
-    resize: none;
-
-    background:
-        linear-gradient(
-            145deg,
-            #151515,
-            #0d0d0d
-        );
-}
-
-
-.why-textarea:hover {
-
-    border-color: #8fa071;
-}
-
-
-.why-textarea:focus {
-
-    border-color: #b7c69a;
-
-    background:
-        linear-gradient(
-            145deg,
-            #191c17,
-            #10110e
-        );
-
-    box-shadow:
-        0 0 0 1px rgba(183,198,154,0.22),
-        0 0 28px rgba(183,198,154,0.10);
-
-    transform: translateY(-1px);
+    color: #707070;
 }
 
 
@@ -733,26 +555,27 @@ textarea:not(:placeholder-shown) {
 
 select {
 
-    height: 40px;
+    height: 41px;
 
-    padding: 0 38px 0 13px;
+    padding:
+        0 38px 0 13px;
 
     appearance: none;
 
     cursor: pointer;
 
-    color: #777;
+    color: #777777;
 
-    border: 1px solid #7f8f65;
-
-    background-color: #111;
+    background-color: #111111;
 
     background-image:
+
         linear-gradient(
             45deg,
             transparent 50%,
             #aebd8f 50%
         ),
+
         linear-gradient(
             135deg,
             #aebd8f 50%,
@@ -760,6 +583,7 @@ select {
         );
 
     background-position:
+
         calc(100% - 17px) 17px,
         calc(100% - 12px) 17px;
 
@@ -773,7 +597,7 @@ select {
 
 select:hover {
 
-    border-color: #8fa071;
+    border-color: #829166;
 }
 
 
@@ -784,8 +608,10 @@ select:focus {
     background-color: #141614;
 
     box-shadow:
-        0 0 0 1px rgba(183,198,154,0.18),
-        0 0 20px rgba(183,198,154,0.08);
+        0 0 0 1px
+        rgba(183,198,154,0.18),
+        0 0 18px
+        rgba(183,198,154,0.07);
 }
 
 
@@ -804,6 +630,71 @@ select option {
 
 
 /* =========================================================
+   TEXTAREA
+========================================================= */
+
+textarea {
+
+    min-height: 82px;
+
+    padding:
+        11px 13px;
+
+    line-height: 1.6;
+
+    resize: none;
+
+    overflow: auto;
+}
+
+
+textarea:hover {
+
+    border-color: #829166;
+
+    background:
+        linear-gradient(
+            145deg,
+            #181a16,
+            #10110f
+        );
+}
+
+
+textarea:focus {
+
+    border-color: #b7c69a;
+
+    background:
+        linear-gradient(
+            145deg,
+            #191c17,
+            #10110f
+        );
+
+    box-shadow:
+        0 0 0 1px
+        rgba(183,198,154,0.18),
+        0 0 20px
+        rgba(183,198,154,0.07);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   WHY THE WHITE
+========================================================= */
+
+.why-textarea {
+
+    min-height: 105px;
+
+    border-radius: 12px;
+}
+
+
+/* =========================================================
    AUTOFILL
 ========================================================= */
 
@@ -816,10 +707,8 @@ input:-webkit-autofill:focus {
     -webkit-box-shadow:
         0 0 0 1000px #121412 inset;
 
-    border: 1px solid #7f8f65;
-
-    transition:
-        background-color 5000s ease-in-out 0s;
+    border:
+        1px solid #657052;
 }
 
 
@@ -835,7 +724,7 @@ input:-webkit-autofill:focus {
 
     border: none;
 
-    border-radius: 10px;
+    border-radius: 9px;
 
     background:
         linear-gradient(
@@ -855,13 +744,16 @@ input:-webkit-autofill:focus {
 
     font-weight: 600;
 
-    letter-spacing: 5px;
+    letter-spacing: 4px;
 
     cursor: pointer;
 
-    transition: all 0.25s ease;
+    margin-top: 9px;
 
-    margin-top: 10px;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
 }
 
 
@@ -878,7 +770,7 @@ input:-webkit-autofill:focus {
 
     box-shadow:
         0 10px 25px
-        rgba(183,198,154,0.16);
+        rgba(183,198,154,0.15);
 }
 
 
@@ -900,9 +792,9 @@ input:-webkit-autofill:focus {
 
     margin-top: 11px;
 
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 
-    color: #555;
+    color: #555555;
 
     font-size: 7px;
 
@@ -934,102 +826,125 @@ input:-webkit-autofill:focus {
         rgba(183,198,154,0.06);
 
     border:
-        1px solid rgba(183,198,154,0.12);
+        1px solid
+        rgba(183,198,154,0.12);
 
     display: none;
 }
 
 
 /* =========================================================
-   INVALID INPUT
+   LARGE DESKTOP
 ========================================================= */
 
-input:invalid:not(:placeholder-shown) {
-
-    border-color: #7f8f65;
-}
-
-
-input:invalid:focus {
-
-    border-color: #b7c69a;
-
-    box-shadow:
-        0 0 0 1px rgba(183,198,154,0.12);
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 900px) {
-
-    body {
-
-        align-items: flex-start;
-    }
-
-
-    .signup-container {
-
-        width: 100vw;
-
-        min-height: 100vh;
-
-        height: auto;
-
-        flex-direction: column;
-    }
-
+@media (min-width: 1500px) {
 
     .image-side {
 
-        width: 100%;
-
-        height: 400px;
-
-        min-height: 400px;
-
-        flex-shrink: 0;
+        width: 50%;
     }
 
 
     .form-side {
 
-        width: 100%;
+        width: 50%;
 
-        height: auto;
+        padding-left: 80px;
 
-        min-height: calc(100vh - 400px);
-
-        padding: 45px 50px;
-
-        overflow: visible;
+        padding-right: 80px;
     }
 
 
     .form-wrapper {
 
-        max-width: 700px;
+        max-width: 760px;
+    }
 
-        margin: 0 auto;
+
+    .form-wrapper h1 {
+
+        font-size: 27px;
+    }
+
+
+    input,
+    select {
+
+        height: 43px;
+
+        font-size: 11px;
+    }
+
+
+    textarea {
+
+        font-size: 11px;
     }
 
 }
 
 
 /* =========================================================
-   MOBILE
+   TABLET
+   KEEP 50 / 50
 ========================================================= */
 
-@media (max-width: 550px) {
+@media (max-width: 1000px) and (min-width: 801px) {
+
+    .image-side {
+
+        width: 50%;
+    }
+
+
+    .form-side {
+
+        width: 50%;
+
+        padding:
+            38px
+            35px;
+    }
+
+
+    .form-wrapper h1 {
+
+        font-size: 22px;
+    }
+
+
+    .description {
+
+        font-size: 9px;
+    }
+
+
+    .form-row {
+
+        gap: 10px;
+    }
+
+
+    input,
+    select {
+
+        font-size: 9px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE / TABLET STACK
+========================================================= */
+
+@media (max-width: 800px) {
 
     body {
 
-        background: #999b94;
-
         align-items: flex-start;
+
+        background: #050505;
     }
 
 
@@ -1037,47 +952,57 @@ input:invalid:focus {
 
         width: 100%;
 
-        min-height: 100vh;
-
         height: auto;
 
-        border-radius: 0;
+        min-height: 100vh;
+
+        flex-direction: column;
     }
 
 
+    /* -----------------------------------------------------
+       IMAGE
+    ----------------------------------------------------- */
+
     .image-side {
 
-        height: 300px;
+        width: 100%;
 
-        min-height: 300px;
+        height: 360px;
 
-        border-radius: 0;
+        min-height: 360px;
+    }
+
+
+    .image-side img {
+
+        object-position: center;
     }
 
 
     .image-text {
 
-        top: 35px;
+        top: 45px;
 
-        left: 18px;
+        left: 25px;
 
-        right: 18px;
+        right: 25px;
     }
 
 
     .image-text .brand {
 
-        font-size: 12px;
+        font-size: 14px;
 
-        letter-spacing: 4px;
+        letter-spacing: 5px;
 
-        margin-bottom: 16px;
+        margin-bottom: 18px;
     }
 
 
     .image-text h2 {
 
-        font-size: 15px;
+        font-size: 18px;
 
         letter-spacing: 3px;
     }
@@ -1091,35 +1016,126 @@ input:invalid:focus {
     }
 
 
+    /* -----------------------------------------------------
+       FORM
+    ----------------------------------------------------- */
+
     .form-side {
+
+        width: 100%;
+
+        height: auto;
 
         min-height: auto;
 
-        padding: 35px 22px;
+        padding:
+            42px
+            45px;
 
         overflow: visible;
     }
 
 
-    .form-row {
+    .form-wrapper {
 
-        flex-direction: column;
+        max-width: 720px;
 
-        gap: 0;
+        margin: 0 auto;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .image-side {
+
+        height: 290px;
+
+        min-height: 290px;
+    }
+
+
+    .image-text {
+
+        top: 34px;
+
+        left: 18px;
+
+        right: 18px;
+    }
+
+
+    .image-text .brand {
+
+        font-size: 11px;
+
+        letter-spacing: 3.5px;
+
+        margin-bottom: 16px;
+    }
+
+
+    .image-text h2 {
+
+        font-size: 15px;
+
+        letter-spacing: 2.5px;
+
+        margin-bottom: 8px;
+    }
+
+
+    .image-text p {
+
+        font-size: 7px;
+
+        letter-spacing: 1.8px;
+    }
+
+
+    /* -----------------------------------------------------
+       FORM
+    ----------------------------------------------------- */
+
+    .form-side {
+
+        width: 100%;
+
+        padding:
+            32px
+            20px
+            40px;
+
+        overflow: visible;
     }
 
 
     .form-wrapper {
 
+        width: 100%;
+
         max-width: none;
+
+        padding-bottom: 0;
     }
 
+
+    /* -----------------------------------------------------
+       HEADER
+    ----------------------------------------------------- */
 
     .form-wrapper h1 {
 
         font-size: 19px;
 
         letter-spacing: 1px;
+
+        margin-bottom: 8px;
     }
 
 
@@ -1127,60 +1143,161 @@ input:invalid:focus {
 
         font-size: 8px;
 
-        margin-bottom: 20px;
+        line-height: 1.65;
+
+        margin-bottom: 23px;
+
+        max-width: 100%;
     }
 
+
+    /* -----------------------------------------------------
+       SECTION TITLES
+    ----------------------------------------------------- */
 
     .section-title {
 
         margin-top: 23px;
 
+        margin-bottom: 12px;
+
+        gap: 9px;
+
         font-size: 7px;
 
-        letter-spacing: 2.5px;
+        letter-spacing: 2.4px;
     }
 
+
+    /* -----------------------------------------------------
+       FORM ROW
+    ----------------------------------------------------- */
+
+    .form-row {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 0;
+    }
+
+
+    /* -----------------------------------------------------
+       FIELD
+    ----------------------------------------------------- */
+
+    .field {
+
+        margin-bottom: 13px;
+    }
+
+
+    /* -----------------------------------------------------
+       LABEL
+    ----------------------------------------------------- */
+
+    label {
+
+        font-size: 7px;
+
+        letter-spacing: 1px;
+
+        margin-bottom: 6px;
+    }
+
+
+    /* -----------------------------------------------------
+       INPUT / SELECT
+    ----------------------------------------------------- */
 
     input,
     select {
 
-        height: 42px;
+        height: 43px;
 
-        border-radius: 10px;
+        font-size: 10px;
+
+        border-radius: 9px;
     }
 
+
+    input {
+
+        padding:
+            0 12px;
+    }
+
+
+    select {
+
+        padding:
+            0 35px 0 12px;
+    }
+
+
+    /* -----------------------------------------------------
+       TEXTAREA
+    ----------------------------------------------------- */
 
     textarea {
 
-        min-height: 85px;
+        min-height: 90px;
 
-        border-radius: 11px;
+        font-size: 10px;
 
-        resize: none;
-    }
+        padding:
+            11px 12px;
 
-
-    #bio,
-    #overview,
-    #building {
-
-        min-height: 85px;
+        border-radius: 10px;
     }
 
 
     .why-textarea {
 
-        min-height: 110px;
+        min-height: 115px;
     }
 
+
+    /* -----------------------------------------------------
+       OBJECTIVE
+    ----------------------------------------------------- */
+
+    #objective {
+
+        font-size: 9px;
+    }
+
+
+    /* -----------------------------------------------------
+       BUTTON
+    ----------------------------------------------------- */
 
     .create-btn {
 
         height: 48px;
 
-        border-radius: 10px;
+        margin-top: 8px;
 
-        letter-spacing: 4px;
+        border-radius: 9px;
+
+        font-size: 9px;
+
+        letter-spacing: 3.5px;
+    }
+
+
+    /* -----------------------------------------------------
+       MEMBERSHIP NOTE
+    ----------------------------------------------------- */
+
+    .membership-note {
+
+        font-size: 6.5px;
+
+        letter-spacing: 1.5px;
+
+        margin-top: 10px;
     }
 
 }
@@ -1192,23 +1309,23 @@ input:invalid:focus {
 
 @media (max-width: 380px) {
 
-    .form-side {
+    .image-side {
 
-        padding: 30px 17px;
+        height: 265px;
+
+        min-height: 265px;
     }
 
 
-    .image-side {
+    .image-text {
 
-        height: 270px;
-
-        min-height: 270px;
+        top: 30px;
     }
 
 
     .image-text .brand {
 
-        font-size: 10px;
+        font-size: 9px;
 
         letter-spacing: 3px;
     }
@@ -1224,9 +1341,81 @@ input:invalid:focus {
 
     .image-text p {
 
-        font-size: 7px;
+        font-size: 6.5px;
 
-        letter-spacing: 1.5px;
+        letter-spacing: 1.3px;
+    }
+
+
+    .form-side {
+
+        padding:
+            28px
+            16px
+            35px;
+    }
+
+
+    .form-wrapper h1 {
+
+        font-size: 18px;
+    }
+
+
+    .description {
+
+        font-size: 7.5px;
+    }
+
+
+    .section-title {
+
+        font-size: 6.5px;
+
+        letter-spacing: 2px;
+    }
+
+
+    input,
+    select {
+
+        height: 42px;
+
+        font-size: 9px;
+    }
+
+
+    textarea {
+
+        font-size: 9px;
+    }
+
+
+    .create-btn {
+
+        height: 46px;
+
+        font-size: 8px;
+
+        letter-spacing: 3px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        transition: none !important;
+
+        animation: none !important;
     }
 
 }
@@ -1243,7 +1432,7 @@ input:invalid:focus {
 
 
     <!-- =====================================================
-         LEFT IMAGE
+         LEFT IMAGE — 50%
     ====================================================== -->
 
     <div class="image-side">
@@ -1276,7 +1465,7 @@ input:invalid:focus {
 
 
     <!-- =====================================================
-         RIGHT FORM
+         RIGHT FORM — 50%
     ====================================================== -->
 
     <div class="form-side">
@@ -1526,60 +1715,6 @@ input:invalid:focus {
 
 
                 <!-- =================================================
-                     YOUR VISION
-                ================================================== -->
-
-                <div class="section-title">
-                    YOUR VISION
-                </div>
-
-
-                <div class="field">
-
-                    <label for="bio">
-                        Founder Bio
-                    </label>
-
-                    <textarea
-                        id="bio"
-                        name="bio"
-                        placeholder="Tell us briefly about yourself..."
-                    ></textarea>
-
-                </div>
-
-
-                <div class="field">
-
-                    <label for="overview">
-                        Company Overview
-                    </label>
-
-                    <textarea
-                        id="overview"
-                        name="overview"
-                        placeholder="What does your company do?"
-                    ></textarea>
-
-                </div>
-
-
-                <div class="field">
-
-                    <label for="building">
-                        What are you building?
-                    </label>
-
-                    <textarea
-                        id="building"
-                        name="building"
-                        placeholder="Describe what you are building..."
-                    ></textarea>
-
-                </div>
-
-
-                <!-- =================================================
                      YOUR OBJECTIVE
                 ================================================== -->
 
@@ -1616,7 +1751,7 @@ input:invalid:focus {
                 <div class="field">
 
                     <label for="whyWhite">
-                        Why do you want to join THE WHITE FOUNDERS™?
+                        Why do you want to join THE WHITE INVESTORS™?
                     </label>
 
                     <textarea
