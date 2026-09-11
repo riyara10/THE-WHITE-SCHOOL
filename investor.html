@@ -1,2296 +1,1975 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The White Investor</title>
 
-  <title>The White Investors™</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    background: #e8e8e6;
+    color: #736e4e;
+}
+
+:root {
+    --olive: #736e4e;
+    --olive-light: #898363;
+    --olive-soft: #a39e82;
+    --olive-pale: #f1f0eb;
+    --paper: #ffffff;
+    --soft: #e8e8e4;
+    --light-text: #89877c;
+}
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.main-shell {
+    width: 100%;
+    min-height: 100vh;
+    background: #ffffff;
+    padding: 18px;
+    overflow: hidden;
+}
 
 
-  <!-- =========================================================
-       LUXURY FONTS
-  ========================================================== -->
+/* =========================
+   NAVBAR
+========================= */
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+.navbar {
+    width: 100%;
+    height: 70px;
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 32px;
+}
+
+.logo {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 16px;
+    line-height: .82;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--olive);
+}
+
+.logo span {
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    color: var(--light-text);
+}
+
+.nav-links a {
+    color: inherit;
+    text-decoration: none;
+    transition: .25s ease;
+}
+
+.nav-links a:hover {
+    color: var(--olive);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 35px;
+    padding: 0 15px;
+
+    border: 1px solid #dfded7;
+    border-radius: 30px;
+
+    background: #fff;
+    color: var(--olive);
+
+    text-decoration: none;
+    font-size: 9px;
+
+    transition: .3s ease;
+}
+
+.nav-pill:hover {
+    background: var(--olive);
+    color: #fff;
+    border-color: var(--olive);
+}
 
 
-  <style>
+/* =========================
+   HERO
+========================= */
 
-    /* =========================================================
-       RESET
-    ========================================================== */
+.hero {
+    width: 100%;
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    height: 500px;
+    min-height: 500px;
+    max-height: 500px;
+
+    display: grid;
+    grid-template-columns: 1.08fr .92fr;
+    gap: 10px;
+
+    background: var(--olive-pale);
+    border-radius: 28px;
+
+    overflow: hidden;
+}
+
+.hero-left {
+    width: 100%;
+    height: 500px;
+    min-height: 0;
+
+    padding: 55px 7%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 620px;
+}
+
+
+/* =========================
+   HERO TITLE
+========================= */
+
+.hero-content h1.hero-title {
+    font-family: Helvetica, Arial, sans-serif;
+
+    font-size: clamp(48px, 5vw, 76px);
+    line-height: .9;
+
+    font-weight: 700;
+    letter-spacing: -2.5px;
+
+    color: var(--olive);
+
+    max-width: 650px;
+}
+
+.hero-content p {
+    max-width: 500px;
+
+    margin-top: 22px;
+
+    color: #858277;
+
+    font-size: 10px;
+    line-height: 1.55;
+    font-weight: 300;
+}
+
+.dark-button {
+    width: 165px;
+    height: 46px;
+
+    margin-top: 23px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 30px;
+
+    background: var(--olive);
+    color: #fff;
+
+    text-decoration: none;
+
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+
+    transition: .3s ease;
+}
+
+.dark-button:hover {
+    background: #625e40;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   HERO STATS
+========================= */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+
+    margin-top: 35px;
+
+    max-width: 620px;
+}
+
+.stat {
+    min-height: 95px;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    background: rgba(255,255,255,.96);
+}
+
+.stat-number {
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 35px;
+    font-weight: 500;
+
+    letter-spacing: -1px;
+
+    color: var(--olive);
+}
+
+.stat-number small {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--olive-light);
+}
+
+.stat p {
+    margin-top: 6px;
+
+    font-size: 7.5px;
+    line-height: 1.45;
+
+    color: #858277;
+}
+
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.hero-image {
+    width: 100%;
+
+    height: 500px;
+    min-height: 0;
+    max-height: 500px;
+
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================
+   COMMON SECTIONS
+========================= */
+
+.section {
+    width: 100%;
+    padding: 90px 8%;
+}
+
+.section-title {
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 38px;
+    line-height: .95;
+
+    font-weight: 500;
+    letter-spacing: -1.5px;
+
+    color: var(--olive);
+}
+
+.section-description {
+    max-width: 430px;
+
+    margin-top: 20px;
+
+    color: #858277;
+
+    font-size: 10px;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+
+/* =========================
+   TECHNOLOGY
+========================= */
+
+.technology {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+
+    gap: 70px;
+
+    align-items: start;
+}
+
+
+/* =========================
+   TECHNOLOGY IMAGE
+========================= */
+
+.tech-image {
+    width: 100%;
+    height: 310px;
+
+    margin-top: 35px;
+    margin-left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+}
+
+.tech-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.feature-card {
+    width: 100%;
+    min-height: 95px;
+
+    display: grid;
+    grid-template-columns: 86px 1fr;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    border-radius: 17px;
+
+    background: var(--olive);
+    color: white;
+
+    transition: .3s ease;
+}
+
+.feature-card:hover {
+    transform: translateX(-5px);
+    background: #686343;
+}
+
+.feature-image {
+    width: 72px;
+    height: 72px;
+
+    margin-left: 8px;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+}
+
+.feature-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.feature-content {
+    padding: 15px;
+}
+
+.feature-content h3 {
+    margin-bottom: 7px;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.feature-content p {
+    color: #eeeee8;
+
+    font-size: 8px;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+
+/* =========================
+   CATALOG
+========================= */
+
+.catalog {
+    width: 100%;
+
+    background: var(--olive-pale);
+
+    border-radius: 28px;
+
+    padding: 60px 8%;
+
+    overflow: hidden;
+}
+
+.catalog-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    margin-bottom: 30px;
+}
+
+.catalog-note {
+    max-width: 190px;
+
+    color: #858277;
+
+    font-size: 8px;
+    line-height: 1.5;
+}
+
+.catalog-note strong {
+    color: var(--olive);
+
+    font-size: 10px;
+    font-weight: 500;
+}
+
+
+/* =========================
+   SLIDER
+========================= */
+
+.catalog-slider {
+    width: 100%;
+
+    overflow: hidden;
+}
+
+.catalog-track {
+    width: 100%;
+
+    display: flex;
+
+    transition: transform .6s cubic-bezier(.65, 0, .35, 1);
+
+    will-change: transform;
+}
+
+.catalog-slide {
+    min-width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+
+/* =========================
+   HOUSE CARDS
+========================= */
+
+.house-card {
+    position: relative;
+
+    height: 290px;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    background: var(--olive);
+    color: #fff;
+
+    transition: .35s ease;
+}
+
+.house-card:hover {
+    transform: translateY(-5px);
+}
+
+.house-card img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.house-card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(65,62,43,.72),
+        rgba(65,62,43,0) 65%
+    );
+}
+
+.house-info {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 15px;
+    right: 12px;
+    bottom: 15px;
+}
+
+.house-info h3 {
+    margin-bottom: 5px;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.house-info p {
+    color: #eee;
+    font-size: 7px;
+}
+
+
+/* =========================
+   CATALOG BOTTOM
+========================= */
+
+.catalog-bottom {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    margin-top: 28px;
+}
+
+.slider-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.slider-button {
+    width: 35px;
+    height: 35px;
+
+    border: 1px solid #dddcd5;
+    border-radius: 50%;
+
+    background: #fff;
+    color: var(--olive);
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    transition: .3s ease;
+}
+
+.slider-button:hover {
+    background: var(--olive);
+    color: white;
+}
+
+.slider-button:disabled {
+    opacity: .35;
+    cursor: not-allowed;
+}
+
+.slider-button:disabled:hover {
+    background: #fff;
+    color: var(--olive);
+}
+
+
+/* =========================
+   PAYMENT
+========================= */
+
+.payment {
+    width: 100%;
+
+    padding: 75px 8% 40px;
+}
+
+.center-title {
+    margin-bottom: 32px;
+
+    text-align: center;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 38px;
+    font-weight: 500;
+
+    letter-spacing: -1.5px;
+
+    color: var(--olive);
+}
+
+.payment-grid {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+}
+
+.payment-card {
+    position: relative;
+
+    min-height: 175px;
+
+    padding: 22px 18px;
+
+    border-radius: 16px;
+
+    background: var(--olive-pale);
+}
+
+.payment-card.dark {
+    background: var(--olive);
+    color: #fff;
+}
+
+.payment-card h3 {
+    margin-bottom: 18px;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.payment-card p {
+    max-width: 220px;
+
+    color: #858277;
+
+    font-size: 8px;
+    line-height: 1.6;
+}
+
+.payment-card.dark p {
+    color: #eee;
+}
+
+.circle-arrow {
+    position: absolute;
+
+    right: 12px;
+    bottom: 12px;
+
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--olive);
+
+    color: #fff;
+
+    font-size: 9px;
+}
+
+.payment-card.dark .circle-arrow {
+    background: #fff;
+    color: var(--olive);
+}
+
+
+/* =========================
+   STEPS
+========================= */
+
+.steps {
+    width: 100%;
+
+    padding: 40px 8% 90px;
+}
+
+.steps-title {
+    margin-bottom: 50px;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 38px;
+    font-weight: 500;
+
+    letter-spacing: -1.5px;
+
+    color: var(--olive);
+}
+
+.steps-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 70px;
+}
+
+.step-number {
+    margin-bottom: 25px;
+
+    color: #dcd9ca;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 66px;
+    font-weight: 500;
+
+    line-height: .8;
+
+    letter-spacing: -4px;
+}
+
+.step h3 {
+    margin-bottom: 18px;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 19px;
+    font-weight: 500;
+
+    line-height: 1.15;
+
+    color: var(--olive);
+}
+
+.step p {
+    max-width: 280px;
+
+    color: #858277;
+
+    font-size: 8px;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    width: 100%;
+
+    min-height: 85px;
+
+    padding: 25px 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-radius: 20px;
+
+    background: var(--olive);
+
+    color: #fff;
+}
+
+.footer-logo {
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    letter-spacing: 1px;
+}
+
+.footer p {
+    color: #eee;
+    font-size: 9px;
+}
+
+.footer .dark-button {
+    margin: 0;
+
+    width: 145px;
+    height: 38px;
+
+    background: #fff;
+    color: var(--olive);
+}
+
+.footer .dark-button:hover {
+    background: #f3f2ec;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+.hero-left {
+    animation: fadeUp .8s ease both;
+}
+
+.hero-image {
+    animation: fadeIn 1s ease both;
+}
+
+.technology {
+    animation: fadeUp .8s ease both;
+}
+
+.catalog {
+    animation: fadeUp .8s ease both;
+}
+
+.payment {
+    animation: fadeUp .8s ease both;
+}
+
+.steps {
+    animation: fadeUp .8s ease both;
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
     }
 
-    html {
-      scroll-behavior: smooth;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 
-    body {
-      width: 100%;
-      min-height: 100vh;
-      background: #fff;
-      color: #2e2c1f;
-      font-family: "Montserrat", Arial, sans-serif;
-      overflow-x: hidden;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
     }
 
+    to {
+        opacity: 1;
+    }
 
-    /* =========================================================
-       HERO
-    ========================================================== */
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
 
     .hero {
-      padding: 30px 42px 0;
-      position: relative;
-      background: #fff;
-      overflow: hidden;
-    }
+        width: 100%;
 
-    .hero-box {
-      height: 525px;
-      position: relative;
-      display: flex;
-      overflow: hidden;
-      border-radius: 18px;
-      background: #fff;
-    }
-
-    .hero-image-area {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      width: 49%;
-      background: #736e4e;
-      border-radius: 18px 0 0 18px;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    .hero-image-area::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(
-          circle at 70% 20%,
-          rgba(255,255,255,.08),
-          transparent 38%
-        );
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .hero-person {
-      position: absolute;
-      z-index: 3;
-      left: -8px;
-      bottom: 0;
-      width: 430px;
-      height: auto;
-      max-width: none;
-      display: block;
-      object-fit: contain;
-      filter:
-        contrast(1.04)
-        saturate(1.03)
-        drop-shadow(
-          0 14px 20px
-          rgba(20,20,15,.16)
-        );
-      pointer-events: none;
-      user-select: none;
-    }
-
-    .person-shadow {
-      position: absolute;
-      z-index: 2;
-      left: 10px;
-      bottom: 8px;
-      width: 320px;
-      height: 28px;
-      background: rgba(25,27,18,.22);
-      border-radius: 50%;
-      filter: blur(17px);
-      pointer-events: none;
-    }
-
-
-    /* =========================================================
-       HERO CONTENT
-    ========================================================== */
-
-    .hero-content {
-      position: absolute;
-      z-index: 10;
-      top: 50%;
-      left: 55%;
-      width: 39%;
-      transform: translateY(-50%);
-      background: transparent;
-      padding: 0;
-      border: none;
-      box-shadow: none;
-    }
-
-    .eyebrow {
-      margin-bottom: 14px;
-      color: #736e4e;
-      font-family: "Montserrat", Arial, sans-serif;
-      font-size: 9px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      line-height: 1.4;
-    }
-
-    .hero-title {
-      margin: 0 0 20px;
-      color: #2e2c1f;
-      font-family:
-        "DM Serif Display",
-        Georgia,
-        "Times New Roman",
-        serif;
-      font-size: clamp(42px, 4.4vw, 64px);
-      line-height: .98;
-      letter-spacing: -1.8px;
-      font-weight: 400;
-    }
-
-    .hero-description {
-      max-width: 395px;
-      margin: 0 0 24px;
-      color: #66645b;
-      font-family: "Montserrat", Arial, sans-serif;
-      font-size: 10px;
-      line-height: 1.75;
-      font-weight: 400;
-      letter-spacing: .15px;
-    }
-
-    .hero-button {
-      color: #fff;
-      background: #736e4e;
-      padding: 13px 21px;
-      font-family: "Montserrat", Arial, sans-serif;
-      font-size: 8px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-      transition:
-        transform .25s ease,
-        background .25s ease;
-    }
-
-    .hero-button:hover {
-      background: #575338;
-      transform: translateY(-2px);
-    }
-
-
-    /* =========================================================
-       PHOTO GALLERY
-    ========================================================== */
-
-    .photo-wall-section {
-      width: 100%;
-      padding: 90px 7vw 45px;
-      background: #fff;
-    }
-
-    .gallery-heading {
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto 55px;
-      text-align: center;
-    }
-
-    .gallery-heading h2 {
-      margin: 0;
-      color: #736e4e;
-      font-family:
-        "DM Serif Display",
-        Georgia,
-        "Times New Roman",
-        serif;
-      font-size: clamp(50px, 6vw, 82px);
-      font-weight: 400;
-      line-height: .9;
-      letter-spacing: -3px;
-    }
-
-    .gallery-heading h2 em {
-      color: #2e2c1f;
-      font-style: normal;
-    }
-
-    .gallery-frame {
-      width: 88%;
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    .editorial-gallery {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: 330px;
-      column-gap: 18px;
-      width: 100%;
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      transition:
-        opacity .7s ease-in-out,
-        transform .7s cubic-bezier(.22,.61,.36,1);
-    }
-
-    .editorial-gallery.fade-out {
-      opacity: 0;
-      transform: translateY(12px) scale(.985);
-    }
-
-    .editorial-gallery.fade-in {
-      opacity: 0;
-      transform: translateY(-12px) scale(1.01);
-    }
-
-    .editorial-tile {
-      position: relative;
-      width: 100%;
-      height: 330px;
-      overflow: hidden;
-      background: #eee;
-      border: 1px solid #1d1d1d;
-      border-radius: 0;
-    }
-
-    .editorial-tile img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-      object-position: center center;
-      transform: scale(1.01);
-      filter:
-        saturate(.94)
-        contrast(1.02);
-      transition:
-        transform 1.1s cubic-bezier(.2,.7,.2,1),
-        filter 1s ease;
-    }
-
-    .editorial-tile:hover img {
-      transform: scale(1.055);
-      filter:
-        saturate(.88)
-        contrast(1.04);
-    }
-
-
-    /* =========================================================
-       INVEST WITH CONVICTION
-    ========================================================== */
-
-    .conviction-section {
-      width: 100%;
-      padding: 45px 7vw 70px;
-      background: #fff;
-    }
-
-    .conviction-container {
-      width: 100%;
-      max-width: 1250px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 44% 56%;
-      gap: 65px;
-      align-items: start;
-    }
-
-    .conviction-header {
-      position: relative;
-    }
-
-    .conviction-title {
-      margin: 0 0 38px;
-      color: #2e2c1f;
-      font-family:
-        "DM Serif Display",
-        Georgia,
-        "Times New Roman",
-        serif;
-      font-size: clamp(42px, 4.4vw, 68px);
-      font-weight: 400;
-      line-height: .98;
-      letter-spacing: -2.5px;
-    }
-
-    .conviction-title span {
-      color: #736e4e;
-    }
-
-    .conviction-intro {
-      max-width: 420px;
-    }
-
-    .conviction-intro p {
-      margin: 0 0 22px;
-      color: #66645b;
-      font-family: "Montserrat", Arial, sans-serif;
-      font-size: 11px;
-      line-height: 1.8;
-      font-weight: 400;
-      letter-spacing: .1px;
-    }
-
-    .conviction-image {
-      width: 100%;
-      height: 330px;
-      display: block;
-      margin-top: 38px;
-      object-fit: cover;
-      border: none;
-      outline: none;
-      border-radius: 14px;
-      filter:
-        saturate(.88)
-        contrast(1.03);
-      box-shadow: none;
-    }
-
-
-    /* =========================================================
-       CONVICTION CARDS
-    ========================================================== */
-
-    .conviction-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      width: 100%;
-    }
-
-    .conviction-card {
-      position: relative;
-      min-height: 150px;
-      padding: 28px 32px 30px;
-      background: #eae9e5;
-      border: none;
-      border-radius: 4px;
-      transition:
-        transform .3s ease,
-        background .3s ease;
-    }
-
-    .conviction-card:hover {
-      background: #e4e3de;
-      transform: translateX(5px);
-    }
-
-    .conviction-card h3 {
-      margin: 0 0 12px;
-      color: #2e2c1f;
-      font-family:
-        "DM Serif Display",
-        Georgia,
-        "Times New Roman",
-        serif;
-      font-size: 28px;
-      font-weight: 400;
-      line-height: 1;
-      letter-spacing: -.5px;
-    }
-
-    .conviction-card p {
-      max-width: 570px;
-      margin: 0;
-      color: #77756c;
-      font-family: "Montserrat", Arial, sans-serif;
-      font-size: 9px;
-      line-height: 1.7;
-      font-weight: 400;
-    }
-
-
-    /* =========================================================
-       MEMBER PRIVILEGES
-    ========================================================== */
-
-    .privileges-section {
-      width: 100%;
-      padding: 95px 4vw 110px;
-      background: #f7f7f4;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .privileges-top {
-      width: 100%;
-      max-width: 1380px;
-      margin: 0 auto 55px;
-    }
-
-    .privileges-kicker {
-      margin-bottom: 25px;
-      color: #736e4e;
-      font-family: "Montserrat", Arial, sans-serif;
-      font-size: 8px;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    .privileges-heading-wrap {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 50px;
-    }
-
-    .privileges-heading {
-      margin: 0;
-      color: #2e2c1f;
-      font-family:
-        "DM Serif Display",
-        Georgia,
-        serif;
-      font-size: clamp(55px, 6.5vw, 95px);
-      font-weight: 400;
-      line-height: .82;
-      letter-spacing: -4px;
-    }
-
-    .privileges-heading span {
-      color: #736e4e;
-      font-style: italic;
-    }
-
-    .privileges-intro {
-      width: 330px;
-      margin: 0 0 4px;
-      color: #77756c;
-      font-family: "Montserrat", Arial, sans-serif;
-      font-size: 9px;
-      line-height: 1.85;
-      letter-spacing: .1px;
-    }
-
-
-    /* =========================================================
-       SIX CARDS
-    ========================================================== */
-
-    .privileges-grid {
-      width: 100%;
-      max-width: 1380px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 8px;
-    }
-
-    .privilege-card {
-      min-width: 0;
-      height: 350px;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 22px 18px 18px;
-      background: #736e4e;
-      border: 1px solid #736e4e;
-      overflow: hidden;
-      transition:
-        transform .45s cubic-bezier(.2,.8,.2,1),
-        background .4s ease,
-        border-color .4s ease,
-        box-shadow .4s ease;
-    }
-
-    .privilege-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: #fff;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform .45s ease;
-    }
-
-    .privilege-card:hover {
-      transform: translateY(-8px);
-      background: #686344;
-      border-color: #686344;
-      box-shadow:
-        0 20px 38px
-        rgba(46,44,31,.18);
-    }
-
-    .privilege-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .privilege-top-line {
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding-bottom: 18px;
-      border-bottom: 1px solid rgba(255,255,255,.25);
-    }
-
-    .privilege-icon {
-      width: 32px;
-      height: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(255,255,255,.75);
-      border-radius: 50%;
-      background: transparent;
-      color: #fff;
-      font-family: Georgia, serif;
-      font-size: 15px;
-      line-height: 1;
-      transition:
-        transform .4s ease,
-        background .4s ease,
-        color .4s ease,
-        border-color .4s ease;
-    }
-
-    .privilege-card:hover .privilege-icon {
-      transform: rotate(12deg);
-      background: #fff;
-      color: #736e4e;
-      border-color: #fff;
-    }
-
-    .privilege-content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding-top: 22px;
-    }
-
-    .privilege-content h3 {
-      margin: 0 0 20px;
-      color: #fff;
-      font-family:
-        "DM Serif Display",
-        Georgia,
-        serif;
-      font-size: clamp(21px,1.7vw,29px);
-      font-weight: 400;
-      line-height: .94;
-      letter-spacing: -1px;
-    }
-
-    .privilege-content h3 em {
-      color: #e5e1d2;
-      font-style: italic;
-    }
-
-    .privilege-content p {
-      width: 100%;
-      margin: 0;
-      color: rgba(255,255,255,.76);
-      font-family: "Montserrat", Arial, sans-serif;
-      font-size: 8px;
-      line-height: 1.75;
-      font-weight: 400;
-    }
-
-    .privilege-footer {
-      padding-top: 15px;
-      border-top: 1px solid rgba(255,255,255,.25);
-      color: rgba(255,255,255,.55);
-      font-family: "Montserrat", Arial, sans-serif;
-      font-size: 6px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      white-space: nowrap;
-    }
-
-    .ecosystem-card {
-      background: #736e4e;
-      border-color: #736e4e;
-    }
-
-    .ecosystem-card:hover {
-      background: #686344;
-      border-color: #686344;
-    }
-
-    .ecosystem-card .privilege-top-line {
-      border-color: rgba(255,255,255,.25);
-    }
-
-    .ecosystem-card .privilege-icon {
-      color: #fff;
-      border-color: rgba(255,255,255,.75);
-    }
-
-    .ecosystem-card:hover .privilege-icon {
-      background: #fff;
-      color: #736e4e;
-      border-color: #fff;
-    }
-
-    .ecosystem-card .privilege-content h3 {
-      color: #fff;
-    }
-
-    .ecosystem-card .privilege-content h3 em {
-      color: #e5e1d2;
-    }
-
-    .ecosystem-card .privilege-content p {
-      color: rgba(255,255,255,.76);
-    }
-
-    .ecosystem-card .privilege-footer {
-      color: rgba(255,255,255,.55);
-      border-color: rgba(255,255,255,.25);
-    }
-
-
-    /* =========================================================
-       YELLOW CLOSING CTA
-    ========================================================== */
-
-    .yellow-cta {
-      width: 100%;
-      min-height: 560px;
-      padding: 80px 7vw 65px;
-      background: #fff18f;
-      color: #2e2c1f;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .yellow-cta::before {
-      content: "CAPITAL";
-      position: absolute;
-      right: -30px;
-      bottom: -45px;
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-      font-size:
-        clamp(110px, 15vw, 220px);
-      font-weight: 900;
-      line-height: .75;
-      letter-spacing: -9px;
-      color:
-        rgba(46,44,31,.045);
-      pointer-events: none;
-      white-space: nowrap;
-    }
-
-    .yellow-cta-inner {
-      width: 100%;
-      max-width: 1380px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    .yellow-cta-label {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 34px;
-      font-family:
-        "Montserrat",
-        Arial,
-        sans-serif;
-      font-size: 7px;
-      font-weight: 700;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-    }
-
-    .yellow-cta-label::before {
-      content: "";
-      width: 36px;
-      height: 1px;
-      background: #2e2c1f;
-    }
-
-    .yellow-cta-title {
-      max-width: 1080px;
-      margin: 0;
-      font-family:
-        "DM Serif Display",
-        Georgia,
-        "Times New Roman",
-        serif;
-      font-size:
-        clamp(46px, 6vw, 88px);
-      font-weight: 400;
-      line-height: .92;
-      letter-spacing: -3.5px;
-    }
-
-    .yellow-cta-title .italic {
-      font-style: italic;
-    }
-
-    .yellow-cta-title .outline {
-      color: transparent;
-      -webkit-text-stroke:
-        1px #2e2c1f;
-    }
-
-    .yellow-cta-bottom {
-      display: grid;
-      grid-template-columns:
-        1fr auto;
-      align-items: end;
-      gap: 50px;
-      margin-top: 55px;
-      padding-top: 24px;
-      border-top:
-        1px solid
-        rgba(46,44,31,.35);
-    }
-
-    .yellow-cta-description {
-      max-width: 490px;
-      font-family:
-        "Montserrat",
-        Arial,
-        sans-serif;
-      font-size: 10px;
-      line-height: 1.7;
-      font-weight: 500;
-      color: #4d4a38;
-    }
-
-    .yellow-cta-description strong {
-      color: #2e2c1f;
-    }
-
-    .yellow-cta-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 24px;
-      min-width: 225px;
-      padding: 15px 20px;
-      background: #2e2c1f;
-      color: #fff;
-      text-decoration: none;
-      font-family:
-        "Montserrat",
-        Arial,
-        sans-serif;
-      font-size: 7px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      border:
-        1px solid #2e2c1f;
-      transition:
-        background .3s ease,
-        color .3s ease,
-        transform .3s ease;
-    }
-
-    .yellow-cta-button span {
-      font-size: 14px;
-      line-height: 1;
-    }
-
-    .yellow-cta-button:hover {
-      background: transparent;
-      color: #2e2c1f;
-      transform: translateY(-4px);
-    }
-
-    .yellow-cta-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 50px;
-      font-family:
-        "Montserrat",
-        Arial,
-        sans-serif;
-      font-size: 6px;
-      font-weight: 700;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-    }
-
-    .yellow-cta-footer-left {
-      color: #2e2c1f;
-    }
-
-    .yellow-cta-footer-right {
-      color: rgba(46,44,31,.6);
-    }
-
-
-    /* =========================================================
-       TABLET
-    ========================================================== */
-
-    @media (max-width: 1100px) {
-
-      .hero {
-        padding: 25px 25px 0;
-      }
-
-      .hero-box {
-        height: 500px;
-        border-radius: 17px;
-      }
-
-      .hero-image-area {
-        width: 50%;
-        border-radius: 17px 0 0 17px;
-      }
-
-      .hero-person {
-        left: -8px;
-        width: 390px;
-      }
-
-      .person-shadow {
-        left: 8px;
-        width: 290px;
-      }
-
-      .hero-content {
-        left: 54%;
-        width: 41%;
-      }
-
-      .eyebrow {
-        font-size: 8px;
-      }
-
-      .hero-title {
-        font-size: 45px;
-      }
-
-      .hero-description {
-        max-width: 350px;
-        font-size: 9px;
-      }
-
-
-      /* GALLERY */
-
-      .photo-wall-section {
-        padding: 75px 5vw 35px;
-      }
-
-      .gallery-heading {
-        margin-bottom: 48px;
-      }
-
-      .gallery-frame {
-        width: 92%;
-      }
-
-      .editorial-gallery {
-        grid-template-rows: 280px;
-        column-gap: 12px;
-      }
-
-      .editorial-tile {
-        height: 280px;
-      }
-
-
-      /* CONVICTION */
-
-      .conviction-section {
-        padding: 35px 5vw 60px;
-      }
-
-      .conviction-container {
-        grid-template-columns: 42% 58%;
-        gap: 40px;
-      }
-
-      .conviction-title {
-        font-size: 48px;
-      }
-
-      .conviction-intro p {
-        font-size: 9px;
-      }
-
-      .conviction-image {
-        height: 270px;
-        border-radius: 12px;
-      }
-
-      .conviction-grid {
-        gap: 11px;
-      }
-
-      .conviction-card {
-        min-height: 145px;
-        padding: 24px 25px 25px;
-      }
-
-      .conviction-card h3 {
-        font-size: 25px;
-      }
-
-
-      /* PRIVILEGES */
-
-      .privileges-section {
-        padding: 80px 3vw 90px;
-      }
-
-      .privileges-top {
-        margin-bottom: 42px;
-      }
-
-      .privileges-grid {
-        gap: 6px;
-      }
-
-      .privilege-card {
-        height: 330px;
-        padding: 19px 13px 16px;
-      }
-
-      .privilege-content h3 {
-        font-size: 21px;
-        letter-spacing: -.7px;
-      }
-
-      .privilege-content p {
-        font-size: 7.5px;
-      }
-
-      .privilege-footer {
-        font-size: 5.5px;
-        letter-spacing: 1px;
-      }
-
-      .privilege-icon {
-        width: 29px;
-        height: 29px;
-        font-size: 13px;
-      }
-
-
-      /* YELLOW CTA */
-
-      .yellow-cta {
-        min-height: 500px;
-        padding: 70px 6vw 60px;
-      }
-
-      .yellow-cta::before {
-        font-size: 180px;
-        letter-spacing: -7px;
-      }
-
-      .yellow-cta-title {
-        font-size: clamp(43px, 7vw, 72px);
-        letter-spacing: -2.8px;
-      }
-
-      .yellow-cta-bottom {
-        grid-template-columns: 1fr;
-        align-items: start;
-        gap: 25px;
-        margin-top: 48px;
-      }
-
-      .yellow-cta-footer {
-        margin-top: 45px;
-      }
-
-    }
-
-
-    /* =========================================================
-       MOBILE
-       FIXED HERO IMAGE CROP
-    ========================================================== */
-
-    @media (max-width: 700px) {
-
-      .hero {
-        padding: 20px 15px 0;
-      }
-
-      .hero-box {
         height: auto;
         min-height: 0;
-        display: flex;
-        flex-direction: column;
-        border-radius: 15px;
-        overflow: hidden;
-        background: #fff;
-      }
+        max-height: none;
 
+        grid-template-columns: 1fr;
+    }
 
-      /* -------------------------------------------------------
-         MOBILE HERO IMAGE
-      ------------------------------------------------------- */
-
-      .hero-image-area {
-        position: relative;
-        order: 1;
-
+    .hero-left {
         width: 100%;
-
-        /* Increased height so head is not cropped */
-        height: 420px;
-
-        top: auto;
-        left: auto;
-        bottom: auto;
-
-        border-radius: 15px 15px 0 0;
-
-        background: #736e4e;
-
-        overflow: hidden;
-      }
-
-      .hero-image-area::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-
-        background:
-          radial-gradient(
-            circle at 70% 20%,
-            rgba(255,255,255,.08),
-            transparent 38%
-          );
-
-        pointer-events: none;
-        z-index: 1;
-      }
-
-
-      /* -------------------------------------------------------
-         MOBILE PERSON
-         Smaller width prevents head from going outside
-      ------------------------------------------------------- */
-
-      .hero-person {
-        position: absolute;
-
-        z-index: 3;
-
-        left: 50%;
-        bottom: 0;
-
-        transform: translateX(-50%);
-
-        width: 330px;
 
         height: auto;
+        min-height: 450px;
 
-        max-width: none;
+        padding: 50px 7%;
 
-        display: block;
+        overflow: visible;
+    }
 
-        object-fit: contain;
-
-        object-position: center bottom;
-
-        filter:
-          contrast(1.04)
-          saturate(1.03)
-          drop-shadow(
-            0 14px 20px
-            rgba(20,20,15,.16)
-          );
-      }
-
-
-      /* -------------------------------------------------------
-         MOBILE PERSON SHADOW
-      ------------------------------------------------------- */
-
-      .person-shadow {
-        position: absolute;
-
-        z-index: 2;
-
-        left: 50%;
-        bottom: 8px;
-
-        transform: translateX(-50%);
-
-        width: 270px;
-        height: 26px;
-
-        background: rgba(25,27,18,.22);
-
-        border-radius: 50%;
-
-        filter: blur(17px);
-      }
-
-
-      /* -------------------------------------------------------
-         MOBILE HERO CONTENT
-      ------------------------------------------------------- */
-
-      .hero-content {
-        position: relative;
-
-        order: 2;
-
-        top: auto;
-        left: auto;
-
+    .hero-image {
         width: 100%;
 
-        transform: none;
+        height: 400px;
+        min-height: 0;
+        max-height: 400px;
+    }
 
-        padding: 38px 25px 40px;
+    .technology {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
 
-        background: #fff;
-
-        border: none;
-
-        box-shadow: none;
-      }
-
-      .eyebrow {
-        margin-bottom: 14px;
-        font-size: 8px;
-        letter-spacing: 3px;
-      }
-
-      .hero-title {
-        margin: 0 0 20px;
-        font-size: 39px;
-        line-height: .98;
-        letter-spacing: -1.5px;
-      }
-
-      .hero-description {
-        max-width: 100%;
-        margin: 0 0 24px;
-        font-size: 9px;
-        line-height: 1.75;
-      }
-
-      .hero-button {
-        padding: 13px 21px;
-        font-size: 8px;
-      }
-
-
-      /* =====================================================
-         GALLERY
-      ====================================================== */
-
-      .photo-wall-section {
-        padding: 60px 15px 30px;
-      }
-
-      .gallery-heading {
-        width: 94%;
-        margin-bottom: 38px;
-      }
-
-      .gallery-heading h2 {
-        font-size: 48px;
-      }
-
-      .gallery-frame {
-        width: 97%;
-      }
-
-      .editorial-gallery {
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 170px;
-        column-gap: 7px;
-      }
-
-      .editorial-tile {
-        height: 170px;
-      }
-
-
-      /* =====================================================
-         CONVICTION
-      ====================================================== */
-
-      .conviction-section {
-        padding: 30px 20px 50px;
-      }
-
-      .conviction-container {
-        display: block;
-      }
-
-      .conviction-header {
-        margin-bottom: 55px;
-      }
-
-      .conviction-title {
-        font-size: 43px;
-      }
-
-      .conviction-intro p {
-        font-size: 9px;
-      }
-
-      .conviction-image {
-        height: 280px;
-        margin-top: 30px;
-        border-radius: 12px;
-      }
-
-      .conviction-grid {
-        gap: 12px;
-      }
-
-      .conviction-card {
-        min-height: 150px;
-        padding: 25px 22px 28px;
-      }
-
-      .conviction-card h3 {
-        font-size: 27px;
-      }
-
-      .conviction-card p {
-        font-size: 9px;
-      }
-
-
-      /* =====================================================
-         PRIVILEGES
-      ====================================================== */
-
-      .privileges-section {
-        padding: 70px 18px 80px;
-      }
-
-      .privileges-top {
-        margin-bottom: 35px;
-      }
-
-      .privileges-heading-wrap {
-        display: block;
-      }
-
-      .privileges-heading {
-        font-size: 58px;
-        letter-spacing: -2.5px;
-        margin-bottom: 24px;
-      }
-
-      .privileges-intro {
+    .tech-image {
         width: 100%;
-        max-width: 330px;
-        font-size: 9px;
-      }
+        height: 310px;
+        margin-left: 0;
+    }
+
+    .catalog-slide {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .payment-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
 
 
-      /* =====================================================
-         MOBILE HORIZONTAL CARDS
-      ====================================================== */
+/* =========================
+   MOBILE
+========================= */
 
-      .privileges-grid {
-        display: flex;
+@media (max-width: 650px) {
 
-        width: calc(100% + 18px);
+    body {
+        background: #e8e8e6;
+    }
 
-        overflow-x: auto;
+    .main-shell {
+        padding: 7px;
+    }
 
-        gap: 9px;
+    .navbar {
+        height: 60px;
+        padding: 0 12px;
+    }
 
-        padding-bottom: 15px;
-        padding-right: 18px;
-
-        scroll-snap-type: x mandatory;
-
-        scrollbar-width: none;
-      }
-
-      .privileges-grid::-webkit-scrollbar {
+    .nav-links {
         display: none;
-      }
+    }
 
-      .privilege-card {
-        flex: 0 0 250px;
+    .nav-actions {
+        gap: 5px;
+    }
 
-        height: 350px;
-
-        scroll-snap-align: start;
-
-        padding: 22px 20px 18px;
-
-        background: #736e4e;
-      }
-
-      .privilege-content h3 {
-        font-size: 28px;
-      }
-
-      .privilege-content p {
-        font-size: 9px;
-      }
+    .nav-pill {
+        height: 31px;
+        padding: 0 10px;
+        font-size: 8px;
+    }
 
 
-      /* =====================================================
-         YELLOW CTA MOBILE
-      ====================================================== */
+    /* MOBILE HERO */
 
-      .yellow-cta {
-        min-height: auto;
-        padding: 55px 20px 40px;
-      }
-
-      .yellow-cta::before {
-        right: -30px;
-        bottom: 5px;
-        font-size: 95px;
-        letter-spacing: -5px;
-      }
-
-      .yellow-cta-label {
-        margin-bottom: 28px;
-        font-size: 6.5px;
-        letter-spacing: 2px;
-      }
-
-      .yellow-cta-label::before {
-        width: 27px;
-      }
-
-      .yellow-cta-title {
-        font-size: 40px;
-        line-height: .94;
-        letter-spacing: -1.8px;
-      }
-
-      .yellow-cta-title .outline {
-        -webkit-text-stroke: .7px #2e2c1f;
-      }
-
-      .yellow-cta-bottom {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-        margin-top: 42px;
-        padding-top: 20px;
-      }
-
-      .yellow-cta-description {
-        font-size: 8.5px;
-        line-height: 1.7;
-        max-width: 340px;
-      }
-
-      .yellow-cta-button {
+    .hero {
         width: 100%;
-        min-width: 0;
-        padding: 15px 18px;
-        justify-content: space-between;
-      }
 
-      .yellow-cta-footer {
-        margin-top: 42px;
-        display: flex;
+        height: auto;
+        min-height: 0;
+        max-height: none;
+
+        border-radius: 21px;
+    }
+
+    .hero-left {
+        width: 100%;
+
+        height: auto;
+        min-height: auto;
+
+        padding: 42px 24px 25px;
+
+        overflow: visible;
+    }
+
+    .hero-content h1.hero-title {
+        font-family: Helvetica, Arial, sans-serif;
+
+        font-size: 47px;
+        line-height: .9;
+
+        font-weight: 700;
+
+        letter-spacing: -2px;
+    }
+
+    .hero-content p {
+        font-size: 10px;
+        line-height: 1.6;
+    }
+
+    .dark-button {
+        width: 145px;
+        height: 42px;
+    }
+
+    .stats {
+        gap: 6px;
+        margin-top: 40px;
+    }
+
+    .stat {
+        min-height: 90px;
+        padding: 12px 9px;
+    }
+
+    .stat-number {
+        font-size: 27px;
+    }
+
+    .stat p {
+        font-size: 7px;
+    }
+
+    .hero-image {
+        width: 100%;
+
+        height: 330px;
+        min-height: 0;
+        max-height: 330px;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+    /* TECHNOLOGY */
+
+    .section {
+        padding: 55px 20px;
+    }
+
+    .section-title {
+        font-size: 31px;
+    }
+
+    .section-description {
+        font-size: 9px;
+    }
+
+    .tech-image {
+        width: 100%;
+        height: 205px;
+
+        margin-left: 0;
+        margin-top: 30px;
+
+        border-radius: 14px;
+    }
+
+    .tech-image img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center;
+    }
+
+
+    /* FEATURES */
+
+    .feature-card {
+        grid-template-columns: 68px 1fr;
+        min-height: 82px;
+    }
+
+    .feature-image {
+        width: 58px;
+        height: 58px;
+    }
+
+    .feature-content h3 {
+        font-size: 16px;
+    }
+
+    .feature-content p {
+        font-size: 7px;
+    }
+
+
+    /* CATALOG */
+
+    .catalog {
+        padding: 35px 18px;
+        border-radius: 21px;
+    }
+
+    .catalog-top {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .catalog-slide {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 7px;
+    }
+
+    .house-card {
+        height: 220px;
+        border-radius: 12px;
+    }
+
+    .house-info {
+        left: 9px;
+        bottom: 10px;
+    }
+
+    .house-info h3 {
+        font-size: 14px;
+    }
+
+    .house-info p {
+        font-size: 6px;
+    }
+
+    .slider-button {
+        width: 32px;
+        height: 32px;
+    }
+
+
+    /* PAYMENT */
+
+    .payment {
+        padding: 50px 20px 25px;
+    }
+
+    .center-title {
+        font-size: 31px;
+    }
+
+    .payment-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 7px;
+    }
+
+    .payment-card {
+        min-height: 155px;
+        padding: 17px 12px;
+    }
+
+    .payment-card h3 {
+        font-size: 16px;
+    }
+
+    .payment-card p {
+        font-size: 7px;
+    }
+
+
+    /* STEPS */
+
+    .steps {
+        padding: 30px 20px 55px;
+    }
+
+    .steps-title {
+        font-size: 31px;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .step-number {
+        font-size: 55px;
+    }
+
+    .step h3 {
+        font-size: 18px;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        min-height: auto;
+
+        padding: 22px 16px;
+
         flex-direction: column;
         align-items: flex-start;
-        gap: 9px;
-        font-size: 5.5px;
-        letter-spacing: 1.3px;
-      }
-
     }
 
-
-    /* =========================================================
-       SMALL MOBILE
-    ========================================================== */
-
-    @media (max-width: 420px) {
-
-      .hero {
-        padding-top: 15px;
-      }
-
-      .hero-box {
-        height: auto;
-      }
+}
 
 
-      /* -------------------------------------------------------
-         SMALL MOBILE HERO IMAGE
-      ------------------------------------------------------- */
+/* =========================
+   VERY SMALL MOBILE
+========================= */
 
-      .hero-image-area {
-        height: 390px;
-        border-radius: 14px 14px 0 0;
-      }
+@media (max-width: 400px) {
 
-      .hero-person {
-        width: 300px;
-      }
+    .hero-content h1.hero-title {
+        font-family: Helvetica, Arial, sans-serif;
 
-      .person-shadow {
-        width: 245px;
-      }
+        font-size: 40px;
+        line-height: .9;
 
+        font-weight: 700;
 
-      .hero-content {
-        padding: 32px 20px 35px;
-      }
-
-      .hero-title {
-        font-size: 34px;
-      }
-
-
-      /* =====================================================
-         GALLERY
-      ====================================================== */
-
-      .gallery-heading {
-        width: 95%;
-        margin-bottom: 32px;
-      }
-
-      .gallery-heading h2 {
-        font-size: 42px;
-      }
-
-      .gallery-frame {
-        width: 98%;
-      }
-
-      .editorial-gallery {
-        grid-template-rows: 140px;
-        column-gap: 5px;
-      }
-
-      .editorial-tile {
-        height: 140px;
-      }
-
-
-      /* =====================================================
-         CONVICTION
-      ====================================================== */
-
-      .conviction-section {
-        padding: 25px 17px 45px;
-      }
-
-      .conviction-title {
-        font-size: 37px;
-      }
-
-      .conviction-image {
-        height: 230px;
-        border-radius: 10px;
-      }
-
-      .conviction-card {
-        min-height: 145px;
-        padding: 23px 20px 25px;
-      }
-
-      .conviction-card h3 {
-        font-size: 24px;
-      }
-
-
-      /* =====================================================
-         PRIVILEGES
-      ====================================================== */
-
-      .privileges-section {
-        padding: 60px 17px 70px;
-      }
-
-      .privileges-heading {
-        font-size: 49px;
-      }
-
-      .privilege-card {
-        flex-basis: 235px;
-        height: 335px;
-        background: #736e4e;
-      }
-
-
-      /* =====================================================
-         YELLOW CTA SMALL MOBILE
-      ====================================================== */
-
-      .yellow-cta {
-        padding: 48px 17px 35px;
-      }
-
-      .yellow-cta-title {
-        font-size: 35px;
         letter-spacing: -1.5px;
-      }
-
-      .yellow-cta-bottom {
-        margin-top: 38px;
-      }
-
-      .yellow-cta-description {
-        font-size: 8px;
-      }
-
-      .yellow-cta-footer {
-        margin-top: 38px;
-      }
-
     }
 
-  </style>
+    .stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
+    .stat {
+        min-height: 85px;
+        padding: 10px 7px;
+    }
+
+    .stat-number {
+        font-size: 23px;
+    }
+
+    .stat p {
+        font-size: 6px;
+    }
+
+    .catalog-slide {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .house-card {
+        height: 190px;
+    }
+
+    .tech-image {
+        width: 100%;
+        height: 195px;
+        margin-left: 0;
+    }
+
+}
+
+</style>
 </head>
-
 
 <body>
 
+<div class="page">
 
-  <!-- =========================================================
-       HERO
-  ========================================================== -->
-
-  <section class="hero">
-
-    <div class="hero-box">
-
-      <div class="hero-image-area">
-
-        <div class="person-shadow"></div>
-
-        <img
-          src="assets/investor.png"
-          alt="The White Investors"
-          class="hero-person"
-        >
-
-      </div>
+<main class="main-shell">
 
 
-      <div class="hero-content">
+<!-- =========================
+     NAVIGATION
+========================= -->
 
-        <div class="eyebrow">
-          THE WHITE INVESTORS
-        </div>
+<header class="navbar">
 
-        <h1 class="hero-title">
-          WHERE CAPITAL<br>
-          MEETS POSSIBILITY
-        </h1>
-
-        <p class="hero-description">
-
-          A selective collective for investors, capital partners,
-          family offices, founders, operators, and strategic
-          decision-makers seeking what’s next.
-
-          <br><br>
-
-          THE WHITE INVESTORS brings capital and opportunity into
-          the same room—creating access to exceptional founders,
-          emerging ventures, strategic partnerships, and businesses
-          positioned for meaningful growth.
-
-        </p>
-
-        <button
-          class="hero-button"
-          onclick="window.location.href='investor_reg.html'"
-        >
-          BECOME A MEMBER
-        </button>
-
-      </div>
-
+    <div class="logo">
+        <span>THE WHITE</span>
+        <span>INVESTOR</span>
     </div>
 
-  </section>
+    <nav class="nav-links">
 
+     
 
 
-  <!-- =========================================================
-       PHOTO GALLERY
-  ========================================================== -->
+     
 
-  <section class="photo-wall-section">
+    </nav>
 
-    <div class="gallery-heading">
+    <div class="nav-actions">
 
-      <h2>
-        THE <em>GALLERY</em>
-      </h2>
-
-    </div>
-
-
-    <div class="gallery-frame">
-
-      <div
-        class="editorial-gallery"
-        id="editorialGallery"
-      >
-
-        <div class="editorial-tile">
-          <img
-            src="assets/1.jpg"
-            alt="Investor gathering"
-          >
-        </div>
-
-        <div class="editorial-tile">
-          <img
-            src="assets/2.jpg"
-            alt="Business meeting"
-          >
-        </div>
-
-        <div class="editorial-tile">
-          <img
-            src="assets/3.jpg"
-            alt="Leadership gathering"
-          >
-        </div>
-
-        <div class="editorial-tile">
-          <img
-            src="assets/4.jpg"
-            alt="Executive networking"
-          >
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================================================
-       INVEST WITH CONVICTION
-  ========================================================== -->
-
-  <section class="conviction-section">
-
-    <div class="conviction-container">
-
-
-      <div class="conviction-header">
-
-        <h2 class="conviction-title">
-
-          INVEST WITH<br>
-
-          <span>CONVICTION.</span><br>
-
-          THINK BEYOND<br>
-
-          THE NEXT DEAL.
-
-        </h2>
-
-
-        <div class="conviction-intro">
-
-          <p>
-            THE WHITE INVESTORS is designed for those who
-            understand that meaningful investment is not only
-            about capital.
-          </p>
-
-          <p>
-            It is about perspective, relationships, timing,
-            access, and the ability to see possibility before
-            it becomes obvious.
-          </p>
-
-        </div>
-
-
-        <img
-          src="assets/invest.jpg"
-          alt="Investor"
-          class="conviction-image"
-        >
-
-      </div>
-
-
-
-      <div class="conviction-grid">
-
-        <article class="conviction-card">
-
-          <h3>
-            DISCOVER THE NEXT
-          </h3>
-
-          <p>
-            Gain perspective on emerging founders,
-            ventures, industries and opportunities
-            shaping what comes next.
-          </p>
-
-        </article>
-
-
-        <article class="conviction-card">
-
-          <h3>
-            EXPAND YOUR CIRCLE
-          </h3>
-
-          <p>
-            Build meaningful relationships with investors,
-            founders, operators and strategic leaders.
-          </p>
-
-        </article>
-
-
-        <article class="conviction-card">
-
-          <h3>
-            SEE BEYOND THE PITCH
-          </h3>
-
-          <p>
-            Move beyond presentations and numbers into
-            deeper conversations, context and conviction.
-          </p>
-
-        </article>
-
-
-        <article class="conviction-card">
-
-          <h3>
-            ACCESS STRATEGIC OPPORTUNITY
-          </h3>
-
-          <p>
-            Discover conversations and possibilities that
-            emerge through a trusted and selective network.
-          </p>
-
-        </article>
-
-
-        <article class="conviction-card">
-
-          <h3>
-            BUILD YOUR POSITION
-          </h3>
-
-          <p>
-            Strengthen your perspective, relationships and
-            long-term position within a changing ecosystem.
-          </p>
-
-        </article>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================================================
-       MEMBER PRIVILEGES
-  ========================================================== -->
-
-  <section class="privileges-section">
-
-    <div class="privileges-top">
-
-      <div class="privileges-kicker">
-        MEMBER PRIVILEGES
-      </div>
-
-
-      <div class="privileges-heading-wrap">
-
-        <h2 class="privileges-heading">
-          ACCESS <span>BEYOND</span>
-        </h2>
-
-
-        <p class="privileges-intro">
-
-          A private ecosystem designed around access,
-          relationships, perspective, and opportunities
-          that emerge when the right people are brought
-          into the same room.
-
-        </p>
-
-      </div>
-
-    </div>
-
-
-
-    <div class="privileges-grid">
-
-
-      <!-- CARD 01 -->
-
-      <article class="privilege-card">
-
-        <div class="privilege-top-line">
-
-          <span class="privilege-icon">
-            ↗
-          </span>
-
-        </div>
-
-
-        <div class="privilege-content">
-
-          <h3>
-            CURATED<br>
-            <em>ACCESS</em>
-          </h3>
-
-          <p>
-            Investors. Founders. Operators.
-            Capital Partners. Strategic Leaders.
-          </p>
-
-        </div>
-
-
-        <div class="privilege-footer">
-          THE RIGHT ROOM
-        </div>
-
-      </article>
-
-
-
-      <!-- CARD 02 -->
-
-      <article class="privilege-card">
-
-        <div class="privilege-top-line">
-
-          <span class="privilege-icon">
-            ◌
-          </span>
-
-        </div>
-
-
-        <div class="privilege-content">
-
-          <h3>
-            NATIONAL<br>
-            <em>REACH</em>
-          </h3>
-
-          <p>
-            Build relationships across India’s
-            evolving investment and business landscape.
-          </p>
-
-        </div>
-
-
-        <div class="privilege-footer">
-          INDIA / CONNECTED
-        </div>
-
-      </article>
-
-
-
-      <!-- CARD 03 -->
-
-      <article class="privilege-card">
-
-        <div class="privilege-top-line">
-
-          <span class="privilege-icon">
-            ✦
-          </span>
-
-        </div>
-
-
-        <div class="privilege-content">
-
-          <h3>
-            PRIVATE<br>
-            <em>EXPERIENCES</em>
-          </h3>
-
-          <p>
-            Investor forums. Private gatherings.
-            Founder conversations. Executive experiences.
-          </p>
-
-        </div>
-
-
-        <div class="privilege-footer">
-          PRIVATE / PERSONAL
-        </div>
-
-      </article>
-
-
-
-      <!-- CARD 04 -->
-
-      <article class="privilege-card">
-
-        <div class="privilege-top-line">
-
-          <span class="privilege-icon">
-            ∞
-          </span>
-
-        </div>
-
-
-        <div class="privilege-content">
-
-          <h3>
-            GLOBAL<br>
-            <em>CONNECTIONS</em>
-          </h3>
-
-          <p>
-            Extend your investment network through
-            an international collective.
-          </p>
-
-        </div>
-
-
-        <div class="privilege-footer">
-          ONE COLLECTIVE
-        </div>
-
-      </article>
-
-
-
-      <!-- CARD 05 -->
-
-      <article class="privilege-card">
-
-        <div class="privilege-top-line">
-
-          <span class="privilege-icon">
-            +
-          </span>
-
-        </div>
-
-
-        <div class="privilege-content">
-
-          <h3>
-            STRATEGIC<br>
-            <em>OPPORTUNITIES</em>
-          </h3>
-
-          <p>
-            Capital conversations. Ventures.
-            Partnerships. Emerging opportunities.
-          </p>
-
-        </div>
-
-
-        <div class="privilege-footer">
-          CAPITAL / POSSIBILITY
-        </div>
-
-      </article>
-
-
-
-      <!-- CARD 06 -->
-
-      <article class="privilege-card ecosystem-card">
-
-        <div class="privilege-top-line">
-
-          <span class="privilege-icon">
-            W
-          </span>
-
-        </div>
-
-
-        <div class="privilege-content">
-
-          <h3>
-            WHITE<br>
-            <em>ECOSYSTEM</em>
-          </h3>
-
-          <p>
-            Connect across THE WHITE FOUNDERS™,
-            THE WHITE CREATORS™, and
-            THE WHITE INNOVATORS™.
-          </p>
-
-        </div>
-
-
-        <div class="privilege-footer">
-          ONE WHITE NETWORK
-        </div>
-
-      </article>
-
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================================================
-       YELLOW CLOSING CTA
-  ========================================================== -->
-
-  <section class="yellow-cta">
-
-    <div class="yellow-cta-inner">
-
-
-      <h2 class="yellow-cta-title">
-
-        CAPITAL ISN’T JUST
-        <span class="italic">MONEY.</span>
-
-        <br>
-
-        IT’S
-        <span class="outline">ACCESS.</span>
-
-        <span class="outline">INSIGHT.</span>
-
-        <span class="outline">INFLUENCE.</span>
-
-        <br>
-
-        WHERE CAPITAL MEETS
-        <span class="italic">WHAT’S NEXT.</span>
-
-      </h2>
-
-
-      <div class="yellow-cta-bottom">
-
-
-        <p class="yellow-cta-description">
-
-          <strong>SELECTIVE MEMBERSHIP.</strong>
-          Built for investors, capital partners, family offices,
-          founders, operators and strategic decision-makers
-          who want to be closer to what’s next.
-
-          <br><br>
-
-          Membership is selective and
-          <strong>subject to approval.</strong>
-
-        </p>
-
-
-        <a
-          href="investor_reg.html"
-          class="yellow-cta-button"
-        >
-
-          APPLY FOR INVESTOR MEMBERSHIP
-
-          <span>→</span>
-
+        <a href="investor_reg.html" class="nav-pill">
+            Become a member
         </a>
 
+    </div>
 
-      </div>
+</header>
 
 
-      <div class="yellow-cta-footer">
+<!-- =========================
+     HERO
+========================= -->
 
-        <div class="yellow-cta-footer-left">
-          THE WHITE INVESTORS
+<section class="hero">
+
+    <div class="hero-left">
+
+        <div class="hero-content">
+
+            <h1 class="hero-title">
+                WHERE CAPITAL MEETS POSSIBILITY
+            </h1>
+
+            <p>
+                A selective collective for investors,
+                capital partners, family offices,
+                founders, operators, and strategic
+                decision-makers seeking what’s next.
+                <br><br>
+                THE WHITE INVESTORS brings capital and
+                opportunity into the same room—creating
+                access to exceptional founders, emerging
+                ventures, strategic partnerships, and
+                businesses positioned for meaningful growth.
+            </p>
+
+            <a href="investor_reg.html" class="dark-button">
+                Become a member →
+            </a>
+
         </div>
 
-        <div class="yellow-cta-footer-right">
-          BY THE WHITE STARTUP SCHOOL
+
+        <div class="stats">
+
         </div>
-
-      </div>
-
 
     </div>
 
-  </section>
+
+    <div class="hero-image">
+
+        <img
+            src="assets/down.jpg"
+            alt="Modern frame house"
+        >
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TECHNOLOGY
+========================= -->
+
+<section class="section" id="technology">
+
+    <div class="technology">
+
+        <div>
+
+            <h2 class="section-title">
+                INVEST WITH CONVICTION.
+                THINK BEYOND THE NEXT DEAL.
+            </h2>
+
+            <p class="section-description">
+                Make decisions with clarity, purpose, and a long-term perspective. Look beyond the immediate opportunity to understand the people, ideas, and businesses shaping what comes next.
+                <br><br>
+                Gain access to ambitious founders, emerging companies, breakthrough ideas, and high-potential opportunities before they become tomorrow's defining success stories.
+            </p>
+
+
+            <div class="tech-image">
+
+                <img
+                    src="assets/invest.jpg"
+                    alt="Investment and business opportunity"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="features">
+
+
+            <div class="feature-card">
+
+                <div class="feature-image">
+
+                    <img
+                        src="assets/inv7.jpg"
+                        alt="Business meeting and investment opportunity"
+                    >
+
+                </div>
+
+                <div class="feature-content">
+
+                    <h3>
+                        DISCOVER THE NEXT
+                    </h3>
+
+                    <p>
+                        Gain access to ambitious founders, emerging companies, breakthrough ideas, and high-potential opportunities.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1630523628169-0e0863cdf69a?q=80&w=1169&auto=format&fit=crop"
+                        alt="Professional networking and connections"
+                    >
+
+                </div>
+
+                <div class="feature-content">
+
+                    <h3>
+                        EXPAND YOUR CIRCLE
+                    </h3>
+
+                    <p>
+                        Connect with investors, founders, creators, innovators, and influential business leaders.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-image">
+
+                    <img
+                        src="assets/inv2.jpg"
+                        alt="Entrepreneurs discussing business strategy"
+                    >
+
+                </div>
+
+                <div class="feature-content">
+
+                    <h3>
+                        SEE BEYOND THE PITCH
+                    </h3>
+
+                    <p>
+                        Build relationships with the visionaries, operators, and businesses behind the opportunity.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1573496546038-82f9c39f6365?q=80&w=1169&auto=format&fit=crop"
+                        alt="Strategic business planning and opportunity"
+                    >
+
+                </div>
+
+                <div class="feature-content">
+
+                    <h3>
+                        ACCESS STRATEGIC OPPORTUNITY
+                    </h3>
+
+                    <p>
+                        Explore investment conversations, partnerships, ventures, and long-term value creation.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-image">
+
+                    <img
+                        src="assets/footer.jpg"
+                        alt="Business leaders building strategic relationships"
+                    >
+
+                </div>
+
+                <div class="feature-content">
+
+                    <h3>
+                        BUILD YOUR POSITION
+                    </h3>
+
+                    <p>
+                        Develop relationships and perspectives that can shape where capital moves next.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CATALOG / IMAGE GALLERY
+========================= -->
+
+<section class="catalog" id="catalog">
+
+    <div class="catalog-top">
+
+        <h2 class="section-title">
+            PHOTO GALLERY<br>
+            of our investors
+        </h2>
+
+        <div class="catalog-note">
+        </div>
+
+    </div>
+
+
+    <!-- SLIDER VIEWPORT -->
+
+    <div class="catalog-slider">
+
+        <!-- SLIDER TRACK -->
+
+        <div class="catalog-track" id="catalogTrack">
+
+
+            <!-- =========================
+                 SLIDE 1
+            ========================= -->
+
+            <div class="catalog-slide">
+
+                <article class="house-card">
+
+                    <img
+                        src="assets/1.jpg"
+                        alt="Investor event"
+                    >
+
+                </article>
+
+
+                <article class="house-card">
+
+                    <img
+                        src="assets/8.jpg"
+                        alt="Investor networking"
+                    >
+
+                </article>
+
+
+                <article class="house-card">
+
+                    <img
+                        src="assets/3.jpg"
+                        alt="Business meeting"
+                    >
+
+                </article>
+
+
+                <article class="house-card">
+
+                    <img
+                        src="assets/5.jpg"
+                        alt="Business gathering"
+                    >
+
+                </article>
+
+            </div>
+
+
+            <!-- =========================
+                 SLIDE 2
+            ========================= -->
+
+            <div class="catalog-slide">
+
+                <article class="house-card">
+
+                    <img
+                        src="assets/10.jpg"
+                        alt="Investor discussion"
+                    >
+
+                </article>
+
+
+                <article class="house-card">
+
+                    <img
+                        src="assets/11.jpg"
+                        alt="Business networking"
+                    >
+
+                </article>
+
+
+                <article class="house-card">
+
+                    <img
+                        src="assets/6.jpg"
+                        alt="Founders meeting"
+                    >
+
+                </article>
+
+
+                <article class="house-card">
+
+                    <img
+                        src="assets/7.jpg"
+                        alt="Investor community"
+                    >
+
+                </article>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         SLIDER BUTTONS
+    ========================= -->
+
+    <div class="catalog-bottom">
+
+        <div class="slider-buttons">
+
+            <button
+                class="slider-button"
+                id="prevButton"
+                type="button"
+                aria-label="Previous images"
+            >
+                ←
+            </button>
+
+            <button
+                class="slider-button"
+                id="nextButton"
+                type="button"
+                aria-label="Next images"
+            >
+                →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAYMENT
+========================= -->
+
+<section class="payment" id="payment">
+
+    <h2 class="center-title">
+    YOUR MEMBER PRIVILEGES.
+    </h2>
+
+    <div class="payment-grid">
+
+        <!-- CARD 1 -->
+
+        <article class="payment-card">
+
+            <h3>
+                CURATED ACCESS
+            </h3>
+
+            <p>
+            Investors. Founders. Operators. Capital Partners. Strategic Leaders. Connect with the people shaping what comes next.
+            </p>
+
+            <div class="circle-arrow">
+                ↗
+            </div>
+
+        </article>
+
+
+        <!-- CARD 2 -->
+
+        <article class="payment-card dark">
+
+            <h3>
+                NATIONAL REACH
+            </h3>
+
+            <p>
+                Build relationships across India's evolving investment and business landscape through a connected national network.
+            </p>
+
+            <div class="circle-arrow">
+                ↗
+            </div>
+
+        </article>
+
+
+        <!-- CARD 3 -->
+
+        <article class="payment-card">
+
+            <h3>
+                PRIVATE EXPERIENCES
+            </h3>
+
+            <p>
+               Investor forums. Private gatherings. Founder conversations. Executive experiences designed for meaningful connections.
+            </p>
+
+            <div class="circle-arrow">
+                ↗
+            </div>
+
+        </article>
+
+
+        <!-- CARD 4 -->
+
+        <article class="payment-card dark">
+
+            <h3>
+                GLOBAL CONNECTIONS
+            </h3>
+
+            <p>
+                Extend your investment network through an international collective of capital, founders, ideas, and strategic relationships.
+            </p>
+
+            <div class="circle-arrow">
+                ↗
+            </div>
+
+        </article>
+
+
+        <!-- CARD 5 -->
+
+        <article class="payment-card">
+
+            <h3>
+                STRATEGIC OPPURTUNITIES
+            </h3>
+
+            <p>
+              Capital conversations. Ventures. Partnerships. Emerging opportunities with the potential to create long-term value.
+            </p>
+
+            <div class="circle-arrow">
+                ↗
+            </div>
+
+        </article>
+
+
+        <!-- CARD 6 -->
+
+        <article class="payment-card dark">
+
+            <h3>
+               WHITE ECOSYSTEM
+            </h3>
+
+            <p>
+                Connect across THE WHITE FOUNDERS, THE WHITE CREATORS, and THE WHITE INNOVATORS.
+            </p>
+
+            <div class="circle-arrow">
+                ↗
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     STEPS
+========================= -->
 
 
 
-  <!-- =========================================================
-       PHOTO GALLERY ANIMATION
-  ========================================================== -->
 
-  <script>
+<!-- =========================
+     FOOTER
+========================= -->
 
-    const gallery =
-      document.getElementById(
-        "editorialGallery"
-      );
+<footer class="footer" id="contact">
 
+    <div class="footer-logo">
+        CAPITAL ISN’T JUST MONEY. IT’S ACCESS. INSIGHT. INFLUENCE.
+    </div>
 
-    const galleryImages = [
+    <p>
+       SELECTIVE MEMBERSHIP. SUBJECT TO APPROVAL.
+    </p>
 
-      [
-        "assets/1.jpg",
-        "assets/2.jpg",
-        "assets/3.jpg",
-        "assets/4.jpg"
-      ],
+    <a href="investor_reg.html" class="dark-button">
+        Apply for membership →
+    </a>
 
-      [
-        "assets/5.jpg",
-        "assets/6.jpg",
-        "assets/7.jpg",
-        "assets/8.jpg"
-      ],
-
-      [
-        "assets/9.jpg",
-        "assets/10.jpg",
-        "assets/11.jpg",
-        "assets/12.jpg"
-      ]
-
-    ];
+</footer>
 
 
-    let currentSet = 0;
+</main>
+
+</div>
 
 
-    function changeGallery() {
+<!-- =========================
+     IMAGE SLIDER JAVASCRIPT
+========================= -->
 
-      gallery.classList.add(
-        "fade-out"
-      );
+<script>
 
+const catalogTrack = document.getElementById("catalogTrack");
+const prevButton = document.getElementById("prevButton");
+const nextButton = document.getElementById("nextButton");
 
-      setTimeout(() => {
+const slides = document.querySelectorAll(".catalog-slide");
 
-        currentSet =
-          (currentSet + 1) %
-          galleryImages.length;
+let currentSlide = 0;
 
+function updateSlider() {
 
-        const tiles =
-          gallery.querySelectorAll(
-            ".editorial-tile img"
-          );
+    catalogTrack.style.transform =
+        `translateX(-${currentSlide * 100}%)`;
 
-
-        tiles.forEach(
-          (img, index) => {
-
-            img.src =
-              galleryImages[
-                currentSet
-              ][index];
-
-          }
-        );
+    prevButton.disabled = currentSlide === 0;
+    nextButton.disabled = currentSlide === slides.length - 1;
+}
 
 
-        gallery.classList.remove(
-          "fade-out"
-        );
+nextButton.addEventListener("click", function() {
 
-        gallery.classList.add(
-          "fade-in"
-        );
+    if (currentSlide < slides.length - 1) {
 
+        currentSlide++;
 
-        requestAnimationFrame(() => {
-
-          requestAnimationFrame(() => {
-
-            gallery.classList.remove(
-              "fade-in"
-            );
-
-          });
-
-        });
-
-
-      }, 700);
+        updateSlider();
 
     }
 
+});
 
-    setInterval(
-      changeGallery,
-      5000
-    );
 
-  </script>
+prevButton.addEventListener("click", function() {
 
+    if (currentSlide > 0) {
+
+        currentSlide--;
+
+        updateSlider();
+
+    }
+
+});
+
+
+updateSlider();
+
+</script>
 
 </body>
-
 </html>
