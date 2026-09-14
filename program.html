@@ -247,23 +247,6 @@
     }
 
 
-    .cards-title {
-      color: #fff;
-
-      font-family: Helvetica, Arial, sans-serif;
-
-      font-size: clamp(36px, 5vw, 72px);
-
-      line-height: 0.95;
-
-      font-weight: 700;
-
-      letter-spacing: -3px;
-
-      max-width: 700px;
-    }
-
-
     /* =====================================================
        CARDS GRID
     ===================================================== */
@@ -300,11 +283,11 @@
 
       display: flex;
 
-      align-items: flex-start;
+      align-items: stretch;
 
       justify-content: flex-start;
 
-      padding: 30px;
+      padding: 0;
 
       cursor: pointer;
 
@@ -321,9 +304,10 @@
     }
 
 
-    /* =========================
+    /* =====================================================
        CARD BACKGROUNDS
-    ========================= */
+       LEFT SIDE BACKGROUND
+    ===================================================== */
 
     .card-one {
       background:
@@ -369,24 +353,30 @@
     }
 
 
-    /* =========================
+    /* =====================================================
        CARD IMAGE
-    ========================= */
+       EXACTLY RIGHT 50%
+    ===================================================== */
 
     .card-image {
       position: absolute;
 
-      right: -5px;
-      bottom: -15px;
+      top: 0;
+      right: 0;
+      bottom: 0;
 
-      width: 58%;
-      height: 105%;
+      width: 50%;
+      height: 100%;
 
-      object-fit: contain;
+      display: block;
 
-      object-position: right bottom;
+      object-fit: cover;
 
-      z-index: -1;
+      object-position: center center;
+
+      margin: 0;
+
+      z-index: 2;
 
       transition:
         transform 0.5s ease;
@@ -394,13 +384,14 @@
 
 
     .feature-card:hover .card-image {
-      transform: scale(1.07) rotate(1deg);
+      transform: scale(1.04);
     }
 
 
-    /* =========================
+    /* =====================================================
        CARD CONTENT
-    ========================= */
+       EXACTLY LEFT 50%
+    ===================================================== */
 
     .card-content {
       position: relative;
@@ -410,11 +401,15 @@
       width: 50%;
       height: 100%;
 
+      padding: 30px;
+
       display: flex;
 
       flex-direction: column;
 
-      justify-content: space-between;
+      justify-content: flex-start;
+
+      align-items: flex-start;
     }
 
 
@@ -434,6 +429,8 @@
       font-weight: 500;
 
       letter-spacing: -0.5px;
+
+      margin: 0;
     }
 
 
@@ -716,6 +713,7 @@
 
       .hero {
         width: 100vw;
+
         height: 100vh;
 
         background: #fbfbf9;
@@ -724,15 +722,18 @@
 
       .hero-image {
         width: 100%;
+
         height: 100%;
 
         object-fit: contain;
+
         object-position: center center;
       }
 
 
       .logo {
         top: 20px;
+
         left: 25px;
 
         width: 80px;
@@ -741,12 +742,14 @@
 
       .register-button {
         top: 20px;
+
         right: 25px;
       }
 
 
       .location {
         right: 30px;
+
         bottom: 25px;
       }
 
@@ -761,6 +764,7 @@
 
       .cards-section {
         padding-left: 30px;
+
         padding-right: 30px;
       }
 
@@ -772,6 +776,10 @@
 
       .feature-card {
         height: 210px;
+      }
+
+
+      .card-content {
         padding: 25px;
       }
 
@@ -788,6 +796,7 @@
 
       .footer-content {
         padding-left: 5vw;
+
         padding-right: 5vw;
       }
 
@@ -810,11 +819,9 @@
 
     @media (max-width: 768px) {
 
-
-      /* =====================================================
+      /* =========================
          MOBILE HERO
-         SLIGHTLY TALLER
-      ===================================================== */
+      ========================= */
 
       .hero {
         width: 100vw;
@@ -823,7 +830,6 @@
 
         min-height: 0;
 
-        /* Slightly taller than 16:9 */
         aspect-ratio: 14 / 9;
 
         background: #fbfbf9;
@@ -943,15 +949,6 @@
       }
 
 
-      .cards-title {
-        font-size: 42px;
-
-        letter-spacing: -2px;
-
-        line-height: 0.95;
-      }
-
-
       .cards-grid {
         width: 100%;
 
@@ -966,26 +963,50 @@
 
         border-radius: 14px;
 
-        padding: 23px;
+        padding: 0;
       }
 
 
+      /* LEFT 50% */
+
       .card-content {
-        width: 55%;
+        width: 50%;
+
+        height: 100%;
+
+        padding: 23px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: flex-start;
+
+        align-items: flex-start;
+      }
+
+
+      /* RIGHT 50% */
+
+      .card-image {
+        width: 50%;
+
+        height: 100%;
+
+        top: 0;
+
+        right: 0;
+
+        bottom: 0;
+
+        object-fit: cover;
+
+        object-position: center center;
       }
 
 
       .card-title {
         font-size: 19px;
-      }
-
-
-      .card-image {
-        width: 58%;
-
-        right: -8px;
-
-        bottom: -12px;
       }
 
 
@@ -1095,16 +1116,18 @@
 
     @media (max-width: 450px) {
 
-      /* HERO */
+      /* =========================
+         HERO
+      ========================= */
 
       .hero {
-        /* Slightly taller mobile hero */
         aspect-ratio: 14 / 9;
       }
 
 
       .logo {
         top: 10px;
+
         left: 12px;
 
         width: 58px;
@@ -1113,6 +1136,7 @@
 
       .register-button {
         top: 10px;
+
         right: 12px;
 
         height: 28px;
@@ -1125,6 +1149,7 @@
 
       .location {
         right: 12px;
+
         bottom: 10px;
 
         font-size: 10px;
@@ -1133,12 +1158,40 @@
       }
 
 
-      /* CARDS */
+      /* =========================
+         SMALL MOBILE CARDS
+      ========================= */
 
       .feature-card {
         height: 175px;
 
+        padding: 0;
+      }
+
+
+      .card-content {
+        width: 50%;
+
+        height: 100%;
+
         padding: 20px;
+      }
+
+
+      .card-image {
+        width: 50%;
+
+        height: 100%;
+
+        top: 0;
+
+        right: 0;
+
+        bottom: 0;
+
+        object-fit: cover;
+
+        object-position: center center;
       }
 
 
@@ -1152,7 +1205,9 @@
       }
 
 
-      /* FOOTER */
+      /* =========================
+         FOOTER
+      ========================= */
 
       .footer-image {
         height: 650px;
