@@ -482,11 +482,6 @@
 
       object-position: center bottom;
 
-      /*
-        Slight blur so the image remains visible
-        but does not compete with the text.
-      */
-
       filter: blur(3px);
 
       transform: scale(1.04);
@@ -719,22 +714,24 @@
     @media (min-width: 769px) {
 
       .hero {
+        width: 100vw;
+        height: 100vh;
+
         background: #fbfbf9;
       }
 
 
       .hero-image {
         width: 100%;
-
         height: 100%;
 
         object-fit: contain;
+        object-position: center center;
       }
 
 
       .logo {
         top: 20px;
-
         left: 25px;
 
         width: 80px;
@@ -743,14 +740,12 @@
 
       .register-button {
         top: 20px;
-
         right: 25px;
       }
 
 
       .location {
         right: 30px;
-
         bottom: 25px;
       }
 
@@ -765,7 +760,6 @@
 
       .cards-section {
         padding-left: 30px;
-
         padding-right: 30px;
       }
 
@@ -777,7 +771,6 @@
 
       .feature-card {
         height: 210px;
-
         padding: 25px;
       }
 
@@ -794,7 +787,6 @@
 
       .footer-content {
         padding-left: 5vw;
-
         padding-right: 5vw;
       }
 
@@ -817,16 +809,32 @@
 
     @media (max-width: 768px) {
 
-      /* =========================
-         HERO
-      ========================= */
+
+      /* =====================================================
+         MOBILE HERO
+         SHORTER THAN FULL SCREEN
+      ===================================================== */
 
       .hero {
         width: 100vw;
 
-        height: 100vh;
+        height: auto;
+
+        min-height: 0;
+
+        aspect-ratio: 16 / 9;
 
         background: #fbfbf9;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        overflow: hidden;
+
+        position: relative;
       }
 
 
@@ -835,12 +843,16 @@
 
         height: 100%;
 
+        display: block;
+
         object-fit: contain;
+
+        object-position: center center;
       }
 
 
       /* =========================
-         LOGO
+         MOBILE LOGO
       ========================= */
 
       .logo {
@@ -853,7 +865,7 @@
 
 
       /* =========================
-         REGISTER BUTTON
+         MOBILE REGISTER
       ========================= */
 
       .register-button {
@@ -881,7 +893,7 @@
 
 
       /* =========================
-         LOCATION
+         MOBILE LOCATION
       ========================= */
 
       .location {
@@ -904,9 +916,9 @@
       }
 
 
-      /* =========================
-         CARDS
-      ========================= */
+      /* =====================================================
+         MOBILE CARDS
+      ===================================================== */
 
       .cards-section {
         min-height: auto;
@@ -976,7 +988,7 @@
 
 
       /* =====================================================
-         FOOTER
+         MOBILE FOOTER
       ===================================================== */
 
       .footer-image {
@@ -1081,6 +1093,45 @@
 
     @media (max-width: 450px) {
 
+      /* HERO */
+
+      .hero {
+        aspect-ratio: 16 / 9;
+      }
+
+
+      .logo {
+        top: 10px;
+        left: 12px;
+
+        width: 58px;
+      }
+
+
+      .register-button {
+        top: 10px;
+        right: 12px;
+
+        height: 28px;
+
+        padding: 0 8px;
+
+        font-size: 7px;
+      }
+
+
+      .location {
+        right: 12px;
+        bottom: 10px;
+
+        font-size: 10px;
+
+        padding: 5px 8px;
+      }
+
+
+      /* CARDS */
+
       .feature-card {
         height: 175px;
 
@@ -1097,6 +1148,8 @@
         font-size: 36px;
       }
 
+
+      /* FOOTER */
 
       .footer-image {
         height: 650px;
@@ -1205,8 +1258,6 @@
   <section class="cards-section">
 
 
-    <!-- HEADER -->
-
     <div class="cards-header">
 
       <div class="cards-small-title">
@@ -1218,8 +1269,6 @@
 
     </div>
 
-
-    <!-- CARDS GRID -->
 
     <div class="cards-grid">
 
@@ -1351,8 +1400,6 @@
     <div class="footer-content">
 
 
-      <!-- HEADING -->
-
       <h2 class="footer-heading">
 
         YOUR IDEA.<br>
@@ -1360,8 +1407,6 @@
 
       </h2>
 
-
-      <!-- DESCRIPTION -->
 
       <p class="footer-description">
 
@@ -1373,8 +1418,6 @@
 
       </p>
 
-
-      <!-- META -->
 
       <div class="footer-meta">
 
@@ -1388,8 +1431,6 @@
 
       </div>
 
-
-      <!-- REGISTER -->
 
       <a
         href="register.html"
@@ -1412,8 +1453,6 @@
 
       </a>
 
-
-      <!-- FOOTER BRANDING -->
 
       <div class="footer-bottom">
 
