@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Founder Program</title>
+
+  <style>
+
+    /* =========================
+       RESET
+    ========================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    /* =========================
+       PAGE
+    ========================= */
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100%;
+      background: #fbfbf9;
+      overflow-x: hidden;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero {
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #fbfbf9;
+
+      overflow: hidden;
+
+      position: relative;
+    }
+
+
+    /* =========================
+       HERO IMAGE
+    ========================= */
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+
+      display: block;
+
+      object-fit: contain;
+      object-position: center center;
+    }
+
+
+    /* =========================
+       LOGO
+    ========================= */
+
+    .logo {
+      position: absolute;
+
+      top: 20px;
+      left: 25px;
+
+      z-index: 10;
+
+      width: 80px;
+      height: auto;
+
+      display: block;
+    }
+
+
+    /* =========================
+       REGISTER BUTTON
+    ========================= */
+
+    .register-button {
+      position: absolute;
+
+      top: 20px;
+      right: 25px;
+
+      z-index: 20;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 6px;
+
+      height: 34px;
+      padding: 0 11px;
+
+      background: #000;
+      color: #fff;
+
+      text-decoration: none;
+
+      font-family: Helvetica, Arial, sans-serif;
+
+      font-size: 9px;
+      font-weight: 600;
+
+      letter-spacing: 1.2px;
+
+      border: 1px solid #000;
+
+      transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+    }
+
+
+    .register-button:hover {
+      background: #fff;
+      color: #000;
+
+      transform: translateY(-2px);
+    }
+
+
+    .register-icon {
+      width: 12px;
+      height: 12px;
+
+      fill: currentColor;
+
+      flex-shrink: 0;
+    }
+
+
+    /* =========================
+       LOCATION
+    ========================= */
+
+    .location {
+      position: absolute;
+
+      right: 30px;
+      bottom: 25px;
+
+      z-index: 10;
+
+      display: flex;
+      align-items: center;
+
+      gap: 7px;
+
+      color: #111;
+
+      font-family: Helvetica, Arial, sans-serif;
+
+      font-size: 14px;
+      font-weight: 500;
+
+      letter-spacing: 0.5px;
+
+      background: rgba(251, 251, 249, 0.85);
+
+      padding: 8px 12px;
+
+      border-radius: 3px;
+    }
+
+
+    .location-icon {
+      width: 16px;
+      height: 16px;
+
+      fill: #111;
+
+      flex-shrink: 0;
+    }
+
+
+    /* =====================================================
+       CARDS SECTION
+    ===================================================== */
+
+    .cards-section {
+      width: 100%;
+
+      min-height: 100vh;
+
+      background: #08090a;
+
+      padding: 100px 4vw 80px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+    }
+
+
+    /* =========================
+       SECTION HEADER
+    ========================= */
+
+    .cards-header {
+      width: 100%;
+
+      max-width: 1050px;
+
+      margin: 0 auto 50px;
+    }
+
+
+    .cards-small-title {
+      color: #aaa;
+
+      font-family: Helvetica, Arial, sans-serif;
+
+      font-size: 12px;
+
+      font-weight: 500;
+
+      line-height: 1.6;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 14px;
+    }
+
+
+    .cards-title {
+      color: #fff;
+
+      font-family: Helvetica, Arial, sans-serif;
+
+      font-size: clamp(36px, 5vw, 72px);
+
+      line-height: 0.95;
+
+      font-weight: 700;
+
+      letter-spacing: -3px;
+
+      max-width: 700px;
+    }
+
+
+    /* =====================================================
+       CARDS GRID
+    ===================================================== */
+
+    .cards-grid {
+      width: 90%;
+
+      max-width: 1050px;
+
+      margin: 0 auto;
+
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 36px 25px;
+    }
+
+
+    /* =====================================================
+       CARD
+    ===================================================== */
+
+    .feature-card {
+      position: relative;
+
+      height: 235px;
+
+      border-radius: 17px;
+
+      overflow: hidden;
+
+      isolation: isolate;
+
+      display: flex;
+
+      align-items: flex-start;
+
+      justify-content: flex-start;
+
+      padding: 30px;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+    }
+
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    }
+
+
+    /* =========================
+       CARD BACKGROUNDS
+    ========================= */
+
+    .card-one {
+      background:
+        linear-gradient(
+          110deg,
+          #15202b 0%,
+          #263b4b 55%,
+          #52738a 100%
+        );
+    }
+
+
+    .card-two {
+      background:
+        linear-gradient(
+          110deg,
+          #426d7d 0%,
+          #6da1b7 55%,
+          #9ccddd 100%
+        );
+    }
+
+
+    .card-three {
+      background:
+        linear-gradient(
+          110deg,
+          #247847 0%,
+          #43b978 55%,
+          #79d69a 100%
+        );
+    }
+
+
+    .card-four {
+      background:
+        linear-gradient(
+          110deg,
+          #182923 0%,
+          #263d35 60%,
+          #354d43 100%
+        );
+    }
+
+
+    /* =========================
+       CARD IMAGE
+    ========================= */
+
+    .card-image {
+      position: absolute;
+
+      right: -5px;
+      bottom: -15px;
+
+      width: 58%;
+      height: 105%;
+
+      object-fit: contain;
+
+      object-position: right bottom;
+
+      z-index: -1;
+
+      transition:
+        transform 0.5s ease;
+    }
+
+
+    .feature-card:hover .card-image {
+      transform: scale(1.07) rotate(1deg);
+    }
+
+
+    /* =========================
+       CARD CONTENT
+    ========================= */
+
+    .card-content {
+      position: relative;
+
+      z-index: 3;
+
+      width: 50%;
+      height: 100%;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+    }
+
+
+    /* =========================
+       CARD TITLE
+    ========================= */
+
+    .card-title {
+      color: #fff;
+
+      font-family: Helvetica, Arial, sans-serif;
+
+      font-size: 22px;
+
+      line-height: 1.15;
+
+      font-weight: 500;
+
+      letter-spacing: -0.5px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       IMAGE + BLUR + TEXT OVERLAY
+    ===================================================== */
+
+    .program-footer {
+      width: 100%;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background: #111;
+
+      color: #fff;
+
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+
+    /* =====================================================
+       FOOTER IMAGE
+    ===================================================== */
+
+    .footer-image {
+      width: 100%;
+
+      height: 650px;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+
+    .footer-image img {
+      width: 100%;
+
+      height: 100%;
+
+      display: block;
+
+      object-fit: cover;
+
+      object-position: center bottom;
+
+      /*
+        Slight blur so the image remains visible
+        but does not compete with the text.
+      */
+
+      filter: blur(3px);
+
+      transform: scale(1.04);
+    }
+
+
+    /* =====================================================
+       DARK OVERLAY
+    ===================================================== */
+
+    .footer-image::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background: rgba(0, 0, 0, 0.48);
+
+      z-index: 2;
+    }
+
+
+    /* =====================================================
+       FOOTER CONTENT OVER IMAGE
+    ===================================================== */
+
+    .footer-content {
+      position: absolute;
+
+      z-index: 5;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      max-width: none;
+
+      margin: 0;
+
+      padding: 90px 7vw 70px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+    }
+
+
+    /* =====================================================
+       FOOTER HEADING
+    ===================================================== */
+
+    .footer-heading {
+      font-family: Helvetica, Arial, sans-serif;
+
+      font-size: clamp(42px, 7vw, 105px);
+
+      line-height: 0.92;
+
+      font-weight: 700;
+
+      letter-spacing: -5px;
+
+      max-width: 950px;
+
+      margin-bottom: 45px;
+
+      color: #fff;
+    }
+
+
+    /* =====================================================
+       FOOTER DESCRIPTION
+    ===================================================== */
+
+    .footer-description {
+      max-width: 700px;
+
+      font-family: Helvetica, Arial, sans-serif;
+
+      font-size: clamp(17px, 1.7vw, 25px);
+
+      line-height: 1.45;
+
+      font-weight: 400;
+
+      letter-spacing: -0.5px;
+
+      margin-bottom: 45px;
+
+      color: #fff;
+    }
+
+
+    /* =====================================================
+       FOOTER META
+    ===================================================== */
+
+    .footer-meta {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      align-items: center;
+
+      gap: 15px 25px;
+
+      margin-bottom: 30px;
+    }
+
+
+    .footer-meta span {
+      font-family: Helvetica, Arial, sans-serif;
+
+      font-size: 11px;
+
+      font-weight: 600;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+
+      color: #fff;
+    }
+
+
+    /* =====================================================
+       FOOTER REGISTER BUTTON
+    ===================================================== */
+
+    .footer-apply {
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 12px;
+
+      width: fit-content;
+
+      background: #fff;
+
+      color: #000;
+
+      padding: 16px 23px;
+
+      font-family: Helvetica, Arial, sans-serif;
+
+      font-size: 11px;
+
+      font-weight: 600;
+
+      letter-spacing: 1.5px;
+
+      text-decoration: none;
+
+      text-transform: uppercase;
+
+      border: 1px solid #fff;
+
+      transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+    }
+
+
+    .footer-apply:hover {
+      background: transparent;
+
+      color: #fff;
+
+      transform: translateY(-3px);
+    }
+
+
+    .footer-apply-icon {
+      width: 14px;
+
+      height: 14px;
+
+      fill: currentColor;
+    }
+
+
+    /* =====================================================
+       FOOTER BOTTOM BRANDING
+    ===================================================== */
+
+    .footer-bottom {
+      display: flex;
+
+      align-items: flex-end;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      margin-top: 100px;
+    }
+
+
+    .footer-brand {
+      font-family: Helvetica, Arial, sans-serif;
+
+      font-size: 13px;
+
+      font-weight: 600;
+
+      letter-spacing: 2px;
+
+      color: #fff;
+    }
+
+
+    .footer-bottom .footer-brand:last-child {
+      text-align: right;
+    }
+
+
+    /* =====================================================
+       DESKTOP
+    ===================================================== */
+
+    @media (min-width: 769px) {
+
+      .hero {
+        background: #fbfbf9;
+      }
+
+
+      .hero-image {
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: contain;
+      }
+
+
+      .logo {
+        top: 20px;
+
+        left: 25px;
+
+        width: 80px;
+      }
+
+
+      .register-button {
+        top: 20px;
+
+        right: 25px;
+      }
+
+
+      .location {
+        right: 30px;
+
+        bottom: 25px;
+      }
+
+    }
+
+
+    /* =====================================================
+       TABLET
+    ===================================================== */
+
+    @media (max-width: 900px) and (min-width: 769px) {
+
+      .cards-section {
+        padding-left: 30px;
+
+        padding-right: 30px;
+      }
+
+
+      .cards-grid {
+        width: 95%;
+      }
+
+
+      .feature-card {
+        height: 210px;
+
+        padding: 25px;
+      }
+
+
+      .card-title {
+        font-size: 19px;
+      }
+
+
+      .footer-image {
+        height: 600px;
+      }
+
+
+      .footer-content {
+        padding-left: 5vw;
+
+        padding-right: 5vw;
+      }
+
+
+      .footer-heading {
+        letter-spacing: -3px;
+      }
+
+
+      .footer-bottom {
+        margin-top: 75px;
+      }
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 768px) {
+
+      /* =========================
+         HERO
+      ========================= */
+
+      .hero {
+        width: 100vw;
+
+        height: 100vh;
+
+        background: #fbfbf9;
+      }
+
+
+      .hero-image {
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: contain;
+      }
+
+
+      /* =========================
+         LOGO
+      ========================= */
+
+      .logo {
+        top: 15px;
+
+        left: 15px;
+
+        width: 65px;
+      }
+
+
+      /* =========================
+         REGISTER BUTTON
+      ========================= */
+
+      .register-button {
+        top: 15px;
+
+        right: 15px;
+
+        height: 30px;
+
+        padding: 0 9px;
+
+        gap: 5px;
+
+        font-size: 8px;
+
+        letter-spacing: 1px;
+      }
+
+
+      .register-icon {
+        width: 11px;
+
+        height: 11px;
+      }
+
+
+      /* =========================
+         LOCATION
+      ========================= */
+
+      .location {
+        right: 15px;
+
+        bottom: 15px;
+
+        font-size: 12px;
+
+        padding: 6px 9px;
+
+        gap: 5px;
+      }
+
+
+      .location-icon {
+        width: 14px;
+
+        height: 14px;
+      }
+
+
+      /* =========================
+         CARDS
+      ========================= */
+
+      .cards-section {
+        min-height: auto;
+
+        padding: 70px 20px 60px;
+      }
+
+
+      .cards-header {
+        margin-bottom: 35px;
+      }
+
+
+      .cards-small-title {
+        font-size: 10px;
+
+        letter-spacing: 1.5px;
+
+        margin-bottom: 12px;
+      }
+
+
+      .cards-title {
+        font-size: 42px;
+
+        letter-spacing: -2px;
+
+        line-height: 0.95;
+      }
+
+
+      .cards-grid {
+        width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+      }
+
+
+      .feature-card {
+        height: 190px;
+
+        border-radius: 14px;
+
+        padding: 23px;
+      }
+
+
+      .card-content {
+        width: 55%;
+      }
+
+
+      .card-title {
+        font-size: 19px;
+      }
+
+
+      .card-image {
+        width: 58%;
+
+        right: -8px;
+
+        bottom: -12px;
+      }
+
+
+      /* =====================================================
+         FOOTER
+      ===================================================== */
+
+      .footer-image {
+        height: 650px;
+      }
+
+
+      .footer-image img {
+        filter: blur(2px);
+
+        transform: scale(1.05);
+      }
+
+
+      .footer-image::after {
+        background: rgba(0, 0, 0, 0.52);
+      }
+
+
+      .footer-content {
+        padding: 70px 25px 55px;
+
+        justify-content: center;
+      }
+
+
+      .footer-heading {
+        font-size: clamp(40px, 12vw, 70px);
+
+        line-height: 0.95;
+
+        letter-spacing: -3px;
+
+        margin-bottom: 35px;
+      }
+
+
+      .footer-description {
+        font-size: 18px;
+
+        line-height: 1.45;
+
+        margin-bottom: 35px;
+      }
+
+
+      .footer-meta {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 12px;
+      }
+
+
+      .footer-meta span {
+        font-size: 10px;
+
+        letter-spacing: 1.2px;
+      }
+
+
+      .footer-apply {
+        width: 100%;
+
+        padding: 16px 18px;
+
+        font-size: 10px;
+
+        letter-spacing: 1.2px;
+      }
+
+
+      .footer-bottom {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 25px;
+
+        margin-top: 70px;
+      }
+
+
+      .footer-brand {
+        font-size: 11px;
+
+        letter-spacing: 1.5px;
+      }
+
+
+      .footer-bottom .footer-brand:last-child {
+        text-align: left;
+      }
+
+    }
+
+
+    /* =====================================================
+       SMALL MOBILE
+    ===================================================== */
+
+    @media (max-width: 450px) {
+
+      .feature-card {
+        height: 175px;
+
+        padding: 20px;
+      }
+
+
+      .card-title {
+        font-size: 18px;
+      }
+
+
+      .cards-title {
+        font-size: 36px;
+      }
+
+
+      .footer-image {
+        height: 650px;
+      }
+
+
+      .footer-content {
+        padding-left: 20px;
+
+        padding-right: 20px;
+      }
+
+
+      .footer-heading {
+        font-size: 40px;
+      }
+
+
+      .footer-description {
+        font-size: 17px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       HERO
+  ===================================================== -->
+
+  <section class="hero">
+
+
+    <!-- LOGO -->
+
+    <img
+      src="assets/logo.png"
+      alt="Logo"
+      class="logo"
+    >
+
+
+    <!-- REGISTER BUTTON -->
+
+    <a
+      href="register.html"
+      class="register-button"
+    >
+
+      <svg
+        class="register-icon"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+
+        <path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5z"/>
+
+      </svg>
+
+      <span>REGISTER</span>
+
+    </a>
+
+
+    <!-- HERO IMAGE -->
+
+    <img
+      src="assets/p1.jpeg"
+      alt="Hero Image"
+      class="hero-image"
+    >
+
+
+    <!-- LOCATION -->
+
+    <div class="location">
+
+      <svg
+        class="location-icon"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/>
+
+      </svg>
+
+      <span>OOTY, INDIA</span>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       CARDS SECTION
+  ===================================================== -->
+
+  <section class="cards-section">
+
+
+    <!-- HEADER -->
+
+    <div class="cards-header">
+
+      <div class="cards-small-title">
+
+        A focused 20-day founder building experience for people
+        ready to turn an idea into a real business.
+
+      </div>
+
+    </div>
+
+
+    <!-- CARDS GRID -->
+
+    <div class="cards-grid">
+
+
+      <!-- CARD 1 -->
+
+      <article class="feature-card card-one">
+
+        <img
+          src="assets/p2.jpg"
+          alt="Founder Program"
+          class="card-image"
+        >
+
+        <div class="card-content">
+
+          <h3 class="card-title">
+
+            BUILD THE<br>
+            BUSINESS
+
+          </h3>
+
+        </div>
+
+      </article>
+
+
+      <!-- CARD 2 -->
+
+      <article class="feature-card card-two">
+
+        <img
+          src="assets/p3.jpg"
+          alt="Founder Program"
+          class="card-image"
+        >
+
+        <div class="card-content">
+
+          <h3 class="card-title">
+
+            REGISTER THE<br>
+            COMPANY
+
+          </h3>
+
+        </div>
+
+      </article>
+
+
+      <!-- CARD 3 -->
+
+      <article class="feature-card card-three">
+
+        <img
+          src="assets/p4.jpeg"
+          alt="Founder Program"
+          class="card-image"
+        >
+
+        <div class="card-content">
+
+          <h3 class="card-title">
+
+            CREATE THE<br>
+            BRAND
+
+          </h3>
+
+        </div>
+
+      </article>
+
+
+      <!-- CARD 4 -->
+
+      <article class="feature-card card-four">
+
+        <img
+          src="assets/p5.jpg"
+          alt="Founder Program"
+          class="card-image"
+        >
+
+        <div class="card-content">
+
+          <h3 class="card-title">
+
+            PREPARE THE<br>
+            PITCH
+
+          </h3>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       FOOTER
+       IMAGE + BLUR + TEXT OVERLAY
+  ===================================================== -->
+
+  <footer class="program-footer">
+
+
+    <!-- FOOTER IMAGE -->
+
+    <div class="footer-image">
+
+      <img
+        src="assets/foot.png"
+        alt="The White Startup School"
+      >
+
+    </div>
+
+
+    <!-- TEXT OVER IMAGE -->
+
+    <div class="footer-content">
+
+
+      <!-- HEADING -->
+
+      <h2 class="footer-heading">
+
+        YOUR IDEA.<br>
+        YOUR COMPANY.
+
+      </h2>
+
+
+      <!-- DESCRIPTION -->
+
+      <p class="footer-description">
+
+        This is not simply an application to attend a program.
+        It is an application to build. Selected participants will
+        work through business strategy, company formation, branding,
+        finance, operations, sales, marketing and founder pitching
+        across 20 intensive days.
+
+      </p>
+
+
+      <!-- META -->
+
+      <div class="footer-meta">
+
+        <span>
+          LIMITED PARTICIPATION
+        </span>
+
+        <span>
+          APPLICATION-BASED ADMISSION
+        </span>
+
+      </div>
+
+
+      <!-- REGISTER -->
+
+      <a
+        href="register.html"
+        class="footer-apply"
+      >
+
+        <span>
+          REGISTER NOW
+        </span>
+
+        <svg
+          class="footer-apply-icon"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+
+          <path d="M13 5l7 7-7 7v-4H4v-6h9V5z"/>
+
+        </svg>
+
+      </a>
+
+
+      <!-- FOOTER BRANDING -->
+
+      <div class="footer-bottom">
+
+        <div class="footer-brand">
+          THE WHITE STARTUP SCHOOL
+        </div>
+
+        <div class="footer-brand">
+          WHERE IDEAS BECOME LEGACY.
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </footer>
+
+
+</body>
+
+</html>
