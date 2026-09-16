@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
+
+  <meta charset="UTF-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
-  />
+  >
 
   <title>20-Day Founder Program — Apply</title>
 
+
+  <!-- SUPABASE -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
   <style>
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
 
     :root {
       --black: #0a0a0a;
@@ -23,9 +34,11 @@
       --input: #fafafa;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
+
 
     body {
       font-family: Arial, Helvetica, sans-serif;
@@ -34,6 +47,7 @@
       min-height: 100vh;
       overflow-x: hidden;
     }
+
 
     /* =========================
        PAGE
@@ -49,6 +63,7 @@
       justify-content: center;
     }
 
+
     .application {
       width: min(1380px, 100%);
       min-height: calc(100vh - 44px);
@@ -63,6 +78,7 @@
       background: #fff;
     }
 
+
     /* =========================
        LEFT IMAGE PANEL
     ========================= */
@@ -75,6 +91,7 @@
       overflow: hidden;
     }
 
+
     .visual img {
       width: 100%;
       height: 100%;
@@ -85,6 +102,7 @@
 
       display: block;
     }
+
 
     /* =========================
        FORM PANEL
@@ -98,6 +116,7 @@
 
       min-width: 0;
     }
+
 
     /* =========================
        TOP BAR
@@ -115,6 +134,7 @@
       border-bottom: 1px solid var(--border);
     }
 
+
     .eyebrow {
       font-size: 10px;
       font-weight: 700;
@@ -125,6 +145,7 @@
       margin-bottom: 8px;
     }
 
+
     .topbar h1 {
       font-size: clamp(30px, 3vw, 48px);
 
@@ -134,6 +155,7 @@
 
       font-weight: 500;
     }
+
 
     .program-tag {
       border: 1px solid var(--black);
@@ -153,6 +175,7 @@
       font-weight: 700;
     }
 
+
     /* =========================
        INTRO
     ========================= */
@@ -169,6 +192,7 @@
       padding: 17px 0 18px;
     }
 
+
     .intro p {
       max-width: 650px;
 
@@ -179,6 +203,7 @@
       line-height: 1.55;
     }
 
+
     /* =========================
        FORM
     ========================= */
@@ -186,6 +211,7 @@
     form {
       width: 100%;
     }
+
 
     .form-grid {
       display: grid;
@@ -197,13 +223,16 @@
       row-gap: 12px;
     }
 
+
     .field {
       min-width: 0;
     }
 
+
     .field.full {
       grid-column: 1 / -1;
     }
+
 
     label {
       display: block;
@@ -220,6 +249,7 @@
 
       margin: 0 0 7px 3px;
     }
+
 
     input,
     select,
@@ -243,12 +273,14 @@
       transition: 0.2s ease;
     }
 
+
     input,
     select {
       height: 40px;
 
       padding: 0 13px;
     }
+
 
     textarea {
       height: 65px;
@@ -262,10 +294,12 @@
       line-height: 1.4;
     }
 
+
     input::placeholder,
     textarea::placeholder {
       color: #9a9a9a;
     }
+
 
     input:focus,
     select:focus,
@@ -274,6 +308,7 @@
 
       background: #fff;
     }
+
 
     /* =========================
        SELECT
@@ -307,6 +342,7 @@
       background-repeat: no-repeat;
     }
 
+
     /* =========================
        FOUNDER STATUS
     ========================= */
@@ -319,9 +355,11 @@
       gap: 8px;
     }
 
+
     .status-option {
       position: relative;
     }
+
 
     .status-option input {
       position: absolute;
@@ -330,6 +368,7 @@
 
       pointer-events: none;
     }
+
 
     .status-option label {
       min-height: 40px;
@@ -365,9 +404,11 @@
       transition: 0.2s ease;
     }
 
+
     .status-option label:hover {
       border-color: #000;
     }
+
 
     .status-option input:checked + label {
       background: #000;
@@ -377,6 +418,7 @@
       border-color: #000;
     }
 
+
     /* =========================
        BUSINESS CATEGORY
     ========================= */
@@ -384,6 +426,7 @@
     .category-input {
       width: 100%;
     }
+
 
     /* =========================
        BOTTOM SECTION
@@ -405,9 +448,11 @@
       align-items: center;
     }
 
+
     .statement {
       max-width: 650px;
     }
+
 
     .statement h3 {
       font-size: 16px;
@@ -419,6 +464,7 @@
       margin-bottom: 7px;
     }
 
+
     .statement p {
       font-size: 9.5px;
 
@@ -427,9 +473,11 @@
       line-height: 1.45;
     }
 
+
     .submit-wrap {
       text-align: right;
     }
+
 
     .submit {
       border: 1px solid #000;
@@ -459,11 +507,61 @@
       transition: 0.2s ease;
     }
 
+
     .submit:hover {
       background: #fff;
 
       color: #000;
     }
+
+
+    .submit:disabled {
+      opacity: 0.6;
+
+      cursor: not-allowed;
+    }
+
+
+    /* =========================
+       FORM MESSAGE
+    ========================= */
+
+    .form-message {
+      display: none;
+
+      margin-top: 12px;
+
+      padding: 10px 12px;
+
+      border-radius: 8px;
+
+      font-size: 11px;
+
+      line-height: 1.4;
+    }
+
+
+    .form-message.success {
+      display: block;
+
+      background: #f0f0f0;
+
+      color: #111;
+
+      border: 1px solid #ccc;
+    }
+
+
+    .form-message.error {
+      display: block;
+
+      background: #f7eeee;
+
+      color: #9b0000;
+
+      border: 1px solid #d7aaaa;
+    }
+
 
     /* =========================
        TABLET
@@ -475,23 +573,28 @@
         padding: 16px;
       }
 
+
       .application {
         grid-template-columns: 0.58fr 1fr;
       }
+
 
       .form-area {
         padding: 28px;
       }
 
+
       .status-options {
         grid-template-columns: 1fr;
       }
+
 
       .status-option label {
         min-height: 38px;
       }
 
     }
+
 
     /* =========================
        TABLET / SMALL LAPTOP
@@ -503,25 +606,30 @@
         grid-template-columns: 1fr;
       }
 
+
       .visual {
         min-height: 360px;
 
         height: 360px;
       }
 
+
       .visual img {
         object-position: center center;
       }
 
+
       .form-area {
         padding: 30px;
       }
+
 
       .form-grid {
         column-gap: 12px;
       }
 
     }
+
 
     /* =========================
        MOBILE
@@ -533,6 +641,7 @@
         background: #fff;
       }
 
+
       .page {
         width: 100%;
 
@@ -542,6 +651,7 @@
 
         display: block;
       }
+
 
       .application {
         width: 100%;
@@ -553,10 +663,6 @@
         border-radius: 18px;
       }
 
-      /* =========================
-         MOBILE IMAGE
-         INCREASED TO 650PX
-      ========================= */
 
       .visual {
         width: 100%;
@@ -565,6 +671,7 @@
 
         min-height: 650px;
       }
+
 
       .visual img {
         width: 100%;
@@ -576,7 +683,6 @@
         object-position: center center;
       }
 
-      /* FORM */
 
       .form-area {
         width: 100%;
@@ -584,7 +690,6 @@
         padding: 24px 18px 22px;
       }
 
-      /* HEADER */
 
       .topbar {
         flex-direction: column;
@@ -594,11 +699,13 @@
         padding-bottom: 18px;
       }
 
+
       .eyebrow {
         font-size: 9px;
 
         margin-bottom: 7px;
       }
+
 
       .topbar h1 {
         font-size: clamp(36px, 10vw, 48px);
@@ -606,13 +713,13 @@
         line-height: 0.92;
       }
 
+
       .program-tag {
         font-size: 8px;
 
         padding: 7px 11px;
       }
 
-      /* INTRO */
 
       .intro {
         flex-direction: column;
@@ -624,6 +731,7 @@
         padding: 16px 0 20px;
       }
 
+
       .intro p {
         max-width: 100%;
 
@@ -632,7 +740,6 @@
         line-height: 1.55;
       }
 
-      /* FORM GRID */
 
       .form-grid {
         grid-template-columns: 1fr;
@@ -640,11 +747,11 @@
         gap: 13px;
       }
 
+
       .field.full {
         grid-column: auto;
       }
 
-      /* LABELS */
 
       label {
         font-size: 9px;
@@ -652,7 +759,6 @@
         margin-bottom: 7px;
       }
 
-      /* INPUTS */
 
       input,
       select {
@@ -662,6 +768,7 @@
 
         border-radius: 10px;
       }
+
 
       textarea {
         min-height: 95px;
@@ -675,13 +782,13 @@
         border-radius: 10px;
       }
 
-      /* FOUNDER STATUS */
 
       .status-options {
         grid-template-columns: 1fr;
 
         gap: 7px;
       }
+
 
       .status-option label {
         min-height: 45px;
@@ -695,7 +802,6 @@
         border-radius: 10px;
       }
 
-      /* BOTTOM */
 
       .bottom-section {
         grid-template-columns: 1fr;
@@ -707,23 +813,28 @@
         padding-top: 18px;
       }
 
+
       .statement {
         max-width: 100%;
       }
+
 
       .statement h3 {
         font-size: 17px;
       }
 
+
       .statement p {
         font-size: 9.5px;
       }
+
 
       .submit-wrap {
         width: 100%;
 
         text-align: left;
       }
+
 
       .submit {
         width: 100%;
@@ -735,6 +846,7 @@
 
     }
 
+
     /* =========================
        VERY SMALL MOBILE
     ========================= */
@@ -745,11 +857,11 @@
         padding: 5px;
       }
 
+
       .application {
         border-radius: 15px;
       }
 
-      /* Increased to 560px */
 
       .visual {
         height: 560px;
@@ -757,19 +869,23 @@
         min-height: 560px;
       }
 
+
       .visual img {
         object-position: center center;
       }
 
+
       .form-area {
         padding: 20px 15px;
       }
+
 
       .topbar h1 {
         font-size: 38px;
       }
 
     }
+
 
     /* =========================
        SHORT DESKTOP SCREENS
@@ -781,38 +897,47 @@
         padding: 14px;
       }
 
+
       .application {
         min-height: calc(100vh - 28px);
       }
+
 
       .form-area {
         padding: 22px 30px;
       }
 
+
       .visual {
         min-height: 700px;
       }
+
 
       .topbar {
         padding-bottom: 14px;
       }
 
+
       .intro {
         padding: 12px 0;
       }
+
 
       .form-grid {
         row-gap: 8px;
       }
 
+
       label {
         margin-bottom: 5px;
       }
+
 
       input,
       select {
         height: 36px;
       }
+
 
       textarea {
         height: 55px;
@@ -822,9 +947,11 @@
         resize: none;
       }
 
+
       .status-option label {
         min-height: 36px;
       }
+
 
       .bottom-section {
         margin-top: 9px;
@@ -835,13 +962,18 @@
     }
 
   </style>
+
 </head>
+
 
 <body>
 
+
   <main class="page">
 
+
     <section class="application">
+
 
       <!-- ==========================================
            LEFT IMAGE
@@ -852,15 +984,17 @@
         <img
           src="assets/register.jpeg"
           alt="Founder Program"
-        />
+        >
 
       </aside>
+
 
       <!-- ==========================================
            FORM AREA
       =========================================== -->
 
       <section class="form-area">
+
 
         <!-- HEADER -->
 
@@ -872,17 +1006,20 @@
               20-Day Founder Program
             </div>
 
+
             <h1>
               APPLY FOR THE PROGRAM
             </h1>
 
           </div>
 
+
           <div class="program-tag">
             Limited Participation
           </div>
 
         </header>
+
 
         <!-- INTRO -->
 
@@ -898,11 +1035,16 @@
 
         </div>
 
-        <!-- FORM -->
+
+        <!-- ==========================================
+             FORM
+        =========================================== -->
 
         <form id="founderForm">
 
+
           <div class="form-grid">
+
 
             <!-- FIRST NAME -->
 
@@ -912,6 +1054,7 @@
                 First Name
               </label>
 
+
               <input
                 id="firstName"
                 name="firstName"
@@ -919,9 +1062,10 @@
                 placeholder="Enter your first name"
                 autocomplete="given-name"
                 required
-              />
+              >
 
             </div>
+
 
             <!-- LAST NAME -->
 
@@ -931,6 +1075,7 @@
                 Last Name
               </label>
 
+
               <input
                 id="lastName"
                 name="lastName"
@@ -938,9 +1083,10 @@
                 placeholder="Enter your last name"
                 autocomplete="family-name"
                 required
-              />
+              >
 
             </div>
+
 
             <!-- EMAIL -->
 
@@ -950,6 +1096,7 @@
                 Email Address
               </label>
 
+
               <input
                 id="email"
                 name="email"
@@ -957,9 +1104,10 @@
                 placeholder="Enter your email address"
                 autocomplete="email"
                 required
-              />
+              >
 
             </div>
+
 
             <!-- PHONE -->
 
@@ -969,6 +1117,7 @@
                 Phone / WhatsApp Number
               </label>
 
+
               <input
                 id="phone"
                 name="phone"
@@ -976,9 +1125,10 @@
                 placeholder="Enter your active number"
                 autocomplete="tel"
                 required
-              />
+              >
 
             </div>
+
 
             <!-- LOCATION -->
 
@@ -988,6 +1138,7 @@
                 City / Country
               </label>
 
+
               <input
                 id="location"
                 name="location"
@@ -995,9 +1146,10 @@
                 placeholder="Where are you currently based?"
                 autocomplete="address-level2"
                 required
-              />
+              >
 
             </div>
+
 
             <!-- LINKEDIN -->
 
@@ -1007,14 +1159,16 @@
                 LinkedIn / Professional Profile
               </label>
 
+
               <input
                 id="linkedin"
                 name="linkedin"
                 type="url"
                 placeholder="Share your profile link"
-              />
+              >
 
             </div>
+
 
             <!-- FOUNDER STATUS -->
 
@@ -1024,7 +1178,9 @@
                 Founder Status
               </label>
 
+
               <div class="status-options">
+
 
                 <div class="status-option">
 
@@ -1034,13 +1190,14 @@
                     name="founderStatus"
                     value="idea"
                     checked
-                  />
+                  >
 
                   <label for="ideaFounder">
                     I have a business idea I am preparing to launch
                   </label>
 
                 </div>
+
 
                 <div class="status-option">
 
@@ -1049,13 +1206,14 @@
                     id="startedFounder"
                     name="founderStatus"
                     value="started"
-                  />
+                  >
 
                   <label for="startedFounder">
                     I have already started a business
                   </label>
 
                 </div>
+
 
                 <div class="status-option">
 
@@ -1064,13 +1222,14 @@
                     id="existingFounder"
                     name="founderStatus"
                     value="existing"
-                  />
+                  >
 
                   <label for="existingFounder">
                     I am an existing founder
                   </label>
 
                 </div>
+
 
                 <div class="status-option">
 
@@ -1079,7 +1238,7 @@
                     id="exploringFounder"
                     name="founderStatus"
                     value="exploring"
-                  />
+                  >
 
                   <label for="exploringFounder">
                     I am exploring entrepreneurship
@@ -1087,9 +1246,11 @@
 
                 </div>
 
+
               </div>
 
             </div>
+
 
             <!-- BUSINESS NAME -->
 
@@ -1099,15 +1260,17 @@
                 Business / Idea Name
               </label>
 
+
               <input
                 id="businessName"
                 name="businessName"
                 type="text"
                 placeholder="What are you building?"
                 required
-              />
+              >
 
             </div>
+
 
             <!-- CURRENT STAGE -->
 
@@ -1116,6 +1279,7 @@
               <label for="stage">
                 What Stage Are You Currently At?
               </label>
+
 
               <select
                 id="stage"
@@ -1131,17 +1295,21 @@
                   Select current stage
                 </option>
 
+
                 <option value="Idea">
                   Idea
                 </option>
+
 
                 <option value="Validation">
                   Validation
                 </option>
 
+
                 <option value="Early Stage">
                   Early Stage
                 </option>
+
 
                 <option value="Existing Business">
                   Existing Business
@@ -1151,6 +1319,7 @@
 
             </div>
 
+
             <!-- BUSINESS CATEGORY -->
 
             <div class="field full">
@@ -1159,6 +1328,7 @@
                 Business Category
               </label>
 
+
               <input
                 id="category"
                 name="category"
@@ -1166,9 +1336,10 @@
                 class="category-input"
                 placeholder="Enter your business category"
                 required
-              />
+              >
 
             </div>
+
 
             <!-- IDEA -->
 
@@ -1177,6 +1348,7 @@
               <label for="idea">
                 Tell Us About Your Idea
               </label>
+
 
               <textarea
                 id="idea"
@@ -1187,6 +1359,7 @@
 
             </div>
 
+
             <!-- WHY JOIN -->
 
             <div class="field full">
@@ -1195,6 +1368,7 @@
                 Why Do You Want To Join The
                 20-Day Founder Program™?
               </label>
+
 
               <textarea
                 id="why"
@@ -1205,17 +1379,23 @@
 
             </div>
 
+
           </div>
 
-          <!-- BOTTOM SECTION -->
+
+          <!-- ==========================================
+               BOTTOM SECTION
+          =========================================== -->
 
           <div class="bottom-section">
+
 
             <div class="statement">
 
               <h3>
                 Your idea. Your company.
               </h3>
+
 
               <p>
                 Selected participants will build through business
@@ -1226,55 +1406,691 @@
 
             </div>
 
+
             <div class="submit-wrap">
 
               <button
                 type="submit"
                 class="submit"
+                id="submitButton"
               >
-                Apply Now →
+                APPLY NOW →
               </button>
 
             </div>
 
+
           </div>
+
+
+          <!-- FORM MESSAGE -->
+
+          <div
+            id="formMessage"
+            class="form-message"
+          ></div>
+
 
         </form>
 
+
       </section>
+
 
     </section>
 
+
   </main>
 
-  <!-- JAVASCRIPT -->
+
+  <!-- ==========================================
+       SUPABASE + WEB3FORMS JAVASCRIPT
+  =========================================== -->
 
   <script>
 
-    document
-      .getElementById("founderForm")
-      .addEventListener("submit", function (event) {
+
+    /* ==========================================
+       SUPABASE CONFIG
+    ========================================== */
+
+    const SUPABASE_URL =
+      "https://zdqmyqntgwqnkuvhwoet.supabase.co";
+
+
+    const SUPABASE_KEY =
+      "sb_publishable_31IoWgxcPqneVaOSnl15og_y5HQjmw9";
+
+
+    /* ==========================================
+       WEB3FORMS CONFIG
+    ========================================== */
+
+    const WEB3FORMS_ACCESS_KEY =
+      "dea1c072-c57d-43a7-90d3-58a8f56bb72b";
+
+
+    /* ==========================================
+       CREATE SUPABASE CLIENT
+    ========================================== */
+
+    const supabaseClient =
+      window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+      );
+
+
+    /* ==========================================
+       GET FORM ELEMENTS
+    ========================================== */
+
+    const founderForm =
+      document.getElementById(
+        "founderForm"
+      );
+
+
+    const submitButton =
+      document.getElementById(
+        "submitButton"
+      );
+
+
+    const formMessage =
+      document.getElementById(
+        "formMessage"
+      );
+
+
+    /* ==========================================
+       WEB3FORMS EMAIL FUNCTION
+    ========================================== */
+
+    async function sendFounderEmail(
+      data
+    ) {
+
+      try {
+
+        const response =
+          await fetch(
+            "https://api.web3forms.com/submit",
+            {
+
+              method: "POST",
+
+
+              headers: {
+
+                "Content-Type":
+                  "application/json",
+
+                "Accept":
+                  "application/json"
+
+              },
+
+
+              body: JSON.stringify({
+
+                /* WEB3FORMS ACCESS KEY */
+
+                access_key:
+                  WEB3FORMS_ACCESS_KEY,
+
+
+                /* EMAIL SUBJECT */
+
+                subject:
+                  "New 20-Day Founder Program Application — " +
+                  data.first_name +
+                  " " +
+                  data.last_name,
+
+
+                /* SENDER NAME */
+
+                from_name:
+                  "The White Startup — 20-Day Founder Program",
+
+
+                /* APPLICANT EMAIL */
+
+                email:
+                  data.email,
+
+
+                /* ==================================
+                   PERSONAL DETAILS
+                ================================== */
+
+                first_name:
+                  data.first_name,
+
+                last_name:
+                  data.last_name,
+
+                email_address:
+                  data.email,
+
+                phone:
+                  data.phone,
+
+                location:
+                  data.location,
+
+                linkedin:
+                  data.linkedin ||
+                  "Not provided",
+
+
+                /* ==================================
+                   FOUNDER DETAILS
+                ================================== */
+
+                founder_status:
+                  data.founder_status,
+
+                business_name:
+                  data.business_name,
+
+                stage:
+                  data.stage,
+
+                category:
+                  data.category,
+
+
+                /* ==================================
+                   APPLICATION DETAILS
+                ================================== */
+
+                idea:
+                  data.idea,
+
+                why_join:
+                  data.why_join
+
+              })
+
+            }
+          );
+
+
+        const result =
+          await response.json();
+
+
+        console.log(
+          "WEB3FORMS RESPONSE:",
+          result
+        );
+
+
+        /* ======================================
+           EMAIL SUCCESS
+        ====================================== */
+
+        if (
+          result &&
+          result.success === true
+        ) {
+
+          console.log(
+            "EMAIL SENT SUCCESSFULLY"
+          );
+
+          return true;
+
+        }
+
+
+        /* ======================================
+           EMAIL FAILED
+        ====================================== */
+
+        console.error(
+          "WEB3FORMS EMAIL FAILED:",
+          result
+        );
+
+
+        return false;
+
+      }
+
+
+      catch (error) {
+
+        console.error(
+          "WEB3FORMS REQUEST ERROR:",
+          error
+        );
+
+
+        return false;
+
+      }
+
+    }
+
+
+    /* ==========================================
+       FORM SUBMIT
+    ========================================== */
+
+    founderForm.addEventListener(
+      "submit",
+      async function (event) {
 
         event.preventDefault();
 
-        const formData = new FormData(this);
 
-        const data = Object.fromEntries(
-          formData.entries()
-        );
+        /* ========================================
+           CLEAR OLD MESSAGE
+        ======================================== */
+
+        formMessage.className =
+          "form-message";
+
+        formMessage.textContent =
+          "";
+
+
+        /* ========================================
+           DISABLE BUTTON
+        ======================================== */
+
+        submitButton.disabled =
+          true;
+
+
+        submitButton.textContent =
+          "SUBMITTING...";
+
+
+        /* ========================================
+           GET FORM DATA
+        ======================================== */
+
+        const formData =
+          new FormData(
+            founderForm
+          );
+
+
+        const firstName =
+          formData
+            .get("firstName")
+            ?.trim();
+
+
+        const lastName =
+          formData
+            .get("lastName")
+            ?.trim();
+
+
+        const email =
+          formData
+            .get("email")
+            ?.trim();
+
+
+        const phone =
+          formData
+            .get("phone")
+            ?.trim();
+
+
+        const location =
+          formData
+            .get("location")
+            ?.trim();
+
+
+        const linkedin =
+          formData
+            .get("linkedin")
+            ?.trim();
+
+
+        const founderStatus =
+          formData.get(
+            "founderStatus"
+          );
+
+
+        const businessName =
+          formData
+            .get("businessName")
+            ?.trim();
+
+
+        const stage =
+          formData.get(
+            "stage"
+          );
+
+
+        const category =
+          formData
+            .get("category")
+            ?.trim();
+
+
+        const idea =
+          formData
+            .get("idea")
+            ?.trim();
+
+
+        const why =
+          formData
+            .get("why")
+            ?.trim();
+
+
+        /* ========================================
+           APPLICATION OBJECT
+        ======================================== */
+
+        const applicationData = {
+
+          first_name:
+            firstName,
+
+          last_name:
+            lastName,
+
+          email:
+            email,
+
+          phone:
+            phone,
+
+          location:
+            location,
+
+          linkedin:
+            linkedin,
+
+          founder_status:
+            founderStatus,
+
+          business_name:
+            businessName,
+
+          stage:
+            stage,
+
+          category:
+            category,
+
+          idea:
+            idea,
+
+          why_join:
+            why
+
+        };
+
 
         console.log(
-          "Application submitted:",
-          data
+          "APPLICATION DATA:",
+          applicationData
         );
 
-        alert(
-          "Thank you. Your application has been submitted."
-        );
 
-      });
+        /* ========================================
+           1. SAVE TO SUPABASE
+        ======================================== */
+
+        try {
+
+          const { error } =
+            await supabaseClient
+              .from(
+                "founder_applications"
+              )
+              .insert({
+
+                first_name:
+                  firstName,
+
+                last_name:
+                  lastName,
+
+                email:
+                  email,
+
+                phone:
+                  phone,
+
+                location:
+                  location,
+
+                linkedin:
+                  linkedin ||
+                  null,
+
+                founder_status:
+                  founderStatus,
+
+                business_name:
+                  businessName,
+
+                stage:
+                  stage,
+
+                category:
+                  category,
+
+                idea:
+                  idea,
+
+                why_join:
+                  why
+
+              });
+
+
+          /* ======================================
+             SUPABASE ERROR
+          ====================================== */
+
+          if (error) {
+
+            console.error(
+              "SUPABASE ERROR:",
+              error
+            );
+
+
+            console.error(
+              "ERROR MESSAGE:",
+              error.message
+            );
+
+
+            console.error(
+              "ERROR DETAILS:",
+              error.details
+            );
+
+
+            console.error(
+              "ERROR HINT:",
+              error.hint
+            );
+
+
+            formMessage.className =
+              "form-message error";
+
+
+            formMessage.textContent =
+              "Application could not be submitted. " +
+              (
+                error.message ||
+                "Please try again."
+              );
+
+
+            submitButton.disabled =
+              false;
+
+
+            submitButton.textContent =
+              "APPLY NOW →";
+
+
+            return;
+
+          }
+
+
+          console.log(
+            "APPLICATION SAVED TO SUPABASE"
+          );
+
+
+          /* ======================================
+             2. SEND EMAIL
+          ====================================== */
+
+          const emailSent =
+            await sendFounderEmail(
+              applicationData
+            );
+
+
+          /* ======================================
+             SUCCESS MESSAGE
+          ====================================== */
+
+          formMessage.className =
+            "form-message success";
+
+
+          if (emailSent) {
+
+            formMessage.textContent =
+              "Thank you. Your application has been submitted successfully.";
+
+          }
+
+          else {
+
+            formMessage.textContent =
+              "Application submitted successfully. Email notification could not be sent.";
+
+          }
+
+
+          /* ======================================
+             LOG STATUS
+          ====================================== */
+
+          console.log(
+            "APPLICATION SAVED SUCCESSFULLY"
+          );
+
+
+          if (emailSent) {
+
+            console.log(
+              "EMAIL NOTIFICATION SENT SUCCESSFULLY"
+            );
+
+          }
+
+          else {
+
+            console.warn(
+              "APPLICATION WAS SAVED TO SUPABASE, " +
+              "BUT EMAIL NOTIFICATION FAILED."
+            );
+
+          }
+
+
+          /* ======================================
+             RESET FORM
+          ====================================== */
+
+          founderForm.reset();
+
+
+          /* ======================================
+             DEFAULT FOUNDER STATUS
+          ====================================== */
+
+          document.getElementById(
+            "ideaFounder"
+          ).checked = true;
+
+
+          /* ======================================
+             SUCCESS BUTTON
+          ====================================== */
+
+          submitButton.disabled =
+            false;
+
+
+          submitButton.textContent =
+            "APPLICATION SUBMITTED ✓";
+
+
+          setTimeout(
+            function () {
+
+              submitButton.textContent =
+                "APPLY NOW →";
+
+            },
+            3000
+          );
+
+        }
+
+
+        /* ========================================
+           UNEXPECTED ERROR
+        ======================================== */
+
+        catch (err) {
+
+          console.error(
+            "UNEXPECTED ERROR:",
+            err
+          );
+
+
+          formMessage.className =
+            "form-message error";
+
+
+          formMessage.textContent =
+            "Something went wrong. Please try again.";
+
+
+          submitButton.disabled =
+            false;
+
+
+          submitButton.textContent =
+            "APPLY NOW →";
+
+        }
+
+      }
+    );
 
   </script>
 
 </body>
+
 </html>
