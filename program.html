@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,19 +35,135 @@
     .hero {
       position: relative;
       width: 100%;
+      min-height: 700px;
       height: 100vh;
-      min-height: 650px;
       overflow: hidden;
-      background: #ffffff;
+      background: #fcfbf9;
+
+      display: flex;
+      align-items: center;
     }
 
+
+    /* =========================
+       HERO CONTENT
+    ========================= */
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      width: 90%;
+      max-width: 1400px;
+
+      margin: 0 auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 60px;
+
+      padding-top: 50px;
+    }
+
+
+    .hero-left {
+      width: 48%;
+      max-width: 650px;
+    }
+
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      color: #736e4e;
+
+      margin-bottom: 25px;
+    }
+
+
+    .hero-title {
+      font-size: clamp(58px, 8vw, 120px);
+
+      line-height: 0.82;
+
+      letter-spacing: -6px;
+
+      font-weight: 700;
+
+      color: #202018;
+
+      margin-bottom: 32px;
+    }
+
+
+    .hero-description {
+      max-width: 590px;
+
+      font-size: 17px;
+
+      line-height: 1.45;
+
+      color: #202018;
+
+      margin-bottom: 28px;
+    }
+
+
+    .hero-description strong {
+      font-weight: 700;
+    }
+
+
+    .hero-meta {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px 25px;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: 1.3px;
+
+      color: #202018;
+    }
+
+
+    /* =========================
+       HERO IMAGE
+    ========================= */
+
+    .hero-right {
+      width: 47%;
+
+      display: flex;
+
+      justify-content: flex-end;
+
+      align-items: center;
+    }
+
+
     .hero-image {
-      position: absolute;
-      inset: 0;
       width: 100%;
-      height: 100%;
+
+      max-width: 650px;
+
+      height: 600px;
+
       object-fit: cover;
+
       object-position: center;
+
       display: block;
     }
 
@@ -57,13 +174,18 @@
 
     .hero-nav {
       position: absolute;
+
       top: 0;
       left: 0;
+
       width: 100%;
+
       padding: 24px 36px;
+
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
+
       z-index: 5;
     }
 
@@ -79,18 +201,21 @@
     .logo img {
       width: 105px;
       height: auto;
+
       display: block;
+
       object-fit: contain;
     }
 
 
     /* =========================
-       APPLY BUTTON - BLACK
+       APPLY BUTTON
     ========================= */
 
     .apply-btn {
       display: inline-flex;
       align-items: center;
+
       gap: 8px;
 
       padding: 8px 8px 8px 16px;
@@ -143,6 +268,7 @@
     .apply-btn:hover .apply-icon {
       background: #000000;
       color: #ffffff;
+
       transform: rotate(-45deg);
     }
 
@@ -151,6 +277,7 @@
       height: 13px;
 
       stroke: currentColor;
+
       fill: none;
 
       stroke-width: 2;
@@ -166,9 +293,13 @@
 
     .real-work-section {
       width: 100%;
+
       padding: 45px 5%;
+
       background: #ffffff;
+
       overflow-x: auto;
+
       scrollbar-width: none;
     }
 
@@ -180,6 +311,7 @@
     .real-work-card {
       width: 100%;
       max-width: 1400px;
+
       margin: 0 auto;
 
       background: #e9e9e7;
@@ -196,11 +328,13 @@
 
     .real-work-heading {
       max-width: 950px;
+
       margin-bottom: 25px;
 
       font-size: clamp(26px, 3.5vw, 50px);
 
       line-height: 1;
+
       font-weight: 700;
 
       letter-spacing: -1.5px;
@@ -215,8 +349,11 @@
 
     .work-cards {
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
+
       gap: 12px;
+
       width: 100%;
     }
 
@@ -229,6 +366,7 @@
       padding: 20px 22px;
 
       display: flex;
+
       align-items: center;
 
       border: 1px solid #d5d5d2;
@@ -241,6 +379,7 @@
 
     .cross {
       font-size: 20px;
+
       font-weight: 400;
 
       margin-right: 12px;
@@ -257,6 +396,7 @@
 
     .work-card p {
       font-size: 14px;
+
       line-height: 1.25;
 
       font-weight: 600;
@@ -513,9 +653,9 @@
     }
 
 
-    /* =====================================================
-       BLACK & WHITE BACKGROUND IMAGE
-    ===================================================== */
+    /* =========================
+       FOOTER IMAGE
+    ========================= */
 
     .footer-bg {
       position: absolute;
@@ -538,9 +678,9 @@
     }
 
 
-    /* =====================================================
-       LIGHT DARK OVERLAY
-    ===================================================== */
+    /* =========================
+       FOOTER OVERLAY
+    ========================= */
 
     .footer-overlay {
       position: absolute;
@@ -553,9 +693,9 @@
     }
 
 
-    /* =====================================================
+    /* =========================
        FOOTER CONTENT
-    ===================================================== */
+    ========================= */
 
     .footer-content {
       position: relative;
@@ -572,9 +712,9 @@
     }
 
 
-    /* =====================================================
-       TOP TEXT
-    ===================================================== */
+    /* =========================
+       TOP
+    ========================= */
 
     .footer-top {
       display: flex;
@@ -589,31 +729,9 @@
     }
 
 
-    .footer-label {
-      font-size: 13px;
-
-      font-weight: 700;
-
-      letter-spacing: 1.5px;
-
-      color: #ffffff;
-    }
-
-
-    .footer-description {
-      max-width: 380px;
-
-      font-size: 13px;
-
-      line-height: 1.5;
-
-      color: #ffffff;
-    }
-
-
-    /* =====================================================
+    /* =========================
        BIG STATEMENT
-    ===================================================== */
+    ========================= */
 
     .footer-statement {
       margin-bottom: 38px;
@@ -638,9 +756,9 @@
     }
 
 
-    /* =====================================================
+    /* =========================
        MIDDLE
-    ===================================================== */
+    ========================= */
 
     .footer-middle {
       display: flex;
@@ -664,31 +782,9 @@
     }
 
 
-    .footer-company-count,
-    .footer-days {
-      font-size: 15px;
-
-      font-weight: 700;
-
-      letter-spacing: 1px;
-
-      color: #ffffff;
-    }
-
-
-    .footer-company-count::before,
-    .footer-days::before {
-      content: "•";
-
-      margin-right: 14px;
-
-      color: #ffffff;
-    }
-
-
-    /* =====================================================
+    /* =========================
        INVITATION
-    ===================================================== */
+    ========================= */
 
     .footer-invitation {
       max-width: 780px;
@@ -712,22 +808,9 @@
     }
 
 
-    .footer-invitation h2 {
-      font-size: clamp(28px, 4vw, 48px);
-
-      line-height: 1;
-
-      letter-spacing: -2px;
-
-      font-weight: 700;
-
-      color: #ffffff;
-    }
-
-
-    /* =====================================================
+    /* =========================
        BOTTOM
-    ===================================================== */
+    ========================= */
 
     .footer-bottom {
       display: flex;
@@ -751,9 +834,9 @@
     }
 
 
-    /* =====================================================
+    /* =========================
        FOOTER APPLY BUTTON
-    ===================================================== */
+    ========================= */
 
     .footer-apply-btn {
       display: inline-flex;
@@ -829,6 +912,36 @@
 
     @media (max-width: 900px) {
 
+      .hero {
+        min-height: 650px;
+         background: #fcfbf9;
+      }
+
+
+      .hero-content {
+        width: 90%;
+
+        gap: 30px;
+      }
+
+
+      .hero-title {
+        font-size: 68px;
+
+        letter-spacing: -4px;
+      }
+
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+
+      .hero-image {
+        height: 500px;
+      }
+
+
       .real-work-section {
         padding: 35px 25px;
       }
@@ -852,8 +965,6 @@
         min-height: 95px;
       }
 
-
-      /* JOURNEY */
 
       .journey-section {
         padding: 75px 0 85px;
@@ -905,8 +1016,6 @@
       }
 
 
-      /* FOOTER */
-
       .final-footer {
         min-height: 570px;
       }
@@ -930,44 +1039,146 @@
 
     @media (max-width: 700px) {
 
-      /* HERO */
+      /* =========================
+         HERO
+      ========================= */
 
       .hero {
-        min-height: 600px;
+        min-height: 760px;
 
-        height: 100svh;
+        height: auto;
+
+        display: block;
+
+        padding-top: 100px;
       }
 
 
-      /* NAV */
+      .hero-content {
+        width: 88%;
+
+        margin: 0 auto;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 35px;
+
+        padding-top: 20px;
+
+        padding-bottom: 45px;
+      }
+
+
+      .hero-left {
+        width: 100%;
+
+        max-width: 100%;
+      }
+
+
+      .hero-eyebrow {
+        font-size: 9px;
+
+        margin-bottom: 20px;
+
+        letter-spacing: 1.5px;
+      }
+
+
+      .hero-title {
+        font-size: 57px;
+
+        line-height: 0.85;
+
+        letter-spacing: -3.5px;
+
+        margin-bottom: 25px;
+      }
+
+
+      .hero-description {
+        font-size: 15px;
+
+        line-height: 1.45;
+
+        max-width: 100%;
+
+        margin-bottom: 22px;
+      }
+
+
+      .hero-meta {
+        font-size: 9px;
+
+        gap: 8px 15px;
+
+        letter-spacing: 1px;
+      }
+
+
+      /* =========================
+         HERO IMAGE
+      ========================= */
+
+      .hero-right {
+        width: 100%;
+
+        justify-content: center;
+
+        align-items: center;
+      }
+
+
+      .hero-image {
+        width: 100%;
+
+        max-width: 100%;
+
+        height: 330px;
+
+        object-fit: cover;
+
+        object-position: center;
+      }
+
+
+      /* =========================
+         MOBILE NAV
+      ========================= */
 
       .hero-nav {
         padding: 18px;
+
+        align-items: center;
       }
 
-
-      /* LOGO */
 
       .logo img {
-        width: 85px;
+        width: 82px;
       }
 
 
-      /* APPLY */
+      /* =========================
+         MOBILE APPLY
+      ========================= */
 
       .apply-btn {
-        padding: 6px 6px 6px 13px;
+        padding: 7px 7px 7px 14px;
 
-        gap: 6px;
+        gap: 7px;
 
-        font-size: 10px;
+        font-size: 9px;
       }
 
 
       .apply-icon {
-        width: 24px;
+        width: 25px;
 
-        height: 24px;
+        height: 25px;
       }
 
 
@@ -983,23 +1194,29 @@
       ========================= */
 
       .real-work-section {
-        padding: 25px 15px;
+        padding: 30px 0;
 
         overflow-x: auto;
+
+        scrollbar-width: none;
       }
 
 
       .real-work-card {
-        padding: 28px 18px 30px;
+        width: calc(100% - 30px);
 
-        width: max-content;
+        min-width: calc(100% - 30px);
 
-        min-width: 100%;
+        margin-left: 15px;
+
+        padding: 28px 18px 25px;
       }
 
 
       .real-work-heading {
-        font-size: 29px;
+        font-size: 27px;
+
+        line-height: 0.98;
 
         letter-spacing: -1px;
 
@@ -1008,30 +1225,40 @@
 
 
       .work-cards {
-        display: grid;
-
-        grid-template-columns:
-          repeat(3, minmax(210px, 1fr));
-
-        gap: 10px;
+        display: flex;
 
         width: max-content;
 
-        min-width: 100%;
+        min-width: 0;
+
+        gap: 10px;
       }
 
 
       .work-card {
-        min-height: 95px;
+        width: 225px;
 
-        padding: 18px;
+        min-width: 225px;
 
-        width: 100%;
+        height: 92px;
+
+        min-height: 92px;
+
+        padding: 17px;
       }
 
 
       .work-card p {
-        font-size: 14px;
+        font-size: 13px;
+
+        line-height: 1.25;
+      }
+
+
+      .cross {
+        font-size: 18px;
+
+        margin-right: 10px;
       }
 
 
@@ -1040,7 +1267,7 @@
       ========================= */
 
       .journey-section {
-        padding: 65px 0 75px;
+        padding: 70px 0 80px;
 
         overflow: hidden;
       }
@@ -1049,62 +1276,58 @@
       .journey-header {
         width: 90%;
 
-        margin: 0 auto 35px;
+        margin: 0 auto 38px;
 
-        display: flex;
-
-        align-items: flex-end;
-
-        justify-content: space-between;
-
-        gap: 20px;
+        display: block;
       }
 
 
       .journey-title {
-        font-size: 48px;
+        font-size: 51px;
 
-        line-height: 0.9;
+        line-height: 0.86;
 
-        letter-spacing: -2.5px;
+        letter-spacing: -3px;
 
-        white-space: nowrap;
+        white-space: normal;
+
+        margin-bottom: 24px;
       }
 
 
       .journey-intro {
-        max-width: 230px;
+        max-width: 300px;
 
         font-size: 10px;
 
-        line-height: 1.45;
+        line-height: 1.5;
 
-        margin: 0;
+        text-align: left;
 
-        text-align: right;
+        letter-spacing: 0.7px;
       }
 
 
       /* =========================
-         MOBILE MOVING ROW
+         MOBILE JOURNEY CARDS
       ========================= */
 
       .journey-track {
-        width: max-content;
-
         display: flex;
 
         flex-direction: row;
 
         flex-wrap: nowrap;
 
+        width: max-content;
+
         gap: 10px;
 
-        padding-left: 5%;
+        padding-left: 15px;
 
         animation-name: journeyLeft;
 
-        animation-duration: 22s;
+        animation-duration: 24s;
 
         animation-timing-function: linear;
 
@@ -1112,126 +1335,106 @@
       }
 
 
-      /* =========================
-         SAME WIDTH FOR EVERY CARD
-      ========================= */
-
       .journey-card {
-        width: 245px;
+        width: 240px;
 
-        min-width: 245px;
+        min-width: 240px;
 
-        max-width: 245px;
+        max-width: 240px;
 
-        height: 280px;
+        height: 275px;
 
-        flex: 0 0 245px;
+        flex: 0 0 240px;
 
-        padding: 22px;
-      }
-
-
-      .journey-card h3 {
-        font-size: 26px;
-
-        letter-spacing: -1px;
-
-        margin-bottom: 15px;
-      }
-
-
-      .journey-card p {
-        font-size: 13px;
-
-        line-height: 1.4;
+        padding: 21px;
       }
 
 
       .journey-number {
+        font-size: 11px;
+      }
+
+
+      .journey-card h3 {
+        font-size: 25px;
+
+        letter-spacing: -1px;
+
+        margin-bottom: 14px;
+      }
+
+
+      .journey-card p {
         font-size: 12px;
+
+        line-height: 1.4;
+
+        max-width: 205px;
       }
 
 
       .launch-structure {
-        margin-top: 14px;
+        margin-top: 13px;
 
         gap: 5px;
       }
 
 
       .launch-structure span {
-        font-size: 9px;
+        font-size: 8px;
 
         padding-bottom: 4px;
       }
 
 
       /* =========================
-         MOBILE FOOTER
+         FOOTER
       ========================= */
 
       .final-footer {
         min-height: auto;
+
+        display: block;
       }
 
 
       .footer-bg {
-        inset: -5px;
+        inset: -4px;
 
-        filter: grayscale(100%) blur(1.5px);
+        filter: grayscale(100%) blur(1px);
 
-        transform: scale(1.02);
+        transform: scale(1.015);
+
+        background-position: center;
       }
 
 
       .footer-overlay {
-        background: rgba(0, 0, 0, 0.50);
+        background: rgba(0, 0, 0, 0.52);
       }
 
 
       .footer-content {
-        width: 90%;
+        width: 88%;
 
-        padding: 55px 0;
+        padding: 55px 0 45px;
+
+        margin: 0 auto;
       }
 
-
-      /* TOP */
 
       .footer-top {
-        display: block;
-
-        margin-bottom: 35px;
+        display: none;
       }
 
-
-      .footer-label {
-        display: block;
-
-        margin-bottom: 14px;
-
-        font-size: 11px;
-      }
-
-
-      .footer-description {
-        max-width: 280px;
-
-        font-size: 12px;
-
-        line-height: 1.45;
-      }
-
-
-      /* BIG TEXT */
 
       .footer-statement {
-        margin-bottom: 30px;
+        margin-bottom: 32px;
       }
 
 
       .footer-big-text {
-        font-size: 52px;
+        font-size: 46px;
 
         line-height: 0.88;
 
@@ -1239,205 +1442,319 @@
       }
 
 
-      /* MIDDLE */
+      .footer-big-text + .footer-big-text {
+        margin-top: 3px;
+      }
+
 
       .footer-middle {
-        display: flex;
+        display: block;
 
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 11px;
-
-        margin-bottom: 35px;
+        margin-bottom: 32px;
       }
 
 
       .footer-select {
         font-size: 10px;
+
+        letter-spacing: 1px;
       }
 
-
-      .footer-company-count,
-      .footer-days {
-        font-size: 13px;
-      }
-
-
-      .footer-company-count::before,
-      .footer-days::before {
-        margin-right: 10px;
-      }
-
-
-      /* INVITATION */
 
       .footer-invitation {
-        padding: 0;
+        max-width: 100%;
 
-        margin-bottom: 35px;
-      }
-
-
-      .footer-invitation p {
-        font-size: 19px;
-
-        line-height: 1.25;
-
-        margin-bottom: 18px;
-      }
-
-
-      .footer-invitation h2 {
-        font-size: 31px;
-
-        letter-spacing: -1px;
-      }
-
-
-      /* BOTTOM */
-
-      .footer-bottom {
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 20px;
-      }
-
-
-      .footer-open {
-        font-size: 10px;
-      }
-
-
-      .footer-apply-btn {
-        font-size: 9px;
-
-        padding-left: 15px;
-
-        gap: 9px;
-      }
-
-
-      .footer-arrow {
-        width: 29px;
-
-        height: 29px;
-
-        font-size: 14px;
-      }
-
-    }
-
-
-    /* =====================================================
-       VERY SMALL MOBILE
-    ===================================================== */
-
-    @media (max-width: 480px) {
-
-      .hero-nav {
-        padding: 16px;
-      }
-
-
-      .logo img {
-        width: 78px;
-      }
-
-
-      .journey-section {
-        padding-top: 55px;
-
-        padding-bottom: 65px;
-      }
-
-
-      .journey-header {
-        width: 90%;
-
-        gap: 15px;
-      }
-
-
-      .journey-title {
-        font-size: 40px;
-
-        letter-spacing: -2px;
-      }
-
-
-      .journey-intro {
-        max-width: 150px;
-
-        font-size: 8px;
-      }
-
-
-      .journey-track {
-        gap: 10px;
-
-        animation-duration: 20s;
-      }
-
-
-      .journey-card {
-        width: 230px;
-
-        min-width: 230px;
-
-        max-width: 230px;
-
-        flex: 0 0 230px;
-
-        height: 270px;
-
-        padding: 20px;
-      }
-
-
-      .journey-card h3 {
-        font-size: 24px;
-      }
-
-
-      .journey-card p {
-        font-size: 12px;
-      }
-
-
-      /* FOOTER */
-
-      .footer-content {
-        padding: 48px 0;
-      }
-
-
-      .footer-big-text {
-        font-size: 43px;
-
-        letter-spacing: -2px;
+        margin-bottom: 38px;
       }
 
 
       .footer-invitation p {
         font-size: 17px;
+
+        line-height: 1.35;
+
+        letter-spacing: -0.2px;
+
+        margin-bottom: 0;
+
+        max-width: 330px;
       }
 
 
-      .footer-invitation h2 {
-        font-size: 28px;
+      .footer-bottom {
+        display: block;
+      }
+
+
+      .footer-open {
+        display: block;
+
+        font-size: 9px;
+
+        letter-spacing: 1.3px;
+
+        margin-bottom: 18px;
       }
 
 
       .footer-apply-btn {
         width: 100%;
 
+        min-height: 48px;
+
         justify-content: space-between;
+
+        padding: 7px 7px 7px 16px;
+
+        font-size: 9px;
+
+        letter-spacing: 0.5px;
+      }
+
+
+      .footer-arrow {
+        width: 34px;
+
+        height: 34px;
+
+        font-size: 15px;
+      }
+
+    }
+
+
+    /* =====================================================
+       SMALL MOBILE
+    ===================================================== */
+
+    @media (max-width: 480px) {
+
+      .hero {
+        min-height: 730px;
+
+        padding-top: 90px;
+      }
+
+
+      .hero-content {
+        width: 88%;
+
+        gap: 30px;
+
+        padding-top: 15px;
+
+        padding-bottom: 35px;
+      }
+
+
+      .hero-title {
+        font-size: 45px;
+
+        letter-spacing: -2.5px;
+      }
+
+
+      .hero-description {
+        font-size: 14px;
+
+        line-height: 1.45;
+      }
+
+
+      .hero-meta {
+        font-size: 8px;
+
+        gap: 7px 12px;
+      }
+
+
+      .hero-image {
+        height: 270px;
+      }
+
+
+      .hero-nav {
+        padding: 15px;
+      }
+
+
+      .logo img {
+        width: 75px;
+      }
+
+
+      .apply-btn {
+        font-size: 8px;
+
+        padding: 6px 6px 6px 12px;
+      }
+
+
+      .apply-icon {
+        width: 23px;
+
+        height: 23px;
+      }
+
+
+      /* REAL WORK */
+
+      .real-work-section {
+        padding: 25px 0;
+      }
+
+
+      .real-work-card {
+        width: calc(100% - 24px);
+
+        min-width: calc(100% - 24px);
+
+        margin-left: 12px;
+
+        padding: 24px 16px;
+      }
+
+
+      .real-work-heading {
+        font-size: 24px;
+
+        letter-spacing: -0.8px;
+      }
+
+
+      .work-card {
+        width: 215px;
+
+        min-width: 215px;
+
+        height: 88px;
+
+        min-height: 88px;
+      }
+
+
+      /* JOURNEY */
+
+      .journey-section {
+        padding: 58px 0 68px;
+      }
+
+
+      .journey-header {
+        width: 88%;
+
+        margin-bottom: 32px;
+      }
+
+
+      .journey-title {
+        font-size: 43px;
+
+        letter-spacing: -2.5px;
+
+        margin-bottom: 20px;
+      }
+
+
+      .journey-intro {
+        max-width: 280px;
+
+        font-size: 9px;
+      }
+
+
+      .journey-track {
+        gap: 9px;
+
+        padding-left: 12px;
+
+        animation-duration: 22s;
+      }
+
+
+      .journey-card {
+        width: 220px;
+
+        min-width: 220px;
+
+        max-width: 220px;
+
+        height: 260px;
+
+        flex: 0 0 220px;
+
+        padding: 19px;
+      }
+
+
+      .journey-card h3 {
+        font-size: 23px;
+      }
+
+
+      .journey-card p {
+        font-size: 11px;
+
+        max-width: 190px;
+      }
+
+
+      /* FOOTER */
+
+      .footer-content {
+        width: 88%;
+
+        padding: 48px 0 38px;
+      }
+
+
+      .footer-big-text {
+        font-size: 39px;
+
+        letter-spacing: -2px;
+      }
+
+
+      .footer-middle {
+        margin-bottom: 28px;
+      }
+
+
+      .footer-select {
+        font-size: 9px;
+      }
+
+
+      .footer-invitation {
+        margin-bottom: 32px;
+      }
+
+
+      .footer-invitation p {
+        font-size: 16px;
+
+        line-height: 1.35;
+      }
+
+
+      .footer-open {
+        font-size: 8px;
+
+        margin-bottom: 15px;
+      }
+
+
+      .footer-apply-btn {
+        min-height: 46px;
+
+        font-size: 8px;
+      }
+
+
+      .footer-arrow {
+        width: 32px;
+
+        height: 32px;
       }
 
     }
@@ -1463,18 +1780,12 @@
 <body>
 
 
-  <!-- =========================
-       HERO
-  ========================= -->
+  <!-- HERO -->
 
   <section class="hero">
 
-    <img
-      src="assets/p-h.jpeg"
-      alt="The White Startup School"
-      class="hero-image"
-    >
 
+    <!-- TOP NAVIGATION -->
 
     <div class="hero-nav">
 
@@ -1487,8 +1798,6 @@
 
       </a>
 
-
-      <!-- BLACK APPLY BUTTON -->
 
       <a href="#apply" class="apply-btn">
 
@@ -1513,13 +1822,95 @@
 
     </div>
 
+
+    <!-- HERO CONTENT -->
+
+    <div class="hero-content">
+
+
+      <!-- LEFT CONTENT -->
+
+      <div class="hero-left">
+
+   
+
+
+        <h1 class="hero-title">
+          BUILD<br>
+          WHAT'S<br>
+          NEXT
+        </h1>
+
+
+        <p class="hero-description">
+
+          The White Startup School is a private,
+          immersive 21-day founder experience designed
+          for just <strong>15 selected founders.</strong>
+
+          Step away from the ordinary and into an
+          environment built around one thing:
+
+          <strong>Building something real.</strong>
+
+        </p>
+
+
+        <div class="hero-meta">
+
+          <span>
+            21 DAYS
+          </span>
+
+          <span>
+            ·
+          </span>
+
+          <span>
+            15 COMPANIES
+          </span>
+
+          <span>
+            ·
+          </span>
+
+          <span>
+            19 SEPTEMBER 2026
+          </span>
+
+          <span>
+            ·
+          </span>
+
+          <span>
+            OOTY
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT IMAGE -->
+
+      <div class="hero-right">
+
+        <img
+          src="assets/PROGRAM-HERO.PNG"
+          alt="The White Startup School Program"
+          class="hero-image"
+        >
+
+      </div>
+
+
+    </div>
+
   </section>
 
 
 
-  <!-- =========================
-       REAL WORK SECTION
-  ========================= -->
+  <!-- REAL WORK SECTION -->
 
   <section class="real-work-section">
 
@@ -1538,9 +1929,7 @@
 
         <div class="work-card">
 
-          <span class="cross">
-            ✕
-          </span>
+          <span class="cross">✕</span>
 
           <p>
             Not a mass classroom
@@ -1551,9 +1940,7 @@
 
         <div class="work-card">
 
-          <span class="cross">
-            ✕
-          </span>
+          <span class="cross">✕</span>
 
           <p>
             Not a collection of recorded lessons
@@ -1564,9 +1951,7 @@
 
         <div class="work-card">
 
-          <span class="cross">
-            ✕
-          </span>
+          <span class="cross">✕</span>
 
           <p>
             Not a polished social-media program
@@ -1582,9 +1967,7 @@
 
 
 
-  <!-- =========================
-       THE 21-DAY JOURNEY
-  ========================= -->
+  <!-- THE 21-DAY JOURNEY -->
 
   <section class="journey-section">
 
@@ -1614,15 +1997,11 @@
 
       <div class="journey-card">
 
-        <span class="journey-number">
-          01
-        </span>
+        <span class="journey-number">01</span>
 
         <div class="journey-card-content">
 
-          <h3>
-            THE IDEA
-          </h3>
+          <h3>THE IDEA</h3>
 
           <p>
             Clarify your idea, opportunity,
@@ -1636,15 +2015,11 @@
 
       <div class="journey-card">
 
-        <span class="journey-number">
-          02
-        </span>
+        <span class="journey-number">02</span>
 
         <div class="journey-card-content">
 
-          <h3>
-            THE STRATEGY
-          </h3>
+          <h3>THE STRATEGY</h3>
 
           <p>
             Build the business model,
@@ -1658,15 +2033,11 @@
 
       <div class="journey-card">
 
-        <span class="journey-number">
-          03
-        </span>
+        <span class="journey-number">03</span>
 
         <div class="journey-card-content">
 
-          <h3>
-            THE IDENTITY
-          </h3>
+          <h3>THE IDENTITY</h3>
 
           <p>
             Create the brand, identity and
@@ -1680,15 +2051,11 @@
 
       <div class="journey-card">
 
-        <span class="journey-number">
-          04
-        </span>
+        <span class="journey-number">04</span>
 
         <div class="journey-card-content">
 
-          <h3>
-            THE MARKET
-          </h3>
+          <h3>THE MARKET</h3>
 
           <p>
             Understand your audience,
@@ -1702,15 +2069,11 @@
 
       <div class="journey-card">
 
-        <span class="journey-number">
-          05
-        </span>
+        <span class="journey-number">05</span>
 
         <div class="journey-card-content">
 
-          <h3>
-            THE ENGINE
-          </h3>
+          <h3>THE ENGINE</h3>
 
           <p>
             Build your marketing, sales and
@@ -1724,15 +2087,11 @@
 
       <div class="journey-card">
 
-        <span class="journey-number">
-          06
-        </span>
+        <span class="journey-number">06</span>
 
         <div class="journey-card-content">
 
-          <h3>
-            THE FOUNDATION
-          </h3>
+          <h3>THE FOUNDATION</h3>
 
           <p>
             Work through finance, accounts,
@@ -1747,15 +2106,11 @@
 
       <div class="journey-card">
 
-        <span class="journey-number">
-          07
-        </span>
+        <span class="journey-number">07</span>
 
         <div class="journey-card-content">
 
-          <h3>
-            THE COMPANY
-          </h3>
+          <h3>THE COMPANY</h3>
 
           <p>
             Move from idea to formal
@@ -1764,17 +2119,9 @@
 
           <div class="launch-structure">
 
-            <span>
-              LLP
-            </span>
-
-            <span>
-              PRIVATE LIMITED
-            </span>
-
-            <span>
-              PROPRIETORSHIP
-            </span>
+            <span>LLP</span>
+            <span>PRIVATE LIMITED</span>
+            <span>PROPRIETORSHIP</span>
 
           </div>
 
@@ -1785,15 +2132,11 @@
 
       <div class="journey-card launch-card">
 
-        <span class="journey-number">
-          08
-        </span>
+        <span class="journey-number">08</span>
 
         <div class="journey-card-content">
 
-          <h3>
-            THE LAUNCH
-          </h3>
+          <h3>THE LAUNCH</h3>
 
           <p>
             Bring everything together and
@@ -1806,19 +2149,15 @@
       </div>
 
 
-      <!-- DUPLICATE -->
+      <!-- DUPLICATES FOR DESKTOP ANIMATION -->
 
       <div class="journey-card">
 
-        <span class="journey-number">
-          01
-        </span>
+        <span class="journey-number">01</span>
 
         <div class="journey-card-content">
 
-          <h3>
-            THE IDEA
-          </h3>
+          <h3>THE IDEA</h3>
 
           <p>
             Clarify your idea, opportunity,
@@ -1832,15 +2171,11 @@
 
       <div class="journey-card">
 
-        <span class="journey-number">
-          02
-        </span>
+        <span class="journey-number">02</span>
 
         <div class="journey-card-content">
 
-          <h3>
-            THE STRATEGY
-          </h3>
+          <h3>THE STRATEGY</h3>
 
           <p>
             Build the business model,
@@ -1854,15 +2189,11 @@
 
       <div class="journey-card">
 
-        <span class="journey-number">
-          03
-        </span>
+        <span class="journey-number">03</span>
 
         <div class="journey-card-content">
 
-          <h3>
-            THE IDENTITY
-          </h3>
+          <h3>THE IDENTITY</h3>
 
           <p>
             Create the brand, identity and
@@ -1876,15 +2207,11 @@
 
       <div class="journey-card">
 
-        <span class="journey-number">
-          04
-        </span>
+        <span class="journey-number">04</span>
 
         <div class="journey-card-content">
 
-          <h3>
-            THE MARKET
-          </h3>
+          <h3>THE MARKET</h3>
 
           <p>
             Understand your audience,
@@ -1898,15 +2225,11 @@
 
       <div class="journey-card">
 
-        <span class="journey-number">
-          05
-        </span>
+        <span class="journey-number">05</span>
 
         <div class="journey-card-content">
 
-          <h3>
-            THE ENGINE
-          </h3>
+          <h3>THE ENGINE</h3>
 
           <p>
             Build your marketing, sales and
@@ -1920,15 +2243,11 @@
 
       <div class="journey-card">
 
-        <span class="journey-number">
-          06
-        </span>
+        <span class="journey-number">06</span>
 
         <div class="journey-card-content">
 
-          <h3>
-            THE FOUNDATION
-          </h3>
+          <h3>THE FOUNDATION</h3>
 
           <p>
             Work through finance, accounts,
@@ -1943,15 +2262,11 @@
 
       <div class="journey-card">
 
-        <span class="journey-number">
-          07
-        </span>
+        <span class="journey-number">07</span>
 
         <div class="journey-card-content">
 
-          <h3>
-            THE COMPANY
-          </h3>
+          <h3>THE COMPANY</h3>
 
           <p>
             Move from idea to formal
@@ -1960,17 +2275,9 @@
 
           <div class="launch-structure">
 
-            <span>
-              LLP
-            </span>
-
-            <span>
-              PRIVATE LIMITED
-            </span>
-
-            <span>
-              PROPRIETORSHIP
-            </span>
+            <span>LLP</span>
+            <span>PRIVATE LIMITED</span>
+            <span>PROPRIETORSHIP</span>
 
           </div>
 
@@ -1981,15 +2288,11 @@
 
       <div class="journey-card launch-card">
 
-        <span class="journey-number">
-          08
-        </span>
+        <span class="journey-number">08</span>
 
         <div class="journey-card-content">
 
-          <h3>
-            THE LAUNCH
-          </h3>
+          <h3>THE LAUNCH</h3>
 
           <p>
             Bring everything together and
@@ -2007,9 +2310,7 @@
 
 
 
-  <!-- =====================================================
-       FINAL APPLICATION FOOTER
-  ===================================================== -->
+  <!-- FINAL APPLICATION FOOTER -->
 
   <footer class="final-footer" id="apply">
 
@@ -2019,8 +2320,7 @@
 
     <div class="footer-content">
 
-      <div class="footer-top">
-      </div>
+      <div class="footer-top"></div>
 
 
       <div class="footer-statement">
@@ -2089,3 +2389,4 @@
 </body>
 
 </html>
+
