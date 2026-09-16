@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>20-Day Founder Program — Apply</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --border: #dcdcdc;
+      --input: #fafafa;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       PAGE
+    ========================= */
+
+    .page {
+      width: 100%;
+      min-height: 100vh;
+      padding: 22px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .application {
+      width: min(1380px, 100%);
+      min-height: calc(100vh - 44px);
+
+      border: 1px solid var(--black);
+      border-radius: 28px;
+      overflow: hidden;
+
+      display: grid;
+      grid-template-columns: 0.72fr 1.28fr;
+
+      background: #fff;
+    }
+
+    /* =========================
+       LEFT IMAGE PANEL
+       NO CONTENT / NO OVERLAY
+    ========================= */
+
+    .visual {
+      position: relative;
+      min-height: 780px;
+
+      background: #111;
+      overflow: hidden;
+    }
+
+    .visual img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      filter: grayscale(100%);
+
+      display: block;
+    }
+
+    /* =========================
+       FORM PANEL
+    ========================= */
+
+    .form-area {
+      padding: 34px 42px 30px;
+
+      display: flex;
+      flex-direction: column;
+
+      min-width: 0;
+    }
+
+    /* =========================
+       TOP BAR
+    ========================= */
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      gap: 20px;
+
+      padding-bottom: 22px;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+
+      margin-bottom: 8px;
+    }
+
+    .topbar h1 {
+      font-size: clamp(30px, 3vw, 48px);
+
+      line-height: 0.95;
+
+      letter-spacing: -0.055em;
+
+      font-weight: 500;
+    }
+
+    .program-tag {
+      border: 1px solid var(--black);
+
+      border-radius: 100px;
+
+      padding: 8px 13px;
+
+      white-space: nowrap;
+
+      font-size: 10px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.1em;
+
+      font-weight: 700;
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: flex-end;
+
+      gap: 30px;
+
+      padding: 17px 0 18px;
+    }
+
+    .intro p {
+      max-width: 650px;
+
+      color: #555;
+
+      font-size: 12px;
+
+      line-height: 1.55;
+    }
+
+    /* =========================
+       FORM
+    ========================= */
+
+    form {
+      width: 100%;
+    }
+
+    .form-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      column-gap: 14px;
+
+      row-gap: 12px;
+    }
+
+    .field {
+      min-width: 0;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+
+      font-size: 10px;
+
+      line-height: 1;
+
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.1em;
+
+      margin: 0 0 7px 3px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+
+      border: 1px solid #cfcfcf;
+
+      border-radius: 11px;
+
+      background: var(--input);
+
+      color: #111;
+
+      outline: none;
+
+      font-family: inherit;
+
+      font-size: 12px;
+
+      transition: 0.2s ease;
+    }
+
+    input,
+    select {
+      height: 40px;
+
+      padding: 0 13px;
+    }
+
+    textarea {
+      height: 65px;
+
+      /* Resize handle removed */
+      resize: none;
+
+      min-height: 65px;
+
+      padding: 11px 13px;
+
+      line-height: 1.4;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #9a9a9a;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #000;
+
+      background: #fff;
+    }
+
+    /* =========================
+       SELECT
+    ========================= */
+
+    select {
+      appearance: none;
+
+      cursor: pointer;
+
+      background-image:
+        linear-gradient(
+          45deg,
+          transparent 50%,
+          #111 50%
+        ),
+        linear-gradient(
+          135deg,
+          #111 50%,
+          transparent 50%
+        );
+
+      background-position:
+        calc(100% - 17px) 17px,
+        calc(100% - 12px) 17px;
+
+      background-size:
+        5px 5px,
+        5px 5px;
+
+      background-repeat: no-repeat;
+    }
+
+    /* =========================
+       FOUNDER STATUS
+    ========================= */
+
+    .status-options {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 8px;
+    }
+
+    .status-option {
+      position: relative;
+    }
+
+    .status-option input {
+      position: absolute;
+
+      opacity: 0;
+
+      pointer-events: none;
+    }
+
+    .status-option label {
+      min-height: 40px;
+
+      width: 100%;
+
+      margin: 0;
+
+      padding: 9px 12px;
+
+      border: 1px solid #cfcfcf;
+
+      border-radius: 11px;
+
+      display: flex;
+
+      align-items: center;
+
+      font-size: 9px;
+
+      line-height: 1.25;
+
+      letter-spacing: 0;
+
+      text-transform: none;
+
+      font-weight: 500;
+
+      cursor: pointer;
+
+      background: #fafafa;
+
+      transition: 0.2s ease;
+    }
+
+    .status-option label:hover {
+      border-color: #000;
+    }
+
+    .status-option input:checked + label {
+      background: #000;
+
+      color: #fff;
+
+      border-color: #000;
+    }
+
+    /* =========================
+       BUSINESS CATEGORY
+    ========================= */
+
+    .category-input {
+      width: 100%;
+    }
+
+    /* =========================
+       BOTTOM SECTION
+    ========================= */
+
+    .bottom-section {
+      margin-top: 14px;
+
+      padding-top: 15px;
+
+      border-top: 1px solid var(--border);
+
+      display: grid;
+
+      grid-template-columns: 1fr auto;
+
+      gap: 25px;
+
+      align-items: center;
+    }
+
+    .statement {
+      max-width: 650px;
+    }
+
+    .statement h3 {
+      font-size: 16px;
+
+      line-height: 1;
+
+      letter-spacing: -0.025em;
+
+      margin-bottom: 7px;
+    }
+
+    .statement p {
+      font-size: 9.5px;
+
+      color: #686868;
+
+      line-height: 1.45;
+    }
+
+    .submit-wrap {
+      text-align: right;
+    }
+
+    .submit {
+      border: 1px solid #000;
+
+      border-radius: 100px;
+
+      background: #000;
+
+      color: #fff;
+
+      min-width: 150px;
+
+      height: 42px;
+
+      padding: 0 22px;
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.1em;
+
+      cursor: pointer;
+
+      transition: 0.2s ease;
+    }
+
+    .submit:hover {
+      background: #fff;
+
+      color: #000;
+    }
+
+    .legal {
+      margin-top: 7px;
+
+      font-size: 8px;
+
+      color: #999;
+
+      max-width: 250px;
+
+      line-height: 1.3;
+
+      margin-left: auto;
+    }
+
+    /* =========================
+       TABLET
+    ========================= */
+
+    @media (max-width: 1100px) {
+
+      .page {
+        padding: 16px;
+      }
+
+      .application {
+        grid-template-columns: 0.58fr 1fr;
+      }
+
+      .form-area {
+        padding: 28px;
+      }
+
+      .status-options {
+        grid-template-columns: 1fr;
+      }
+
+      .status-option label {
+        min-height: 38px;
+      }
+
+    }
+
+    /* =========================
+       TABLET / SMALL LAPTOP
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .application {
+        grid-template-columns: 1fr;
+      }
+
+      .visual {
+        min-height: 360px;
+
+        height: 360px;
+      }
+
+      .visual img {
+        object-position: center center;
+      }
+
+      .form-area {
+        padding: 30px;
+      }
+
+      .form-grid {
+        column-gap: 12px;
+      }
+
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      body {
+        background: #fff;
+      }
+
+      .page {
+        width: 100%;
+
+        min-height: 100vh;
+
+        padding: 8px;
+
+        display: block;
+      }
+
+      .application {
+        width: 100%;
+
+        min-height: auto;
+
+        display: block;
+
+        border-radius: 18px;
+      }
+
+      /* IMAGE */
+
+      .visual {
+        width: 100%;
+
+        height: 270px;
+
+        min-height: 270px;
+      }
+
+      .visual img {
+        object-position: center center;
+      }
+
+      /* FORM */
+
+      .form-area {
+        width: 100%;
+
+        padding: 24px 18px 22px;
+      }
+
+      /* HEADER */
+
+      .topbar {
+        flex-direction: column;
+
+        gap: 16px;
+
+        padding-bottom: 18px;
+      }
+
+      .eyebrow {
+        font-size: 9px;
+
+        margin-bottom: 7px;
+      }
+
+      .topbar h1 {
+        font-size: clamp(36px, 10vw, 48px);
+
+        line-height: 0.92;
+      }
+
+      .program-tag {
+        font-size: 8px;
+
+        padding: 7px 11px;
+      }
+
+      /* INTRO */
+
+      .intro {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+
+        padding: 16px 0 20px;
+      }
+
+      .intro p {
+        max-width: 100%;
+
+        font-size: 11px;
+
+        line-height: 1.55;
+      }
+
+      /* FORM GRID */
+
+      .form-grid {
+        grid-template-columns: 1fr;
+
+        gap: 13px;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      /* LABELS */
+
+      label {
+        font-size: 9px;
+
+        margin-bottom: 7px;
+      }
+
+      /* INPUTS */
+
+      input,
+      select {
+        height: 44px;
+
+        font-size: 13px;
+
+        border-radius: 10px;
+      }
+
+      textarea {
+        min-height: 95px;
+
+        height: 95px;
+
+        /* Resize handle removed on mobile */
+        resize: none;
+
+        font-size: 13px;
+
+        border-radius: 10px;
+      }
+
+      /* FOUNDER STATUS */
+
+      .status-options {
+        grid-template-columns: 1fr;
+
+        gap: 7px;
+      }
+
+      .status-option label {
+        min-height: 45px;
+
+        padding: 10px 12px;
+
+        font-size: 10px;
+
+        line-height: 1.3;
+
+        border-radius: 10px;
+      }
+
+      /* BOTTOM */
+
+      .bottom-section {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        margin-top: 18px;
+
+        padding-top: 18px;
+      }
+
+      .statement {
+        max-width: 100%;
+      }
+
+      .statement h3 {
+        font-size: 17px;
+      }
+
+      .statement p {
+        font-size: 9.5px;
+      }
+
+      .submit-wrap {
+        width: 100%;
+
+        text-align: left;
+      }
+
+      .submit {
+        width: 100%;
+
+        height: 48px;
+
+        font-size: 10px;
+      }
+
+      .legal {
+        max-width: 100%;
+
+        margin-left: 0;
+
+        margin-top: 8px;
+
+        font-size: 8px;
+      }
+
+    }
+
+    /* =========================
+       VERY SMALL MOBILE
+    ========================= */
+
+    @media (max-width: 400px) {
+
+      .page {
+        padding: 5px;
+      }
+
+      .application {
+        border-radius: 15px;
+      }
+
+      .visual {
+        height: 235px;
+
+        min-height: 235px;
+      }
+
+      .form-area {
+        padding: 20px 15px;
+      }
+
+      .topbar h1 {
+        font-size: 38px;
+      }
+
+    }
+
+    /* =========================
+       SHORT DESKTOP SCREENS
+    ========================= */
+
+    @media (max-height: 850px) and (min-width: 901px) {
+
+      .page {
+        padding: 14px;
+      }
+
+      .application {
+        min-height: calc(100vh - 28px);
+      }
+
+      .form-area {
+        padding: 22px 30px;
+      }
+
+      .visual {
+        min-height: 700px;
+      }
+
+      .topbar {
+        padding-bottom: 14px;
+      }
+
+      .intro {
+        padding: 12px 0;
+      }
+
+      .form-grid {
+        row-gap: 8px;
+      }
+
+      label {
+        margin-bottom: 5px;
+      }
+
+      input,
+      select {
+        height: 36px;
+      }
+
+      textarea {
+        height: 55px;
+
+        min-height: 55px;
+
+        /* Resize handle removed */
+        resize: none;
+      }
+
+      .status-option label {
+        min-height: 36px;
+      }
+
+      .bottom-section {
+        margin-top: 9px;
+
+        padding-top: 10px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <section class="application">
+
+      <!-- ==========================================
+           LEFT IMAGE
+           IMAGE ONLY — NO CONTENT
+      =========================================== -->
+
+      <aside class="visual">
+
+        <img
+          src="assets/register.jpeg"
+          alt="Founder Program"
+        />
+
+      </aside>
+
+      <!-- ==========================================
+           FORM AREA
+      =========================================== -->
+
+      <section class="form-area">
+
+        <!-- HEADER -->
+
+        <header class="topbar">
+
+          <div>
+
+            <div class="eyebrow">
+              20-Day Founder Program
+            </div>
+
+            <h1>
+              APPLY FOR THE PROGRAM
+            </h1>
+
+          </div>
+
+          <div class="program-tag">
+            Limited Participation
+          </div>
+
+        </header>
+
+        <!-- INTRO -->
+
+        <div class="intro">
+
+          <p>
+            This is not simply an application to attend a program.
+            It is an application to build. Selected participants will
+            work through strategy, company formation, branding, finance,
+            operations, sales, marketing and founder pitching across
+            20 intensive days.
+          </p>
+
+        </div>
+
+        <!-- ==========================================
+             FORM
+        =========================================== -->
+
+        <form id="founderForm">
+
+          <div class="form-grid">
+
+            <!-- FIRST NAME -->
+
+            <div class="field">
+
+              <label for="firstName">
+                First Name
+              </label>
+
+              <input
+                id="firstName"
+                name="firstName"
+                type="text"
+                placeholder="Enter your first name"
+                autocomplete="given-name"
+                required
+              />
+
+            </div>
+
+            <!-- LAST NAME -->
+
+            <div class="field">
+
+              <label for="lastName">
+                Last Name
+              </label>
+
+              <input
+                id="lastName"
+                name="lastName"
+                type="text"
+                placeholder="Enter your last name"
+                autocomplete="family-name"
+                required
+              />
+
+            </div>
+
+            <!-- EMAIL -->
+
+            <div class="field">
+
+              <label for="email">
+                Email Address
+              </label>
+
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Enter your email address"
+                autocomplete="email"
+                required
+              />
+
+            </div>
+
+            <!-- PHONE -->
+
+            <div class="field">
+
+              <label for="phone">
+                Phone / WhatsApp Number
+              </label>
+
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder="Enter your active number"
+                autocomplete="tel"
+                required
+              />
+
+            </div>
+
+            <!-- LOCATION -->
+
+            <div class="field">
+
+              <label for="location">
+                City / Country
+              </label>
+
+              <input
+                id="location"
+                name="location"
+                type="text"
+                placeholder="Where are you currently based?"
+                autocomplete="address-level2"
+                required
+              />
+
+            </div>
+
+            <!-- LINKEDIN -->
+
+            <div class="field">
+
+              <label for="linkedin">
+                LinkedIn / Professional Profile
+              </label>
+
+              <input
+                id="linkedin"
+                name="linkedin"
+                type="url"
+                placeholder="Share your profile link"
+              />
+
+            </div>
+
+            <!-- ======================================
+                 FOUNDER STATUS
+            ======================================= -->
+
+            <div class="field full">
+
+              <label>
+                Founder Status
+              </label>
+
+              <div class="status-options">
+
+                <!-- OPTION 1 -->
+
+                <div class="status-option">
+
+                  <input
+                    type="radio"
+                    id="ideaFounder"
+                    name="founderStatus"
+                    value="idea"
+                    checked
+                  />
+
+                  <label for="ideaFounder">
+                    I have a business idea I am preparing to launch
+                  </label>
+
+                </div>
+
+                <!-- OPTION 2 -->
+
+                <div class="status-option">
+
+                  <input
+                    type="radio"
+                    id="startedFounder"
+                    name="founderStatus"
+                    value="started"
+                  />
+
+                  <label for="startedFounder">
+                    I have already started a business
+                  </label>
+
+                </div>
+
+                <!-- OPTION 3 -->
+
+                <div class="status-option">
+
+                  <input
+                    type="radio"
+                    id="existingFounder"
+                    name="founderStatus"
+                    value="existing"
+                  />
+
+                  <label for="existingFounder">
+                    I am an existing founder
+                  </label>
+
+                </div>
+
+                <!-- OPTION 4 -->
+
+                <div class="status-option">
+
+                  <input
+                    type="radio"
+                    id="exploringFounder"
+                    name="founderStatus"
+                    value="exploring"
+                  />
+
+                  <label for="exploringFounder">
+                    I am exploring entrepreneurship
+                  </label>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- BUSINESS NAME -->
+
+            <div class="field">
+
+              <label for="businessName">
+                Business / Idea Name
+              </label>
+
+              <input
+                id="businessName"
+                name="businessName"
+                type="text"
+                placeholder="What are you building?"
+                required
+              />
+
+            </div>
+
+            <!-- CURRENT STAGE -->
+
+            <div class="field">
+
+              <label for="stage">
+                What Stage Are You Currently At?
+              </label>
+
+              <select
+                id="stage"
+                name="stage"
+                required
+              >
+
+                <option
+                  value=""
+                  selected
+                  disabled
+                >
+                  Select current stage
+                </option>
+
+                <option value="Idea">
+                  Idea
+                </option>
+
+                <option value="Validation">
+                  Validation
+                </option>
+
+                <option value="Early Stage">
+                  Early Stage
+                </option>
+
+                <option value="Existing Business">
+                  Existing Business
+                </option>
+
+              </select>
+
+            </div>
+
+            <!-- BUSINESS CATEGORY -->
+
+            <div class="field full">
+
+              <label for="category">
+                Business Category
+              </label>
+
+              <input
+                id="category"
+                name="category"
+                type="text"
+                class="category-input"
+                placeholder="Enter your business category"
+                required
+              />
+
+            </div>
+
+            <!-- IDEA -->
+
+            <div class="field full">
+
+              <label for="idea">
+                Tell Us About Your Idea
+              </label>
+
+              <textarea
+                id="idea"
+                name="idea"
+                placeholder="Briefly describe what you want to build."
+                required
+              ></textarea>
+
+            </div>
+
+            <!-- WHY JOIN -->
+
+            <div class="field full">
+
+              <label for="why">
+                Why Do You Want To Join The
+                20-Day Founder Program™?
+              </label>
+
+              <textarea
+                id="why"
+                name="why"
+                placeholder="Tell us what you want to achieve during the program."
+                required
+              ></textarea>
+
+            </div>
+
+          </div>
+
+          <!-- ==========================================
+               BOTTOM SECTION
+          =========================================== -->
+
+          <div class="bottom-section">
+
+            <!-- STATEMENT -->
+
+            <div class="statement">
+
+              <h3>
+                Your idea. Your company.
+              </h3>
+
+              <p>
+                Selected participants will build through business
+                strategy, company formation, branding, finance,
+                operations, sales, marketing and founder pitching
+                across 20 intensive days.
+              </p>
+
+            </div>
+
+            <!-- SUBMIT -->
+
+            <div class="submit-wrap">
+
+              <button
+                type="submit"
+                class="submit"
+              >
+                Apply Now →
+              </button>
+
+
+            </div>
+
+          </div>
+
+        </form>
+
+      </section>
+
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       JAVASCRIPT
+  =========================================== -->
+
+  <script>
+
+    document
+      .getElementById("founderForm")
+      .addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const formData = new FormData(this);
+
+        const data = Object.fromEntries(
+          formData.entries()
+        );
+
+        console.log(
+          "Application submitted:",
+          data
+        );
+
+        alert(
+          "Thank you. Your application has been submitted."
+        );
+
+      });
+
+  </script>
+
+</body>
+</html>
