@@ -315,7 +315,7 @@
 
       padding: 45px 5%;
 
-      background: #ffffff;
+      background: #e9e9e7;
 
       overflow: hidden;
     }
@@ -927,8 +927,6 @@
 
     @media (max-width: 900px) {
 
-      /* HERO */
-
       .hero {
         min-height: 650px;
 
@@ -980,6 +978,8 @@
 
       .real-work-section {
         padding: 35px 25px;
+
+        background: #e9e9e7;
       }
 
 
@@ -1250,26 +1250,24 @@
       .real-work-section {
         width: 100%;
 
-        padding: 25px 0 35px;
+        padding: 45px 0 55px;
+
+        background: #e9e9e7;
 
         overflow: hidden;
-
-        background: #ffffff;
       }
 
 
       .real-work-card {
-        width: calc(100% - 24px);
+        width: 100%;
 
         max-width: none;
 
         min-width: 0;
 
-        margin-left: 12px;
+        margin: 0;
 
-        margin-right: 12px;
-
-        padding: 25px 16px 22px;
+        padding: 10px 20px 10px;
 
         background: #e9e9e7;
 
@@ -1282,71 +1280,103 @@
 
         max-width: 100%;
 
-        font-size: clamp(25px, 7vw, 32px);
+        margin-bottom: 30px;
+
+        font-size: clamp(27px, 8vw, 38px);
 
         line-height: 0.98;
 
-        letter-spacing: -1px;
+        letter-spacing: -1.2px;
 
-        margin-bottom: 22px;
-
-        word-break: normal;
+        color: #202018;
       }
 
+
+      /* =================================================
+         MOBILE CARDS - ONE BY ONE
+      ================================================= */
 
       .work-cards {
         display: flex;
 
-        flex-direction: row;
+        flex-direction: column;
 
-        flex-wrap: nowrap;
+        gap: 14px;
 
-        width: max-content;
-
-        min-width: 0;
-
-        gap: 10px;
-
-        overflow: visible;
+        width: 100%;
       }
 
 
       .work-card {
-        width: 225px;
+        width: 100%;
 
-        min-width: 225px;
+        min-width: 100%;
 
-        max-width: 225px;
+        max-width: 100%;
 
-        height: 92px;
+        min-height: 90px;
 
-        min-height: 92px;
+        height: auto;
 
-        padding: 17px;
-
-        flex-shrink: 0;
+        padding: 22px 20px;
 
         background: #ffffff;
+
+        border: 1px solid #d5d5d2;
 
         display: flex;
 
         align-items: center;
+
+        transform: translateX(100px);
+
+        opacity: 0;
+
+        transition:
+          transform 0.8s ease,
+          opacity 0.8s ease;
       }
 
 
-      .work-card p {
-        font-size: 12px;
+      .work-card.show {
+        transform: translateX(0);
 
-        line-height: 1.25;
+        opacity: 1;
+      }
 
-        font-weight: 600;
+
+      .work-card:nth-child(1) {
+        transition-delay: 0s;
+      }
+
+
+      .work-card:nth-child(2) {
+        transition-delay: 0.12s;
+      }
+
+
+      .work-card:nth-child(3) {
+        transition-delay: 0.24s;
       }
 
 
       .cross {
-        font-size: 18px;
+        font-size: 19px;
 
-        margin-right: 10px;
+        margin-right: 12px;
+
+        flex-shrink: 0;
+      }
+
+
+      .work-card p {
+        font-size: 13px;
+
+        line-height: 1.3;
+
+        font-weight: 600;
+
+        color: #202018;
       }
 
 
@@ -1725,67 +1755,71 @@
       ================================================= */
 
       .real-work-section {
-        padding: 20px 0 30px;
+        padding: 38px 0 45px;
+
+        background: #e9e9e7;
       }
 
 
       .real-work-card {
-        width: calc(100% - 20px);
+        width: 100%;
 
         min-width: 0;
 
-        margin-left: 10px;
+        margin: 0;
 
-        margin-right: 10px;
-
-        padding: 23px 14px 20px;
+        padding: 8px 15px;
       }
 
 
       .real-work-heading {
-        font-size: 23px;
+        font-size: 25px;
 
         line-height: 1;
 
-        letter-spacing: -0.8px;
+        letter-spacing: -1px;
 
-        margin-bottom: 20px;
+        margin-bottom: 25px;
       }
 
 
       .work-cards {
-        gap: 8px;
+        display: flex;
 
-        width: max-content;
+        flex-direction: column;
+
+        gap: 11px;
+
+        width: 100%;
       }
 
 
       .work-card {
-        width: 205px;
+        width: 100%;
 
-        min-width: 205px;
+        min-width: 100%;
 
-        max-width: 205px;
+        max-width: 100%;
 
-        height: 86px;
+        min-height: 82px;
 
-        min-height: 86px;
+        height: auto;
 
-        padding: 15px;
+        padding: 18px 16px;
       }
 
 
       .work-card p {
-        font-size: 11px;
+        font-size: 12px;
 
-        line-height: 1.25;
+        line-height: 1.3;
       }
 
 
       .cross {
         font-size: 17px;
 
-        margin-right: 9px;
+        margin-right: 10px;
       }
 
 
@@ -1989,9 +2023,11 @@
 
 
       .work-card {
-        width: 195px;
+        width: 100%;
 
-        min-width: 195px;
+        min-width: 100%;
+
+        max-width: 100%;
       }
 
 
@@ -2026,6 +2062,15 @@
 
       .journey-track {
         animation: none;
+      }
+
+
+      .work-card {
+        transform: none;
+
+        opacity: 1;
+
+        transition: none;
       }
 
     }
@@ -2793,6 +2838,51 @@
     </div>
 
   </footer>
+
+
+  <!-- =====================================================
+       MOBILE CARD SCROLL ANIMATION
+  ===================================================== -->
+
+  <script>
+
+    const workCards = document.querySelectorAll(".work-card");
+
+
+    const workObserver = new IntersectionObserver(
+
+      (entries) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+          } else {
+
+            entry.target.classList.remove("show");
+
+          }
+
+        });
+
+      },
+
+      {
+        threshold: 0.25
+      }
+
+    );
+
+
+    workCards.forEach((card) => {
+
+      workObserver.observe(card);
+
+    });
+
+  </script>
 
 
 </body>
