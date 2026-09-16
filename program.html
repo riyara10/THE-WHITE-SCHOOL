@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -8,1450 +7,1450 @@
 
   <title>The White Startup School</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-
   <style>
 
-    :root{
-      --olive:#736e4e;
-      --olive-dark:#4f4b35;
-      --paper:#ffffff;
-      --soft:#eae9e5;
-      --yellow:#fff18f;
-      --ink:#14161a;
-      --muted:#726f63;
-      --line:rgba(20,22,26,0.12);
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
+    html {
+      scroll-behavior: smooth;
     }
 
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family:"Inter", Arial, sans-serif;
-      background:var(--paper);
-      color:var(--ink);
-      overflow-x:hidden;
-    }
-
-    a{
-      text-decoration:none;
-      color:inherit;
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #202018;
+      overflow-x: hidden;
     }
 
 
-    /* =====================================
+    /* =========================
        HERO
-    ===================================== */
+    ========================= */
 
-    .hero{
-      position:relative;
-      min-height:760px;
-
-      background:#222222;
-
-      border-radius:0 0 28px 28px;
-
-      overflow:hidden;
-
-      color:#000;
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 650px;
+      overflow: hidden;
+      background: #ffffff;
     }
 
-    .hero-bg{
-      position:absolute;
-      inset:-8px;
-
-      background:url("assets/program-hero.png") center center / cover no-repeat;
-
-      filter:blur(2px);
-
-      transform:scale(1.03);
-    }
-
-    .hero-bg::after{
-      display:none;
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
 
 
-    /* =====================================
-       NAVIGATION
-    ===================================== */
+    /* =========================
+       TOP NAVIGATION
+    ========================= */
 
-    nav{
-      position:relative;
-      z-index:10;
-
-      width:100%;
-
-      padding:28px 42px;
-
-      display:grid;
-      grid-template-columns:1fr auto 1fr;
-
-      align-items:start;
-
-      color:#000;
-    }
-
-    .nav-left{
-      display:flex;
-      gap:35px;
-
-      align-items:flex-start;
-    }
-
-    .nav-left a,
-    .nav-right a{
-      font-size:11px;
-      line-height:1.35;
-
-      font-weight:600;
-
-      letter-spacing:.08em;
-
-      text-transform:uppercase;
-
-      color:#000;
-    }
-
-    .brand{
-      font-size:13px;
-
-      font-weight:800;
-
-      letter-spacing:.13em;
-
-      text-align:center;
-
-      white-space:nowrap;
-
-      color:#000;
-    }
-
-    .nav-right{
-      display:flex;
-
-      justify-content:flex-end;
-      align-items:center;
-
-      gap:20px;
-    }
-
-    .menu-btn{
-      width:52px;
-      height:52px;
-
-      border-radius:50%;
-
-      display:flex;
-      align-items:center;
-      justify-content:center;
-
-      background:var(--yellow);
-
-      cursor:pointer;
-    }
-
-    .menu-btn svg{
-      width:22px;
-      height:22px;
+    .hero-nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 24px 36px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      z-index: 5;
     }
 
 
-    /* =====================================
-       HERO CONTENT
-    ===================================== */
+    /* =========================
+       LOGO
+    ========================= */
 
-    .hero-stage{
-      position:relative;
-      z-index:5;
-
-      min-height:650px;
-
-      display:flex;
-      align-items:center;
-
-      padding:70px 7% 100px;
+    .logo {
+      display: block;
     }
 
-    .hero-content{
-      position:relative;
-      z-index:5;
-
-      width:100%;
-      max-width:1200px;
-
-      margin:0 auto;
-    }
-
-    .headline{
-      display:flex;
-      flex-wrap:wrap;
-
-      align-items:baseline;
-
-      gap:0 22px;
-
-      font-size:clamp(58px,9vw,140px);
-
-      line-height:.86;
-
-      font-weight:900;
-
-      letter-spacing:-.06em;
-
-      text-transform:uppercase;
-    }
-
-    .headline .solid{
-      color:#000;
-    }
-
-    .headline .ghost{
-      color:rgba(0,0,0,.88);
+    .logo img {
+      width: 105px;
+      height: auto;
+      display: block;
+      object-fit: contain;
     }
 
 
-    /* =====================================
-       HERO DESCRIPTION
-    ===================================== */
+    /* =========================
+       APPLY BUTTON - BLACK
+    ========================= */
 
-    .hero-description{
-      max-width:610px;
+    .apply-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
 
-      margin-top:30px;
+      padding: 8px 8px 8px 16px;
 
-      color:#000;
+      background: #000000;
+      color: #ffffff;
 
-      font-size:14px;
+      border: none;
+      border-radius: 50px;
 
-      line-height:1.65;
+      font-size: 11px;
+      font-weight: 700;
 
-      font-weight:400;
+      letter-spacing: 0.4px;
+
+      text-decoration: none;
+
+      cursor: pointer;
+
+      transition: 0.3s ease;
     }
 
-    .hero-description p{
-      margin:0;
-    }
-
-    .hero-description strong{
-      color:#000;
-
-      font-weight:700;
-    }
-
-    .build-real{
-      margin-top:14px;
-
-      color:var(--yellow);
-
-      font-size:13px;
-
-      font-weight:800;
-
-      letter-spacing:.13em;
-
-      text-transform:uppercase;
-    }
-
-    .event-info{
-      margin-top:24px;
-
-      color:#000;
-
-      font-size:13px;
-
-      font-weight:700;
-
-      letter-spacing:.14em;
-
-      text-transform:uppercase;
-    }
-
-    .event-info span{
-      color:var(--yellow);
-
-      padding:0 7px;
+    .apply-btn:hover {
+      background: #ffffff;
+      color: #000000;
+      transform: translateY(-2px);
     }
 
 
-    /* =====================================
-       FLOATING STAT CARDS
-    ===================================== */
+    /* =========================
+       APPLY ICON
+    ========================= */
 
-    .float-stats{
-      width:100%;
+    .apply-icon {
+      width: 27px;
+      height: 27px;
 
-      margin-top:35px;
+      border-radius: 50%;
 
-      display:grid;
+      background: #ffffff;
+      color: #000000;
 
-      grid-template-columns:repeat(4, 1fr);
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-      gap:12px;
-
-      z-index:8;
+      transition: 0.3s ease;
     }
 
-    .float-card{
-      min-height:72px;
-
-      padding:12px 14px;
-
-      display:flex;
-      align-items:center;
-
-      gap:13px;
-
-      background:rgba(79,75,53,.76);
-
-      border:1px solid rgba(255,255,255,.18);
-
-      border-radius:16px;
-
-      backdrop-filter:blur(5px);
-      -webkit-backdrop-filter:blur(5px);
-
-      color:#fff;
+    .apply-btn:hover .apply-icon {
+      background: #000000;
+      color: #ffffff;
+      transform: rotate(-45deg);
     }
 
-    .float-icon{
-      width:43px;
-      height:43px;
+    .apply-icon svg {
+      width: 13px;
+      height: 13px;
 
-      flex-shrink:0;
+      stroke: currentColor;
+      fill: none;
 
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      stroke-width: 2;
 
-      border-radius:11px;
-
-      background:var(--yellow);
-    }
-
-    .float-icon svg{
-      width:22px;
-      height:22px;
-    }
-
-    .float-number{
-      font-size:21px;
-
-      line-height:1;
-
-      font-weight:800;
-    }
-
-    .float-label{
-      margin-top:4px;
-
-      font-size:10px;
-
-      font-weight:600;
-
-      letter-spacing:.08em;
-
-      text-transform:uppercase;
-
-      opacity:.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
 
-    /* =====================================
-       GENERAL SECTION
-    ===================================== */
-
-    section:not(.hero){
-      padding:100px 7%;
-    }
-
-
-    /* =====================================
+    /* =========================
        REAL WORK SECTION
-    ===================================== */
+    ========================= */
 
-    .real-work{
-      background:#fff;
+    .real-work-section {
+      width: 100%;
+      padding: 45px 5%;
+      background: #ffffff;
+      overflow-x: auto;
+      scrollbar-width: none;
     }
 
-    .real-work-header{
-      max-width:1200px;
-
-      margin:0 auto 55px;
-    }
-
-    .real-work-label{
-      display:flex;
-      align-items:center;
-
-      gap:10px;
-
-      margin-bottom:18px;
-
-      color:var(--olive);
-
-      font-size:11px;
-
-      font-weight:800;
-
-      letter-spacing:.14em;
-
-      text-transform:uppercase;
-    }
-
-    .real-work-label span{
-      font-size:16px;
-    }
-
-    .real-work-header h2{
-      max-width:900px;
-
-      color:var(--ink);
-
-      font-size:clamp(42px,6vw,82px);
-
-      line-height:.92;
-
-      font-weight:900;
-
-      letter-spacing:-.06em;
-
-      text-transform:uppercase;
-    }
-
-    .real-work-header p{
-      margin-top:18px;
-
-      color:var(--muted);
-
-      font-size:18px;
-
-      line-height:1.5;
-    }
-
-    .real-work-header strong{
-      color:var(--ink);
-
-      font-weight:800;
+    .real-work-section::-webkit-scrollbar {
+      display: none;
     }
 
 
-    /* =====================================
-       THREE SEPARATE CARDS
-    ===================================== */
+    .real-work-card {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
 
-    .real-work-cards{
-      max-width:1200px;
+      background: #e9e9e7;
 
-      margin:0 auto;
+      padding: 35px 40px 38px;
 
-      display:grid;
-
-      grid-template-columns:repeat(3,1fr);
-
-      gap:18px;
-    }
-
-    .work-card{
-      position:relative;
-
-      min-height:390px;
-
-      padding:30px;
-
-      background:var(--soft);
-
-      border-radius:24px;
-
-      display:flex;
-
-      flex-direction:column;
-
-      transition:
-        transform .3s ease,
-        background .3s ease;
-    }
-
-    .work-card:hover{
-      transform:translateY(-6px);
-
-      background:#e4e3dd;
-    }
-
-    .work-number{
-      color:var(--olive);
-
-      font-size:11px;
-
-      font-weight:800;
-
-      letter-spacing:.1em;
-    }
-
-    .work-icon{
-      width:52px;
-      height:52px;
-
-      margin-top:35px;
-
-      border-radius:50%;
-
-      background:var(--olive);
-
-      color:#fff;
-
-      display:flex;
-      align-items:center;
-      justify-content:center;
-
-      font-size:18px;
-
-      font-weight:700;
-    }
-
-    .work-card h3{
-      margin-top:28px;
-
-      color:var(--ink);
-
-      font-size:27px;
-
-      line-height:.98;
-
-      font-weight:900;
-
-      letter-spacing:-.04em;
-
-      text-transform:uppercase;
-    }
-
-    .work-card p{
-      margin-top:auto;
-
-      max-width:310px;
-
-      color:var(--muted);
-
-      font-size:13px;
-
-      line-height:1.7;
+      border-radius: 0;
     }
 
 
-    /* =====================================
-       REAL WORK BOTTOM TEXT
-    ===================================== */
+    /* =========================
+       MAIN HEADING
+    ========================= */
 
-    .real-work-bottom{
-      max-width:1200px;
+    .real-work-heading {
+      max-width: 950px;
+      margin-bottom: 25px;
 
-      margin:35px auto 0;
+      font-size: clamp(26px, 3.5vw, 50px);
 
-      padding-top:25px;
+      line-height: 1;
+      font-weight: 700;
 
-      border-top:1px solid var(--line);
+      letter-spacing: -1.5px;
 
-      color:var(--ink);
-
-      font-size:12px;
-
-      font-weight:800;
-
-      letter-spacing:.1em;
-
-      text-transform:uppercase;
-    }
-
-    .real-work-bottom span{
-      color:var(--olive);
-
-      margin-left:8px;
+      color: #202018;
     }
 
 
-    /* =====================================
-       TRUST SECTION
-    ===================================== */
+    /* =========================
+       THREE CARDS
+    ========================= */
 
-    .trust{
-      background:#fff;
-    }
-
-    .trust-row{
-      max-width:1200px;
-
-      margin:0 auto;
-
-      display:flex;
-
-      align-items:center;
-
-      gap:70px;
-    }
-
-    .badge-circle{
-      width:190px;
-      height:190px;
-
-      flex-shrink:0;
-
-      border-radius:50%;
-
-      background:var(--olive);
-
-      color:#fff;
-
-      display:flex;
-
-      flex-direction:column;
-
-      align-items:center;
-
-      justify-content:center;
-
-      text-align:center;
-    }
-
-    .badge-circle .pct{
-      font-size:52px;
-
-      line-height:1;
-
-      font-weight:900;
-
-      letter-spacing:-.05em;
-    }
-
-    .badge-circle .cap{
-      margin-top:10px;
-
-      font-size:10px;
-
-      line-height:1.35;
-
-      font-weight:600;
-
-      letter-spacing:.08em;
-
-      text-transform:uppercase;
-    }
-
-    .trust-card{
-      flex:1;
-
-      min-height:200px;
-
-      display:grid;
-
-      grid-template-columns:75px 1fr;
-
-      gap:25px;
-
-      padding:35px;
-
-      background:var(--soft);
-
-      border-radius:24px;
-    }
-
-    .trust-card .num{
-      font-size:12px;
-
-      font-weight:800;
-
-      letter-spacing:.08em;
-
-      color:var(--olive);
-    }
-
-    .trust-card h4{
-      margin-bottom:10px;
-
-      font-size:25px;
-
-      line-height:1.1;
-
-      font-weight:800;
-
-      letter-spacing:-.03em;
-
-      text-transform:uppercase;
-    }
-
-    .trust-card p{
-      color:var(--muted);
-
-      font-size:14px;
-
-      line-height:1.65;
-    }
-
-    .trust-card strong{
-      color:var(--ink);
+    .work-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      width: 100%;
     }
 
 
-    /* =====================================
-       INSTRUCTORS
-    ===================================== */
+    .work-card {
+      background: #ffffff;
 
-    .instructors{
-      background:var(--soft);
-    }
+      min-height: 95px;
 
-    .section-top{
-      max-width:1200px;
+      padding: 20px 22px;
 
-      margin:0 auto 50px;
+      display: flex;
+      align-items: center;
 
-      display:flex;
-
-      justify-content:space-between;
-
-      align-items:flex-end;
-
-      gap:30px;
-    }
-
-    .eyebrow{
-      margin-bottom:14px;
-
-      font-size:11px;
-
-      font-weight:800;
-
-      letter-spacing:.14em;
-
-      text-transform:uppercase;
-
-      color:var(--olive);
-    }
-
-    .section-title{
-      max-width:700px;
-
-      font-size:clamp(42px,6vw,85px);
-
-      line-height:.92;
-
-      font-weight:900;
-
-      letter-spacing:-.06em;
-
-      text-transform:uppercase;
-    }
-
-    .section-description{
-      max-width:340px;
-
-      color:var(--muted);
-
-      font-size:13px;
-
-      line-height:1.7;
-    }
-
-    .instructor-card{
-      max-width:1200px;
-
-      margin:0 auto;
-
-      position:relative;
-
-      overflow:hidden;
-
-      border-radius:28px;
-
-      background:#d9d7cf;
-    }
-
-    .instructor-visual{
-      min-height:550px;
-
-      display:flex;
-
-      align-items:center;
-
-      justify-content:center;
-    }
-
-    .person-svg{
-      width:100%;
-      height:100%;
-
-      min-height:550px;
-    }
-
-    .instructor-caption{
-      position:absolute;
-
-      left:35px;
-      bottom:30px;
-
-      padding:16px 20px;
-
-      background:rgba(255,255,255,.88);
-
-      border-radius:14px;
-    }
-
-    .instructor-caption .name{
-      font-size:13px;
-
-      font-weight:800;
-
-      text-transform:uppercase;
-
-      letter-spacing:.06em;
-    }
-
-    .instructor-caption .role{
-      margin-top:4px;
-
-      color:var(--muted);
-
-      font-size:11px;
-    }
-
-    .arrows{
-      position:absolute;
-
-      right:30px;
-      bottom:30px;
-
-      display:flex;
-
-      gap:10px;
-    }
-
-    .arrow-btn{
-      width:48px;
-      height:48px;
-
-      border:0;
-
-      border-radius:50%;
-
-      background:#fff;
-
-      display:flex;
-
-      align-items:center;
-
-      justify-content:center;
-
-      cursor:pointer;
-    }
-
-    .arrow-btn svg{
-      width:18px;
-      height:18px;
+      border: 1px solid #d5d5d2;
     }
 
 
-    /* =====================================
-       FACILITIES
-    ===================================== */
+    /* =========================
+       CROSS
+    ========================= */
 
-    .facilities{
-      background:#fff;
-    }
+    .cross {
+      font-size: 20px;
+      font-weight: 400;
 
-    .facility-grid{
-      max-width:1200px;
+      margin-right: 12px;
 
-      margin:0 auto;
+      line-height: 1;
 
-      display:grid;
-
-      grid-template-columns:repeat(2,1fr);
-
-      gap:25px;
-    }
-
-    .facility-card{
-      position:relative;
-
-      min-height:500px;
-
-      padding:35px;
-
-      overflow:hidden;
-
-      border-radius:25px;
-
-      background:var(--olive);
-
-      color:#fff;
-    }
-
-    .facility-card:nth-child(2){
-      background:#25251c;
-    }
-
-    .facility-number{
-      font-size:12px;
-
-      font-weight:700;
-
-      letter-spacing:.1em;
-    }
-
-    .facility-card h3{
-      position:absolute;
-
-      left:35px;
-      bottom:35px;
-
-      max-width:350px;
-
-      font-size:45px;
-
-      line-height:.95;
-
-      font-weight:900;
-
-      letter-spacing:-.05em;
-
-      text-transform:uppercase;
-    }
-
-    .court-svg{
-      position:absolute;
-
-      inset:0;
-
-      width:100%;
-      height:100%;
-
-      opacity:.75;
+      flex-shrink: 0;
     }
 
 
-    /* =====================================
-       FOOTER
-    ===================================== */
+    /* =========================
+       CARD TEXT
+    ========================= */
 
-    footer{
-      padding:70px 7% 35px;
+    .work-card p {
+      font-size: 14px;
+      line-height: 1.25;
 
-      background:var(--olive-dark);
+      font-weight: 600;
 
-      color:#fff;
-    }
-
-    .footer-inner{
-      max-width:1200px;
-
-      margin:0 auto;
-
-      display:flex;
-
-      justify-content:space-between;
-
-      align-items:flex-end;
-
-      gap:40px;
-    }
-
-    .footer-logo{
-      font-size:24px;
-
-      font-weight:900;
-
-      letter-spacing:.08em;
-    }
-
-    .footer-copy{
-      margin-top:12px;
-
-      max-width:400px;
-
-      color:rgba(255,255,255,.65);
-
-      font-size:12px;
-
-      line-height:1.7;
-    }
-
-    .footer-right{
-      font-size:11px;
-
-      font-weight:700;
-
-      letter-spacing:.1em;
-
-      text-transform:uppercase;
-    }
-
-    .footer-bottom{
-      max-width:1200px;
-
-      margin:60px auto 0;
-
-      padding-top:20px;
-
-      border-top:1px solid rgba(255,255,255,.15);
-
-      display:flex;
-
-      justify-content:space-between;
-
-      color:rgba(255,255,255,.55);
-
-      font-size:10px;
-
-      letter-spacing:.08em;
-
-      text-transform:uppercase;
+      color: #202018;
     }
 
 
-    /* =====================================
+    /* =========================
+       21-DAY JOURNEY
+    ========================= */
+
+    .journey-section {
+      width: 100%;
+
+      padding: 100px 0 110px;
+
+      background: #ffffff;
+
+      overflow: hidden;
+    }
+
+
+    /* =========================
+       JOURNEY HEADER
+    ========================= */
+
+    .journey-header {
+      width: 90%;
+      max-width: 1400px;
+
+      margin: 0 auto 50px;
+
+      display: flex;
+
+      align-items: flex-end;
+
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+
+    .journey-title {
+      font-size: clamp(40px, 6vw, 82px);
+
+      line-height: 0.9;
+
+      letter-spacing: -4px;
+
+      font-weight: 700;
+
+      color: #202018;
+    }
+
+
+    .journey-intro {
+      max-width: 330px;
+
+      font-size: 14px;
+
+      line-height: 1.5;
+
+      color: #736e4e;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.5px;
+    }
+
+
+    /* =========================
+       MOVING CARD TRACK
+    ========================= */
+
+    .journey-track {
+      display: flex;
+
+      width: max-content;
+
+      flex-direction: row;
+
+      flex-wrap: nowrap;
+
+      gap: 14px;
+
+      padding-left: 5%;
+
+      animation: journeyLeft 30s linear infinite;
+
+      will-change: transform;
+    }
+
+
+    /* =========================
+       JOURNEY CARD
+    ========================= */
+
+    .journey-card {
+      width: 300px;
+
+      min-width: 300px;
+
+      max-width: 300px;
+
+      height: 310px;
+
+      flex: 0 0 300px;
+
+      background: #202018;
+
+      color: #ffffff;
+
+      padding: 25px;
+
+      position: relative;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
+      overflow: hidden;
+    }
+
+
+    /* =========================
+       CARD NUMBER
+    ========================= */
+
+    .journey-number {
+      font-size: 14px;
+
+      font-weight: 700;
+
+      letter-spacing: 1px;
+
+      color: #fff18f;
+    }
+
+
+    /* =========================
+       CARD CONTENT
+    ========================= */
+
+    .journey-card-content {
+      margin-top: auto;
+    }
+
+
+    .journey-card h3 {
+      font-size: 29px;
+
+      line-height: 0.95;
+
+      font-weight: 700;
+
+      letter-spacing: -1.2px;
+
+      margin-bottom: 18px;
+
+      color: #ffffff;
+    }
+
+
+    .journey-card p {
+      font-size: 14px;
+
+      line-height: 1.45;
+
+      color: #d7d7d1;
+
+      max-width: 250px;
+    }
+
+
+    /* =========================
+       COMPANY STRUCTURE
+    ========================= */
+
+    .launch-structure {
+      margin-top: 18px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 6px;
+    }
+
+
+    .launch-structure span {
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: 1px;
+
+      border-bottom: 1px solid rgba(255,255,255,0.35);
+
+      padding-bottom: 5px;
+
+      color: #ffffff;
+    }
+
+
+    /* =========================
+       LAUNCH CARD
+    ========================= */
+
+    .journey-card.launch-card {
+      background: #736e4e;
+    }
+
+
+    /* =========================
+       CONTINUOUS LEFT MOVEMENT
+    ========================= */
+
+    @keyframes journeyLeft {
+
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+
+    }
+
+
+    /* =====================================================
+       FINAL APPLICATION FOOTER
+    ===================================================== */
+
+    .final-footer {
+      position: relative;
+
+      width: 100%;
+
+      min-height: 620px;
+
+      overflow: hidden;
+
+      background: #111111;
+
+      color: #ffffff;
+
+      display: flex;
+
+      align-items: center;
+    }
+
+
+    /* =====================================================
+       BLACK & WHITE BACKGROUND IMAGE
+    ===================================================== */
+
+    .footer-bg {
+      position: absolute;
+
+      inset: -10px;
+
+      background-image: url("assets/PROGRAM1.JPEG");
+
+      background-size: cover;
+
+      background-position: center;
+
+      background-repeat: no-repeat;
+
+      filter: grayscale(100%) blur(2px);
+
+      transform: scale(1.02);
+
+      z-index: 0;
+    }
+
+
+    /* =====================================================
+       LIGHT DARK OVERLAY
+    ===================================================== */
+
+    .footer-overlay {
+      position: absolute;
+
+      inset: 0;
+
+      background: rgba(0, 0, 0, 0.48);
+
+      z-index: 1;
+    }
+
+
+    /* =====================================================
+       FOOTER CONTENT
+    ===================================================== */
+
+    .footer-content {
+      position: relative;
+
+      width: 90%;
+
+      max-width: 1250px;
+
+      margin: 0 auto;
+
+      padding: 70px 0;
+
+      z-index: 2;
+    }
+
+
+    /* =====================================================
+       TOP TEXT
+    ===================================================== */
+
+    .footer-top {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: flex-start;
+
+      gap: 40px;
+
+      margin-bottom: 45px;
+    }
+
+
+    .footer-label {
+      font-size: 13px;
+
+      font-weight: 700;
+
+      letter-spacing: 1.5px;
+
+      color: #ffffff;
+    }
+
+
+    .footer-description {
+      max-width: 380px;
+
+      font-size: 13px;
+
+      line-height: 1.5;
+
+      color: #ffffff;
+    }
+
+
+    /* =====================================================
+       BIG STATEMENT
+    ===================================================== */
+
+    .footer-statement {
+      margin-bottom: 38px;
+    }
+
+
+    .footer-big-text {
+      font-size: clamp(48px, 8vw, 105px);
+
+      line-height: 0.85;
+
+      letter-spacing: -4px;
+
+      font-weight: 700;
+
+      color: #ffffff;
+    }
+
+
+    .footer-big-text + .footer-big-text {
+      color: #ffffff;
+    }
+
+
+    /* =====================================================
+       MIDDLE
+    ===================================================== */
+
+    .footer-middle {
+      display: flex;
+
+      align-items: center;
+
+      gap: 28px;
+
+      margin-bottom: 45px;
+    }
+
+
+    .footer-select {
+      font-size: 12px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+      color: #ffffff;
+    }
+
+
+    .footer-company-count,
+    .footer-days {
+      font-size: 15px;
+
+      font-weight: 700;
+
+      letter-spacing: 1px;
+
+      color: #ffffff;
+    }
+
+
+    .footer-company-count::before,
+    .footer-days::before {
+      content: "•";
+
+      margin-right: 14px;
+
+      color: #ffffff;
+    }
+
+
+    /* =====================================================
+       INVITATION
+    ===================================================== */
+
+    .footer-invitation {
+      max-width: 780px;
+
+      margin-bottom: 45px;
+    }
+
+
+    .footer-invitation p {
+      font-size: clamp(18px, 2.3vw, 27px);
+
+      line-height: 1.25;
+
+      letter-spacing: -0.4px;
+
+      font-weight: 400;
+
+      color: #ffffff;
+
+      margin-bottom: 20px;
+    }
+
+
+    .footer-invitation h2 {
+      font-size: clamp(28px, 4vw, 48px);
+
+      line-height: 1;
+
+      letter-spacing: -2px;
+
+      font-weight: 700;
+
+      color: #ffffff;
+    }
+
+
+    /* =====================================================
+       BOTTOM
+    ===================================================== */
+
+    .footer-bottom {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+
+    .footer-open {
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: 1.5px;
+
+      color: #ffffff;
+    }
+
+
+    /* =====================================================
+       FOOTER APPLY BUTTON
+    ===================================================== */
+
+    .footer-apply-btn {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      padding: 7px 7px 7px 17px;
+
+      background: #ffffff;
+
+      color: #111111;
+
+      text-decoration: none;
+
+      border-radius: 50px;
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.5px;
+
+      transition: 0.3s ease;
+    }
+
+
+    .footer-arrow {
+      width: 31px;
+
+      height: 31px;
+
+      border-radius: 50%;
+
+      background: #111111;
+
+      color: #ffffff;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      font-size: 16px;
+
+      transition: 0.3s ease;
+    }
+
+
+    .footer-apply-btn:hover {
+      background: #111111;
+
+      color: #ffffff;
+
+      transform: translateY(-2px);
+    }
+
+
+    .footer-apply-btn:hover .footer-arrow {
+      background: #ffffff;
+
+      color: #111111;
+
+      transform: translateX(3px);
+    }
+
+
+    /* =====================================================
        TABLET
-    ===================================== */
+    ===================================================== */
 
-    @media(max-width:900px){
+    @media (max-width: 900px) {
 
-      nav{
-        padding:25px;
-      }
-
-      .nav-left{
-        gap:18px;
-      }
-
-      .hero-stage{
-        padding:70px 6% 100px;
+      .real-work-section {
+        padding: 35px 25px;
       }
 
 
-      /* FLOAT CARDS */
-
-      .float-stats{
-        grid-template-columns:repeat(2,1fr);
-
-        gap:12px;
-      }
-
-      .float-card{
-        min-height:65px;
-
-        padding:10px;
-      }
-
-      .float-icon{
-        width:38px;
-        height:38px;
-      }
-
-      .float-number{
-        font-size:18px;
-      }
-
-      .float-label{
-        font-size:9px;
+      .real-work-card {
+        padding: 30px 25px 32px;
       }
 
 
-      /* REAL WORK */
+      .work-cards {
+        grid-template-columns: repeat(3, minmax(210px, 1fr));
 
-      .real-work-cards{
-        grid-template-columns:repeat(2,1fr);
-      }
+        width: max-content;
 
-      .work-card:last-child{
-        grid-column:1 / -1;
-      }
-
-
-      /* TRUST */
-
-      .trust-row{
-        gap:35px;
-      }
-
-      .trust-card{
-        padding:28px;
+        min-width: 100%;
       }
 
 
-      /* FACILITIES */
-
-      .facility-card{
-        min-height:400px;
-      }
-
-      .facility-card h3{
-        font-size:38px;
-      }
-
-    }
-
-
-    /* =====================================
-       MOBILE
-    ===================================== */
-
-    @media(max-width:760px){
-
-      .hero{
-        min-height:850px;
-
-        border-radius:0 0 20px 20px;
-      }
-
-      nav{
-        display:flex;
-
-        justify-content:space-between;
-
-        align-items:center;
-
-        padding:20px;
-      }
-
-      .nav-left{
-        display:none;
-      }
-
-      .brand{
-        font-size:10px;
-
-        text-align:left;
-
-        color:#000;
-      }
-
-      .nav-right a{
-        display:block;
-
-        color:#000;
-      }
-
-      .menu-btn{
-        width:45px;
-        height:45px;
+      .work-card {
+        min-height: 95px;
       }
 
 
-      .hero-stage{
-        min-height:730px;
+      /* JOURNEY */
 
-        display:block;
-
-        padding:100px 25px 40px;
-      }
-
-      .hero-content{
-        max-width:100%;
-      }
-
-      .headline{
-        font-size:clamp(58px,17vw,100px);
-
-        gap:0 12px;
-      }
-
-      .headline .solid,
-      .headline .ghost{
-        color:#000;
-      }
-
-      .hero-description{
-        max-width:100%;
-
-        margin-top:28px;
-
-        font-size:13px;
-
-        line-height:1.7;
-
-        color:#000;
-      }
-
-      .hero-description strong{
-        color:#000;
-      }
-
-      .build-real{
-        font-size:11px;
-      }
-
-      .event-info{
-        font-size:11px;
-
-        margin-top:20px;
-
-        color:#000;
+      .journey-section {
+        padding: 75px 0 85px;
       }
 
 
-      /* FLOAT CARDS */
+      .journey-header {
+        width: 90%;
 
-      .float-stats{
-        position:relative;
+        margin-bottom: 35px;
 
-        width:100%;
+        display: flex;
 
-        margin-top:35px;
-
-        display:grid;
-
-        grid-template-columns:repeat(2,1fr);
-
-        gap:10px;
-      }
-
-      .float-card{
-        min-height:70px;
+        align-items: flex-end;
       }
 
 
-      /* GENERAL */
-
-      section:not(.hero){
-        padding:70px 20px;
+      .journey-title {
+        font-size: 62px;
       }
 
 
-      /* REAL WORK */
-
-      .real-work{
-        padding-top:70px !important;
-      }
-
-      .real-work-header{
-        margin-bottom:35px;
-      }
-
-      .real-work-header h2{
-        font-size:clamp(40px,12vw,65px);
-      }
-
-      .real-work-header p{
-        font-size:15px;
-      }
-
-      .real-work-cards{
-        grid-template-columns:1fr;
-
-        gap:14px;
-      }
-
-      .work-card{
-        min-height:320px;
-
-        padding:25px;
-      }
-
-      .work-card:last-child{
-        grid-column:auto;
-      }
-
-      .work-icon{
-        margin-top:25px;
-      }
-
-      .work-card h3{
-        font-size:25px;
-      }
-
-      .real-work-bottom{
-        font-size:10px;
-
-        line-height:1.7;
-      }
-
-      .real-work-bottom span{
-        display:block;
-
-        margin:3px 0 0;
+      .journey-intro {
+        max-width: 280px;
       }
 
 
-      /* TRUST */
+      .journey-track {
+        gap: 12px;
 
-      .trust-row{
-        flex-direction:column;
+        padding-left: 5%;
 
-        align-items:stretch;
-
-        gap:30px;
-      }
-
-      .badge-circle{
-        width:160px;
-        height:160px;
-
-        margin:0 auto;
-      }
-
-      .trust-card{
-        grid-template-columns:1fr;
-
-        gap:15px;
-      }
-
-      .trust-card h4{
-        font-size:21px;
+        animation-duration: 26s;
       }
 
 
-      /* INSTRUCTORS */
+      .journey-card {
+        width: 280px;
 
-      .section-top{
-        display:block;
-      }
+        min-width: 280px;
 
-      .section-description{
-        margin-top:25px;
-      }
+        max-width: 280px;
 
-      .section-title{
-        font-size:clamp(45px,13vw,75px);
-      }
+        height: 300px;
 
-      .instructor-visual{
-        min-height:430px;
-      }
+        flex: 0 0 280px;
 
-      .person-svg{
-        min-height:430px;
-      }
-
-      .instructor-caption{
-        left:20px;
-        bottom:20px;
-      }
-
-      .arrows{
-        right:20px;
-        bottom:20px;
-      }
-
-
-      /* FACILITIES */
-
-      .facility-grid{
-        grid-template-columns:1fr;
-      }
-
-      .facility-card{
-        min-height:400px;
-      }
-
-      .facility-card h3{
-        font-size:40px;
+        padding: 24px;
       }
 
 
       /* FOOTER */
 
-      .footer-inner{
-        display:block;
+      .final-footer {
+        min-height: 570px;
       }
 
-      .footer-right{
-        margin-top:30px;
+
+      .footer-content {
+        padding: 60px 0;
       }
 
-      .footer-bottom{
-        display:block;
-      }
 
-      .footer-bottom div + div{
-        margin-top:10px;
+      .footer-big-text {
+        letter-spacing: -3px;
       }
 
     }
 
 
-    /* =====================================
-       SMALL MOBILE
-    ===================================== */
+    /* =====================================================
+       MOBILE
+    ===================================================== */
 
-    @media(max-width:480px){
+    @media (max-width: 700px) {
 
-      .hero{
-        min-height:900px;
+      /* HERO */
+
+      .hero {
+        min-height: 600px;
+
+        height: 100svh;
       }
 
-      .brand{
-        font-size:9px;
+
+      /* NAV */
+
+      .hero-nav {
+        padding: 18px;
       }
 
-      .hero-stage{
-        padding:90px 20px 35px;
+
+      /* LOGO */
+
+      .logo img {
+        width: 85px;
       }
 
-      .headline{
-        font-size:18vw;
+
+      /* APPLY */
+
+      .apply-btn {
+        padding: 6px 6px 6px 13px;
+
+        gap: 6px;
+
+        font-size: 10px;
       }
 
-      .hero-description{
-        font-size:12px;
+
+      .apply-icon {
+        width: 24px;
+
+        height: 24px;
       }
 
-      .float-stats{
-        margin-top:30px;
+
+      .apply-icon svg {
+        width: 11px;
+
+        height: 11px;
       }
 
-      .float-card{
-        padding:9px;
 
-        border-radius:13px;
+      /* =========================
+         REAL WORK
+      ========================= */
+
+      .real-work-section {
+        padding: 25px 15px;
+
+        overflow-x: auto;
       }
 
-      .float-icon{
-        width:34px;
-        height:34px;
 
-        border-radius:9px;
+      .real-work-card {
+        padding: 28px 18px 30px;
+
+        width: max-content;
+
+        min-width: 100%;
       }
 
-      .float-icon svg{
-        width:18px;
-        height:18px;
+
+      .real-work-heading {
+        font-size: 29px;
+
+        letter-spacing: -1px;
+
+        margin-bottom: 22px;
       }
 
-      .float-number{
-        font-size:16px;
+
+      .work-cards {
+        display: grid;
+
+        grid-template-columns:
+          repeat(3, minmax(210px, 1fr));
+
+        gap: 10px;
+
+        width: max-content;
+
+        min-width: 100%;
       }
 
-      .float-label{
-        font-size:8px;
+
+      .work-card {
+        min-height: 95px;
+
+        padding: 18px;
+
+        width: 100%;
       }
 
-      .trust-card{
-        padding:23px;
+
+      .work-card p {
+        font-size: 14px;
       }
 
-      .work-card{
-        min-height:300px;
+
+      /* =========================
+         JOURNEY
+      ========================= */
+
+      .journey-section {
+        padding: 65px 0 75px;
+
+        overflow: hidden;
       }
 
-      .facility-card{
-        min-height:330px;
+
+      .journey-header {
+        width: 90%;
+
+        margin: 0 auto 35px;
+
+        display: flex;
+
+        align-items: flex-end;
+
+        justify-content: space-between;
+
+        gap: 20px;
       }
 
-      .facility-card h3{
-        left:25px;
-        bottom:25px;
 
-        font-size:34px;
+      .journey-title {
+        font-size: 48px;
+
+        line-height: 0.9;
+
+        letter-spacing: -2.5px;
+
+        white-space: nowrap;
+      }
+
+
+      .journey-intro {
+        max-width: 230px;
+
+        font-size: 10px;
+
+        line-height: 1.45;
+
+        margin: 0;
+
+        text-align: right;
+      }
+
+
+      /* =========================
+         MOBILE MOVING ROW
+      ========================= */
+
+      .journey-track {
+        width: max-content;
+
+        display: flex;
+
+        flex-direction: row;
+
+        flex-wrap: nowrap;
+
+        gap: 10px;
+
+        padding-left: 5%;
+
+        animation-name: journeyLeft;
+
+        animation-duration: 22s;
+
+        animation-timing-function: linear;
+
+        animation-iteration-count: infinite;
+      }
+
+
+      /* =========================
+         SAME WIDTH FOR EVERY CARD
+      ========================= */
+
+      .journey-card {
+        width: 245px;
+
+        min-width: 245px;
+
+        max-width: 245px;
+
+        height: 280px;
+
+        flex: 0 0 245px;
+
+        padding: 22px;
+      }
+
+
+      .journey-card h3 {
+        font-size: 26px;
+
+        letter-spacing: -1px;
+
+        margin-bottom: 15px;
+      }
+
+
+      .journey-card p {
+        font-size: 13px;
+
+        line-height: 1.4;
+      }
+
+
+      .journey-number {
+        font-size: 12px;
+      }
+
+
+      .launch-structure {
+        margin-top: 14px;
+
+        gap: 5px;
+      }
+
+
+      .launch-structure span {
+        font-size: 9px;
+
+        padding-bottom: 4px;
+      }
+
+
+      /* =========================
+         MOBILE FOOTER
+      ========================= */
+
+      .final-footer {
+        min-height: auto;
+      }
+
+
+      .footer-bg {
+        inset: -5px;
+
+        filter: grayscale(100%) blur(1.5px);
+
+        transform: scale(1.02);
+      }
+
+
+      .footer-overlay {
+        background: rgba(0, 0, 0, 0.50);
+      }
+
+
+      .footer-content {
+        width: 90%;
+
+        padding: 55px 0;
+      }
+
+
+      /* TOP */
+
+      .footer-top {
+        display: block;
+
+        margin-bottom: 35px;
+      }
+
+
+      .footer-label {
+        display: block;
+
+        margin-bottom: 14px;
+
+        font-size: 11px;
+      }
+
+
+      .footer-description {
+        max-width: 280px;
+
+        font-size: 12px;
+
+        line-height: 1.45;
+      }
+
+
+      /* BIG TEXT */
+
+      .footer-statement {
+        margin-bottom: 30px;
+      }
+
+
+      .footer-big-text {
+        font-size: 52px;
+
+        line-height: 0.88;
+
+        letter-spacing: -2.5px;
+      }
+
+
+      /* MIDDLE */
+
+      .footer-middle {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 11px;
+
+        margin-bottom: 35px;
+      }
+
+
+      .footer-select {
+        font-size: 10px;
+      }
+
+
+      .footer-company-count,
+      .footer-days {
+        font-size: 13px;
+      }
+
+
+      .footer-company-count::before,
+      .footer-days::before {
+        margin-right: 10px;
+      }
+
+
+      /* INVITATION */
+
+      .footer-invitation {
+        padding: 0;
+
+        margin-bottom: 35px;
+      }
+
+
+      .footer-invitation p {
+        font-size: 19px;
+
+        line-height: 1.25;
+
+        margin-bottom: 18px;
+      }
+
+
+      .footer-invitation h2 {
+        font-size: 31px;
+
+        letter-spacing: -1px;
+      }
+
+
+      /* BOTTOM */
+
+      .footer-bottom {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+      }
+
+
+      .footer-open {
+        font-size: 10px;
+      }
+
+
+      .footer-apply-btn {
+        font-size: 9px;
+
+        padding-left: 15px;
+
+        gap: 9px;
+      }
+
+
+      .footer-arrow {
+        width: 29px;
+
+        height: 29px;
+
+        font-size: 14px;
+      }
+
+    }
+
+
+    /* =====================================================
+       VERY SMALL MOBILE
+    ===================================================== */
+
+    @media (max-width: 480px) {
+
+      .hero-nav {
+        padding: 16px;
+      }
+
+
+      .logo img {
+        width: 78px;
+      }
+
+
+      .journey-section {
+        padding-top: 55px;
+
+        padding-bottom: 65px;
+      }
+
+
+      .journey-header {
+        width: 90%;
+
+        gap: 15px;
+      }
+
+
+      .journey-title {
+        font-size: 40px;
+
+        letter-spacing: -2px;
+      }
+
+
+      .journey-intro {
+        max-width: 150px;
+
+        font-size: 8px;
+      }
+
+
+      .journey-track {
+        gap: 10px;
+
+        animation-duration: 20s;
+      }
+
+
+      .journey-card {
+        width: 230px;
+
+        min-width: 230px;
+
+        max-width: 230px;
+
+        flex: 0 0 230px;
+
+        height: 270px;
+
+        padding: 20px;
+      }
+
+
+      .journey-card h3 {
+        font-size: 24px;
+      }
+
+
+      .journey-card p {
+        font-size: 12px;
+      }
+
+
+      /* FOOTER */
+
+      .footer-content {
+        padding: 48px 0;
+      }
+
+
+      .footer-big-text {
+        font-size: 43px;
+
+        letter-spacing: -2px;
+      }
+
+
+      .footer-invitation p {
+        font-size: 17px;
+      }
+
+
+      .footer-invitation h2 {
+        font-size: 28px;
+      }
+
+
+      .footer-apply-btn {
+        width: 100%;
+
+        justify-content: space-between;
+      }
+
+    }
+
+
+    /* =====================================================
+       REDUCED MOTION
+    ===================================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .journey-track {
+        animation: none;
       }
 
     }
@@ -1460,405 +1459,632 @@
 
 </head>
 
+
 <body>
 
-  <!-- =====================================
+
+  <!-- =========================
        HERO
-  ===================================== -->
+  ========================= -->
 
   <section class="hero">
 
-```
-<div class="hero-bg"></div>
+    <img
+      src="assets/p-h.jpeg"
+      alt="The White Startup School"
+      class="hero-image"
+    >
 
 
-<nav>
+    <div class="hero-nav">
 
-  <div class="nav-left">
-  </div>
+      <a href="#" class="logo">
 
+        <img
+          src="assets/logo.png"
+          alt="The White Startup School"
+        >
 
-  <div class="brand">
-    THE WHITE STARTUP SCHOOL
-  </div>
-
-
-  <div class="nav-right">
-
-    <a href="#">
-      APPLY
-    </a>
-
-  </div>
-
-</nav>
+      </a>
 
 
-<div class="hero-stage">
+      <!-- BLACK APPLY BUTTON -->
 
-  <div class="hero-content">
+      <a href="#apply" class="apply-btn">
 
-    <h1 class="headline">
-
-      <span class="solid">
-        BUILD WHAT'S
-      </span>
-
-      <span class="ghost">
-        NEXT
-      </span>
-
-    </h1>
+        <span>
+          APPLY NOW
+        </span>
 
 
-    <div class="hero-description">
+        <span class="apply-icon">
 
-      <p>
-        The White Startup School™ is a private,
-        immersive 21-day founder experience designed
-        for just <strong>15 selected founders.</strong>
-        Step away from the ordinary and into an
-        environment built around one thing:
+          <svg viewBox="0 0 24 24">
+
+            <path d="M5 12h13"></path>
+
+            <path d="M13 6l6 6-6 6"></path>
+
+          </svg>
+
+        </span>
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       REAL WORK SECTION
+  ========================= -->
+
+  <section class="real-work-section">
+
+    <div class="real-work-card">
+
+      <h2 class="real-work-heading">
+
+        THIS IS NOT ANOTHER COURSE.<br>
+
+        THIS IS WHERE THE REAL WORK HAPPENS
+
+      </h2>
+
+
+      <div class="work-cards">
+
+        <div class="work-card">
+
+          <span class="cross">
+            ✕
+          </span>
+
+          <p>
+            Not a mass classroom
+          </p>
+
+        </div>
+
+
+        <div class="work-card">
+
+          <span class="cross">
+            ✕
+          </span>
+
+          <p>
+            Not a collection of recorded lessons
+          </p>
+
+        </div>
+
+
+        <div class="work-card">
+
+          <span class="cross">
+            ✕
+          </span>
+
+          <p>
+            Not a polished social-media program
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       THE 21-DAY JOURNEY
+  ========================= -->
+
+  <section class="journey-section">
+
+    <div class="journey-header">
+
+      <h2 class="journey-title">
+
+        THE 21-DAY<br>
+
+        JOURNEY
+
+      </h2>
+
+
+      <p class="journey-intro">
+
+        A focused journey from your first idea
+        to a business prepared for its next chapter.
+
       </p>
 
-
-      <div class="build-real">
-        BUILDING SOMETHING REAL.
-      </div>
-
     </div>
 
 
-    <div class="event-info">
+    <div class="journey-track">
 
-      19 SEPTEMBER 2026
 
-      <span>·</span>
+      <div class="journey-card">
 
-      OOTY
+        <span class="journey-number">
+          01
+        </span>
+
+        <div class="journey-card-content">
+
+          <h3>
+            THE IDEA
+          </h3>
+
+          <p>
+            Clarify your idea, opportunity,
+            customer and direction.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="journey-card">
+
+        <span class="journey-number">
+          02
+        </span>
+
+        <div class="journey-card-content">
+
+          <h3>
+            THE STRATEGY
+          </h3>
+
+          <p>
+            Build the business model,
+            positioning and roadmap.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="journey-card">
+
+        <span class="journey-number">
+          03
+        </span>
+
+        <div class="journey-card-content">
+
+          <h3>
+            THE IDENTITY
+          </h3>
+
+          <p>
+            Create the brand, identity and
+            foundation of your presence.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="journey-card">
+
+        <span class="journey-number">
+          04
+        </span>
+
+        <div class="journey-card-content">
+
+          <h3>
+            THE MARKET
+          </h3>
+
+          <p>
+            Understand your audience,
+            competition and market opportunity.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="journey-card">
+
+        <span class="journey-number">
+          05
+        </span>
+
+        <div class="journey-card-content">
+
+          <h3>
+            THE ENGINE
+          </h3>
+
+          <p>
+            Build your marketing, sales and
+            customer acquisition systems.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="journey-card">
+
+        <span class="journey-number">
+          06
+        </span>
+
+        <div class="journey-card-content">
+
+          <h3>
+            THE FOUNDATION
+          </h3>
+
+          <p>
+            Work through finance, accounts,
+            HR, operations and essential
+            business systems.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="journey-card">
+
+        <span class="journey-number">
+          07
+        </span>
+
+        <div class="journey-card-content">
+
+          <h3>
+            THE COMPANY
+          </h3>
+
+          <p>
+            Move from idea to formal
+            business structure.
+          </p>
+
+          <div class="launch-structure">
+
+            <span>
+              LLP
+            </span>
+
+            <span>
+              PRIVATE LIMITED
+            </span>
+
+            <span>
+              PROPRIETORSHIP
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="journey-card launch-card">
+
+        <span class="journey-number">
+          08
+        </span>
+
+        <div class="journey-card-content">
+
+          <h3>
+            THE LAUNCH
+          </h3>
+
+          <p>
+            Bring everything together and
+            prepare your company for its
+            next chapter.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- DUPLICATE -->
+
+      <div class="journey-card">
+
+        <span class="journey-number">
+          01
+        </span>
+
+        <div class="journey-card-content">
+
+          <h3>
+            THE IDEA
+          </h3>
+
+          <p>
+            Clarify your idea, opportunity,
+            customer and direction.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="journey-card">
+
+        <span class="journey-number">
+          02
+        </span>
+
+        <div class="journey-card-content">
+
+          <h3>
+            THE STRATEGY
+          </h3>
+
+          <p>
+            Build the business model,
+            positioning and roadmap.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="journey-card">
+
+        <span class="journey-number">
+          03
+        </span>
+
+        <div class="journey-card-content">
+
+          <h3>
+            THE IDENTITY
+          </h3>
+
+          <p>
+            Create the brand, identity and
+            foundation of your presence.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="journey-card">
+
+        <span class="journey-number">
+          04
+        </span>
+
+        <div class="journey-card-content">
+
+          <h3>
+            THE MARKET
+          </h3>
+
+          <p>
+            Understand your audience,
+            competition and market opportunity.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="journey-card">
+
+        <span class="journey-number">
+          05
+        </span>
+
+        <div class="journey-card-content">
+
+          <h3>
+            THE ENGINE
+          </h3>
+
+          <p>
+            Build your marketing, sales and
+            customer acquisition systems.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="journey-card">
+
+        <span class="journey-number">
+          06
+        </span>
+
+        <div class="journey-card-content">
+
+          <h3>
+            THE FOUNDATION
+          </h3>
+
+          <p>
+            Work through finance, accounts,
+            HR, operations and essential
+            business systems.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="journey-card">
+
+        <span class="journey-number">
+          07
+        </span>
+
+        <div class="journey-card-content">
+
+          <h3>
+            THE COMPANY
+          </h3>
+
+          <p>
+            Move from idea to formal
+            business structure.
+          </p>
+
+          <div class="launch-structure">
+
+            <span>
+              LLP
+            </span>
+
+            <span>
+              PRIVATE LIMITED
+            </span>
+
+            <span>
+              PROPRIETORSHIP
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="journey-card launch-card">
+
+        <span class="journey-number">
+          08
+        </span>
+
+        <div class="journey-card-content">
+
+          <h3>
+            THE LAUNCH
+          </h3>
+
+          <p>
+            Bring everything together and
+            prepare your company for its
+            next chapter.
+          </p>
+
+        </div>
+
+      </div>
 
     </div>
-
-
-    <!-- =====================================
-         STAT CARDS
-    ===================================== -->
-
-    <div class="float-stats">
-
-
-      <!-- CARD 01 -->
-
-      <div class="float-card">
-
-        <div class="float-icon">
-
-          <svg viewBox="0 0 24 24" fill="none">
-
-            <path
-              d="M9 18h6M10 22h4"
-              stroke="#4f4b35"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-
-            <path
-              d="M8.5 14.5C7.56 13.66 7 12.45 7 11.1A5 5 0 0117 11c0 1.4-.58 2.65-1.56 3.51-.78.69-1.44 1.55-1.66 2.49H10.2c-.23-.95-.9-1.81-1.7-2.5z"
-              stroke="#4f4b35"
-              stroke-width="1.7"
-              stroke-linejoin="round"
-            />
-
-          </svg>
-
-        </div>
-
-
-        <div>
-
-          <div class="float-number">
-            15
-          </div>
-
-          <div class="float-label">
-            Ideas
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- CARD 02 -->
-
-      <div class="float-card">
-
-        <div class="float-icon">
-
-          <svg viewBox="0 0 24 24" fill="none">
-
-            <path
-              d="M4 21V8h16v13M8 8V4h8v4M2 21h20"
-              stroke="#4f4b35"
-              stroke-width="1.8"
-              stroke-linejoin="round"
-            />
-
-            <path
-              d="M8 12h2M14 12h2M8 16h2M14 16h2"
-              stroke="#4f4b35"
-              stroke-width="1.8"
-              stroke-linecap="round"
-            />
-
-          </svg>
-
-        </div>
-
-
-        <div>
-
-          <div class="float-number">
-            15
-          </div>
-
-          <div class="float-label">
-            Companies
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- CARD 03 -->
-
-      <div class="float-card">
-
-        <div class="float-icon">
-
-          <svg viewBox="0 0 24 24" fill="none">
-
-            <rect
-              x="3"
-              y="5"
-              width="18"
-              height="16"
-              rx="2"
-              stroke="#4f4b35"
-              stroke-width="1.8"
-            />
-
-            <path
-              d="M7 3v4M17 3v4M3 10h18"
-              stroke="#4f4b35"
-              stroke-width="1.8"
-              stroke-linecap="round"
-            />
-
-            <path
-              d="M7 14h3M14 14h3M7 18h3"
-              stroke="#4f4b35"
-              stroke-width="1.8"
-              stroke-linecap="round"
-            />
-
-          </svg>
-
-        </div>
-
-
-        <div>
-
-          <div class="float-number">
-            21
-          </div>
-
-          <div class="float-label">
-            Days
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- CARD 04 -->
-
-      <div class="float-card">
-
-        <div class="float-icon">
-
-          <svg viewBox="0 0 24 24" fill="none">
-
-            <circle
-              cx="9"
-              cy="8"
-              r="3"
-              stroke="#4f4b35"
-              stroke-width="1.8"
-            />
-
-            <circle
-              cx="17"
-              cy="9"
-              r="2.5"
-              stroke="#4f4b35"
-              stroke-width="1.8"
-            />
-
-            <path
-              d="M3.5 20c.3-3.3 2.3-5 5.5-5s5.2 1.7 5.5 5"
-              stroke="#4f4b35"
-              stroke-width="1.8"
-              stroke-linecap="round"
-            />
-
-            <path
-              d="M14 15.5c.8-.8 1.8-1.2 3-1.2 2.2 0 3.5 1.3 3.8 3.7"
-              stroke="#4f4b35"
-              stroke-width="1.8"
-              stroke-linecap="round"
-            />
-
-          </svg>
-
-        </div>
-
-
-        <div>
-
-          <div class="float-number">
-            15
-          </div>
-
-          <div class="float-label">
-            Founders
-          </div>
-
-        </div>
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</div>
-```
 
   </section>
 
-  <!-- =====================================
-       REAL WORK
-  ===================================== -->
-
-  <section class="real-work">
-
-```
-<div class="real-work-header">
-
-  <div class="real-work-label">
-  </div>
 
 
-  <h2>
-    THIS IS NOT ANOTHER COURSE.
-  </h2>
+  <!-- =====================================================
+       FINAL APPLICATION FOOTER
+  ===================================================== -->
+
+  <footer class="final-footer" id="apply">
+
+    <div class="footer-bg"></div>
+
+    <div class="footer-overlay"></div>
+
+    <div class="footer-content">
+
+      <div class="footer-top">
+      </div>
 
 
-  <p>
-    This is where the
-    <strong>real work happens.</strong>
-  </p>
+      <div class="footer-statement">
 
-</div>
+        <div class="footer-big-text">
+          15 FOUNDERS
+        </div>
+
+        <div class="footer-big-text">
+          15 IDEAS
+        </div>
+
+      </div>
 
 
+      <div class="footer-middle">
 
-<!-- THREE SEPARATE CARDS -->
+        <p class="footer-select">
+          You apply. We select.
+        </p>
 
-<div class="real-work-cards">
+      </div>
 
 
-  <!-- CARD 01 -->
+      <div class="footer-invitation">
 
-  <div class="work-card">
+        <p>
+          If you’ve been waiting for the right environment,
+          the right people and the right moment to finally
+          build your company
+        </p>
 
-    <div class="work-icon">
-      ✕
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <div>
+
+          <span class="footer-open">
+            APPLICATIONS ARE NOW OPEN
+          </span>
+
+        </div>
+
+
+        <a href="#" class="footer-apply-btn">
+
+          <span>
+            APPLY &amp; RESERVE YOUR PLACE
+          </span>
+
+          <span class="footer-arrow">
+            →
+          </span>
+
+        </a>
+
+      </div>
+
     </div>
 
+  </footer>
 
-    <h3>
-      NOT A MASS<br>
-      CLASSROOM
-    </h3>
-
-
-    <p>
-      Work in a focused environment with
-      a small, selected group of founders.
-    </p>
-
-  </div>
-
-
-
-  <!-- CARD 02 -->
-
-  <div class="work-card">
-
-    <div class="work-icon">
-      ✕
-    </div>
-
-
-    <h3>
-      NOT RECORDED<br>
-      LESSONS
-    </h3>
-
-
-    <p>
-      Learn by doing, making decisions,
-      testing ideas and working through
-      real challenges.
-    </p>
-
-  </div>
-
-
-
-  <!-- CARD 03 -->
-
-  <div class="work-card">
-
-    <div class="work-icon">
-      ✕
-    </div>
-
-
-    <h3>
-      NOT A SOCIAL<br>
-      MEDIA PROGRAM
-    </h3>
-
-
-    <p>
-      Build alongside founders, develop
-      your idea, make critical decisions
-      and create something real.
-    </p>
-
-  </div>
-
-
-</div>
-```
-
-  </section>
 
 </body>
 
