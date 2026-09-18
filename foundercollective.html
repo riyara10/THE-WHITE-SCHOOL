@@ -1,0 +1,3026 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Founders</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700;800;900&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #151515;
+  font-family: "Inter", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 58%;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.logo {
+  position: absolute;
+  top: 25px;
+  left: 35px;
+  width: 95px;
+  height: auto;
+  z-index: 3;
+}
+
+
+/* =====================================================
+   OUR FOUNDERS
+===================================================== */
+
+.founders-section {
+  position: relative;
+  width: 100%;
+  min-height: 760px;
+  height: 100vh;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.content {
+  position: absolute;
+  left: 6%;
+  top: 25%;
+  width: 470px;
+  z-index: 8;
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.heading {
+  line-height: 0.82;
+  margin-bottom: 38px;
+}
+
+.heading .our {
+  display: block;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 88px;
+  font-style: italic;
+  font-weight: 600;
+
+  color: #f15a24;
+
+  margin-left: 4px;
+  margin-bottom: -5px;
+}
+
+.heading .founders {
+  display: block;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 84px;
+  font-weight: 800;
+
+  letter-spacing: -5px;
+
+  color: #f15a24;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.description {
+  width: 450px;
+
+  font-size: 18px;
+  line-height: 1.45;
+  font-weight: 500;
+
+  color: #272727;
+
+  text-align: justify;
+}
+
+
+/* =====================================================
+   FOUNDER GALLERY
+===================================================== */
+
+.founders-gallery {
+  position: absolute;
+
+  width: 560px;
+  height: 720px;
+
+  right: 6%;
+  top: 7%;
+
+  z-index: 5;
+
+  isolation: isolate;
+}
+
+
+/* =====================================================
+   FOUNDER CARD
+===================================================== */
+
+.founder-card {
+  position: absolute;
+
+  width: 170px;
+  height: 215px;
+
+  background: #eee;
+
+  padding:
+    9px
+    9px
+    18px;
+
+  box-shadow:
+    0 14px 22px rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+
+  overflow: visible;
+}
+
+.founder-card:hover {
+  z-index: 20;
+
+  transform:
+    rotate(0deg)
+    translateY(-8px)
+    scale(1.04);
+
+  box-shadow:
+    0 20px 35px rgba(0, 0, 0, 0.22);
+}
+
+.founder-card img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter: grayscale(100%);
+}
+
+
+/* =====================================================
+   FOUNDER CARD POSITIONS
+===================================================== */
+
+.card-01 {
+  top: 30px;
+  left: 60px;
+  transform: rotate(3deg);
+}
+
+.card-02 {
+  top: 285px;
+  left: 145px;
+  transform: rotate(-2deg);
+}
+
+.card-03 {
+  top: 130px;
+  right: 15px;
+  transform: rotate(4deg);
+}
+
+.card-04 {
+  top: 405px;
+  left: 0;
+  transform: rotate(-3deg);
+}
+
+.card-05 {
+  top: 555px;
+  left: 95px;
+  transform: rotate(2deg);
+}
+
+.card-06 {
+  top: 405px;
+  right: 5px;
+  transform: rotate(-3deg);
+}
+
+
+/* =====================================================
+   ORANGE SHAPE
+===================================================== */
+
+.orange-shape {
+  position: absolute;
+
+  width: 250px;
+  height: 470px;
+
+  right: 5%;
+  top: 15%;
+
+  background: #f15a24;
+
+  border-radius: 50%;
+
+  transform:
+    rotate(28deg)
+    skewY(-7deg);
+
+  opacity: 0.96;
+
+  z-index: -1;
+}
+
+
+/* =====================================================
+   BUILD YOUR ADVANTAGE
+===================================================== */
+
+.advantage-section {
+  position: relative;
+
+  width: 100%;
+  min-height: 650px;
+
+  padding:
+    75px
+    6%
+    70px;
+
+  background: #ffffff;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+/* =====================================================
+   ADVANTAGE HEADING
+===================================================== */
+
+.advantage-heading {
+  margin:
+    0
+    0
+    42px
+    0;
+
+  max-width: 1000px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size:
+    clamp(
+      58px,
+      9vw,
+      80px
+    );
+
+  font-weight: 1000;
+
+  line-height: 0.82;
+
+  letter-spacing: -7px;
+
+  color: #000000;
+}
+
+
+/* =====================================================
+   INFORMATION SLIDER
+===================================================== */
+
+.info-slider {
+  position: relative;
+
+  width: min(680px, 100%);
+  height: 285px;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f15a24 0%,
+      #f15a24 60%,
+      #db4616 100%
+    );
+}
+
+
+/* =====================================================
+   SLIDES
+===================================================== */
+
+.info-slide {
+  position: absolute;
+
+  inset: 0;
+
+  padding:
+    38px
+    45px;
+
+  display: flex;
+  align-items: center;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateX(30px);
+
+  transition:
+    opacity .5s ease,
+    transform .5s cubic-bezier(.22,.61,.36,1);
+}
+
+.info-slide.active {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateX(0);
+}
+
+
+/* =====================================================
+   SLIDE CONTENT
+===================================================== */
+
+.info-content {
+  width: 100%;
+  max-width: 560px;
+}
+
+.info-content h2 {
+  margin-bottom: 15px;
+
+  color: #ffffff;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size:
+    clamp(
+      32px,
+      4.5vw,
+      50px
+    );
+
+  line-height: .96;
+
+  letter-spacing: -2.2px;
+
+  font-weight: 800;
+}
+
+.info-content p {
+  max-width: 530px;
+
+  color: rgba(255,255,255,.88);
+
+  font-size: 13.5px;
+
+  line-height: 1.6;
+
+  font-weight: 400;
+}
+
+
+/* =====================================================
+   SLIDER NAVIGATION
+===================================================== */
+
+.info-navigation {
+  position: absolute;
+
+  left: 45px;
+  right: 45px;
+  bottom: 27px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.info-progress {
+  width: 65px;
+  height: 1px;
+
+  background: rgba(255,255,255,.35);
+
+  overflow: hidden;
+}
+
+.info-progress-fill {
+  width: 20%;
+  height: 100%;
+
+  background: #ffffff;
+
+  transition: width .4s ease;
+}
+
+.info-arrows {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+.info-arrow {
+  position: relative;
+
+  width: 28px;
+  height: 28px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0;
+
+  transition: opacity .25s ease;
+}
+
+.info-arrow:hover {
+  opacity: .65;
+}
+
+.info-arrow::before {
+  content: "";
+
+  width: 10px;
+  height: 10px;
+
+  border-top: 1.5px solid #ffffff;
+  border-right: 1.5px solid #ffffff;
+
+  transition: transform .25s ease;
+}
+
+.info-arrow.prev::before {
+  transform: rotate(-135deg);
+}
+
+.info-arrow.next::before {
+  transform: rotate(45deg);
+}
+
+.info-arrow.prev:hover::before {
+  transform:
+    translateX(-3px)
+    rotate(-135deg);
+}
+
+.info-arrow.next:hover::before {
+  transform:
+    translateX(3px)
+    rotate(45deg);
+}
+
+
+/* =====================================================
+   THE WHITE ADVANTAGE
+===================================================== */
+
+.privileges-section {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 760px;
+
+  padding:
+    70px
+    6%
+    110px;
+
+  background: #ffffff;
+
+  overflow: visible;
+}
+
+
+/* =====================================================
+   PRIVILEGES HEADER
+===================================================== */
+
+.privileges-header {
+  max-width: 1120px;
+
+  margin-bottom: 58px;
+}
+
+.privileges-label {
+  display: block;
+
+  margin-bottom: 20px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+
+  color: #f15a24;
+}
+
+.privileges-heading {
+  margin: 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    clamp(
+      62px,
+      8vw,
+      104px
+    );
+
+  line-height: .82;
+
+  letter-spacing: -7px;
+
+  font-weight: 900;
+
+  color: #111111;
+}
+
+.privileges-intro {
+  width: 390px;
+
+  max-width: 100%;
+
+  margin:
+    25px
+    0
+    0
+    auto;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.65;
+
+  color: #696860;
+}
+
+
+/* =====================================================
+   PRIVILEGES STACK
+===================================================== */
+
+.privileges-stack {
+
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: stretch;
+
+  border:
+    1px solid
+    #161616;
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   PRIVILEGE CARD
+===================================================== */
+
+.privilege-card {
+
+  position: relative;
+
+  flex:
+    1
+    1
+    0;
+
+  min-width: 0;
+
+  height: auto;
+
+  min-height: 205px;
+
+  padding:
+    23px
+    20px;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  border-right:
+    1px solid
+    #161616;
+
+  border-bottom: 0;
+
+  overflow: hidden;
+
+  transition:
+    flex .55s cubic-bezier(.22,.61,.36,1),
+    background .35s ease,
+    min-height .45s ease;
+}
+
+.privilege-card:last-child {
+  border-right: 0;
+}
+
+
+/* =====================================================
+   SHRINK OTHER CARDS
+===================================================== */
+
+.privileges-stack:hover .privilege-card {
+  flex:
+    .82
+    1
+    0;
+}
+
+
+/* =====================================================
+   EXPANDED CARD
+===================================================== */
+
+.privileges-stack .privilege-card:hover {
+
+  flex:
+    1.55
+    1
+    0;
+
+  min-height: 310px;
+
+  background: #f15a24;
+
+  z-index: 2;
+}
+
+
+/* =====================================================
+   MAIN CARD CONTENT
+===================================================== */
+
+.privilege-top {
+
+  position: relative;
+
+  height: 100%;
+
+  min-height: 157px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  transition:
+    opacity .22s ease,
+    transform .35s ease;
+}
+
+
+/* =====================================================
+   NUMBER
+===================================================== */
+
+.privilege-number {
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  color: #8a8982;
+
+  transition:
+    color .25s ease;
+}
+
+
+/* =====================================================
+   MAIN TITLE
+===================================================== */
+
+.privilege-card h3 {
+
+  max-width: 165px;
+
+  margin: 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 19px;
+
+  line-height: .95;
+
+  letter-spacing: -1px;
+
+  font-weight: 800;
+
+  color: #111111;
+
+  transition:
+    color .25s ease;
+}
+
+
+/* =====================================================
+   PLUS
+===================================================== */
+
+.privilege-plus {
+
+  position: absolute;
+
+  top: -2px;
+  right: 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 25px;
+
+  line-height: 1;
+
+  font-weight: 300;
+
+  color: #111111;
+
+  transition:
+    color .25s ease,
+    transform .35s ease;
+}
+
+
+/* =====================================================
+   HIDDEN SUB CONTENT
+===================================================== */
+
+.privilege-hidden {
+
+  position: absolute;
+
+  left: 20px;
+  right: 20px;
+
+  top: 50%;
+
+  transform:
+    translateY(
+      calc(-50% + 20px)
+    );
+
+  max-height: 210px;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    opacity .3s ease,
+    transform .4s
+    cubic-bezier(.22,.61,.36,1);
+}
+
+
+/* =====================================================
+   SUB CONTENT TEXT
+===================================================== */
+
+.privilege-hidden p {
+
+  margin:
+    0
+    0
+    12px;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.45;
+
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+.privilege-hidden span {
+
+  display: block;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 11.5px;
+
+  line-height: 1.55;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      .9
+    );
+}
+
+
+/* =====================================================
+   EXPANDED STATE
+===================================================== */
+
+.privilege-card:hover .privilege-top {
+
+  opacity: 0;
+
+  transform:
+    translateY(-15px);
+
+  pointer-events: none;
+}
+
+
+.privilege-card:hover .privilege-hidden {
+
+  opacity: 1;
+
+  transform:
+    translateY(-50%);
+
+  pointer-events: auto;
+}
+
+
+/* =====================================================
+   FINAL FOUNDER CTA / FOOTER
+===================================================== */
+
+.founder-footer {
+
+  position: relative;
+
+  width: 100%;
+
+  min-height: 560px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      rgba(10, 10, 10, 0.74),
+      rgba(10, 10, 10, 0.88)
+    ),
+    url("https://images.pexels.com/photos/7652178/pexels-photo-7652178.jpeg?auto=compress&cs=tinysrgb&w=2000")
+    center center / cover no-repeat;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   ORANGE TOP LINE
+===================================================== */
+
+.founder-footer::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background: #f15a24;
+
+  z-index: 5;
+}
+
+
+/* =====================================================
+   FOOTER INNER
+===================================================== */
+
+.footer-inner {
+
+  position: relative;
+
+  width: min(1120px, 88%);
+
+  min-height: 440px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding:
+    60px
+    0
+    30px;
+
+  z-index: 3;
+}
+
+
+/* =====================================================
+   FOOTER LABEL
+===================================================== */
+
+.footer-label {
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  color: #f15a24;
+
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   FOOTER MAIN HEADING
+===================================================== */
+
+.footer-heading {
+
+  max-width: 1000px;
+
+  margin:
+    50px
+    auto
+    0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    clamp(
+      48px,
+      7vw,
+      92px
+    );
+
+  line-height: .87;
+
+  letter-spacing: -5px;
+
+  font-weight: 900;
+
+  color: #ffffff;
+
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   ORANGE HEADING ACCENT
+===================================================== */
+
+.footer-heading span {
+  color: #f15a24;
+}
+
+
+/* =====================================================
+   FOOTER SUBHEADING
+===================================================== */
+
+.footer-subheading {
+
+  margin-top: 28px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      25px,
+      3vw,
+      38px
+    );
+
+  line-height: 1;
+
+  font-weight: 600;
+
+  font-style: italic;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      .92
+    );
+}
+
+
+/* =====================================================
+   FOOTER CTA
+===================================================== */
+
+.footer-cta {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 18px;
+
+  margin-top: 40px;
+
+  padding:
+    17px
+    28px;
+
+  border:
+    1px solid
+    #f15a24;
+
+  background: #f15a24;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+
+  transition:
+    background .3s ease,
+    color .3s ease,
+    border-color .3s ease,
+    transform .3s ease;
+}
+
+
+.footer-cta::after {
+
+  content: "↗";
+
+  font-size: 18px;
+
+  line-height: 1;
+
+  transition:
+    transform .3s ease;
+}
+
+
+.footer-cta:hover {
+
+  background: transparent;
+
+  color: #ffffff;
+
+  border-color: #ffffff;
+
+  transform:
+    translateY(-3px);
+}
+
+
+.footer-cta:hover::after {
+
+  transform:
+    translate(
+      3px,
+      -3px
+    );
+}
+
+
+/* =====================================================
+   APPROVAL NOTE
+===================================================== */
+
+.footer-note {
+
+  margin-top: 17px;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+
+  letter-spacing: 1.5px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      .58
+    );
+
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   FOOTER BOTTOM
+===================================================== */
+
+.footer-bottom {
+
+  width: 100%;
+
+  padding-top: 27px;
+
+  border-top:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      .25
+    );
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+}
+
+
+/* =====================================================
+   FOOTER BRAND
+===================================================== */
+
+.footer-brand {
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+
+  color: #ffffff;
+
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   FOOTER BY
+===================================================== */
+
+.footer-by {
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 1.5px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      .55
+    );
+
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .content {
+    left: 5%;
+    width: 400px;
+  }
+
+  .founders-gallery {
+    right: 2%;
+
+    transform:
+      scale(.9);
+
+    transform-origin:
+      top right;
+  }
+
+  .heading .our {
+    font-size: 76px;
+  }
+
+  .heading .founders {
+    font-size: 72px;
+  }
+
+  .description {
+    width: 390px;
+    font-size: 17px;
+  }
+
+  .advantage-section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .privileges-section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .privileges-stack {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .privilege-card {
+
+    flex:
+      1
+      1
+      0;
+
+    height: auto;
+
+    min-height: 205px;
+
+    border-right:
+      1px solid
+      #161616;
+
+    border-bottom: 0;
+  }
+
+  .privilege-card:last-child {
+    border-right: 0;
+  }
+
+  .privileges-stack:hover .privilege-card {
+    flex:
+      .82
+      1
+      0;
+  }
+
+  .privileges-stack .privilege-card:hover {
+
+    flex:
+      1.55
+      1
+      0;
+
+    min-height: 300px;
+
+    height: auto;
+  }
+
+}
+
+
+/* =====================================================
+   HERO TABLET
+===================================================== */
+
+@media (max-width: 1024px) {
+
+  .hero {
+    height: 560px;
+  }
+
+  .hero-image {
+    object-position:
+      center
+      58%;
+  }
+
+  .logo {
+    top: 25px;
+    left: 30px;
+    width: 90px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  /* HERO */
+
+  .hero {
+    height: 520px;
+  }
+
+  .hero-image {
+    object-position:
+      center
+      58%;
+  }
+
+  .logo {
+    top: 20px;
+    left: 20px;
+    width: 75px;
+  }
+
+
+  /* FOUNDERS */
+
+  .founders-section {
+
+    min-height: 1200px;
+
+    height: auto;
+
+    padding-bottom: 100px;
+  }
+
+
+  .content {
+
+    position: relative;
+
+    left: auto;
+    top: auto;
+
+    width: 100%;
+
+    padding:
+      100px
+      22px
+      0;
+  }
+
+
+  .heading {
+    margin-bottom: 30px;
+  }
+
+  .heading .our {
+    font-size: 65px;
+  }
+
+  .heading .founders {
+
+    font-size: 58px;
+
+    letter-spacing: -3px;
+  }
+
+
+  .description {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    font-size: 17px;
+
+    line-height: 1.45;
+  }
+
+
+  /* GALLERY */
+
+  .founders-gallery {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 690px;
+
+    right: auto;
+    top: auto;
+
+    margin-top: 25px;
+
+    transform: none;
+  }
+
+
+  .orange-shape {
+
+    width: 180px;
+
+    height: 400px;
+
+    right: 8%;
+    top: 12%;
+
+    transform:
+      rotate(28deg)
+      skewY(-7deg);
+  }
+
+
+  .founder-card {
+
+    width: 125px;
+    height: 165px;
+
+    padding:
+      7px
+      7px
+      13px;
+  }
+
+
+  .card-01 {
+    top: 20px;
+    left: 18%;
+  }
+
+  .card-03 {
+    top: 85px;
+    right: 7%;
+  }
+
+  .card-02 {
+    top: 190px;
+    left: 37%;
+  }
+
+  .card-04 {
+    top: 320px;
+    left: 8%;
+  }
+
+  .card-06 {
+    top: 350px;
+    right: 8%;
+  }
+
+  .card-05 {
+    top: 485px;
+    left: 32%;
+  }
+
+
+  /* ADVANTAGE */
+
+  .advantage-section {
+
+    min-height: auto;
+
+    padding:
+      70px
+      22px
+      60px;
+
+    align-items: flex-start;
+  }
+
+
+  .advantage-heading {
+
+    max-width: 100%;
+
+    margin-bottom: 38px;
+
+    font-size: 62px;
+
+    line-height: .86;
+
+    letter-spacing: -4px;
+  }
+
+
+  .info-slider {
+
+    width: 100%;
+
+    height: 340px;
+
+    border-radius: 13px;
+  }
+
+
+  .info-slide {
+
+    padding:
+      32px
+      28px;
+
+    align-items: center;
+  }
+
+
+  .info-content h2 {
+
+    font-size: 36px;
+
+    letter-spacing: -1.7px;
+
+    margin-bottom: 14px;
+  }
+
+
+  .info-content p {
+
+    font-size: 12.5px;
+
+    line-height: 1.6;
+  }
+
+
+  .info-navigation {
+
+    left: 28px;
+    right: 28px;
+
+    bottom: 24px;
+  }
+
+
+  .info-arrows {
+    gap: 12px;
+  }
+
+
+  /* =================================================
+     MOBILE PRIVILEGES
+  ================================================= */
+
+  .privileges-section {
+
+    min-height: auto;
+
+    padding:
+      55px
+      20px
+      80px;
+
+    overflow: visible;
+  }
+
+
+  .privileges-header {
+    margin-bottom: 42px;
+  }
+
+
+  .privileges-heading {
+
+    font-size: 58px;
+
+    letter-spacing: -4px;
+  }
+
+
+  .privileges-intro {
+
+    width: 100%;
+
+    margin:
+      25px
+      0
+      0;
+
+    font-size: 13px;
+  }
+
+
+  /* MOBILE STACK */
+
+  .privileges-stack {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    width: 100%;
+
+    border:
+      1px solid
+      #161616;
+
+    overflow: hidden;
+  }
+
+
+  /* MOBILE CARD */
+
+  .privilege-card {
+
+    flex: none;
+
+    width: 100%;
+
+    height: 112px;
+
+    min-height: 112px;
+
+    padding:
+      19px
+      20px;
+
+    border-right: 0;
+
+    border-bottom:
+      1px solid
+      #161616;
+
+    background: #ffffff;
+
+    transition:
+      height .45s ease,
+      min-height .45s ease,
+      background .3s ease;
+  }
+
+
+  .privilege-card:last-child {
+    border-bottom: 0;
+  }
+
+
+  /* MOBILE EXPANSION */
+
+  .privilege-card:hover {
+
+    height: 285px;
+
+    min-height: 285px;
+
+    background: #f15a24;
+  }
+
+
+  .privilege-top {
+
+    min-height: 74px;
+
+    height: 74px;
+
+    transition:
+      opacity .22s ease,
+      transform .3s ease;
+  }
+
+
+  .privilege-card h3 {
+
+    max-width: 250px;
+
+    font-size: 20px;
+  }
+
+
+  .privilege-hidden {
+
+    left: 20px;
+    right: 20px;
+
+    top: 50%;
+
+    max-height: 180px;
+
+    transform:
+      translateY(
+        calc(-50% + 20px)
+      );
+  }
+
+
+  .privilege-hidden p {
+
+    font-size: 12.5px;
+
+    line-height: 1.5;
+  }
+
+
+  .privilege-hidden span {
+
+    font-size: 11px;
+
+    line-height: 1.55;
+  }
+
+
+  .privilege-card:hover .privilege-top {
+
+    opacity: 0;
+
+    transform:
+      translateY(-12px);
+  }
+
+
+  .privilege-card:hover .privilege-hidden {
+
+    opacity: 1;
+
+    transform:
+      translateY(-50%);
+  }
+
+
+  /* =================================================
+     FOOTER MOBILE
+  ================================================= */
+
+  .founder-footer {
+
+    min-height: 600px;
+
+    background-position:
+      center center;
+  }
+
+
+  .footer-inner {
+
+    width: 88%;
+
+    min-height: 510px;
+
+    padding:
+      55px
+      0
+      25px;
+  }
+
+
+  .footer-label {
+
+    font-size: 9px;
+
+    letter-spacing: 2.3px;
+  }
+
+
+  .footer-heading {
+
+    margin-top: 42px;
+
+    font-size: 48px;
+
+    line-height: .9;
+
+    letter-spacing: -3px;
+  }
+
+
+  .footer-subheading {
+
+    margin-top: 25px;
+
+    font-size: 28px;
+
+    line-height: 1.05;
+  }
+
+
+  .footer-cta {
+
+    width: 100%;
+
+    max-width: 330px;
+
+    margin-top: 35px;
+
+    padding:
+      16px
+      20px;
+
+    font-size: 10px;
+
+    letter-spacing: 1.1px;
+  }
+
+
+  .footer-note {
+
+    font-size: 8px;
+
+    letter-spacing: 1.1px;
+  }
+
+
+  .footer-bottom {
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    text-align: center;
+
+    gap: 10px;
+  }
+
+
+  .footer-brand {
+
+    font-size: 9px;
+
+    letter-spacing: 1.3px;
+  }
+
+
+  .footer-by {
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .hero {
+    height: 480px;
+  }
+
+  .hero-image {
+    object-position:
+      center
+      58%;
+  }
+
+  .logo {
+    top: 18px;
+    left: 18px;
+    width: 65px;
+  }
+
+
+  /* FOUNDERS */
+
+  .founders-section {
+    min-height: 1100px;
+  }
+
+
+  .content {
+    padding-top: 90px;
+  }
+
+
+  .heading .our {
+    font-size: 57px;
+  }
+
+
+  .heading .founders {
+
+    font-size: 48px;
+
+    letter-spacing: -3px;
+  }
+
+
+  .description {
+
+    font-size: 16px;
+
+    line-height: 1.45;
+  }
+
+
+  /* GALLERY */
+
+  .founders-gallery {
+    height: 620px;
+  }
+
+
+  .founder-card {
+
+    width: 110px;
+    height: 145px;
+  }
+
+
+  .card-01 {
+    left: 16%;
+  }
+
+  .card-03 {
+    right: 4%;
+  }
+
+  .card-02 {
+    left: 37%;
+  }
+
+  .card-04 {
+    left: 4%;
+  }
+
+  .card-06 {
+    right: 4%;
+  }
+
+  .card-05 {
+    left: 30%;
+  }
+
+
+  /* ADVANTAGE */
+
+  .advantage-section {
+
+    padding:
+      60px
+      20px
+      45px;
+  }
+
+
+  .advantage-heading {
+
+    font-size: 48px;
+
+    line-height: .88;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 34px;
+  }
+
+
+  .info-slider {
+    height: 355px;
+  }
+
+
+  .info-content h2 {
+    font-size: 32px;
+  }
+
+
+  .info-content p {
+    font-size: 12px;
+  }
+
+
+  /* PRIVILEGES */
+
+  .privileges-section {
+
+    padding:
+      45px
+      18px
+      75px;
+  }
+
+
+  .privileges-heading {
+
+    font-size: 49px;
+
+    letter-spacing: -3px;
+  }
+
+
+  .privilege-card {
+
+    height: 105px;
+
+    min-height: 105px;
+
+    padding: 18px;
+  }
+
+
+  .privilege-card:hover {
+
+    height: 300px;
+
+    min-height: 300px;
+  }
+
+
+  .privilege-top {
+
+    min-height: 69px;
+
+    height: 69px;
+  }
+
+
+  .privilege-card h3 {
+    font-size: 18px;
+  }
+
+
+  .privilege-hidden {
+
+    left: 18px;
+    right: 18px;
+
+    top: 50%;
+
+    max-height: 190px;
+
+    transform:
+      translateY(
+        calc(-50% + 20px)
+      );
+  }
+
+
+  .privilege-hidden p {
+
+    font-size: 12px;
+
+    line-height: 1.45;
+  }
+
+
+  .privilege-hidden span {
+
+    font-size: 10.5px;
+
+    line-height: 1.55;
+  }
+
+
+  /* FOOTER */
+
+  .founder-footer {
+
+    min-height: 620px;
+
+    background-position:
+      center center;
+  }
+
+
+  .footer-inner {
+
+    width: 90%;
+
+    min-height: 530px;
+
+    padding-top: 48px;
+  }
+
+
+  .footer-label {
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .footer-heading {
+
+    margin-top: 40px;
+
+    font-size: 40px;
+
+    letter-spacing: -2.5px;
+  }
+
+
+  .footer-subheading {
+
+    font-size: 25px;
+  }
+
+
+  .footer-cta {
+
+    max-width: 310px;
+
+    font-size: 9px;
+
+    padding:
+      15px
+      18px;
+  }
+
+
+  .footer-note {
+
+    font-size: 7.5px;
+
+    letter-spacing: .9px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+  <img
+    src="assets/founder_hero.png"
+    alt="Founders"
+    class="hero-image"
+  >
+
+  <img
+    src="assets/logo.png"
+    alt="Logo"
+    class="logo"
+  >
+
+</section>
+
+
+<!-- =====================================================
+     OUR FOUNDERS
+===================================================== -->
+
+<section class="founders-section">
+
+  <div class="content">
+
+    <h1 class="heading">
+
+      <span class="our">
+        Our
+      </span>
+
+      <span class="founders">
+        FOUNDERS
+      </span>
+
+    </h1>
+
+
+    <p class="description">
+      THE WHITE FOUNDERS™ is built for people creating companies
+      with conviction. A private network designed to bring ambitious
+      founders closer to capital, strategic relationships, exceptional
+      talent, influential brands, and opportunities that compound over time.
+    </p>
+
+  </div>
+
+
+  <div class="founders-gallery">
+
+    <div class="orange-shape"></div>
+
+
+    <div class="founder-card card-01">
+
+      <img
+        src="assets/founder-01.jpeg"
+        alt="Founder 01"
+      >
+
+    </div>
+
+
+    <div class="founder-card card-02">
+
+      <img
+        src="assets/founder-02.jpeg"
+        alt="Founder 02"
+      >
+
+    </div>
+
+
+    <div class="founder-card card-03">
+
+      <img
+        src="assets/founder-03.jpeg"
+        alt="Founder 03"
+      >
+
+    </div>
+
+
+    <div class="founder-card card-04">
+
+      <img
+        src="assets/founder-04.jpeg"
+        alt="Founder 04"
+      >
+
+    </div>
+
+
+    <div class="founder-card card-05">
+
+      <img
+        src="assets/founder-05.jpeg"
+        alt="Founder 05"
+      >
+
+    </div>
+
+
+    <div class="founder-card card-06">
+
+      <img
+        src="assets/founder-06.jpeg"
+        alt="Founder 06"
+      >
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     BUILD YOUR ADVANTAGE
+===================================================== -->
+
+<section class="advantage-section">
+
+  <h2 class="advantage-heading">
+    BUILD YOUR<br>
+    ADVANTAGE
+  </h2>
+
+
+  <div class="info-slider">
+
+
+    <div class="info-slide active">
+
+      <div class="info-content">
+
+        <h2>
+          ACCESS CAPITAL<br>
+          &amp; CONNECTIONS
+        </h2>
+
+        <p>
+          Create proximity to investors, strategic partners,
+          operators, and decision-makers who can accelerate
+          your trajectory.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="info-slide">
+
+      <div class="info-content">
+
+        <h2>
+          EXPAND YOUR<br>
+          INFLUENCE
+        </h2>
+
+        <p>
+          Build relationships that extend beyond business —
+          into partnerships, visibility, talent, and strategic
+          opportunity.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="info-slide">
+
+      <div class="info-content">
+
+        <h2>
+          ENTER THE<br>
+          RIGHT ROOM
+        </h2>
+
+        <p>
+          Gain access to curated founder circles, private
+          conversations, executive gatherings, and high
+          value experiences.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="info-slide">
+
+      <div class="info-content">
+
+        <h2>
+          SURROUND<br>
+          YOURSELF
+        </h2>
+
+        <p>
+          Connect with founders and leaders building
+          meaningful companies, brands, and markets.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="info-slide">
+
+      <div class="info-content">
+
+        <h2>
+          TURN VISION<br>
+          INTO VALUE
+        </h2>
+
+        <p>
+          Transform ideas, relationships, and ambition into
+          ventures, partnerships, and enduring enterprise value.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="info-navigation">
+
+      <div class="info-progress">
+
+        <div class="info-progress-fill"></div>
+
+      </div>
+
+
+      <div class="info-arrows">
+
+        <button
+          class="info-arrow prev"
+          aria-label="Previous slide">
+        </button>
+
+
+        <button
+          class="info-arrow next"
+          aria-label="Next slide">
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     THE WHITE ADVANTAGE
+===================================================== -->
+
+<section class="privileges-section">
+
+
+  <div class="privileges-header">
+
+    <span class="privileges-label">
+      THE WHITE ADVANTAGE
+    </span>
+
+
+    <h2 class="privileges-heading">
+      MORE THAN<br>
+      A NETWORK.
+    </h2>
+
+
+    <p class="privileges-intro">
+      A connected ecosystem designed to create meaningful
+      proximity, private access, and opportunities that move
+      ambitious businesses and ideas forward.
+    </p>
+
+  </div>
+
+
+  <div class="privileges-stack">
+
+
+    <!-- 01 -->
+
+    <article class="privilege-card">
+
+      <div class="privilege-top">
+
+        <span class="privilege-number">
+          01
+        </span>
+
+        <h3>
+          CURATED<br>
+          ACCESS
+        </h3>
+
+        <span class="privilege-plus">
+          +
+        </span>
+
+      </div>
+
+
+      <div class="privilege-hidden">
+
+        <p>
+          Founders. Investors. Creators. Innovators. Business Leaders.
+        </p>
+
+        <span>
+          Meet people selected for what they are building, what they know,
+          and the opportunities they can unlock together.
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <!-- 02 -->
+
+    <article class="privilege-card">
+
+      <div class="privilege-top">
+
+        <span class="privilege-number">
+          02
+        </span>
+
+        <h3>
+          PRIVATE<br>
+          EXPERIENCES
+        </h3>
+
+        <span class="privilege-plus">
+          +
+        </span>
+
+      </div>
+
+
+      <div class="privilege-hidden">
+
+        <p>
+          Founder forums. Private dinners. Leadership sessions. Select gatherings.
+        </p>
+
+        <span>
+          Intimate environments designed for deeper conversations,
+          stronger relationships, and ideas that continue beyond the room.
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <!-- 03 -->
+
+    <article class="privilege-card">
+
+      <div class="privilege-top">
+
+        <span class="privilege-number">
+          03
+        </span>
+
+        <h3>
+          STRATEGIC<br>
+          OPPORTUNITIES
+        </h3>
+
+        <span class="privilege-plus">
+          +
+        </span>
+
+      </div>
+
+
+      <div class="privilege-hidden">
+
+        <p>
+          Capital. Partnerships. Ventures. Talent. Market access.
+        </p>
+
+        <span>
+          Build relationships around opportunities that can create
+          new ventures, unlock resources, and accelerate growth.
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <!-- 04 -->
+
+    <article class="privilege-card">
+
+      <div class="privilege-top">
+
+        <span class="privilege-number">
+          04
+        </span>
+
+        <h3>
+          NATIONAL<br>
+          REACH
+        </h3>
+
+        <span class="privilege-plus">
+          +
+        </span>
+
+      </div>
+
+
+      <div class="privilege-hidden">
+
+        <p>
+          Build relationships across India's influential entrepreneurial ecosystems.
+        </p>
+
+        <span>
+          Connect beyond your immediate geography and become part of
+          a wider network of founders, investors, and operators.
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <!-- 05 -->
+
+    <article class="privilege-card">
+
+      <div class="privilege-top">
+
+        <span class="privilege-number">
+          05
+        </span>
+
+        <h3>
+          GLOBAL<br>
+          CONNECTIONS
+        </h3>
+
+        <span class="privilege-plus">
+          +
+        </span>
+
+      </div>
+
+
+      <div class="privilege-hidden">
+
+        <p>
+          Extend your network beyond borders through an emerging international collective.
+        </p>
+
+        <span>
+          Discover perspectives, relationships, and opportunities that
+          connect India's next generation of builders with the wider world.
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <!-- 06 -->
+
+    <article class="privilege-card">
+
+      <div class="privilege-top">
+
+        <span class="privilege-number">
+          06
+        </span>
+
+        <h3>
+          WHITE<br>
+          ECOSYSTEM
+        </h3>
+
+        <span class="privilege-plus">
+          +
+        </span>
+
+      </div>
+
+
+      <div class="privilege-hidden">
+
+        <p>
+          Access THE WHITE FOUNDERS™, INVESTORS™, CREATORS™, and INNOVATORS™.
+        </p>
+
+        <span>
+          One connected ecosystem bringing ambition, expertise, capital,
+          creativity, and influence into the same room.
+        </span>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL FOUNDER CTA / FOOTER
+===================================================== -->
+
+<section class="founder-footer">
+
+  <div class="footer-inner">
+
+
+    <div class="footer-label">
+   
+    </div>
+
+
+    <div>
+
+      <h2 class="footer-heading">
+        BUILD THE COMPANY.<br>
+        BUILD THE <span>NETWORK.</span><br>
+        BUILD WHAT’S NEXT.
+      </h2>
+
+
+      <p class="footer-subheading">
+        WHERE FOUNDERS MEET OPPORTUNITY.
+      </p>
+
+
+      <a
+        href="register.html"
+        class="footer-cta"
+      >
+        APPLY FOR FOUNDER MEMBERSHIP
+      </a>
+
+
+      <p class="footer-note">
+       
+      </p>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <div class="footer-brand">
+        THE WHITE FOUNDERS
+      </div>
+
+  <p class="footer-note">
+        SELECTIVE MEMBERSHIP. SUBJECT TO APPROVAL.
+      </p>
+      <div class="footer-by">
+         THE WHITE STARTUP SCHOOL
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<script>
+
+/* =====================================================
+   INFORMATION SLIDER
+===================================================== */
+
+const slides =
+  document.querySelectorAll(".info-slide");
+
+const previous =
+  document.querySelector(".info-arrow.prev");
+
+const next =
+  document.querySelector(".info-arrow.next");
+
+const progress =
+  document.querySelector(".info-progress-fill");
+
+let current = 0;
+
+let autoPlay;
+
+
+/* =====================================================
+   SHOW SLIDE
+===================================================== */
+
+function showSlide(index) {
+
+  current =
+    (index + slides.length) %
+    slides.length;
+
+
+  slides.forEach((slide, i) => {
+
+    slide.classList.toggle(
+      "active",
+      i === current
+    );
+
+  });
+
+
+  progress.style.width =
+    (
+      (current + 1) /
+      slides.length *
+      100
+    ) + "%";
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+next.addEventListener(
+  "click",
+  () => {
+
+    showSlide(current + 1);
+
+    restartAutoPlay();
+
+  }
+);
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+previous.addEventListener(
+  "click",
+  () => {
+
+    showSlide(current - 1);
+
+    restartAutoPlay();
+
+  }
+);
+
+
+/* =====================================================
+   AUTO PLAY
+===================================================== */
+
+function startAutoPlay() {
+
+  autoPlay =
+    setInterval(
+      () => {
+
+        showSlide(current + 1);
+
+      },
+      5000
+    );
+}
+
+
+/* =====================================================
+   RESTART
+===================================================== */
+
+function restartAutoPlay() {
+
+  clearInterval(autoPlay);
+
+  startAutoPlay();
+}
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+showSlide(0);
+
+startAutoPlay();
+
+</script>
+
+</body>
+
+</html>
